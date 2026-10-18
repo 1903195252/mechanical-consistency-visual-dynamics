@@ -68,7 +68,7 @@ docs/                   Protocols and usage
 Generated datasets, weights, predictions, and environments are ignored by Git. Upstream licenses are retained in [THIRD_PARTY.md](THIRD_PARTY.md). Original project code has no assigned redistribution license at this stage.
 
 ```bash
-./setup.sh --profile all --device cuda --download-models --artifact-dir /path/to/artifacts/current
+./setup.sh --profile all --device cuda --download-models --artifact-dir /path/to/artifacts
 ```
 
-`--artifact-dir` accepts a manifested data directory or a directory containing verified archives. Check all seeds and test cases with `python3 scripts/check_artifact_coverage.py` after import.
+`--artifact-dir` accepts the model/experiment collection, an individual package, or a directory containing TAR packages. The 24 packages separate shared data, KeyCLD, CON, V-JEPA, LingBot and measurement components; the largest is 14.35 GB. Final models and official pretrained components import by default; V-JEPA continuation states remain optional. Each package has a directory guide and file/model indexes. See [package layout and import commands](docs/data.md).

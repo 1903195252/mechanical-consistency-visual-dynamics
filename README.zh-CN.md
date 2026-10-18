@@ -30,8 +30,8 @@
 [架构](docs/architecture.md) · [复现](docs/reproduction.md) · [结果](docs/results.md) · [英文首页](README.md)
 
 ```bash
-./setup.sh --profile all --device cuda --download-models --artifact-dir /path/to/artifacts/current
+./setup.sh --profile all --device cuda --download-models --artifact-dir /path/to/artifacts
 python3 scripts/check_artifact_coverage.py
 ```
 
-数据目录包含 `artifact_manifest.json` 和统一的 `output/` 路径，可直接校验、导入，无需先打成巨型压缩包。SHA-256 校验保证文件完整；覆盖检查另外核对全部种子、测试轨迹、模型权重和参考视频。V-JEPA 的完整优化器状态单独放在可选的 `vjepa-resume` 目录，日常推理与评分不需要导入。
+数据按“模型 → 实验类型”拆成 24 个分包：共享数据、KeyCLD、CON、V-JEPA、LingBot 和独立测量组件各自分开。最大单包 14.35 GB，所有分包均小于 50 GB；每包提供目录导航和模型组件索引。默认组合导入实验成果与官方预训练组件，V-JEPA 续训状态按种子单独导入。分包可直接复制，也可单独导出为 TAR；详见[数据与模型](docs/data.md)。

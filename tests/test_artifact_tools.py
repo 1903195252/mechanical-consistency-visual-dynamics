@@ -24,6 +24,44 @@ bootstrap=module('bootstrap')
 
 
 class ArtifactTransport(unittest.TestCase):
+    def test_portable_package_roundtrip_and_neutral_archive_metadata(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);package=root/'package';target=root/'imported';target.mkdir()
+            source=package/'output/model/weight.bin';source.parent.mkdir(parents=True)
+            data=b'portable model parameters';source.write_bytes(data)
+            metadata=dict(title='Model',files=[dict(path='output/model/weight.bin',bytes=len(data))])
+            (package/'package.json').write_text(json.dumps(metadata))
+            (package/'README.md').write_text('Model and experiment files.\n')
+            self.assertEqual(bootstrap.artifact_inputs(package),[package])
+            self.assertEqual(artifacts.import_tree(package,target),1)
+            self.assertEqual(artifacts.import_tree(package,target),1)
+            archive=root/'model.tar'
+            self.assertEqual(artifacts.export_package(package,archive),1)
+            with tarfile.open(archive) as f:
+                self.assertNotIn('artifact_manifest.json',f.getnames())
+                self.assertNotIn(b'sha256',f.extractfile('package.json').read())
+                for entry in f.getmembers():
+                    self.assertEqual((entry.uid,entry.gid,entry.mtime),(0,0,0))
+                    self.assertEqual((entry.uname,entry.gname),('',''))
+            self.assertEqual(artifacts.import_bundle(archive,target),1)
+            (target/'output/model/weight.bin').write_bytes(b'x'*len(data))
+            with self.assertRaises(FileExistsError):artifacts.import_bundle(archive,target)
+            with self.assertRaises(FileExistsError):artifacts.import_tree(package,target)
+
+    def test_collection_verification_includes_optional_optimizer_states(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            for name in ('current','pretrained','resume'):
+                (root/name).mkdir();(root/name/'artifact_manifest.json').write_text('{"files": []}')
+            index=root/'artifact_collection.json'
+            index.write_text(json.dumps(dict(packages=[dict(path='current'),dict(path='pretrained'),dict(path='resume',default=False)])))
+            self.assertEqual(artifacts.collection_packages(root),[root/'current',root/'pretrained'])
+            self.assertEqual(artifacts.collection_packages(root,True),[root/'current',root/'pretrained',root/'resume'])
+            index.write_text(json.dumps(dict(packages=[dict(path='current'),dict(path='current')])))
+            with self.assertRaises(ValueError):artifacts.collection_packages(root,True)
+            index.write_text(json.dumps(dict(packages=[dict(path='../outside',default=False)])))
+            with self.assertRaises(ValueError):artifacts.collection_packages(root)
+
     def test_collection_selects_defaults_and_rejects_escape(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder);collection=root/'artifact_collection.json'

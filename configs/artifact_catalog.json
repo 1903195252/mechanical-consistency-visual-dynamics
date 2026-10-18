@@ -1,409 +1,1015 @@
 {
-  "schema": 1,
-  "packages": {
-    "current": {
-      "files": 52028,
-      "bytes": 89144511295,
-      "groups": {
-        "planar_data": {
-          "files": 12348,
-          "bytes": 12811314017,
-          "registered_checksums": 10290
-        },
-        "spatial_data": {
-          "files": 3156,
-          "bytes": 816070974,
-          "registered_checksums": 1566
-        },
-        "planar64": {
-          "files": 6918,
-          "bytes": 1485740365,
-          "registered_checksums": 21
-        },
-        "metadata": {
-          "files": 19,
-          "bytes": 7051695,
-          "registered_checksums": 0
-        },
-        "planar256": {
-          "files": 5861,
-          "bytes": 15451551039,
-          "registered_checksums": 6
-        },
-        "readers": {
-          "files": 658,
-          "bytes": 155750493,
-          "registered_checksums": 5
-        },
-        "vjepa": {
-          "files": 10372,
-          "bytes": 11093165806,
-          "registered_checksums": 12
-        },
-        "torque_controls": {
-          "files": 527,
-          "bytes": 15165454,
-          "registered_checksums": 160
-        },
-        "lingbot": {
-          "files": 12169,
-          "bytes": 47308701452,
-          "registered_checksums": 1803
-        }
-      }
-    },
-    "pretrained": {
-      "files": 20,
-      "bytes": 26045431858,
-      "groups": {
-        "lingbot_official": {
-          "files": 19,
-          "bytes": 24381208430,
-          "registered_checksums": 19
-        },
-        "vjepa_official": {
-          "files": 1,
-          "bytes": 1664223428,
-          "registered_checksums": 1
-        }
-      }
-    },
-    "vjepa-resume": {
-      "files": 6,
-      "bytes": 21883843278,
-      "groups": {
-        "vjepa_optimizer_states": {
-          "files": 6,
-          "bytes": 21883843278,
-          "registered_checksums": 6
-        }
-      }
-    }
-  },
-  "core_coverage": {
-    "complete": true,
-    "counts": {
-      "planar_final_checkpoints": 27,
-      "planar_test_predictions": 2916,
-      "vjepa_predictors": 6,
-      "vjepa_feedback_heads": 6,
-      "vjepa_forecasts": 900,
-      "lingbot_adapted_checkpoints": 3,
-      "lingbot_videos": 1800,
-      "reference_videos": 300
-    },
-    "missing_or_conflicting": []
-  },
-  "checkpoints": [
+  "schema": 3,
+  "packages": [
     {
-      "path": "output/closed_chain_eval/visual_calibration/optimization/geometry_spatial_reader/H-A_head.pt",
-      "bytes": 25799967,
-      "sha256": "19dfcd012b15e572d97519e7637324cb6cbfe26c2d43044566ce658a0e4c27c0",
-      "group": "readers"
+      "path": "data/planar-64",
+      "title": "共享平面数据 · 64 px",
+      "description": "343 个机构的图像、命令、几何、状态与物理参考。",
+      "model": "Data",
+      "experiment": "planar64",
+      "files": 8235,
+      "bytes": 955448827,
+      "default": true
     },
     {
-      "path": "output/closed_chain_eval/visual_calibration/optimization/geometry_spatial_reader/H-B_head.pt",
-      "bytes": 25790687,
-      "sha256": "9b065117f54e659f57eaa607ff76dc072030bab93ca6dc4dbf2cd77616b43823",
-      "group": "readers"
+      "path": "data/planar-256",
+      "title": "共享平面数据 · 256 px",
+      "description": "与 64 px 对齐的高分辨率图像、输入与状态标签。",
+      "model": "Data",
+      "experiment": "planar256",
+      "files": 4119,
+      "bytes": 11859186292,
+      "default": true
     },
     {
-      "path": "output/closed_chain_eval/visual_calibration/vjepa_readout_replay/calibration/H-B_relative_head.npz",
-      "bytes": 1954434,
-      "sha256": "c104e5ac2cbce2b4762a1b6c22604a9f96eafb8c5f5bc5442d34368b77706e2e",
-      "group": "readers"
+      "path": "data/spatial",
+      "title": "共享空间数据",
+      "description": "Stewart / Delta 的训练、验证、测试视频、命令与物理参考。",
+      "model": "Data",
+      "experiment": "spatial",
+      "files": 3157,
+      "bytes": 816625461,
+      "default": true
     },
     {
-      "path": "output/con_corpus/dynamics_extension/runs/state_euler_con_iae_seed42/params.p",
-      "bytes": 54591,
-      "sha256": "a3f5bbf614da4a6cbfaf5a30ac478f2dbc030c3303242db3110540f6f0a4339a",
-      "group": "planar64"
+      "path": "keycld/planar-64",
+      "title": "KeyCLD · 64 px",
+      "description": "视频、State–Euler、State–RK4 三种子最终权重与预测。",
+      "model": "KeyCLD",
+      "experiment": "planar64",
+      "files": 2973,
+      "bytes": 116192403,
+      "default": true
     },
     {
-      "path": "output/con_corpus/dynamics_extension/runs/state_euler_con_iae_seed43/params.p",
-      "bytes": 54591,
-      "sha256": "70ca1684cb0ce4294bc7e2ff9bfc46646fb608978f287a1e622f37521020581e",
-      "group": "planar64"
+      "path": "keycld/planar-256",
+      "title": "KeyCLD · 256 px",
+      "description": "高分辨率视频分支的三种子权重、预测与评分。",
+      "model": "KeyCLD",
+      "experiment": "planar256",
+      "files": 2934,
+      "bytes": 1101768566,
+      "default": true
     },
     {
-      "path": "output/con_corpus/dynamics_extension/runs/state_euler_con_iae_seed44/params.p",
-      "bytes": 54591,
-      "sha256": "625ea6fb27623c922b33519ba4d4bd4eae8fc72be79aed3ef6e6ac01710cdd2b",
-      "group": "planar64"
+      "path": "keycld/torque-diagnostics",
+      "title": "KeyCLD · 力矩激励与结构诊断",
+      "description": "单机构受控诊断、状态对照与八工况迁移成果。",
+      "model": "KeyCLD",
+      "experiment": "torque",
+      "files": 525,
+      "bytes": 15164595,
+      "default": true
     },
     {
-      "path": "output/con_corpus/dynamics_extension/runs/state_rk4_con_iae_seed42/params.p",
-      "bytes": 54591,
-      "sha256": "23b84e84a9cd69702c0affb5962555c11528d819fb23fe217cf060e0cba0b630",
-      "group": "planar64"
+      "path": "con-model/planar-64",
+      "title": "CON · 64 px",
+      "description": "视频、状态及 Euler / RK4 对照的三种子权重、预测与评分。",
+      "model": "CON",
+      "experiment": "planar64",
+      "files": 3949,
+      "bytes": 1371099082,
+      "default": true
     },
     {
-      "path": "output/con_corpus/dynamics_extension/runs/state_rk4_con_iae_seed43/params.p",
-      "bytes": 54591,
-      "sha256": "0368f28ddd86c637bdb826e000a857f3e13ef0ec29c450a17d2f22c41be2fee3",
-      "group": "planar64"
+      "path": "con-model/planar-256",
+      "title": "CON · 256 px",
+      "description": "保留原生架构的高分辨率三种子权重、预测与评分。",
+      "model": "CON",
+      "experiment": "planar256",
+      "files": 2924,
+      "bytes": 14349781525,
+      "default": true
     },
     {
-      "path": "output/con_corpus/dynamics_extension/runs/state_rk4_con_iae_seed44/params.p",
-      "bytes": 54591,
-      "sha256": "ab8b596d23d0318fcaa0a20537325ae4eb81eae6386f88c22e1aaa6333d277b8",
-      "group": "planar64"
+      "path": "vjepa/pretrained",
+      "title": "V-JEPA · 官方编码器",
+      "description": "V-JEPA 2.1 B/16 384 px 预训练编码器。",
+      "model": "V-JEPA",
+      "experiment": "pretrained",
+      "files": 1,
+      "bytes": 1664223428,
+      "default": true
     },
     {
-      "path": "output/con_corpus/runs/state_con_iae_seed42/params.p",
-      "bytes": 54591,
-      "sha256": "f55c2b98f7162fb29771b1de50e154c0d1553fd48176eadfb7427405b53c2285",
-      "group": "planar64"
+      "path": "vjepa/spatial-experiments",
+      "title": "V-JEPA + AC · 空间主实验",
+      "description": "三种子 AC 预测器、内部反馈头、900 条特征预测及参考测量。",
+      "model": "V-JEPA",
+      "experiment": "spatial",
+      "files": 10374,
+      "bytes": 11093818184,
+      "default": true
     },
     {
-      "path": "output/con_corpus/runs/state_con_iae_seed43/params.p",
-      "bytes": 54591,
-      "sha256": "78488b10f3506eb6b5d899a8eea8f6b66840ed4c2a0750a7c02ce3085ca7caa0",
-      "group": "planar64"
+      "path": "vjepa/resume-seed42",
+      "title": "V-JEPA · seed 42 续训状态",
+      "description": "Stewart 与 Delta 的模型、优化器及训练状态。",
+      "model": "V-JEPA",
+      "experiment": "resume",
+      "files": 2,
+      "bytes": 7294614490,
+      "default": false
     },
     {
-      "path": "output/con_corpus/runs/state_con_iae_seed44/params.p",
-      "bytes": 54591,
-      "sha256": "8940cab2352e539fe7fc0ccec8910a4fb4c300ba7cf58c62e9c37cfd75e05754",
-      "group": "planar64"
+      "path": "vjepa/resume-seed43",
+      "title": "V-JEPA · seed 43 续训状态",
+      "description": "Stewart 与 Delta 的模型、优化器及训练状态。",
+      "model": "V-JEPA",
+      "experiment": "resume",
+      "files": 2,
+      "bytes": 7294614426,
+      "default": false
     },
     {
-      "path": "output/con_corpus/runs/video_con_iae_seed42/params.p",
-      "bytes": 269087554,
-      "sha256": "652687685b8015b0d9e8d2b0d17d785a53f755cdb884171a70147f899520a9e9",
-      "group": "planar64"
+      "path": "vjepa/resume-seed44",
+      "title": "V-JEPA · seed 44 续训状态",
+      "description": "Stewart 与 Delta 的模型、优化器及训练状态。",
+      "model": "V-JEPA",
+      "experiment": "resume",
+      "files": 2,
+      "bytes": 7294614362,
+      "default": false
     },
     {
-      "path": "output/con_corpus/runs/video_con_iae_seed43/params.p",
-      "bytes": 269087554,
-      "sha256": "de87318de316442a17d3a9fa5812d2f327759449ee75578932fdc07aa11d2a7b",
-      "group": "planar64"
+      "path": "lingbot/pretrained-transformer",
+      "title": "LingBot · 官方 Transformer",
+      "description": "零样本推理与适配的官方 Transformer 分片和配置。",
+      "model": "LingBot",
+      "experiment": "pretrained",
+      "files": 5,
+      "bytes": 10179092782,
+      "default": true
     },
     {
-      "path": "output/con_corpus/runs/video_con_iae_seed44/params.p",
-      "bytes": 269087554,
-      "sha256": "33cbeb26e6bf3794104bb7a2b5efd5024466922717636778c5cac49c07b2dd60",
-      "group": "planar64"
+      "path": "lingbot/pretrained-vae",
+      "title": "LingBot · 官方 VAE",
+      "description": "视频编码与解码的官方 VAE。",
+      "model": "LingBot",
+      "experiment": "pretrained",
+      "files": 2,
+      "bytes": 2818779509,
+      "default": true
     },
     {
-      "path": "output/keycld_corpus/runs/state_euler_seed42/params.p",
-      "bytes": 2389018,
-      "sha256": "e6b8919bdfb7bc9df2c655c4f3723b9fad63da58217b4e44764cee0324e12f76",
-      "group": "planar64"
+      "path": "lingbot/pretrained-text",
+      "title": "LingBot · 官方文本组件",
+      "description": "文本编码器、分词器与模型说明、配置。",
+      "model": "LingBot",
+      "experiment": "pretrained",
+      "files": 12,
+      "bytes": 11383336139,
+      "default": true
     },
     {
-      "path": "output/keycld_corpus/runs/state_euler_seed43/params.p",
-      "bytes": 2389018,
-      "sha256": "0ad678ce150e8ea29c6e615c019e0724e5771bba2e05f9df6059fb1e8a8a0663",
-      "group": "planar64"
+      "path": "lingbot/adapted-seed42",
+      "title": "LingBot · seed 42 适配权重",
+      "description": "50 更新的完整 Transformer 权重及配套输入配置。",
+      "model": "LingBot",
+      "experiment": "adapted-weights",
+      "files": 8,
+      "bytes": 10190436009,
+      "default": true
     },
     {
-      "path": "output/keycld_corpus/runs/state_euler_seed44/params.p",
-      "bytes": 2389018,
-      "sha256": "1815b3154aecff53f82dbca4c1192eb9dae62a60465bb943d3105db8f8716256",
-      "group": "planar64"
+      "path": "lingbot/adapted-seed43",
+      "title": "LingBot · seed 43 适配权重",
+      "description": "50 更新的完整 Transformer 权重及配套输入配置。",
+      "model": "LingBot",
+      "experiment": "adapted-weights",
+      "files": 7,
+      "bytes": 10190435705,
+      "default": true
     },
     {
-      "path": "output/keycld_corpus/runs/state_rk4_seed42/params.p",
-      "bytes": 2389018,
-      "sha256": "e5b0d67f4055e4a8da22003ef6f13bac1432144457de65bd361b468c4d1cbe19",
-      "group": "planar64"
+      "path": "lingbot/adapted-seed44",
+      "title": "LingBot · seed 44 适配权重",
+      "description": "50 更新的完整 Transformer 权重及配套输入配置。",
+      "model": "LingBot",
+      "experiment": "adapted-weights",
+      "files": 7,
+      "bytes": 10190435713,
+      "default": true
     },
     {
-      "path": "output/keycld_corpus/runs/state_rk4_seed43/params.p",
-      "bytes": 2389018,
-      "sha256": "14857a5f6371487c7839be045483b1126ca55d5a8ab812098c6d1d259bd4fcfe",
-      "group": "planar64"
+      "path": "lingbot/forecast-0000",
+      "title": "LingBot · 0 更新预测",
+      "description": "三个种子、900 条零样本视频及对应坐标读出和评分。",
+      "model": "LingBot",
+      "experiment": "zero-shot",
+      "files": 5258,
+      "bytes": 7353447792,
+      "default": true
     },
     {
-      "path": "output/keycld_corpus/runs/state_rk4_seed44/params.p",
-      "bytes": 2389018,
-      "sha256": "001e9f5192a016bc68086b8345e42bb2dd5a0283f0b7606d87d56c5183c72d32",
-      "group": "planar64"
+      "path": "lingbot/forecast-0050",
+      "title": "LingBot · 50 更新预测",
+      "description": "三个种子、900 条适配后视频及对应坐标读出和评分。",
+      "model": "LingBot",
+      "experiment": "adapted",
+      "files": 5386,
+      "bytes": 8084230199,
+      "default": true
     },
     {
-      "path": "output/keycld_corpus/runs/video_euler_seed42/params.p",
-      "bytes": 2389018,
-      "sha256": "56624826e5be827eb2fbeaaad3f97b889f2ae52173f278e02b0d8ca945e7605b",
-      "group": "planar64"
+      "path": "lingbot/reference-and-protocol",
+      "title": "LingBot · 参考视频与协议",
+      "description": "300 条匹配参考视频、参考测量和共享模型输入配置。",
+      "model": "LingBot",
+      "experiment": "reference",
+      "files": 1509,
+      "bytes": 1300688642,
+      "default": true
     },
     {
-      "path": "output/keycld_corpus/runs/video_euler_seed43/params.p",
-      "bytes": 2389018,
-      "sha256": "5ab02834d0c66263ff39836024e5a5f8a9230c40f4577b66c11f171e9a61e42f",
-      "group": "planar64"
+      "path": "measurement/planar",
+      "title": "平面独立测量组件",
+      "description": "256 px 测量头、标定、参考读出与测量对照。",
+      "model": "Measurement",
+      "experiment": "planar",
+      "files": 280,
+      "bytes": 5286388,
+      "default": true
     },
     {
-      "path": "output/keycld_corpus/runs/video_euler_seed44/params.p",
-      "bytes": 2389018,
-      "sha256": "60e08737b31053ee2506acd705662742bb2da0b7689949dcb106166207caa069",
-      "group": "planar64"
-    },
-    {
-      "path": "output/keycld_fourbar/diagnosis/state_oracle/euler/params.p",
-      "bytes": 2389018,
-      "sha256": "382ad7d17af8af666641e2fe15ffc345a7a54a2616b0043edbf746eca90b6651",
-      "group": "torque_controls"
-    },
-    {
-      "path": "output/keycld_fourbar/diagnosis/state_oracle/rk4_4/params.p",
-      "bytes": 2389018,
-      "sha256": "087add5de75e92b384f550d4713ed6f64efd38a4409a9fb03b1e66ed97a55438",
-      "group": "torque_controls"
-    },
-    {
-      "path": "output/keycld_fourbar/trained/trained_params.p",
-      "bytes": 2389018,
-      "sha256": "b7b65abfc5df9d6befc49952e8ee92021a9ffc9d1d1d2ca17cbc155874ad5f50",
-      "group": "torque_controls"
-    },
-    {
-      "path": "output/lingbot_expansion/delta_instrument/no_coordinate_smoothing/relative_head.npz",
-      "bytes": 1958789,
-      "sha256": "097ba0b315b9e866bf042090224b0afeeb05d8799bfae28b4d2982f33cfa7be0",
-      "group": "readers"
-    },
-    {
-      "path": "output/lingbot_expansion/runs/seed42/checkpoints/checkpoint_step_50/transformer/diffusion_pytorch_model.safetensors",
-      "bytes": 10177831668,
-      "sha256": "465192d800dfea92037f8c294ccc3b62be68bac154c937e08cd1fad862eb324a",
-      "group": "lingbot"
-    },
-    {
-      "path": "output/lingbot_expansion/runs/seed43/checkpoints/checkpoint_step_50/transformer/diffusion_pytorch_model.safetensors",
-      "bytes": 10177831668,
-      "sha256": "a565a7fb3274c663611a846577d865836d856c7932f0213ef4e888c83f374068",
-      "group": "lingbot"
-    },
-    {
-      "path": "output/lingbot_expansion/runs/seed44/checkpoints/checkpoint_step_50/transformer/diffusion_pytorch_model.safetensors",
-      "bytes": 10177831668,
-      "sha256": "58108895d9adb9d681449893fea13ecf7ce722715236833a063af7661534fc2e",
-      "group": "lingbot"
-    },
-    {
-      "path": "output/planar_resolution/readers/reader_256/final.pt",
-      "bytes": 2088240,
-      "sha256": "9570ebce7c5d9bfb71a6c21da14164992b163b516c4c1c0684841a0574d22152",
-      "group": "readers"
-    },
-    {
-      "path": "output/planar_resolution/runs/con_256_seed42/params.p",
-      "bytes": 4303483714,
-      "sha256": "b5d92d841b3b172f9cc9012f12a7947fc2e9aaa478dc356830df754341828ce1",
-      "group": "planar256"
-    },
-    {
-      "path": "output/planar_resolution/runs/con_256_seed43/params.p",
-      "bytes": 4303483714,
-      "sha256": "4c0c9e316d8e09a19777764f09d4936224c2b9309b87920ad6891bb50f624966",
-      "group": "planar256"
-    },
-    {
-      "path": "output/planar_resolution/runs/con_256_seed44/params.p",
-      "bytes": 4303483714,
-      "sha256": "6c6601205f44039c226f61c65f0bc509f34a446e4c5a38fb16ff73985b2e77d4",
-      "group": "planar256"
-    },
-    {
-      "path": "output/planar_resolution/runs/keycld_256_seed42/params.p",
-      "bytes": 9516060,
-      "sha256": "85c1c9886297366d0e7f53921d391d82cf437d53a0abf9868d386de1aba8d4ba",
-      "group": "planar256"
-    },
-    {
-      "path": "output/planar_resolution/runs/keycld_256_seed43/params.p",
-      "bytes": 9516060,
-      "sha256": "2e4b070266d66b738f2d3b919f38f245b492799e25d746c2c32bfdfeb5318c68",
-      "group": "planar256"
-    },
-    {
-      "path": "output/planar_resolution/runs/keycld_256_seed44/params.p",
-      "bytes": 9516060,
-      "sha256": "154345931564576bb24fb7eb65da192b5f54473c4f0f16eca367f41a27ec7846",
-      "group": "planar256"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_42/H-A_predictor.pt",
-      "bytes": 1215818835,
-      "sha256": "d887e0fc30ae0342cfc6f9bd037ae0d68d7f15c8d61dead955455ae7c280a2fb",
-      "group": "vjepa"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_42/H-A_readout.pt",
-      "bytes": 25775301,
-      "sha256": "9c47b244c65799fa79f729ca73e5efad4f6551b7216a0d4d60e36df3bbaf643e",
-      "group": "vjepa"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_42/H-B_predictor.pt",
-      "bytes": 1215744851,
-      "sha256": "f96391627b2fbe25188a3b7b3274c363fd3c927afbf5ada6de16c64df76bc3ad",
-      "group": "vjepa"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_42/H-B_readout.pt",
-      "bytes": 25768837,
-      "sha256": "8d48095eebf62dfa81b413b0bb2e0f513bece6f0a1cb6c6a0340ace6c362ac02",
-      "group": "vjepa"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_43/H-A_predictor.pt",
-      "bytes": 1215818835,
-      "sha256": "bc8eb625b1b341fb84666ee62c292b00f678bd5e0133fb3d639b64c349ffdbfe",
-      "group": "vjepa"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_43/H-A_readout.pt",
-      "bytes": 25775301,
-      "sha256": "3aa97593ec82c01d3932b512139a17bceab772cace910608fcc6d8cba43fa0a3",
-      "group": "vjepa"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_43/H-B_predictor.pt",
-      "bytes": 1215744851,
-      "sha256": "67bb987cef6402b032fd255ebd5788926951e285e0ac7d6c3993f2386df94605",
-      "group": "vjepa"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_43/H-B_readout.pt",
-      "bytes": 25768837,
-      "sha256": "d90a2999389dc75957db8682a4ce10a898cc5af4fda44e50c4f19ea17c1c5fc3",
-      "group": "vjepa"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_44/H-A_predictor.pt",
-      "bytes": 1215818835,
-      "sha256": "e46f61a9b0ceac103c69d844b23f539e560d4489f6d1d21f4e8b326da541f76c",
-      "group": "vjepa"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_44/H-A_readout.pt",
-      "bytes": 25775301,
-      "sha256": "87d207f78403ab98a3865e335116996d0cb1518f13cbf3dfdff347184e481a3a",
-      "group": "vjepa"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_44/H-B_predictor.pt",
-      "bytes": 1215744851,
-      "sha256": "e0c003b4ca14e62807ee41500e29b75d9c5579ac32551d35b5d01b3511b05b32",
-      "group": "vjepa"
-    },
-    {
-      "path": "output/vjepa_expansion/seed_44/H-B_readout.pt",
-      "bytes": 25768837,
-      "sha256": "7ee0a75ee7f961e11f61816c2171f048d71716704aa4dd52a68c45ff1afdd91a",
-      "group": "vjepa"
+      "path": "measurement/spatial",
+      "title": "空间独立测量组件",
+      "description": "Stewart / Delta 测量头、光学几何缓存、标定和对照。",
+      "model": "Measurement",
+      "experiment": "spatial",
+      "files": 369,
+      "bytes": 150415156,
+      "default": true
     }
   ],
-  "supplementary_availability": {
-    "final_checkpoints": 3,
-    "extended_conditions": 8,
-    "extended_cases": 160,
-    "initial_registered_observations": 590,
-    "initial_observations_recovered": 0,
-    "initial_physics_reference_runs_recovered": 0,
-    "generation_source": "experiments/keycld_fourbar/dataset.py",
-    "status": "Original initial-study observations and references have not been recovered; registered manifests, checkpoints and the generation recipe are retained."
-  }
+  "checkpoints": [
+    {
+      "package": "keycld/planar-64",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "state_euler_seed42",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_corpus/runs/state_euler_seed42/params.p",
+      "bytes": 2389018,
+      "group": "planar64"
+    },
+    {
+      "package": "keycld/planar-64",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "state_euler_seed43",
+      "seed": 43,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_corpus/runs/state_euler_seed43/params.p",
+      "bytes": 2389018,
+      "group": "planar64"
+    },
+    {
+      "package": "keycld/planar-64",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "state_euler_seed44",
+      "seed": 44,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_corpus/runs/state_euler_seed44/params.p",
+      "bytes": 2389018,
+      "group": "planar64"
+    },
+    {
+      "package": "keycld/planar-64",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "state_rk4_seed42",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_corpus/runs/state_rk4_seed42/params.p",
+      "bytes": 2389018,
+      "group": "planar64"
+    },
+    {
+      "package": "keycld/planar-64",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "state_rk4_seed43",
+      "seed": 43,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_corpus/runs/state_rk4_seed43/params.p",
+      "bytes": 2389018,
+      "group": "planar64"
+    },
+    {
+      "package": "keycld/planar-64",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "state_rk4_seed44",
+      "seed": 44,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_corpus/runs/state_rk4_seed44/params.p",
+      "bytes": 2389018,
+      "group": "planar64"
+    },
+    {
+      "package": "keycld/planar-64",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "video_euler_seed42",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_corpus/runs/video_euler_seed42/params.p",
+      "bytes": 2389018,
+      "group": "planar64"
+    },
+    {
+      "package": "keycld/planar-64",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "video_euler_seed43",
+      "seed": 43,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_corpus/runs/video_euler_seed43/params.p",
+      "bytes": 2389018,
+      "group": "planar64"
+    },
+    {
+      "package": "keycld/planar-64",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "video_euler_seed44",
+      "seed": 44,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_corpus/runs/video_euler_seed44/params.p",
+      "bytes": 2389018,
+      "group": "planar64"
+    },
+    {
+      "package": "keycld/planar-256",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "keycld_256_seed42",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 256,
+      "path": "output/planar_resolution/runs/keycld_256_seed42/params.p",
+      "bytes": 9516060,
+      "group": "planar256"
+    },
+    {
+      "package": "keycld/planar-256",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "keycld_256_seed43",
+      "seed": 43,
+      "family": "",
+      "resolution_px": 256,
+      "path": "output/planar_resolution/runs/keycld_256_seed43/params.p",
+      "bytes": 9516060,
+      "group": "planar256"
+    },
+    {
+      "package": "keycld/planar-256",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "keycld_256_seed44",
+      "seed": 44,
+      "family": "",
+      "resolution_px": 256,
+      "path": "output/planar_resolution/runs/keycld_256_seed44/params.p",
+      "bytes": 9516060,
+      "group": "planar256"
+    },
+    {
+      "package": "keycld/torque-diagnostics",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "euler",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_fourbar/diagnosis/state_oracle/euler/params.p",
+      "bytes": 2389018,
+      "group": "torque_controls"
+    },
+    {
+      "package": "keycld/torque-diagnostics",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "rk4_4",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_fourbar/diagnosis/state_oracle/rk4_4/params.p",
+      "bytes": 2389018,
+      "group": "torque_controls"
+    },
+    {
+      "package": "keycld/torque-diagnostics",
+      "model": "KeyCLD",
+      "role": "final_checkpoint",
+      "component": "trained_params",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/keycld_fourbar/trained/trained_params.p",
+      "bytes": 2389018,
+      "group": "torque_controls"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "state_euler_con_iae_seed42",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/dynamics_extension/runs/state_euler_con_iae_seed42/params.p",
+      "bytes": 54591,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "state_euler_con_iae_seed43",
+      "seed": 43,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/dynamics_extension/runs/state_euler_con_iae_seed43/params.p",
+      "bytes": 54591,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "state_euler_con_iae_seed44",
+      "seed": 44,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/dynamics_extension/runs/state_euler_con_iae_seed44/params.p",
+      "bytes": 54591,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "state_rk4_con_iae_seed42",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/dynamics_extension/runs/state_rk4_con_iae_seed42/params.p",
+      "bytes": 54591,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "state_rk4_con_iae_seed43",
+      "seed": 43,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/dynamics_extension/runs/state_rk4_con_iae_seed43/params.p",
+      "bytes": 54591,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "state_rk4_con_iae_seed44",
+      "seed": 44,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/dynamics_extension/runs/state_rk4_con_iae_seed44/params.p",
+      "bytes": 54591,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "state_con_iae_seed42",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/runs/state_con_iae_seed42/params.p",
+      "bytes": 54591,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "state_con_iae_seed43",
+      "seed": 43,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/runs/state_con_iae_seed43/params.p",
+      "bytes": 54591,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "state_con_iae_seed44",
+      "seed": 44,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/runs/state_con_iae_seed44/params.p",
+      "bytes": 54591,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "video_con_iae_seed42",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/runs/video_con_iae_seed42/params.p",
+      "bytes": 269087554,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "video_con_iae_seed43",
+      "seed": 43,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/runs/video_con_iae_seed43/params.p",
+      "bytes": 269087554,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-64",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "video_con_iae_seed44",
+      "seed": 44,
+      "family": "",
+      "resolution_px": 64,
+      "path": "output/con_corpus/runs/video_con_iae_seed44/params.p",
+      "bytes": 269087554,
+      "group": "planar64"
+    },
+    {
+      "package": "con-model/planar-256",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "con_256_seed42",
+      "seed": 42,
+      "family": "",
+      "resolution_px": 256,
+      "path": "output/planar_resolution/runs/con_256_seed42/params.p",
+      "bytes": 4303483714,
+      "group": "planar256"
+    },
+    {
+      "package": "con-model/planar-256",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "con_256_seed43",
+      "seed": 43,
+      "family": "",
+      "resolution_px": 256,
+      "path": "output/planar_resolution/runs/con_256_seed43/params.p",
+      "bytes": 4303483714,
+      "group": "planar256"
+    },
+    {
+      "package": "con-model/planar-256",
+      "model": "CON",
+      "role": "final_checkpoint",
+      "component": "con_256_seed44",
+      "seed": 44,
+      "family": "",
+      "resolution_px": 256,
+      "path": "output/planar_resolution/runs/con_256_seed44/params.p",
+      "bytes": 4303483714,
+      "group": "planar256"
+    },
+    {
+      "package": "vjepa/pretrained",
+      "model": "V-JEPA 2.1",
+      "role": "official_weights",
+      "component": "vjepa2_1_vitb_dist_vitG_384",
+      "seed": "",
+      "family": "",
+      "resolution_px": "",
+      "path": "output/model_expansion/weights/vjepa2_1_vitb_dist_vitG_384.pt",
+      "bytes": 1664223428,
+      "group": "vjepa_official"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "final_checkpoint",
+      "component": "H-A_predictor",
+      "seed": 42,
+      "family": "H-A",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_42/H-A_predictor.pt",
+      "bytes": 1215818835,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "feedback_head",
+      "component": "H-A_readout",
+      "seed": 42,
+      "family": "H-A",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_42/H-A_readout.pt",
+      "bytes": 25775301,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "final_checkpoint",
+      "component": "H-B_predictor",
+      "seed": 42,
+      "family": "H-B",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_42/H-B_predictor.pt",
+      "bytes": 1215744851,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "feedback_head",
+      "component": "H-B_readout",
+      "seed": 42,
+      "family": "H-B",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_42/H-B_readout.pt",
+      "bytes": 25768837,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "final_checkpoint",
+      "component": "H-A_predictor",
+      "seed": 43,
+      "family": "H-A",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_43/H-A_predictor.pt",
+      "bytes": 1215818835,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "feedback_head",
+      "component": "H-A_readout",
+      "seed": 43,
+      "family": "H-A",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_43/H-A_readout.pt",
+      "bytes": 25775301,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "final_checkpoint",
+      "component": "H-B_predictor",
+      "seed": 43,
+      "family": "H-B",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_43/H-B_predictor.pt",
+      "bytes": 1215744851,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "feedback_head",
+      "component": "H-B_readout",
+      "seed": 43,
+      "family": "H-B",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_43/H-B_readout.pt",
+      "bytes": 25768837,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "final_checkpoint",
+      "component": "H-A_predictor",
+      "seed": 44,
+      "family": "H-A",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_44/H-A_predictor.pt",
+      "bytes": 1215818835,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "feedback_head",
+      "component": "H-A_readout",
+      "seed": 44,
+      "family": "H-A",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_44/H-A_readout.pt",
+      "bytes": 25775301,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "final_checkpoint",
+      "component": "H-B_predictor",
+      "seed": 44,
+      "family": "H-B",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_44/H-B_predictor.pt",
+      "bytes": 1215744851,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/spatial-experiments",
+      "model": "V-JEPA + AC",
+      "role": "feedback_head",
+      "component": "H-B_readout",
+      "seed": 44,
+      "family": "H-B",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_44/H-B_readout.pt",
+      "bytes": 25768837,
+      "group": "vjepa"
+    },
+    {
+      "package": "vjepa/resume-seed42",
+      "model": "V-JEPA + AC",
+      "role": "optimizer_state",
+      "component": "H-A_dynamics",
+      "seed": 42,
+      "family": "H-A",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_42/H-A_dynamics.pt",
+      "bytes": 3647393389,
+      "group": "vjepa_optimizer_states"
+    },
+    {
+      "package": "vjepa/resume-seed42",
+      "model": "V-JEPA + AC",
+      "role": "optimizer_state",
+      "component": "H-B_dynamics",
+      "seed": 42,
+      "family": "H-B",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_42/H-B_dynamics.pt",
+      "bytes": 3647221101,
+      "group": "vjepa_optimizer_states"
+    },
+    {
+      "package": "vjepa/resume-seed43",
+      "model": "V-JEPA + AC",
+      "role": "optimizer_state",
+      "component": "H-A_dynamics",
+      "seed": 43,
+      "family": "H-A",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_43/H-A_dynamics.pt",
+      "bytes": 3647393325,
+      "group": "vjepa_optimizer_states"
+    },
+    {
+      "package": "vjepa/resume-seed43",
+      "model": "V-JEPA + AC",
+      "role": "optimizer_state",
+      "component": "H-B_dynamics",
+      "seed": 43,
+      "family": "H-B",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_43/H-B_dynamics.pt",
+      "bytes": 3647221101,
+      "group": "vjepa_optimizer_states"
+    },
+    {
+      "package": "vjepa/resume-seed44",
+      "model": "V-JEPA + AC",
+      "role": "optimizer_state",
+      "component": "H-A_dynamics",
+      "seed": 44,
+      "family": "H-A",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_44/H-A_dynamics.pt",
+      "bytes": 3647393325,
+      "group": "vjepa_optimizer_states"
+    },
+    {
+      "package": "vjepa/resume-seed44",
+      "model": "V-JEPA + AC",
+      "role": "optimizer_state",
+      "component": "H-B_dynamics",
+      "seed": 44,
+      "family": "H-B",
+      "resolution_px": "",
+      "path": "output/vjepa_expansion/seed_44/H-B_dynamics.pt",
+      "bytes": 3647221037,
+      "group": "vjepa_optimizer_states"
+    },
+    {
+      "package": "lingbot/pretrained-transformer",
+      "model": "LingBot-VA",
+      "role": "official_weights",
+      "component": "transformer",
+      "seed": "",
+      "family": "",
+      "resolution_px": "",
+      "path": "output/model_expansion/weights/lingbot-va-base/transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+      "bytes": 4821987820,
+      "group": "lingbot_official"
+    },
+    {
+      "package": "lingbot/pretrained-transformer",
+      "model": "LingBot-VA",
+      "role": "official_weights",
+      "component": "transformer",
+      "seed": "",
+      "family": "",
+      "resolution_px": "",
+      "path": "output/model_expansion/weights/lingbot-va-base/transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+      "bytes": 4821655760,
+      "group": "lingbot_official"
+    },
+    {
+      "package": "lingbot/pretrained-transformer",
+      "model": "LingBot-VA",
+      "role": "official_weights",
+      "component": "transformer",
+      "seed": "",
+      "family": "",
+      "resolution_px": "",
+      "path": "output/model_expansion/weights/lingbot-va-base/transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+      "bytes": 535373816,
+      "group": "lingbot_official"
+    },
+    {
+      "package": "lingbot/pretrained-vae",
+      "model": "LingBot-VA",
+      "role": "official_weights",
+      "component": "vae",
+      "seed": "",
+      "family": "",
+      "resolution_px": "",
+      "path": "output/model_expansion/weights/lingbot-va-base/vae/diffusion_pytorch_model.safetensors",
+      "bytes": 2818777808,
+      "group": "lingbot_official"
+    },
+    {
+      "package": "lingbot/pretrained-text",
+      "model": "LingBot-VA",
+      "role": "official_weights",
+      "component": "text_encoder",
+      "seed": "",
+      "family": "",
+      "resolution_px": "",
+      "path": "output/model_expansion/weights/lingbot-va-base/text_encoder/model-00001-of-00003.safetensors",
+      "bytes": 4935812536,
+      "group": "lingbot_official"
+    },
+    {
+      "package": "lingbot/pretrained-text",
+      "model": "LingBot-VA",
+      "role": "official_weights",
+      "component": "text_encoder",
+      "seed": "",
+      "family": "",
+      "resolution_px": "",
+      "path": "output/model_expansion/weights/lingbot-va-base/text_encoder/model-00002-of-00003.safetensors",
+      "bytes": 4983103192,
+      "group": "lingbot_official"
+    },
+    {
+      "package": "lingbot/pretrained-text",
+      "model": "LingBot-VA",
+      "role": "official_weights",
+      "component": "text_encoder",
+      "seed": "",
+      "family": "",
+      "resolution_px": "",
+      "path": "output/model_expansion/weights/lingbot-va-base/text_encoder/model-00003-of-00003.safetensors",
+      "bytes": 1442935480,
+      "group": "lingbot_official"
+    },
+    {
+      "package": "lingbot/adapted-seed42",
+      "model": "LingBot-VA",
+      "role": "final_checkpoint",
+      "component": "transformer_step50",
+      "seed": 42,
+      "family": "",
+      "resolution_px": "",
+      "path": "output/lingbot_expansion/runs/seed42/checkpoints/checkpoint_step_50/transformer/diffusion_pytorch_model.safetensors",
+      "bytes": 10177831668,
+      "group": "lingbot"
+    },
+    {
+      "package": "lingbot/adapted-seed43",
+      "model": "LingBot-VA",
+      "role": "final_checkpoint",
+      "component": "transformer_step50",
+      "seed": 43,
+      "family": "",
+      "resolution_px": "",
+      "path": "output/lingbot_expansion/runs/seed43/checkpoints/checkpoint_step_50/transformer/diffusion_pytorch_model.safetensors",
+      "bytes": 10177831668,
+      "group": "lingbot"
+    },
+    {
+      "package": "lingbot/adapted-seed44",
+      "model": "LingBot-VA",
+      "role": "final_checkpoint",
+      "component": "transformer_step50",
+      "seed": 44,
+      "family": "",
+      "resolution_px": "",
+      "path": "output/lingbot_expansion/runs/seed44/checkpoints/checkpoint_step_50/transformer/diffusion_pytorch_model.safetensors",
+      "bytes": 10177831668,
+      "group": "lingbot"
+    },
+    {
+      "package": "measurement/planar",
+      "model": "Measurement",
+      "role": "measurement_head",
+      "component": "final",
+      "seed": "",
+      "family": "",
+      "resolution_px": 256,
+      "path": "output/planar_resolution/readers/reader_256/final.pt",
+      "bytes": 2088240,
+      "group": "readers"
+    },
+    {
+      "package": "measurement/spatial",
+      "model": "Measurement",
+      "role": "measurement_head",
+      "component": "H-A_head",
+      "seed": "",
+      "family": "H-A",
+      "resolution_px": "",
+      "path": "output/closed_chain_eval/visual_calibration/optimization/geometry_spatial_reader/H-A_head.pt",
+      "bytes": 25799967,
+      "group": "readers"
+    },
+    {
+      "package": "measurement/spatial",
+      "model": "Measurement",
+      "role": "measurement_head",
+      "component": "H-B_head",
+      "seed": "",
+      "family": "H-B",
+      "resolution_px": "",
+      "path": "output/closed_chain_eval/visual_calibration/optimization/geometry_spatial_reader/H-B_head.pt",
+      "bytes": 25790687,
+      "group": "readers"
+    },
+    {
+      "package": "measurement/spatial",
+      "model": "Measurement",
+      "role": "measurement_head",
+      "component": "H-B_relative_head",
+      "seed": "",
+      "family": "H-B",
+      "resolution_px": "",
+      "path": "output/closed_chain_eval/visual_calibration/vjepa_readout_replay/calibration/H-B_relative_head.npz",
+      "bytes": 1954434,
+      "group": "readers"
+    },
+    {
+      "package": "measurement/spatial",
+      "model": "Measurement",
+      "role": "measurement_head",
+      "component": "relative_head",
+      "seed": "",
+      "family": "",
+      "resolution_px": "",
+      "path": "output/lingbot_expansion/delta_instrument/no_coordinate_smoothing/relative_head.npz",
+      "bytes": 1958789,
+      "group": "readers"
+    }
+  ]
 }

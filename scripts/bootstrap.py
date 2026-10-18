@@ -19,14 +19,14 @@ def run(args, dry=False):
 
 def artifact_inputs(directory):
     directory=Path(directory).resolve()
-    if (directory/'artifact_manifest.json').is_file():return [directory]
+    if any((directory/name).is_file() for name in ('package.json','artifact_manifest.json')):return [directory]
     collection=directory/'artifact_collection.json'
     if collection.is_file():
         result=[]
         for item in json.loads(collection.read_text())['packages']:
             if not item.get('default',True):continue
             package=(directory/item['path']).resolve()
-            if directory not in package.parents or not (package/'artifact_manifest.json').is_file():
+            if directory not in package.parents or not any((package/name).is_file() for name in ('package.json','artifact_manifest.json')):
                 raise ValueError('Invalid artifact collection entry: '+item['path'])
             result.append(package)
         return result

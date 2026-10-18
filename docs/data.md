@@ -1,69 +1,65 @@
-# Data, weights and storage
+# Data and model packages
 
-## What is available in the source repository?
+Artifacts are organized by **model, then experiment type**. Shared datasets and independent measurement components have their own directories. Every leaf directory is a transferable package with a `package.json` description, a file index, model-component index, and canonical `output/` runtime paths.
 
-Frozen manifests, protocols, model-download metadata, per-case numerical records and the current paper sources are included. Videos, arrays and trained checkpoints are stored outside Git.
+## Package layout
 
-Official pretrained weights can be downloaded now:
+| Directory | Packages |
+|---|---|
+| `data/` | Planar 64 px, planar 256 px, shared spatial data |
+| `keycld/` | Planar 64 px, planar 256 px, torque and structural diagnostics |
+| `con-model/` | Planar 64 px, planar 256 px |
+| `vjepa/` | Official encoder, spatial experiments, continuation states for seeds 42/43/44 |
+| `lingbot/` | Official Transformer/VAE/text components, adapted weights by seed, 0/50-update forecasts, matched references and protocols |
+| `measurement/` | Planar and spatial measurement heads, calibration and controls |
 
-```bash
-python3 scripts/download_models.py all --list
-python3 scripts/download_models.py vjepa
-python3 scripts/download_models.py lingbot
-python3 scripts/download_models.py all --verify-only
-```
+The collection contains 24 packages. The largest is 14.35 GB; every package is below the 50 GB limit. Sizes use decimal GB. Package identifiers, contents and sizes are listed in the [artifact catalog](../configs/artifact_catalog.json).
 
-V-JEPA uses the official B/16 384-pixel checkpoint. LingBot uses the fixed ModelScope revision of Robbyant/lingbot-va-base, including Transformer, VAE, tokenizer and text encoder. All files are verified against the recorded hashes. A partial transfer resumes on the next invocation; an existing mismatched final file is preserved and reported.
+## Importing packages
 
-KeyCLD and CON training starts from the registered random initialization; their upstream source is installed by `setup.sh`. Experiment-trained weights are separate from these official pretrained weights.
-
-## Experiment artifacts
-
-Experiment data and trained weights are distributed separately from Git. Public download URLs have not yet been assigned. The artifact directory uses canonical runtime paths, a SHA-256 manifest, and a group inventory. Import the directory directly or use an archive:
-
-```bash
-python3 scripts/artifacts.py verify /path/to/experiment-bundle.tar
-python3 scripts/artifacts.py import /path/to/experiment-bundle.tar
-python3 scripts/artifacts.py verify /path/to/artifacts/current
-python3 scripts/artifacts.py import /path/to/artifacts/current
-```
-
-For the full artifact collection, including already downloaded official models:
+From the source repository:
 
 ```bash
 ./setup.sh --profile all --device cuda --download-models --artifact-dir /path/to/artifacts
 ```
 
-The collection index selects `current` and `pretrained` by default. The installer imports them before checking the official download list, so verified local weights are reused. Import `vjepa-resume` explicitly only when continuing AC training. A standalone `current` directory works with the same command; missing official components are then downloaded normally.
+The collection imports the data, final model weights, predictions, measurement components and official pretrained models by default. It imports official components before checking for missing downloads. Setup installs dependencies and prepares the repository; it does not start training.
 
-A directory or bundle contains `artifact_manifest.json` and the exact `output/...` files it lists. Each entry has `path`, `bytes` and `sha256`; directory inventories also record the experiment group. Imports check containment, sizes, hashes, and conflicting existing files. Matching destination files are preserved. Directory import avoids allocating an additional archive-sized staging file; allow enough disk space for the copied runtime files.
-
-The current core experiment collection contains 27 planar final checkpoints and 2,916 test predictions, six V-JEPA AC predictors with six internal feedback heads and 900 saved feature forecasts, and three adapted LingBot checkpoints with 1,800 generated videos. It includes matched reference RGB, native and reconstructed coordinate trajectories, physical reference states, commands, calibration heads, and all evaluated failure records. Model source and official pretrained components are installed separately by `setup.sh`.
-
-The [artifact catalog](../configs/artifact_catalog.json) lists package sizes, coverage and checkpoint hashes. The core collection is 83.02 GiB; official pretrained components add 24.26 GiB. Supplementary torque-study artifacts include three final checkpoints and all 160 extended-condition observations and references. The original 590 clips and state references from the initial single-mechanism training/test study have not been recovered; their registered manifest and generation recipe are retained.
-
-| Artifact group | Runtime location |
-|---|---|
-| Shared corpus RGB, public inputs, physical references | `output/mechanism_corpus/` |
-| 64-pixel planar observations and state labels | `output/keycld_corpus/` |
-| 256-pixel observations | `output/planar_resolution/256/` |
-| 256-pixel KeyCLD/CON final weights and predictions | `output/planar_resolution/runs/` |
-| Additional spatial assemblies | `output/lingbot_expansion/corpus/` |
-| LingBot seeds 42/43/44, 0/50 predictions | `output/lingbot_expansion/runs/` |
-| V-JEPA AC predictors, internal heads and features | `output/vjepa_expansion/seed_42/`, `seed_43/`, `seed_44/` |
-| Fixed measurement heads | `output/closed_chain_eval/` and `output/lingbot_expansion/delta_instrument/` |
-| Official model weights | `output/model_expansion/weights/` |
-
-After import, check both required inputs and the exact experiment case identities:
+V-JEPA continuation states are optional and separated by seed:
 
 ```bash
-python3 scripts/doctor.py --profile all --weights
-python3 scripts/check_artifact_coverage.py
+python3 scripts/artifacts.py import /path/to/artifacts/vjepa/resume-seed42
 ```
 
-Coverage can also be checked before import with `python3 scripts/check_artifact_coverage.py /path/to/artifacts/current`. Use `--profile planar`, `vjepa`, or `lingbot` for a selected experiment. Hash verification and case coverage are separate checks: a directory can contain intact files while missing a seed or test trajectory.
+An individual package also works with `--artifact-dir` or `scripts/artifacts.py import`. For a model-specific workflow, include the corresponding shared data, measurement and pretrained packages. V-JEPA's `*_predictor.pt` files are AC predictors; `*_readout.pt` files are internal autoregressive feedback heads. Independently calibrated measurement heads are indexed separately. LingBot adapted weights are Transformer evaluation checkpoints; V-JEPA continuation packages additionally contain optimizer state.
 
-The CPU checks run immediately after setup. Model training and full rescoring require the corresponding artifacts at these paths. Inference checkpoints and optimizer-resume states are separate; only the latter support exact training continuation. The optional `vjepa-resume` directory contains the six full AC training states; it is unnecessary for inference or rescoring. LingBot's exported adapted Transformer weights are evaluation checkpoints, not optimizer-resume states.
+Official pretrained components can also be fetched with:
+
+```bash
+python3 scripts/download_models.py vjepa
+python3 scripts/download_models.py lingbot
+```
+
+KeyCLD and CON train from their registered random initializations; `setup.sh` installs their upstream implementations. Dataset rendering additionally requires Blender and FFmpeg.
+
+## Transferring one package
+
+Package directories can be copied directly. To create a single upload file:
+
+```bash
+python3 scripts/artifacts.py export /path/to/artifacts/con-model/planar-256 con-planar-256.tar
+python3 scripts/artifacts.py import con-planar-256.tar
+```
+
+Export also enforces the 50 GB archive limit. Each TAR contains relative runtime paths and neutral ownership and timestamp metadata. It can be imported independently; no concatenation of volume fragments is needed. Existing different destination files are preserved and reported.
+
+To regenerate package navigation and file/model indexes:
+
+```bash
+python3 scripts/index_artifacts.py /path/to/artifacts
+```
+
+The source repository contains code, protocols and numerical results. The model and dataset packages are distributed separately; public download URLs have not yet been assigned.
 
 ## Fixed data partitions
 
@@ -80,13 +76,3 @@ Three conditions from the same assembly are grouped observations. Three model se
 CPU evaluation uses the audit environment. Planar training uses Python 3.12 and JAX; the native CON 256 model has 1.08B parameters and requires a large-memory GPU or its verified optimizer-memory pathway. Spatial models use PyTorch. LingBot adapts the full 5.09B Transformer; model parameters and optimizer state require substantial GPU and host memory. A 96 GiB GPU and at least 384 GiB host RAM match the documented full-model execution setting.
 
 The setup script installs software but does not start training. Run a complete-objective preflight before allocating a long job on a new device. New corpus rendering additionally needs Blender and FFmpeg.
-
-## Preparing a transferable bundle
-
-Create a JSON list of explicit file mappings, for example `[ {"path": "output/model/params.p", "source": "output/local-run/params.p"} ]`. `source` defaults to `path`. Both are relative to the selected source root; only canonical destination paths are stored in the bundle.
-
-```bash
-python3 scripts/artifacts.py pack selection.json weights.tar --source-root /path/to/experiment-root
-```
-
-Packing checks tensor-file completeness, writes checksums, verifies the archive, and removes no source files. An optional `sha256` in each selection entry also checks against a previously recorded digest. Separate dataset, measurement-head, model-weight and prediction bundles keep downloads selective.

@@ -8,8 +8,18 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def check(directory, profile='all'):
     root=Path(directory);errors=[];counts={}
+    locations=None
+    if (root/'artifact_collection.json').is_file():
+        locations={}
+        for item in json.loads((root/'artifact_collection.json').read_text())['packages']:
+            package=(root/item['path']).resolve()
+            if root.resolve() not in package.parents:raise ValueError('External package path')
+            descriptor=package/('package.json' if (package/'package.json').is_file() else 'artifact_manifest.json')
+            for entry in json.loads(descriptor.read_text())['files']:
+                if entry['path'] in locations:raise ValueError('Duplicate runtime path: '+entry['path'])
+                locations[entry['path']]=package/entry['path']
     def require(relative):
-        path=root/relative
+        path=(locations or {}).get(relative,root/relative)
         if not path.is_file():errors.append(str(relative))
         return path
     if profile in ('all','planar'):
@@ -23,7 +33,11 @@ def check(directory, profile='all'):
             runs.extend('output/planar_resolution/runs/%s_256_seed%d'%(model,seed) for model in ('keycld','con'))
         for run in runs:
             require(run+'/params.p');require(run+'/training_report.json')
-            present={p.stem for p in (root/run/'predictions/test').glob('*.npz')}
+            if locations is None:
+                present={p.stem for p in (root/run/'predictions/test').glob('*.npz')}
+            else:
+                prefix=run+'/predictions/test/'
+                present={Path(p).stem for p in locations if p.startswith(prefix) and p.endswith('.npz') and '/' not in p[len(prefix):] and locations[p].is_file()}
             if present!=cases:errors.append(run+': test case identities differ')
         counts['planar_final_checkpoints']=len(runs)
         counts['planar_test_predictions']=len(runs)*len(cases)
