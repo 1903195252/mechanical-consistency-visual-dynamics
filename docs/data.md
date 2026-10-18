@@ -19,14 +19,26 @@ KeyCLD and CON training starts from the registered random initialization; their 
 
 ## Experiment artifacts
 
-Public download URLs for the experiment datasets and trained weights have not yet been assigned. The source repository provides a verified local bundle importer:
+Experiment data and trained weights are distributed separately from Git. Public download URLs have not yet been assigned. The artifact directory uses canonical runtime paths, a SHA-256 manifest, and a group inventory. Import the directory directly or use an archive:
 
 ```bash
 python3 scripts/artifacts.py verify /path/to/experiment-bundle.tar
 python3 scripts/artifacts.py import /path/to/experiment-bundle.tar
+python3 scripts/artifacts.py verify /path/to/artifacts/current
+python3 scripts/artifacts.py import /path/to/artifacts/current
 ```
 
-A bundle contains `artifact_manifest.json` and the exact `output/...` files it lists. Each entry has `path`, `bytes` and `sha256`. Imports reject path traversal, links, corrupt data, and conflicting existing files. They preserve matching files, so repeated imports are safe.
+For the full artifact collection, including already downloaded official models:
+
+```bash
+./setup.sh --profile all --device cuda --download-models --artifact-dir /path/to/artifacts
+```
+
+The collection index selects `current` and `pretrained` by default. The installer imports them before checking the official download list, so verified local weights are reused. Import `vjepa-resume` explicitly only when continuing AC training. A standalone `current` directory works with the same command; missing official components are then downloaded normally.
+
+A directory or bundle contains `artifact_manifest.json` and the exact `output/...` files it lists. Each entry has `path`, `bytes` and `sha256`; directory inventories also record the experiment group. Imports check containment, sizes, hashes, and conflicting existing files. Matching destination files are preserved. Directory import avoids allocating an additional archive-sized staging file; allow enough disk space for the copied runtime files.
+
+The current core experiment collection contains 27 planar final checkpoints and 2,916 test predictions, six V-JEPA AC predictors with six internal feedback heads and 900 saved feature forecasts, and three adapted LingBot checkpoints with 1,800 generated videos. It includes matched reference RGB, native and reconstructed coordinate trajectories, physical reference states, commands, calibration heads, and all evaluated failure records. Model source and official pretrained components are installed separately by `setup.sh`.
 
 | Artifact group | Runtime location |
 |---|---|
@@ -40,9 +52,16 @@ A bundle contains `artifact_manifest.json` and the exact `output/...` files it l
 | Fixed measurement heads | `output/closed_chain_eval/` and `output/lingbot_expansion/delta_instrument/` |
 | Official model weights | `output/model_expansion/weights/` |
 
-After importing bundles, run `python3 scripts/doctor.py --profile all --weights` to check required data paths and official weight checksums.
+After import, check both required inputs and the exact experiment case identities:
 
-The CPU checks run immediately after setup. Model training and full rescoring require the corresponding artifacts at these paths. Inference checkpoints and optimizer-resume states are separate; only the latter support exact training continuation.
+```bash
+python3 scripts/doctor.py --profile all --weights
+python3 scripts/check_artifact_coverage.py
+```
+
+Coverage can also be checked before import with `python3 scripts/check_artifact_coverage.py /path/to/artifacts/current`. Use `--profile planar`, `vjepa`, or `lingbot` for a selected experiment. Hash verification and case coverage are separate checks: a directory can contain intact files while missing a seed or test trajectory.
+
+The CPU checks run immediately after setup. Model training and full rescoring require the corresponding artifacts at these paths. Inference checkpoints and optimizer-resume states are separate; only the latter support exact training continuation. The optional `vjepa-resume` directory contains the six full AC training states; it is unnecessary for inference or rescoring. LingBot's exported adapted Transformer weights are evaluation checkpoints, not optimizer-resume states.
 
 ## Fixed data partitions
 

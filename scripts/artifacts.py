@@ -28,6 +28,48 @@ def sha(path):
     return h.hexdigest()
 
 
+def import_tree(directory, root=ROOT, verify_only=False):
+    """Import a manifested directory with the same checks as an archive.
+
+    Plain directories avoid a second archive-sized disk allocation when sharing
+    large checkpoints. Each copied file is checked before atomic publication.
+    """
+    directory=Path(directory).resolve();root=Path(root).resolve()
+    files=json.loads((directory/'artifact_manifest.json').read_text())['files']
+    if len({f['path'] for f in files})!=len(files):
+        raise ValueError('Duplicate manifest entries')
+    pending=[]
+    for f in files:
+        name=f['path'];safe_path(name)
+        source=(directory/name).resolve();target=(root/name).resolve()
+        if directory not in source.parents or root not in target.parents:
+            raise ValueError('Artifact path escapes its root: '+name)
+        if not source.is_file() or source.stat().st_size!=f['bytes']:
+            raise ValueError('Missing or incomplete artifact: '+name)
+        if target.exists() and not verify_only:
+            if not target.is_file() or target.stat().st_size!=f['bytes'] or sha(target)!=f['sha256']:
+                raise FileExistsError('Existing artifact differs: '+name)
+        else:pending.append((source,target,f))
+    if not verify_only and shutil.disk_usage(root).free<sum(f['bytes'] for _,_,f in pending)+16*1024**2:
+        raise OSError('Insufficient space for imported artifacts')
+    for source,target,f in pending:
+        if verify_only:
+            if sha(source)!=f['sha256']:raise ValueError('Artifact checksum mismatch: '+f['path'])
+            continue
+        target.parent.mkdir(parents=True,exist_ok=True)
+        fd,temp=tempfile.mkstemp(prefix=target.name+'.',suffix='.partial',dir=target.parent)
+        h=hashlib.sha256()
+        try:
+            with os.fdopen(fd,'wb') as out,source.open('rb') as stream:
+                for block in iter(lambda:stream.read(8*1024**2),b''):
+                    h.update(block);out.write(block)
+            if h.hexdigest()!=f['sha256']:raise ValueError('Artifact checksum mismatch: '+f['path'])
+            Path(temp).replace(target)
+        finally:
+            if Path(temp).exists():Path(temp).unlink()
+    return len(files)
+
+
 def import_bundle(bundle, root=ROOT, verify_only=False):
     root=Path(root).resolve()
     with tarfile.open(bundle,'r:*') as archive:
@@ -150,7 +192,8 @@ def main():
         print('Packaged %d verified files'%pack_bundle(a.selection,a.destination,a.source_root))
         return
     for bundle in a.bundle:
-        print('%s: %d verified files'%(bundle,import_bundle(bundle,verify_only=a.command=='verify')))
+        importer=import_tree if bundle.is_dir() else import_bundle
+        print('%s: %d verified files'%(bundle,importer(bundle,verify_only=a.command=='verify')))
 
 
 if __name__=='__main__':main()

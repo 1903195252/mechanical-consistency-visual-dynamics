@@ -20,9 +20,38 @@ def module(name):
 
 download=module('download_models')
 artifacts=module('artifacts')
+bootstrap=module('bootstrap')
 
 
 class ArtifactTransport(unittest.TestCase):
+    def test_collection_selects_defaults_and_rejects_escape(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);collection=root/'artifact_collection.json'
+            for name in ('current','pretrained','resume'):
+                (root/name).mkdir();(root/name/'artifact_manifest.json').write_text('{}')
+            collection.write_text(json.dumps(dict(packages=[dict(path='current'),dict(path='pretrained'),dict(path='resume',default=False)])))
+            self.assertEqual(bootstrap.artifact_inputs(root),[root/'current',root/'pretrained'])
+            collection.write_text(json.dumps(dict(packages=[dict(path='../outside')])))
+            with self.assertRaises(ValueError):bootstrap.artifact_inputs(root)
+
+    def test_directory_import_preserves_data_and_rejects_invalid_inputs(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);tree=root/'tree';target=root/'target';target.mkdir()
+            source=tree/'output/checkpoint.bin';source.parent.mkdir(parents=True)
+            payload=b'complete checkpoint';source.write_bytes(payload)
+            record=dict(path='output/checkpoint.bin',bytes=len(payload),sha256=hashlib.sha256(payload).hexdigest())
+            manifest=tree/'artifact_manifest.json';manifest.write_text(json.dumps(dict(files=[record])))
+            self.assertEqual(artifacts.import_tree(tree,target,True),1)
+            self.assertEqual(artifacts.import_tree(tree,target),1)
+            self.assertEqual((target/record['path']).read_bytes(),payload)
+            self.assertEqual(artifacts.import_tree(tree,target),1)
+            source.write_bytes(b'x'*len(payload))
+            with self.assertRaises(ValueError):artifacts.import_tree(tree,target,True)
+            source.unlink();outside=root/'outside';outside.write_bytes(payload);source.symlink_to(outside)
+            with self.assertRaises(ValueError):artifacts.import_tree(tree,target,True)
+            manifest.write_text(json.dumps(dict(files=[record,record])))
+            with self.assertRaises(ValueError):artifacts.import_tree(tree,target)
+
     def test_resume_when_server_ignores_range_and_reject_corruption(self):
         payload=b'recorded model data'*100
         class Handler(http.server.BaseHTTPRequestHandler):

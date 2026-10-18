@@ -9,9 +9,12 @@ Datasets, experiment checkpoints and measurement heads are imported separately u
 ```bash
 ./run.sh verify
 python3 scripts/download_models.py all --list
+python3 scripts/check_artifact_coverage.py /path/to/artifacts/current
 ```
 
 The tests check constraint-reaction cancellation, friction work, differentiated constraints, continuous scoring, and incomplete-case denominators. Result verification reads the included current records without training a model.
+
+Imported forecasts are the frozen evidence for the paper. They can be remeasured and rescored directly. For a new training or generation run, use a separate checkout with the input data and measurement heads; retain the imported forecasts separately. Run fingerprints distinguish the released adapter from the original execution source and prevent silently mixing predictions from different implementations.
 
 ## 2. Planar models
 

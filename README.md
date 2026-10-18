@@ -68,5 +68,7 @@ docs/                   Protocols and usage
 Generated datasets, weights, predictions, and environments are ignored by Git. Upstream licenses are retained in [THIRD_PARTY.md](THIRD_PARTY.md). Original project code has no assigned redistribution license at this stage.
 
 ```bash
-./setup.sh --profile all --device cuda --download-models --artifact-dir /path/to/downloaded-bundles
+./setup.sh --profile all --device cuda --download-models --artifact-dir /path/to/artifacts/current
 ```
+
+`--artifact-dir` accepts a manifested data directory or a directory containing verified archives. Check all seeds and test cases with `python3 scripts/check_artifact_coverage.py` after import.

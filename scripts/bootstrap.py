@@ -17,6 +17,22 @@ def run(args, dry=False):
         subprocess.run([str(x) for x in args], cwd=ROOT, check=True)
 
 
+def artifact_inputs(directory):
+    directory=Path(directory).resolve()
+    if (directory/'artifact_manifest.json').is_file():return [directory]
+    collection=directory/'artifact_collection.json'
+    if collection.is_file():
+        result=[]
+        for item in json.loads(collection.read_text())['packages']:
+            if not item.get('default',True):continue
+            package=(directory/item['path']).resolve()
+            if directory not in package.parents or not (package/'artifact_manifest.json').is_file():
+                raise ValueError('Invalid artifact collection entry: '+item['path'])
+            result.append(package)
+        return result
+    return sorted(p for p in directory.iterdir() if p.is_file() and p.name.endswith(('.tar','.tar.gz','.tgz')))
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--profile', choices=['audit','planar','vjepa','lingbot','spatial','all'], default='audit')
@@ -24,7 +40,7 @@ def main():
     p.add_argument('--download-models', action='store_true')
     p.add_argument('--dry-run', action='store_true')
     p.add_argument('--skip-checks', action='store_true')
-    p.add_argument('--artifact-dir', type=Path, help='Import all .tar/.tar.gz/.tgz bundles from this directory')
+    p.add_argument('--artifact-dir', type=Path, help='Import a manifested artifact tree, or .tar/.tar.gz/.tgz bundles')
     a = p.parse_args()
     if sys.platform != 'linux':
         raise SystemExit('The registered training launchers target Linux.')
@@ -73,15 +89,15 @@ def main():
         raise SystemExit('Install Git before fetching model sources.')
     for model in models:
         run([sys.executable,'scripts/setup_upstream.py',model],a.dry_run)
+    if a.artifact_dir:
+        bundles=artifact_inputs(a.artifact_dir)
+        if not bundles:
+            raise SystemExit('No artifact bundles found in '+str(a.artifact_dir))
+        run([sys.executable,'scripts/artifacts.py','import',*bundles],a.dry_run)
     if a.download_models:
         for model in ('vjepa','lingbot'):
             if model in models:
                 run([sys.executable,'scripts/download_models.py',model],a.dry_run)
-    if a.artifact_dir:
-        bundles=sorted(p for p in a.artifact_dir.resolve().iterdir() if p.is_file() and (p.name.endswith('.tar') or p.name.endswith('.tar.gz') or p.name.endswith('.tgz')))
-        if not bundles:
-            raise SystemExit('No artifact bundles found in '+str(a.artifact_dir))
-        run([sys.executable,'scripts/artifacts.py','import',*bundles],a.dry_run)
     if not a.skip_checks:
         run(['bash','run.sh','verify'],a.dry_run)
     if not a.dry_run:

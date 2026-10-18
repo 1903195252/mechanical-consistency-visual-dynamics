@@ -30,5 +30,8 @@
 [架构](docs/architecture.md) · [复现](docs/reproduction.md) · [结果](docs/results.md) · [英文首页](README.md)
 
 ```bash
-./setup.sh --profile all --device cuda --download-models --artifact-dir /path/to/downloaded-bundles
+./setup.sh --profile all --device cuda --download-models --artifact-dir /path/to/artifacts/current
+python3 scripts/check_artifact_coverage.py
 ```
+
+数据目录包含 `artifact_manifest.json` 和统一的 `output/` 路径，可直接校验、导入，无需先打成巨型压缩包。SHA-256 校验保证文件完整；覆盖检查另外核对全部种子、测试轨迹、模型权重和参考视频。V-JEPA 的完整优化器状态单独放在可选的 `vjepa-resume` 目录，日常推理与评分不需要导入。
