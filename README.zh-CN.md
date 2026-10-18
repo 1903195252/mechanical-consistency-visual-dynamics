@@ -19,6 +19,18 @@
 
 环境按 CPU 审计、JAX 平面模型和 PyTorch 空间模型隔离。可用 `--profile planar`、`--profile vjepa`、`--profile lingbot` 单独准备，用 `--dry-run` 查看计划。实验数据与训练权重单独存放，支持校验导入；发布状态见[数据与模型](docs/data.md)。
 
+## 数据与权重
+
+24 个实验材料分包（共 137.13 GB）已正式发布至三条 Zenodo 记录。**文件为受限访问**：标题、作者、简介与 DOI 公开，数据及权重下载需要授权。
+
+| 记录 | 内容 | 容量 |
+|---|---|---:|
+| [数据与空间评测](https://zenodo.org/records/23448115) | 共享数据、测量组件、V-JEPA 实验、LingBot 预测与参考视频 | 41.66 GB |
+| [训练模型与平面实验](https://zenodo.org/records/23448170) | KeyCLD、CON 实验及 LingBot 三种子适配权重 | 47.54 GB |
+| [预训练组件与续训状态](https://zenodo.org/records/23448172) | 官方 V-JEPA、LingBot 组件及 V-JEPA 续训状态 | 47.93 GB |
+
+获授权后，下载所需分包并按[导入说明](docs/data.md#importing-packages)使用。分卷包需将 `.tar.parts.json` 与全部同名前缀分卷放在同一目录，导入器会自动跨卷读取，无需手动合并。
+
 ## 当前实验
 
 - 平面：343 个机构，KeyCLD 与 CON 均完成 64/256 分辨率和三种子；包含精确状态、Euler/RK4、几何重构与本构探针。

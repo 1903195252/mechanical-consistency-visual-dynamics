@@ -2,6 +2,18 @@
 
 Artifacts are organized by **model, then experiment type**. Shared datasets and independent measurement components have their own directories. Every leaf directory is a transferable package with a `package.json` description, a file index, model-component index, and canonical `output/` runtime paths.
 
+## Published records and access
+
+All 24 packages are published on Zenodo, totaling 137.13 GB across three records. **Files are restricted to authorized users.** Titles, authors, descriptions and DOIs are public. Sign in with an authorized Zenodo account to download the required packages; the setup script imports downloaded artifacts and fetches official pretrained weights from their upstream sources.
+
+| Record | Package groups | Packages | Size |
+|---|---|---:|---:|
+| [Datasets and spatial evaluation](https://zenodo.org/records/23448115) | `data/*`, `measurement/*`, `vjepa/spatial-experiments`, `lingbot/forecast-*`, `lingbot/reference-and-protocol` | 9 | 41.66 GB |
+| [Trained models and planar experiments](https://zenodo.org/records/23448170) | `keycld/*`, `con-model/*`, `lingbot/adapted-seed*` | 8 | 47.54 GB |
+| [Pretrained dependencies and continuation states](https://zenodo.org/records/23448172) | `vjepa/pretrained`, `vjepa/resume-seed*`, `lingbot/pretrained-*` | 7 | 47.93 GB |
+
+Each record includes a `README.md` and `packages.json` to locate individual packages. Download either a complete `.tar` archive or a split archive's `.tar.parts.json` descriptor with all matching `.tar.part*` files. Import only the packages needed for the selected experiment.
+
 ## Package layout
 
 | Directory | Packages |
@@ -67,7 +79,7 @@ To regenerate package navigation and file/model indexes:
 python3 scripts/index_artifacts.py /path/to/artifacts
 ```
 
-The source repository contains code, protocols and numerical results. The model and dataset packages are distributed separately; public download URLs have not yet been assigned.
+The source repository contains code, protocols and numerical results. The published Zenodo records above hold the corresponding data, model weights, forecasts and measurement components.
 
 ## Fixed data partitions
 

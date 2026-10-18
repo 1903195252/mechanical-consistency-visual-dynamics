@@ -32,6 +32,18 @@ Audit, JAX, and PyTorch dependencies stay in separate environments. Downloads ar
 
 Training requires the experiment datasets. Official pretrained weights have download URLs; experiment datasets and trained checkpoints are separate artifacts. See [artifact import and hardware requirements](docs/data.md). Blender and FFmpeg are required to render new data.
 
+## Data and weights
+
+The 24 artifact packages (137.13 GB) are published in three Zenodo records. **Files have restricted access**: record descriptions and DOIs are public; downloading data and weights requires authorization.
+
+| Record | Contents | Size |
+|---|---|---:|
+| [Datasets and spatial evaluation](https://zenodo.org/records/23448115) | Shared data, measurement components, V-JEPA experiments, LingBot forecasts and references | 41.66 GB |
+| [Trained models and planar experiments](https://zenodo.org/records/23448170) | KeyCLD and CON experiments; LingBot adapted weights for three seeds | 47.54 GB |
+| [Pretrained dependencies and continuation states](https://zenodo.org/records/23448172) | Official V-JEPA and LingBot components; V-JEPA continuation states | 47.93 GB |
+
+Once granted access, download the required packages and follow the [import instructions](docs/data.md#importing-packages). For split archives, keep the `.tar.parts.json` descriptor and every matching part together; the importer reads them without manual concatenation.
+
 ## Experiments
 
 | Study | Models | Test scope | Comparison |
