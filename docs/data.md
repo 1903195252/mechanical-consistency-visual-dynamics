@@ -40,6 +40,8 @@ A directory or bundle contains `artifact_manifest.json` and the exact `output/..
 
 The current core experiment collection contains 27 planar final checkpoints and 2,916 test predictions, six V-JEPA AC predictors with six internal feedback heads and 900 saved feature forecasts, and three adapted LingBot checkpoints with 1,800 generated videos. It includes matched reference RGB, native and reconstructed coordinate trajectories, physical reference states, commands, calibration heads, and all evaluated failure records. Model source and official pretrained components are installed separately by `setup.sh`.
 
+The [artifact catalog](../configs/artifact_catalog.json) lists package sizes, coverage and checkpoint hashes. The core collection is 83.02 GiB; official pretrained components add 24.26 GiB. Supplementary torque-study artifacts include three final checkpoints and all 160 extended-condition observations and references. The original 590 clips and state references from the initial single-mechanism training/test study have not been recovered; their registered manifest and generation recipe are retained.
+
 | Artifact group | Runtime location |
 |---|---|
 | Shared corpus RGB, public inputs, physical references | `output/mechanism_corpus/` |
