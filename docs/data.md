@@ -51,7 +51,15 @@ python3 scripts/artifacts.py export /path/to/artifacts/con-model/planar-256 con-
 python3 scripts/artifacts.py import con-planar-256.tar
 ```
 
-Export also enforces the 50 GB archive limit. Each TAR contains relative runtime paths and neutral ownership and timestamp metadata. It can be imported independently; no concatenation of volume fragments is needed. Existing different destination files are preserved and reported.
+Export also enforces the 50 GB archive limit. Each TAR contains relative runtime paths and neutral ownership and timestamp metadata. Existing different destination files are preserved and reported.
+
+Zenodo distributes large archives as volumes of at most 512 MiB. Download the package's `.tar.parts.json` descriptor and all matching `.tar.part0001`, `.tar.part0002`, etc. files into one directory, then import the descriptor:
+
+```bash
+python3 scripts/artifacts.py import /path/to/package.tar.parts.json
+```
+
+The importer reads the volumes as a single archive without creating another full-sized TAR. It checks that all declared volumes are present and complete before importing. `setup.sh --artifact-dir` also discovers these descriptors automatically, alongside ordinary TAR packages.
 
 To regenerate package navigation and file/model indexes:
 

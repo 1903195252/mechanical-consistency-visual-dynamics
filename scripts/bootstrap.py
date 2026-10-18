@@ -30,7 +30,7 @@ def artifact_inputs(directory):
                 raise ValueError('Invalid artifact collection entry: '+item['path'])
             result.append(package)
         return result
-    return sorted(p for p in directory.iterdir() if p.is_file() and p.name.endswith(('.tar','.tar.gz','.tgz')))
+    return sorted(p for p in directory.iterdir() if p.is_file() and p.name.endswith(('.tar','.tar.gz','.tgz','.tar.parts.json')))
 
 
 def main():
@@ -40,7 +40,7 @@ def main():
     p.add_argument('--download-models', action='store_true')
     p.add_argument('--dry-run', action='store_true')
     p.add_argument('--skip-checks', action='store_true')
-    p.add_argument('--artifact-dir', type=Path, help='Import a manifested artifact tree, or .tar/.tar.gz/.tgz bundles')
+    p.add_argument('--artifact-dir', type=Path, help='Import artifact trees, TAR bundles, or .tar.parts.json volume sets')
     a = p.parse_args()
     if sys.platform != 'linux':
         raise SystemExit('The registered training launchers target Linux.')

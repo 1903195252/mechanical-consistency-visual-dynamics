@@ -1,5 +1,7 @@
 """Verify or import experiment bundles containing a file manifest and output/ tree."""
 import argparse
+import bisect
+from contextlib import contextmanager
 import hashlib
 import io
 import json
@@ -88,9 +90,71 @@ def import_tree(directory, root=ROOT, verify_only=False):
     return len(files)
 
 
+class SplitArchiveReader(io.RawIOBase):
+    """Seek across downloaded TAR volumes without allocating a joined copy."""
+    def __init__(self, index):
+        super().__init__()
+        index=Path(index).resolve();metadata=json.loads(index.read_text())
+        parts=metadata.get('parts',[])
+        if metadata.get('format')!='split-tar' or not parts:
+            raise ValueError('Invalid split archive descriptor')
+        names=[p['filename'] for p in parts]
+        if len(set(names))!=len(names) or any(Path(n).name!=n or n in ('.','..') or '\\' in n for n in names):
+            raise ValueError('Invalid or duplicate archive volume name')
+        self.paths=[];self.offsets=[0];self.position=0;self.stream=None;self.part=-1
+        for part in parts:
+            path=(index.parent/part['filename']).resolve();size=part['bytes']
+            if path.parent!=index.parent or not isinstance(size,int) or size<=0:
+                raise ValueError('Invalid archive volume')
+            if not path.is_file() or path.stat().st_size!=size:
+                raise ValueError('Missing or incomplete archive volume: '+part['filename'])
+            self.paths.append(path);self.offsets.append(self.offsets[-1]+size)
+        if metadata.get('bytes')!=self.offsets[-1]:
+            raise ValueError('Archive volume sizes differ from total')
+
+    def readable(self):return True
+    def seekable(self):return True
+    def tell(self):return self.position
+
+    def seek(self, offset, whence=os.SEEK_SET):
+        if whence not in (os.SEEK_SET,os.SEEK_CUR,os.SEEK_END):raise ValueError('Invalid seek origin')
+        position=offset+(self.position if whence==os.SEEK_CUR else self.offsets[-1] if whence==os.SEEK_END else 0)
+        if position<0:raise ValueError('Negative archive position')
+        self.position=position;return position
+
+    def read(self, size=-1):
+        if self.closed:raise ValueError('Archive is closed')
+        available=max(0,self.offsets[-1]-self.position)
+        remaining=available if size is None or size<0 else min(size,available)
+        blocks=[]
+        while remaining:
+            part=bisect.bisect_right(self.offsets,self.position)-1
+            if self.part!=part:
+                if self.stream:self.stream.close()
+                self.stream=self.paths[part].open('rb');self.part=part
+            self.stream.seek(self.position-self.offsets[part])
+            block=self.stream.read(min(remaining,self.offsets[part+1]-self.position))
+            if not block:raise ValueError('Archive volume was truncated while reading')
+            blocks.append(block);self.position+=len(block);remaining-=len(block)
+        return b''.join(blocks)
+
+    def close(self):
+        if getattr(self,'stream',None):self.stream.close()
+        super().close()
+
+
+@contextmanager
+def open_archive(bundle):
+    if str(bundle).endswith('.tar.parts.json'):
+        with SplitArchiveReader(bundle) as stream:
+            with tarfile.open(fileobj=stream,mode='r:*') as archive:yield archive
+    else:
+        with tarfile.open(bundle,'r:*') as archive:yield archive
+
+
 def import_bundle(bundle, root=ROOT, verify_only=False):
     root=Path(root).resolve()
-    with tarfile.open(bundle,'r:*') as archive:
+    with open_archive(bundle) as archive:
         members=archive.getmembers()
         names=[m.name for m in members]
         if len(names)!=len(set(names)):

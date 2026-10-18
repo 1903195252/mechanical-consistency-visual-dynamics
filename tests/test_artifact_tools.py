@@ -24,6 +24,31 @@ bootstrap=module('bootstrap')
 
 
 class ArtifactTransport(unittest.TestCase):
+    def test_split_archive_import_and_incomplete_download(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);bundle=root/'data.tar';data=self.make_bundle(bundle)
+            payload=bundle.read_bytes();parts=[]
+            for i,offset in enumerate(range(0,len(payload),777),1):
+                name='data.tar.part%04d'%i;block=payload[offset:offset+777]
+                (root/name).write_bytes(block);parts.append(dict(filename=name,bytes=len(block)))
+            index=root/'data.tar.parts.json'
+            index.write_text(json.dumps(dict(format='split-tar',bytes=len(payload),parts=parts)))
+            bundle.unlink()
+            self.assertEqual(bootstrap.artifact_inputs(root),[index])
+            self.assertEqual(artifacts.import_bundle(index,root),1)
+            self.assertEqual((root/'output/example.bin').read_bytes(),data)
+            self.assertEqual(artifacts.import_bundle(index,root),1)
+            (root/parts[-1]['filename']).write_bytes(b'incomplete')
+            with self.assertRaises(ValueError):artifacts.import_bundle(index,root,True)
+
+    def test_split_archive_rejects_external_and_duplicate_parts(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);index=root/'data.tar.parts.json'
+            for parts in ([dict(filename='../outside',bytes=1)],
+                          [dict(filename='a',bytes=1),dict(filename='a',bytes=1)]):
+                index.write_text(json.dumps(dict(format='split-tar',bytes=len(parts),parts=parts)))
+                with self.assertRaises(ValueError):artifacts.import_bundle(index,root,True)
+
     def test_portable_package_roundtrip_and_neutral_archive_metadata(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder);package=root/'package';target=root/'imported';target.mkdir()
