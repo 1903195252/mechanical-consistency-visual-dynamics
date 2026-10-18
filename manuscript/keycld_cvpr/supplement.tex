@@ -1,0 +1,1074 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[review]{cvpr}
+\input{preamble}
+\usepackage{placeins}
+\def\paperID{DRAFT}
+\def\confName{CVPR}
+\def\confYear{}
+\title{\keytitle\\Supplementary Material}
+\author{Anonymous Authors}
+\begin{document}
+\maketitle
+\nocite{*}
+\appendix
+The supplement follows the main paper's progression from visual coordinates to admissible motion, actuator effort, and work--energy balance. Physical derivations define the measured quantities, reference replay calibrates their recovery, and controlled interventions distinguish the sources of error. The torque-excitation study isolates KeyCLD's force response; the shared planar corpus compares KeyCLD and CON; and the spatial study extends the same criteria to V-JEPA 2.1 and LingBot-VA on Stewart and Delta mechanisms. Section~\ref{app:measurement} details the observation and differentiation controls.
+
+\section{Geometry and parameter specification}
+\label{app:mechanism}
+The planar mechanism lies in the world $XZ$ plane, with revolute axes along $-Y$. Ground anchors are $A=(0,0.32)$ m and $D=(0.40,0.32)$ m. Absolute link angles are measured in the motion plane. The network interface uses physical points $B,C$ and $P=(B+C)/2$. The five supplied constraints are the three distances $|B-A|=l_1$, $|C-B|=l_2$, $|C-D|=l_3$, together with the two midpoint coordinates. For the slider, $C_z=0.32$ m replaces the rocker distance. These constraints leave one independent degree of freedom in the six point coordinates.
+
+Each moving link is a uniform capsule plate with two through bores. Its pivot spacing is $L$, width $2r=0.028$ m, thickness $h=0.012$ m, bore radius $r_b=0.005$ m, and density $\rho=2700$ kg/m$^3$. Its mass is
+\begin{equation}
+m=\rho h\left(2rL+\pi r^2-2\pi r_b^2\right).
+\end{equation}
+Analytic area moments give the inertia about the center of mass; the fixed ground and visual fasteners do not add unrecorded moving mass. The three moving masses are $0.123725$, $0.341453$, and $0.268877$ kg. The source payload is a $0.052\times0.012\times0.024$ m cuboid of mass $0.08$ kg, attached $0.24$ m along the coupler. Its local in-plane normal offset is zero. The rotor armature is $0.0002$ kg\,m$^2$, gravity is $9.81$ m/s$^2$, and a constant world force $(0,-0.5)$ N acts $0.30$ m along the coupler.
+
+The known camera is 10 m from the plane, centered at $(0.20,0.37)$ m in $XZ$, with a field of view determined by a $0.43$ m half extent. The KeyCLD pixel-center convention gives the physical map
+\begin{equation}
+x_{\rm world}=0.43\frac{63}{64}x_{\rm normalized}
++(0.20,0.37).
+\end{equation}
+This fixed calibration is used for all conditions. Small offsets in the visible thickness direction are retained in rendering. No test-dependent coordinate alignment is performed.
+
+\begin{table}[t]
+\caption{Changes from the nominal source condition. Unlisted physical parameters retain their source values.}
+\label{app:conditions}
+\centering
+\small
+\begin{tabular}{lp{.66\columnwidth}}
+\toprule
+Condition & Change\\
+\midrule
+Viscous & $b=(0.10,0.03,0.02,0.04)$ N\,m\,s/rad\\
+Coulomb & $f_c=(0.008,0.005,0.005,0.007)$ N\,m\\
+Mixed & Both preceding friction terms\\
+Payload & Payload mass $0.25$ kg; cuboid size fixed\\
+Density & Bar density $4050$ kg/m$^3$; payload fixed\\
+Size & Link and ground lengths $\times0.8$; along-coupler force/payload offsets $\times0.8$; width and thickness fixed\\
+Slider & Rocker replaced by a $0.055\times0.024\times0.044$ m slider of mass $0.268877$ kg with an ideal horizontal prismatic joint\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the four-bar, actual relative joint velocities are $R\dot q$, where
+\begin{equation}
+R=\begin{bmatrix}
+1&0&0\\-1&1&0\\0&-1&1\\0&0&1
+\end{bmatrix}.
+\end{equation}
+With elementwise multiplication, signed friction is
+\begin{equation}
+Q_f=-R\T\left[b\odot R\dot q+
+f_c\odot\tanh(R\dot q/\epsilon)\right],
+\end{equation}
+where $\epsilon=0.05$ rad/s. These are viscous coefficients and smooth Coulomb \emph{torques}, not dimensionless contact-friction coefficients. Exact stiction is not simulated. The slider condition has zero friction; a frictional slider would require translational units for its prismatic joint.
+
+\section{Independent dynamics and energy}
+The crank-normalized tangent converts the constrained equations into one scalar balance:
+\begin{equation}
+\mathcal I\alpha+\mathcal H\omega^2+\mathcal G+\mathcal F=\tau_A+\mathcal Q_{\rm ext},
+\label{eq:reduced}
+\end{equation}
+where $\mathcal I=\gamma\T M\gamma$, $\mathcal H=\gamma\T(M\gamma'+c(q,\gamma))$, $\mathcal G=\gamma\T G$, $\mathcal F=-\gamma\T Q_f$, and $\mathcal Q_{\rm ext}=\gamma\T Q_{\rm ext}$. For admissible motion, the local torque residual accumulates into the work--energy defect:
+\begin{equation}
+r_E(t)=\int_{t_0}^t r_\tau(s)\omega(s)\,\dd s.
+\label{eq:residualpower}
+\end{equation}
+\label{app:equations}
+For body $i$, let $p_i(q)$ be its center of mass, $J_i=\partial p_i/\partial q$, and $h_i=\dot J_i\dot q$. Its planar angular velocity is $s_i\T\dot q$, with constant selector $s_i$; a translating slider has $s_i=0$. From prescribed mass $m_i$, out-of-plane inertia $I_i$, rotor inertia $I_r$, upward unit vector $e_z$, and gravitational magnitude $g$, we construct
+\begin{align}
+M&=\sum_i\left(m_iJ_i\T J_i+I_i s_i s_i\T\right)+I_r e_1e_1\T,\\
+c&=\sum_i m_iJ_i\T h_i,\qquad
+G=\sum_i m_i gJ_i\T e_z.
+\label{eq:bodydynamics}
+\end{align}
+Here $e_1=(1,0,0)\T$. The point-force Jacobian gives $Q_{\rm ext}=J_F\T F$. Relative joint velocities are $w=R\dot q$: for 4R joints, $w=(\dot q_1,\dot q_2-\dot q_1,\dot q_3-\dot q_2,\dot q_3)\T$. In a slider chain the last two entries are $-\dot q_2$ and $\dot s$. Viscous and smooth Coulomb forces are
+\begin{equation}
+Q_f=-R\T\!\left[b\odot w+f_c\odot\tanh(w/\epsilon)\right],
+\label{eq:friction}
+\end{equation}
+where $b,f_c,\epsilon$ are channel-wise damping coefficients, Coulomb magnitudes, and smoothing velocities. Revolute and prismatic entries retain their respective SI units.
+
+
+The independent tangent is obtained from
+\begin{equation}
+\gamma_1=1,\qquad
+J_{:,2:3}\gamma_{2:3}=-J_{:,1}.
+\end{equation}
+Differentiating $J\gamma=0$ gives $\gamma'$ and hence
+\begin{equation}
+\dot q=\gamma\omega,\qquad
+\ddot q=\gamma\alpha+\gamma'\omega^2.
+\end{equation}
+Projection of the full force equation then gives the reduced scalar acceleration used by the reference solver. The current configurations remain in an invertible crank chart. A multi-degree-of-freedom extension needs a registered physical chart and channel units, especially near singularities.
+
+The score evaluator decodes raw point derivatives analytically. For a planar rod vector $r$, with point-derived derivatives $\dot r,\ddot r$,
+\begin{align}
+\dot\theta&=\frac{r_x\dot r_z-r_z\dot r_x}{\|r\|^2},\\
+\ddot\theta&=\frac{r_x\ddot r_z-r_z\ddot r_x}{\|r\|^2}
+-2\frac{(r\T\dot r)(r_x\dot r_z-r_z\dot r_x)}{\|r\|^4}.
+\end{align}
+Raw link-length and midpoint errors are measured before this conversion. The native score does not project decoded configurations. The separately reported geometric-readout intervention is defined in Section~\ref{app:geometry-readout}.
+
+The energy computation uses physical kinetic energy and gravitational potential. Constant crank torque performs work $\tau_A[\theta(t)-\theta(t_0)]$, with the crank angle unwrapped on the dense grid. A constant world force performs work $F\T[p_F(t)-p_F(t_0)]$. Signed friction power $Q_f\T\dot q$ is integrated at 1600 Hz. Fixed ideal constraints perform no work. These identities avoid differentiating video positions twice or approximating the motor work with coarse quadrature.
+
+\section{Training and diagnostic controls}
+KeyCLD combines visual reconstruction, short-rollout prediction, and heatmap regularization:
+\begin{equation}
+\begin{aligned}
+\mathcal L_{\rm video}&=\mathcal L_{\rm RGB}+\mathcal L_{\rm dyn}+\mathcal L_{\rm heat},\\
+\mathcal L_{\rm dyn}&=\sum_t\sum_{k=0}^{4}\|\hat x_{t+k\mid t}-x_{t+k}\|^2.
+\end{aligned}
+\label{eq:learning}
+\end{equation}
+\label{app:training}
+The full video adaptation follows the released KeyCLD modules and loss construction~\cite{daems2024keycld}. The pinned public revision is
+\texttt{426c99a53d597e81044e4ce77214cd3aa6b92b64}.
+There are 596,508 parameters in the adapted model. The encoder and renderer use base channel width 32, expanding to 64 and 128 features. The potential and input-map MLPs have two hidden layers of width 32 with CELU activation. The mass is represented by three squared point-mass parameters.
+
+The three losses are image reconstruction, heatmap consistency, and four-step latent dynamics prediction. Dynamics and heatmap weights are one. Adam uses the released parameter groups, with visual learning rate $3\times10^{-4}$, dynamics learning rate $6\times10^{-5}$, and elementwise gradient clipping at 5. The returned optimizer state is carried forward each update, repairing its omission in the pinned update path. The mechanism geometry, three-point representation, recorded seed, and test sets specify the closed-chain adaptation of the released procedure.
+
+The state-supervised controls replace image-derived point positions and finite-difference velocities in the dynamics loss with their true values. They use the same initial dynamics parameters, 450 training trajectories, 50 validation trajectories, batch size one, 40 epochs, and 18,000 updates. The visual networks are inactive and remain at initialization. The sole paired difference is Euler training integration versus four RK4 substeps per 0.01 s. Both final checkpoints use the same adaptive solver at test time.
+
+\begin{table}[t]
+\caption{State-control force diagnostic on 50 original test trajectories. This uses a \emph{unit-norm} null-space tangent $n$, alongside the crank-normalized $\gamma$ used for actuator effort.}
+\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+Control & Rod-length RMSE ($\mu$m) & Tangent force RMS\\
+\midrule
+\statee & 0.121 & 0.977704 N\,m\\
+\stater & 0.449 & 0.459588 N\,m\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On the torque-driven held-out set, changing inference integration to RK4 with 16 substeps leaves VPT unchanged. The paired difference in future image MSE is $-1.88\times10^{-7}$, with 95\% bootstrap interval $[-5.61\times10^{-7},4.06\times10^{-9}]$. These checks isolate inference integration at fixed learned dynamics.
+
+Confidence intervals for the torque-excitation diagnostic comparison use 2,000 paired trajectory-bootstrap resamples of the existing 50 cases. They condition on one training seed. The state-RK4 minus state-Euler zero-velocity acceleration error is $-0.70067$, with interval $[-0.73449,-0.66339]$. The corresponding unit-tangent force difference is $-0.51812$ N\,m, with interval $[-0.63616,-0.40859]$. Unit-tangent force and crank-equivalent torque use their respective normalizations.
+
+\subsection{Torque-excitation visual and state diagnostics}
+On 50 torque-driven KeyCLD tests, framewise reconstruction and prefix forecasting give MSE $1.18\times10^{-4}$ and $8.94\times10^{-3}$ (\cref{fig:diagnostics}a). The gap remains over $70\times$ on motion pixels, which occupy $17.06\%$ of each image yet contain $95.74\%$ of forecast squared error, averaged per trajectory.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/controlled_diagnostics.pdf}
+\caption{Visual and integration diagnostics. (a) Reference, framewise reconstruction, and forecast at three fixed times. Reconstruction uses each true image; forecasts use three initial frames. (b) Fifty trajectories $\times$ three readouts; adjacent bars show mean coordinate RMSE $\pm$ SD (mm). (c) Paired state-supervised Euler/RK4 errors; diamond: mean.}
+\label{fig:diagnostics}
+\end{figure*}
+
+Video VPT is $7.82\pm4.86$, versus persistence's $7.98\pm4.17$: paired difference $-0.16$, 95\% interval $[-0.42,0.18]$. Resetting 44 local windows per trajectory to observed encodings gives four-step Euler latent RMSE $6.774$ mm versus hold's $6.657$ mm. The $+0.117$ mm difference, interval $[0.086,0.153]$, exposes a local prediction deficit.
+
+A validation-selected keypoint permutation reduces coordinate RMSE from $137.26$ to $129.75$ mm ($5.47\%$), still above the mean-pose control's $70.27$ mm (\cref{fig:diagnostics}b). The small gain from relabeling points to a coordinate-anchoring problem in the native objective. Encoded constraint RMSE is $158.53$ mm, yet its level drifts by only $0.039\,\mu$m: the dynamics preserve the miscalibrated initial geometry, as derived in the main text.
+
+\subsection{Visual-region and reset-window diagnostics}
+To separate moving mechanisms from static background, the evaluation mask marks pixels whose mean RGB temporal variance over all 50 reference images exceeds $10^{-4}$. With mask fraction $p_i$, the fraction of forecast squared error inside it is $s_i=p_i\,\mathrm{MSE}_{i,\mathrm{motion}}/\mathrm{MSE}_{i,\mathrm{full}}$. Computing these quantities per trajectory and then averaging the 50 tests gives $\langle p_i\rangle=0.17055$ and $\langle s_i\rangle=0.95738$. RGB errors use future frames 3--49 (zero-based), while the reconstruction/forecast comparison holds the visual encoder and renderer fixed.
+
+\begin{table}[t]
+\caption{Visual controls on the 50 torque-driven tests. MSE averages normalized RGB squared error. Motion MSE uses the temporal-variance mask. Framewise reconstruction receives each true image; the other controls use the observed prefix or a training-set statistic. VPT retains the author's index convention.}
+\label{app:visual-controls}
+\centering\small
+\begin{tabular}{lrrr}
+\toprule
+Control & RGB MSE & Motion MSE & VPT\\
+\midrule
+\input{tables/visual_control_rows}
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each local window resets position to the observed encoding and velocity to its central difference; 44 windows per trajectory retain the same action and frozen checkpoint. Four-step coordinate RMSE averages $6.774$ mm for Euler, $6.796$ mm for RK4, and $6.657$ mm for latent persistence. The targets are image encodings in calibrated coordinate units. Post-hoc paired trajectory-bootstrap intervals use 2,000 draws with seed 20261013. Euler-minus-persistence is $0.117$ mm, with 95\% interval $[0.086,0.153]$; RK4-minus-persistence is $0.139$ mm, with interval $[0.104,0.176]$. Resampling trajectories retains dependence among their local windows.
+
+The released RGB loss decodes observed keypoints, while its dynamics term supervises future encoded positions. Thus image reconstruction trains the representation locally, but neither future rendered images nor absolute closure residuals anchor its long-horizon coordinates. The numerical controls locate errors along this training pathway. On the assembly corpus, the $159.09$--$161.99$ mm point RMSEs describe validation-set permutation selection; held-out test coverage assesses the resulting frozen readout.
+
+\section{Data stages and numerical calibration}
+\label{app:calibration}
+\begin{table}[t]
+\caption{Disjoint data roles used in the paper. Transfer probes and final scoring use different test seeds.}
+\centering
+\small
+\begin{tabular}{lrrl}
+\toprule
+Role & Conditions & Clips & Seeds\\
+\midrule
+Source training & 1 & 450 & 0--449\\
+Source validation & 1 & 50 & 450--499\\
+Original held-out test & 1 & 50 & 500--549\\
+Extended transfer/probes & 8 & 160 & 1000--1019\\
+Torque calibration & 8 & 96 & 2000--2011\\
+Torque test & 8 & 160 & 3000--3019\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the torque-excitation audit, a physical trajectory supplies initial images, action metadata, and a separately stored dense reference. The video model receives the three images at 0.01, 0.02, and 0.03 s. Its original central-difference initialization is centered at 0.02 s. The state component receives the true state and velocity at the same time. Each frozen model is integrated to 0.50 s and evaluated from 0.04 s onward, yielding 737 scored samples at 1600 Hz. Dense evaluation adds no future observations to the model.
+
+With ideal DOP853 references and endpoint work computation, all 96 positive controls pass. Maximum geometric error is $3.33\times10^{-16}$ m, maximum trajectory-level torque RMS is $3.45\times10^{-14}$ N\,m, and maximum energy residual is $3.49\times10^{-5}$ J. MuJoCo provides an independent mass/bias implementation check and the renderer. These controls calibrate the physical-coordinate interface independently of visual localization.
+
+A separate diagnostic of the common finite-difference route on a sampled nominal trajectory gives torque RMS $2.439$ N\,m with a seven-point cubic differentiator at 100 Hz, even for the correct sampled state. It motivates separating that route from the native-ODE scoring track. The latter includes five-point dense differentiation checks against native derivatives and an 800 versus 1600 Hz friction-work quadrature comparison.
+
+\section{Complete parameter-intervention results}
+\label{app:allresults}
+\begin{table*}[t]
+\caption{Frozen \stater{} component on the new test set. Each row contains 20 trajectories. Torque and position entries are means of trajectory-level RMS values; energy is the mean of each trajectory's maximum cumulative residual. Position uses the maximum per-channel RMS. The torque standard deviation describes trajectories, not independent training seeds.}
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Condition & Torque RMS mean $\pm$ std (N\,m) & Energy error (J) & Position error (mm) & Torque passes\\
+\midrule
+\input{tables/transfer_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+All 160 video-conditioned outputs are finite and satisfy the differentiated constraints, yet fail closure and point prediction. Their velocities and accelerations therefore preserve an incorrect geometric level set. Because the raw coordinates never form a valid physical trajectory, native torque and energy residuals remain unavailable.
+
+For the state component, all 160 trajectories are measured and satisfy all three constraint criteria. Motor-torque passes occur on 54/160 trajectories and conditional-prediction passes on 21/160. Their family-balanced rates are $30.0\%$ and $7.5\%$, respectively. No trajectory passes the energy criterion, hence none passes jointly.
+
+The macro average assigns equal weight to four-bar and crank-slider families, then equal weight to the seven four-bar conditions. It therefore differs from the pooled 54/160 or 21/160 fractions. At half of every tolerance the joint rate remains zero; at twice every tolerance it is zero for the video interface and $3.57\%$ for the state control.
+
+The continuous tolerance-ratio composite is $33.37/100$ for the video interface and $56.88/100$ for the state component. Missing measurements contribute zero within the six-component denominator. Almost all of the video score comes from differentiated constraints, which preserve a nonzero geometric level set. Raw residuals and strict joint rates distinguish this partial consistency from full mechanical qualification.
+
+\section{Structural probes and parameter identification}
+\label{app:probes}
+A positive-semidefinite damping law supplies a dissipative force:
+\begin{equation}
+Q_{\rm diss}=-D_\theta(q,\dot q)\dot q,\qquad D_\theta\succeq0,
+\label{eq:design-dissipation}
+\end{equation}
+which guarantees $\dot q\T Q_{\rm diss}\leq0$.
+
+Under unsaturated proportional servo control, the velocity sensitivity of acceleration $\alpha_\pi$ combines intrinsic dynamics and actuation gain:
+\begin{equation}
+\frac{\partial\alpha_\pi}{\partial\omega}
+=\frac{\partial\alpha}{\partial\omega}
+-k_p\frac{\partial\alpha}{\partial\tau}.
+\label{eq:controller-confound}
+\end{equation}
+
+Known geometry and inertia-to-mass ratios give a linear system for identifying masses and friction coefficients from calibrated motion and forcing:
+\begin{equation}
+\begin{aligned}
+y&=Y(q,\dot q,\ddot q)\beta,\\
+\beta&=(m_1,m_2,m_3,m_p,b_1,\ldots,b_4,f_{c1},\ldots,f_{c4})\T.
+\end{aligned}
+\label{eq:identification}
+\end{equation}
+
+\begin{samepage}
+KeyCLD's Cartesian acceleration combines the learned force $f$ with a constraint reaction $\lambda$ that enforces the differentiated constraints:
+\begin{align}
+\widehat a&=M_x^{-1}(f-D\Phi\T\lambda),\\
+\lambda&=(D\Phi M_x^{-1}D\Phi\T)^{-1}
+\left[D\Phi M_x^{-1}f+D^2\Phi[\dot x,\dot x]\right].
+\label{eq:keycld}
+\end{align}
+\end{samepage}
+For the velocity-reversal probe we use angles evenly spaced from $-\pi$ to $\pi$, inclusive, and speed magnitudes $\{0.25,1,4,12\}$ rad/s. Thus the 73 angle samples include two representations of the periodic endpoint. There are 292 matched reversal pairs per friction condition. We hold the motor input at $1$ N\,m and evaluate each pair at the same physical pose.
+
+The architecture's evenness follows from its position-only mass, potential, actuation, and constraint derivatives: changing $\dot x$ to $-\dot x$ leaves both the force and the quadratic term $D^2\Phi[\dot x,\dot x]$ unchanged, so it preserves the entire constrained acceleration. Smooth viscous and Coulomb terms instead change sign at fixed pose. The reversal probe therefore quantifies the dissipative response that this architecture cannot represent, extending the original KeyCLD discussion of absent dissipation~\cite{daems2024keycld} to the adapted mechanism.
+
+For the scale probe, multiply the point-mass root parameters by $\sqrt{k}$ and the output layers of the potential and input networks by $k$. Then $M_x^{-1}$ scales by $1/k$, the constraint solve yields $\lambda' = k\lambda$, and the acceleration remains invariant. The recorded single-state probes at $k=0.25$ and $k=4$ both have zero numerical acceleration change. The algebraic statement applies to every regular state under these parameter transformations.
+
+\begin{table}[t]
+\caption{Behavioral effective-inertia errors from calibrated $\pm1$ N\,m action queries at zero speed. Error statistics condition on positive gains; the positive-gain counts are always shown.}
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Condition & Positive & Median (\%) & Mean (\%)\\
+\midrule
+\input{tables/inertia_rows}
+\bottomrule
+\end{tabular}
+\end{table}
+
+Effective inertia combines the learned mass and input-map responses, so its discrepancy measures actuator calibration rather than mass error alone. We report response errors together with positive-gain coverage, which is incomplete in every condition. The classical control below then tests whether calibrated mechanical equations can identify the four physical body masses.
+
+For that control, the known geometry gives mass-linear bases for $M,c,G$, with prescribed inertia-to-mass ratios. We form one equation per sampled state,
+\begin{equation}
+y=Y(q,\dot q,\ddot q)\beta,
+\end{equation}
+where $\beta$ contains the crank, coupler, rocker/slider, and payload masses, four viscous coefficients, and four smooth Coulomb magnitudes. The known rotor and external-force terms are moved to $y$. We normalize regressor columns on the fitting split and solve nonnegative least squares. Seeds 1000--1011 fit and 1012--1019 test; no neural output is used.
+
+\begin{table*}[t]
+\caption{Exact-state physical parameter control on the extended dataset. Mass error is the largest absolute relative error among four masses, expressed as a fraction. This regression tests identifiability under specified uniform-shape and SI-actuation assumptions.}
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Condition & Rank & Normalized condition number & Maximum mass error & Test torque RMS (N\,m)\\
+\midrule
+\input{tables/identification_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The mixed-friction fit has maximum viscous coefficient error $5.85\times10^{-9}$ N\,m\,s/rad and maximum Coulomb torque error $4.75\times10^{-8}$ N\,m. Prescribed simulator parameters supply the SI reference.
+
+\section{Reproducibility and study scope}
+\label{app:reproducibility}
+All models use fixed final-epoch checkpoints, with gradient updates and sequence exposures specifying the training budget across GPU and CPU environments. Released model modules and adaptation scripts define the predictors, physical readouts, and independent mechanism equations. The source package provides the figure assets, tables, and evidence mappings needed to reproduce the reported comparisons.
+
+The torque-excitation study uses one KeyCLD seed, while each shared-assembly arm uses three seeds. Friction and payload interventions query the frozen KeyCLD model across changed physical conditions. The shared study evaluates transfer to unseen assemblies within three trained mechanism families, retaining each model's command interface and native objective.
+
+The dataset consists of synthetic mechanism images and trajectories, with no human subjects or personal data.
+
+\section{Additional residual distributions}
+The following distributions and equation substitution retain the torque-excitation protocol. Their eight operating conditions, constant-torque inputs, and calibrated tolerances differ from the multi-assembly servo experiment.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/residuals.pdf}
+  \caption{Independent physical errors of the frozen \stater{} component on the torque-excitation scoring set. Each condition contains 20 paired trajectories. Points are individual trajectories, black marks show the median and interquartile range, and dashed lines are the fixed diagnostic tolerances. All trajectories pass the three geometric/differential constraint criteria, while physical residuals vary substantially with condition. Both axes are logarithmic.}
+  \label{fig:residuals}
+\end{figure*}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/score_profile.pdf}
+  \caption{Torque-excitation pass profile, balanced across mechanism families and conditions. Hatched N/A cells have no valid physical readout and are distinct from measured zero-pass rates. All 160 state trajectories pass the three constraint criteria, while no trajectory passes work--energy balance.}
+  \label{fig:passes}
+\end{figure}
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/probes.pdf}
+  \caption{Constitutive probes of the frozen state component. (a) Matched velocity reversal gives nonzero reference odd acceleration and zero model response for all 292 pairs per condition. (b) Effective-inertia errors on positive input gains: both medians and means are shown on a log scale, with positive-gain counts below each condition. The large mean--median gaps retain the effect of near-zero gains.}
+  \label{fig:probes}
+\end{figure*}
+\subsection{Interpreting a concrete equation mismatch}
+\begin{table}[t]
+\caption{Matched-state acceleration queries at the fixed first extended-test seed and $t=0.11$ s. Each condition uses its corresponding true pose and speed. These are local constitutive probes, separate from trajectory scoring.}
+\label{tab:local}
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Condition & True $\alpha$ & Model $\alpha$ & $r_\tau$\\
+& (rad/s$^2$) & (rad/s$^2$) & (N\,m)\\
+\midrule
+Nominal & 590.32 & 613.06 & 0.08196\\
+Mixed friction & 48.46 & 141.58 & 0.53881\\
+Slider & $-144.72$ & 95.43 & 0.96611\\
+\bottomrule
+\end{tabular}
+\end{table}
+The residual has a direct interpretation in the governing mechanical equation. In the fixed nominal example of \cref{tab:local}, the independent equation at the measured crank state is
+\begin{equation}
+\begin{split}
+0.00360379\,\alpha
+-0.00164571(25.51406)^2\\
+-0.41765765=0.61435837+0.02407613.
+\end{split}
+\label{eq:worked}
+\end{equation}
+The terms are effective inertia, velocity-quadratic torque, gravity, motor torque, and external-force torque. It requires $\alpha=590.32$ rad/s$^2$, whereas the model queried at that same state predicts $613.06$ rad/s$^2$. Their difference corresponds to $0.08196$ N\,m. In the slider query the predicted acceleration has the opposite sign to the physical reference. These examples illustrate the units and meaning of the test; the overall conclusions use all paired trajectories. A locally small force discrepancy can also coexist with an unacceptable accumulated energy error over the full rollout.
+
+
+
+\section{Assembly partitions and observation preprocessing}
+\label{app:corpus-data}
+The multi-assembly study uses a frozen subset of the accepted planar-linkage corpus. Each assembly has its own geometry, rigid-body properties, and three operating trajectories. Table~\ref{app:corpus-splits} counts distinct assemblies. Each trajectory has multiple rendered views, but the current experiment uses the front view and counts each operating trajectory once. Video availability determines the frozen training subset before model evaluation. Held-out assemblies are never used for parameter updates or checkpoint selection.
+
+\begin{table}[t]
+\caption{Multi-assembly partition. Each assembly contributes three operating conditions. Validation and numerical calibration occupy separate subsets of the original validation partition.}
+\label{app:corpus-splits}
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Family & Train & Val. & Cal. & Test\\
+\midrule
+Crank-rocker & 96 & 6 & 6 & 12\\
+Crank-slider & 92 & 6 & 6 & 12\\
+Double-crank & 83 & 6 & 6 & 12\\
+\midrule
+Assemblies & 271 & 18 & 18 & 36\\
+Trajectories & 813 & 54 & 54 & 108\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Physical parameters include all moving hardware in the body mass, center of mass, and inertia. Independent rigid-body equations check the simulated mass and bias terms. MuJoCo~\cite{todorov2012mujoco} supplies the trajectories; Blender replays their body transforms for rendering. The physics step is $1/4800$ s, reference recording is $240$ Hz, and videos have 120 frames at $30$ Hz. Finite numerical constraint compliance is retained in the references and measured by calibration.
+
+Source videos have $640\times640$ pixels. Orthographic calibration rectifies the motion plane at $Y=0$ into $64\times64$ and $256\times256$ RGB, with a fixed world half extent $0.65$ m and center $(0.20,0.35)$ m. Physical coordinates satisfy
+\begin{equation}
+x_{\rm world}=0.65x_{\rm normalized}+(0.20,0.35).
+\end{equation}
+Plate thickness and its parallax remain in the observations. Source camera framing used the reference trajectory extents; cameras then remain fixed. The evaluation uses these recorded cameras and their given calibration.
+
+Training uses frames 30--79. Evaluation observes frames 30--32, initializes the ODE at the central frame, and predicts through frame 119. The native grid contains 705 states from $1+8/240$ to $1+712/240$ s. The 689 samples from $1.10$ s onward are scored. Energy is anchored at the last observed time, $1+16/240$ s.
+
+Velocity commands have settled by $t=1$ s. Crank-rockers and sliders use proportional gain $2$ N\,m\,s/rad and a $5$ N\,m torque bound. Double-cranks use gain $12$ N\,m\,s/rad and a $12$ N\,m bound. KeyCLD's wrapper recomputes torque from its predicted crank velocity, with known external force providing two additional action channels. CON learns the closed-loop evolution from command and controller metadata. The evaluator recomputes physical servo torque for both models. Future measured torque, SI mass, inertia, and friction remain evaluator information. Both models receive geometry and camera calibration.
+
+The three commands are $1$, $3$, and $5$ rad/s; the last condition jointly increases speed and multiplies payload mass by $1.75$. All three occur in training. The test set therefore measures generalization to new assemblies within these families and operating conditions.
+
+\section{KeyCLD training and shared numerical calibration}
+The architecture and video objective use the same released modules as the torque-excitation experiment. Corpus training has 813 sequences, 40 epochs, and 32,520 updates per run. Seeds 42, 43, and 44 are used independently for the 64-pixel video arm and two state-supervised controls. For each seed, the three arms start from the same saved initial parameters. State supervision replaces both encoded training coordinates/velocities and the forecast initialization. State--Euler and State--RK4 therefore differ in training integration, while sharing their data and four-step loss windows. Visual parameters are unchanged in the state controls.
+
+KeyCLD uses float32 computation in JAX 0.11.2. Adaptive validation rollouts evaluate the fixed final-epoch checkpoints. Paired Euler/RK4 controls receive equal updates and sequence exposures.
+
+The registered physical thresholds are $1$ mm, $0.01$ m/s, $0.1$ m/s$^2$, $0.25$ N\,m, $0.05$ J, and $1$ cm for the six criteria. The last three quantities are torque RMS, maximum prefix energy error, and maximum-channel point RMS. The corpus torque/energy thresholds use a common $5$ N\,m reference scale. Thus $0.25$ N\,m is $5\%$ of the crank-rocker/slider bound and $2.08\%$ of the double-crank bound.
+
+Independent calibration uses 54 trajectories from 18 separate assemblies. All positive controls pass. Maximum geometric error is $7.23\times10^{-6}$ m, velocity-constraint RMS $3.84\times10^{-5}$ m/s, acceleration-constraint RMS $6.97\times10^{-4}$ m/s$^2$, torque RMS $2.06\times10^{-5}$ N\,m, and energy error $2.23\times10^{-4}$ J. Geometrically admissible persistence and $0.8$-time-scaling controls each pass 0/54 jointly.
+
+Raw predictions and native derivatives define the native evaluation track. Complete force/energy measurement requires valid geometry and a regular physical-coordinate readout throughout the scored interval; unavailable terms remain missing. Native integration uses the same adaptive solver with a 4,096-step interval cap. A 10 s integration wall-time budget and a separate 120 s initialization/compilation budget retain timeouts as explicit failed cases.
+
+\section{KeyCLD 64-pixel and state-control results}
+\label{app:corpus-results}
+Table~\ref{app:corpus-seeds} preserves all test denominators and separates finite output from valid physical readout. Each seed uses the same 108 test trajectories. The 324 predictions retain pairing across 36 independent assemblies. The video seed-44 run contains 13 test timeouts. All 648 test predictions from the two state-supervised arms are finite and physically measurable.
+
+\begin{table*}[t]
+\caption{All multi-assembly test runs. Every checkpoint completes 40 epochs and 32,520 updates. Finite output and a complete physical readout are distinct requirements.}
+\label{app:corpus-seeds}
+\centering\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Arm & Seed & Finite & Timeouts & Physical readout & $S_{\rm comp}$ & Joint (\%)\\
+\midrule
+\input{tables/corpus_seed_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\caption{Mechanism-level state-control results. Each row averages 108 predictions: 12 assemblies, three conditions, and three seeds. Errors are means of trajectory statistics. Point error is maximum-channel RMS; energy error is maximum absolute prefix imbalance. All rows have 100\% passes on the three constraint criteria.}
+\label{app:corpus-families}
+\centering\small
+\begin{tabular}{llrrrrrr}
+\toprule
+Arm & Family & Point (mm) & Torque (N\,m) & Energy (J) & Point pass (\%) & Torque pass (\%) & Energy pass (\%)\\
+\midrule
+\input{tables/corpus_family_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The paired RK4-minus-Euler differences are $-122.69$ mm for point error (95\% interval $[-128.17,-115.21]$), $-3.849$ N\,m for torque RMS ($[-4.059,-3.578]$), and $-19.528$ J for energy error ($[-21.744,-17.373]$). Bootstrap draws resample three training seeds and 12 assembly identities within each family, using the same draw in both arms and retaining all conditions together. We use 2,000 draws with the registered resampling seed. Family and condition averages receive equal weight.
+
+With zero joint passes in every observed group, resampling reproduces the same zero empirical rate. Population uncertainty therefore requires more than this degenerate bootstrap; continuous residuals and coverage provide the informative comparisons among the evaluated models.
+
+\section{KeyCLD response-query grids and inertia fitting}
+\label{app:corpus-probes}
+A usable response gain must be finite and exceed $10^{-8}$ rad\,s$^{-2}$/(N\,m). Failed checks include negative, near-zero, and nonfinite gains. The main figure reports this fraction alongside the inertia distribution of usable responses.
+
+These post-hoc diagnostics query frozen state-supervised checkpoints. Six predetermined reference states from each of 108 test trajectories give 648 states per checkpoint. The probe supplies true physical coordinates and varies the applied motor torque independently of the velocity servo, isolating response to controlled mechanical inputs.
+
+At zero speed, we query $\tau=\pm0.25$ N\,m with the known external force fixed. The finite difference gives $\partial\widehat\alpha/\partial\tau$ and its reciprocal defines behavioral effective inertia for usable gains. Table~\ref{app:corpus-response} gives both coverage and relative errors. Errors are dimensionless fractions: a value of 100 represents $10{,}000\%$. The learned input matrix is unconstrained, so the response combines actuation and inertia errors.
+
+\begin{table*}[t]
+\caption{Counterfactual SI response of the corpus state controls. Inertia error is $|\widehat{\mathcal I}_{\rm resp}/\mathcal I-1|$, conditioned on positive gain. Friction error is the RMS equivalent torque of the missing velocity-odd response. Each checkpoint uses the same 648 physical states.}
+\label{app:corpus-response}
+\centering\small
+\begin{tabular}{lrrrrr}
+\toprule
+Arm & Seed & Positive gains & Median inertia error & Mean inertia error & Friction RMS (N\,m)\\
+\midrule
+\input{tables/corpus_probe_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+For friction, independent crank speeds are matched at $\pm1$ rad/s with motor torque fixed at zero. The learned odd acceleration is exactly zero for all six checkpoints; the reference equivalent friction-torque RMS is $0.03885$ N\,m. Holding physical torque fixed removes the public servo's known damping from this constitutive test.
+
+A separate kinetic representation control uses all 360 physically specified planar assemblies, including the 17 without accepted videos in the training-data snapshot. For each of 1,080 conditions, 41 recorded poses form the positive point-mass fitting problem from the main paper's reduced-inertia equation. Separate per-condition fits achieve relative RMS error below $1.55\times10^{-15}$ over these recorded poses. Fitting one shared mass vector across all conditions gives $22.55\%$ relative RMS discrepancy. These evaluator fits quantify the kinetic representation over the specified reference states.
+
+The per-condition and shared fits separate local representational capacity from consistency across heterogeneous mechanisms. Forecast accuracy also depends on learned potential and actuation, whose identification is affected by the state-dependent servo input. Checking excitation and regressor rank under the known controller therefore complements the full-rank independent-torque control.
+
+\section{CON configuration and shared-data extension}
+\label{app:con}
+The CON adaptation uses the released \texttt{node-con-iae} implementation~\cite{stolzle2024con}, revision \texttt{cef5441f0201ed28e3ac9e1d3e7d4de7d52c4a30}. Its CNN $\beta$-VAE and coupled-oscillator dynamics retain the upstream mathematical implementation. At 64 pixels, the visual model has 67,271,267 parameters and eight latent coordinates; the separate state component has 13,360 parameters. A five-layer, width-30 input autoencoder maps the public command and geometry information to this latent dynamical system.
+
+Both models use the same assembly manifest, source observations, three-frame prefix, calibration trajectories, and forecast grid. Each seed evaluates 108 test sequences from 36 held-out identities. Table~\ref{app:two-model-budget} records the native training budgets. CON includes the final batch of 13 sequences, giving 51 updates per epoch. KeyCLD evaluates 43 overlapping four-step windows per sequence, while CON integrates one 48-interval rollout.
+
+\begin{table*}[t]
+\caption{64-pixel video and state-control training configurations. Counts are per run. All arms use 813 training sequences and seeds 42, 43, and 44. A sequence use is one sequence in one epoch; temporal loss windows differ by model.}
+\label{app:two-model-budget}
+\centering\small
+\begin{tabular}{llrrrrl}
+\toprule
+Model & Arms & Epochs & Batch & Updates & Sequence uses & Training integration\\
+\midrule
+KeyCLD & Video, State--Euler, State--RK4 & 40 & 1 & 32,520 & 32,520 & Euler / RK4 substeps\\
+CON & Video, State--Dopri5 & 50 & 16 & 2,550 & 40,650 & Dopri5, $0.01$ s steps\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{Command and geometry input.}
+The fixed 14-dimensional input contains command speed, servo gain, torque limit, in-plane force $(F_x,F_z)$, and nine geometry entries $(A_x,A_z,D_x,D_z,l_1,l_2,l_3,h_s,\mathrm{slider})$. Their normalization divisors are $(5,12,12,1,1)$ followed by nine ones. CON learns command-conditioned closed-loop evolution, and its input decoder reconstructs the normalized metadata. The released model's positive-definite inverse inertia, stiffness, and damping matrices act in latent coordinates. We evaluate this interface through physical readouts and trajectories; the independent evaluator computes SI motor torque from the public servo law.
+
+\paragraph{Objective and optimization.}
+CON Video retains latent rollout MSE, static RGB reconstruction, dynamic RGB reconstruction, KL regularization, and input reconstruction. Their weights are $0.3733687489$, $1$, $83.7248326772$, $0.0002006838$, and $10$. AdamW uses peak learning rate $0.0184869909$, weight decay $0.0000553401$, five warmup epochs, and cosine decay thereafter. The training objective integrates the full 50-frame window with Dopri5 and fixed $0.01$ s steps. State trains the same dynamical component and input autoencoder against true normalized $B,C,P$ coordinates and velocities, padded with two zero coordinates. Its visual losses are inactive. State-training integrations use float64 ODE states, with predicted coordinates cast to float32 for the loss. Section~\ref{app:con-integrators} adds a paired state-training integrator control.
+
+\paragraph{Initialization and physical readout.}
+For Video, the encoder's Jacobian--vector product maps the centered difference of the three observed images into latent velocity at the middle frame. State starts from exact middle-frame coordinates and velocity. Frozen rollouts integrate float64 ODE states using adaptive Dopri5 with relative/absolute tolerances $10^{-7}/10^{-9}$ and native derivatives on the common 240 Hz grid. RGB decoding uses float32 latent inputs. Only the three-frame prefix initializes prediction.
+
+After video training, a single affine latent-to-point map is fitted on 40,650 training-frame states (813 sequences, 50 frames each). Its coefficients stay fixed during validation and testing and are never supplied to the predictor. Validation RMSE averages squared error over the six coordinates and observed frames before averaging trajectories. Future point error instead uses the shared maximum-channel trajectory RMS. This privileged readout gives an interpretable diagnostic interface, distinct from KeyCLD's validation-selected keypoint permutation. State reads the first six latent coordinates directly. Neither native readout projects predictions onto the mechanism manifold; Section~\ref{app:geometry-readout} defines a separate geometric intervention.
+
+\section{CON 64-pixel and state-control results}
+\begin{table*}[t]
+\caption{Detailed native component scores and seed/assembly bootstrap intervals for the five original assembly arms. The main table adds RGB/finite outputs and the paired CON integrator arms. Physical counts complete SI measurements; rates are percentages.}
+\centering\small
+\begin{tabular}{lrrrrrrrrl}
+\toprule
+Interface & Physical & Geom. & Vel. & Acc. & Torque & Energy & Pred. & Joint & $S_{\rm comp}$ [95\% CI]\\
+\midrule
+\multicolumn{10}{l}{\textit{KeyCLD}}\\
+\input{tables/corpus_score_rows}
+\midrule
+\multicolumn{10}{l}{\textit{CON}}\\
+\input{tables/con_score_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\label{app:con-results}
+The six native Dopri5 runs each complete 50 epochs and 2,550 updates, with all 108 test and 54 validation forecasts finite. Table~\ref{app:con-seeds} reports every seed, and the common SI evaluator measures all 648 CON test predictions against the shared engineering targets.
+
+\begin{table*}[t]
+\caption{CON seed results. Finite and complete physical coverage refer to 108 test trajectories. Point error is mean maximum-channel future RMS. RGB MSE uses future frames 33--119 and is displayed in units of $10^{-4}$. Reader validation uses observed validation images and coordinate RMSE, not future forecast error. State has no RGB decoder or fitted reader.}
+\label{app:con-seeds}
+\centering\small
+\begin{tabular}{lrrrrrrr}
+\toprule
+Arm & Seed & Finite & Physical & $S_{\rm comp}$ & Point (mm) & RGB MSE & Reader val. (mm)\\
+\midrule
+\input{tables/con_seed_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Video's RGB MSE averages $3.0802447\times10^{-4}$ across seeds, families, and conditions. Last-observed-image persistence gives $4.9398983\times10^{-4}$ on the same future targets, a $37.6456\%$ relative reduction. Decoded RGB is stored as clipped 8-bit pixels; squared errors use $[0,1]$ normalization. This pixel comparison concerns the assembly corpus. KeyCLD's torque-excitation RGB and VPT diagnostics use different data and are reported separately.
+
+The video reader's validation RMSE spans $86.42$--$93.54$ mm. Across future test trajectories, Video and State have mean maximum-channel point RMS of $123.48$ and $142.39$ mm, respectively. Their mean trajectory-maximum geometry errors are $137.67$ and $170.40$ mm. No trajectory in either arm passes geometry, yielding zero complete physical coverage and zero joint qualification. Native torque and energy values are unavailable because the physical-coordinate interface fails geometric validity. Continuous $S_{\rm comp}$ is $7.23$ with 95\% interval $[3.72,9.73]$ for Video and $1.91$ with $[1.22,2.71]$ for State. Intervals use 2,000 seed/assembly resamples with conditions kept together.
+
+The extension tests sustained servo-driven closed-chain motion, a periodic regime discussed in CON's original formulation~\cite{stolzle2024con}. Its state control supervises padded Cartesian coordinates directly. Maintaining the curved closure manifold then depends on the learned oscillator flow, and the observed forecasts depart from it despite exact-state supervision. Together with KeyCLD's admissible state trajectories and residual force errors, these results locate complementary failures under the same physical criteria.
+
+
+\section{Matched 64-pixel video and inference diagnostics}
+\label{app:matched-video}
+These post-hoc diagnostics use the frozen dataset, thresholds, and checkpoints without test-set parameter tuning. Both models are evaluated on the same 108 assembly sequences for each of three seeds. Framewise reconstruction encodes each true image; the forecast uses only the three-frame prefix and the saved native trajectory. Reconstruction and reset-window diagnostics access later observations to separate local representation error from open-loop prediction.
+
+\begin{table*}[t]
+\caption{Matched assembly-video diagnostics. RGB MSE is in units of $10^{-4}$ on future frames 33--119. Four-step reset error measures self-consistency against later observed encodings, in millimeters through each model's distinct fixed point readout. Means balance seed, family, and condition.}
+\label{app:matched-video-table}
+\centering\small
+\begin{tabular}{lrrrrrrr}
+\toprule
+Model & Reconstruction & Forecast & Finite forecast & Persistence & Reset Euler & Reset RK4 & Reset hold\\
+\midrule
+\input{tables/matched_video_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Each 90-frame test sequence supplies 84 local windows centered at observed frames 1--84 in the cropped sequence. Encodings initialize positions, while KeyCLD's centered differences and tangent projection or CON's encoder Jacobian--vector product initialize velocities. Each window predicts four subsequent encodings using either one Euler step or four RK4 substeps per video interval. The frozen encoder, dynamics, and readout are also compared with training-set mean-image and mean-pose controls, using the same temporal-variance motion mask.
+
+KeyCLD's assembly forecast MSE is about $1.83$ times its framewise reconstruction error and is close to persistence. On the 311 common finite cases, KeyCLD/CON forecast MSE is $(4.9595,3.0914)\times10^{-4}$. The paired CON-minus-KeyCLD difference is $-1.8680\times10^{-4}$, with seed/assembly bootstrap interval $[-2.4067,-1.1620]\times10^{-4}$. Thirteen KeyCLD native timeouts remain failures in the registered denominator.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/matched_video_example.png}
+\caption{Last forecast frame (119) of the first frozen test case, seed 42. Reconstruction uses the current true image to test visual representation, while forecasting uses frames 30--32 to test temporal prediction.}
+\label{app:matched-video-figure}
+\end{figure}
+
+\paragraph{Fixed-weight inference solvers.}
+For each video checkpoint, Euler and RK4 use 1, 4, and 16 substeps per $1/30$ s interval. The 3,888 trajectories share saved native initial states and retain each model's parameters and precision. For native timeouts without a finite saved initial state, the original three-frame initializer is rerun. The six solver settings therefore compare fixed-weight evolution from common observed prefixes.
+
+\begin{table*}[!t]
+\caption{Frozen video inference sweeps. RGB MSE is in units of $10^{-4}$. Native difference is point-coordinate RMS in millimeters; parentheses give the number of common finite cases. Finite counts refer to state trajectories, with denominator 324. Large finite outliers are retained.}
+\label{app:inference-solvers}
+\centering\small
+\begin{tabular}{llrrr}
+\toprule
+Model & Solver / steps & Finite & RGB MSE & Native difference\\
+\midrule
+\input{tables/inference_solver_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+CON's refined solvers converge to nearly identical RGB error. KeyCLD's coarse Euler and RK4 predictions can contain extremely large finite coordinates even when decoded RGB error remains bounded. RK4 with four or sixteen substeps produces 324 finite trajectories in this fixed-weight sweep, compared with 311 in native inference. This isolates inference integration from the training-integrator intervention below.
+
+\section{Paired CON training-integrator controls}
+\label{app:con-integrators}
+
+\begin{table*}[!t]
+\caption{Additional CON state-training controls, averaged over three seeds. Point error uses maximum-channel future RMS; geometry uses the trajectory maximum, both in millimeters. The original State--Dopri5 arm remains a separate reference.}
+\label{app:con-integrator-table}
+\centering\small
+\begin{tabular}{lrrr}
+\toprule
+Training solver & Point & Geometry & Raw physical\\
+\midrule
+\input{tables/con_integrator_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+Six additional privileged-state runs compare Euler and RK4 across seeds 42--44. Within each seed, initial parameters and all 50 shuffled epoch orders match. Architecture, normalized state/action inputs, loss weights, optimizer schedule, batch size 16, and final epoch 50 are fixed. Both train on all 813 sequences per epoch, giving 2,550 updates and 40,650 sequence exposures. The state objective predicts 48 frame intervals from the middle observed training frame; Euler uses one step and RK4 four substeps per interval. Both use float64 ODE states and float32 coordinate losses, as in the native state control.
+
+The six runs produce 972 native adaptive-Dopri5 forecasts: 648 test and 324 validation predictions. Table~\ref{app:con-integrator-table} reports the native coordinates. RK4 increases point error by $12.907$ mm, paired 95\% interval $[6.734,23.497]$, across all 324 test pairs. Both arms retain zero complete native physical coverage. Higher-order training integration thus increases trajectory error within this oscillator pipeline, alongside the reductions observed for KeyCLD.
+
+
+
+\section{Common geometry-conditioned force and energy readout}
+\label{app:geometry-readout}
+
+\begin{table*}[!t]
+\caption{Explicit geometric-readout intervention on all seven assembly arms. Coverage counts complete force/energy trajectories among 324 registered cases per arm. Correction is per-trajectory coordinate RMS over the saved grid. Point error is maximum-channel future RMS. Correction and residual means use available cases with equal seed/family/condition weighting; missing cases remain in coverage counts.}
+\label{app:geometry-readout-table}
+\centering\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Model / training & Raw physical & Readout physical & Correction (mm) & Torque (N\,m) & Energy (J) & Point (mm)\\
+\midrule
+\input{tables/geometry_readout_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+The same post-hoc geometric intervention maps both architectures' frozen point predictions to admissible trajectories. It operates after rollout and defines an additional evaluation track, reported alongside native coverage and residuals.
+
+Let $b=B-A$ be the predicted crank direction, with predicted derivatives $v_B,a_B$. We decode
+\begin{align}
+\theta&=\operatorname{atan2}(b_z,b_x),\qquad
+\omega=\frac{b\times v_B}{\|b\|^2},\\
+\alpha&=\frac{b\times a_B}{\|b\|^2}
+-2\frac{b\T v_B}{\|b\|^2}\omega.
+\end{align}
+Public mechanism geometry determines $\widetilde q=\operatorname{IK}_{\mathcal G}(\theta)$ on the declared assembly branch. For angular-coordinate closure $\psi(q)=0$, write $J_q=[J_{q,0}\;J_{q,d}]$ and
+\begin{align}
+\gamma&=\begin{bmatrix}1\\-J_{q,d}^{-1}J_{q,0}\end{bmatrix},&
+\gamma'&=\begin{bmatrix}0\\-J_{q,d}^{-1}D^2\psi[\gamma,\gamma]\end{bmatrix},\\
+\dot{\widetilde q}&=\gamma\omega,&
+\ddot{\widetilde q}&=\gamma\alpha+\gamma'\omega^2.
+\end{align}
+Forward kinematics yields consistent points and analytic derivatives. The map uses predicted $B,v_B,a_B$ and public geometry only. Mass, inertia, friction, and future reference states enter the independent evaluator, not this readout. Cases with predicted crank radius below $1$ mm or dependent-coordinate condition number above $10^{10}$ remain unavailable.
+
+\paragraph{Calibration and coverage.}
+All 54 independent calibration references pass after this map; persistence and $0.8$ time scaling each pass 0/54. Maximum calibration correction RMS is $2.481\,\mu$m, maximum torque RMS $2.17\times10^{-4}\,\Nm$, and maximum energy defect $1.21\times10^{-4}$ J, using the registered engineering targets.
+
+
+
+The readout enables force and energy measurement for 308/324 CON Video and 323/324 native CON State trajectories, with average corrections of $73.185$ and $67.675$ mm. KeyCLD's state trajectories require less than $1\,\mu$m mean correction, while its video predictions require $120.494$ mm. The correction cost quantifies how far the specified reconstruction moves each predicted trajectory to obtain admissible coordinates.
+
+
+
+Across the 315 CON Euler/RK4 pairs with both readouts available, RK4-minus-Euler torque difference is $0.560\,\Nm$ with interval $[-0.158,2.070]$, and energy difference is $9.084$ J with interval $[-0.370,27.863]$. Both intervals span zero: among these measurable trajectories, the force/energy effect remains unresolved, while the native point error increases across all 324 pairs.
+
+
+\twocolumn[{\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width=.78\textwidth]{figures/conditioned_dynamics_example.pdf}
+\captionof{figure}{Independent force/energy evaluation after the common geometric readout, using the first frozen test case and seed 42; video arms use 64-pixel inputs. Phase error is wrapped to $[-\pi,\pi]$. Dashed lines show the $0.25\,\Nm$ and $0.05$ J criteria; the dotted line marks the first future frame. Work is anchored at the last observed frame.}
+\label{app:conditioned-dynamics-example}
+\end{minipage}\par\vspace{\textfloatsep}}]
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/spatial_vjepa_traces.pdf}
+\caption{Spatial platform trajectories for the first registered Stewart and Delta test cases, seed 42. Black curves are reference positions; purple curves are V-JEPA 2.1 + AC with the frozen physical readout. The dotted line ends the three-frame observed prefix. All three coordinates and the full forecast horizon are shown.}
+\label{app:spatial-traces}
+\end{figure*}
+
+\section{Spatial adaptation and independent SI evaluation}
+\label{app:spatial}
+\subsection{Data, representation, and training}
+The spatial studies share 50 Stewart (H-A) and 50 Delta (H-B) test assemblies, each with three operating conditions, and use seeds 42, 43, and 44. The resulting 300-trajectory cohort is common to V-JEPA + AC and LingBot; each model retains its native training objective and budget. Assembly-level training/validation/test partitions are disjoint. Stewart has 14 training and four validation identities, while Delta has four of each. All five training views are used, giving 210 and 60 videos; validation and testing use the front view, giving 12 validation and 150 test trajectories per family. The assembly is the independent sampling unit. Each video contains 120 frames at 30 Hz, rendered at $640\times640$ and resized to $384\times384$ for V-JEPA's encoder.
+
+The spatial model combines the released V-JEPA 2.1-B/16 encoder~\cite{murlabadia2026vjepa2_1} with the AC predictor architecture~\cite{assran2025vjepa2}. The frozen encoder has 86.8 million parameters. Each observed frame forms a duplicated-frame tubelet, yielding 576 spatial tokens of width 768 without future-frame access. A separate 24-layer predictor, width 1024 with 16 heads, is initialized and trained for each family. Its inputs are visual features, standardized actuator position/velocity commands, and actuator state feedback. Training uses true training-state feedback; forecasting uses the model's own decoded state.
+
+A physical readout pools encoder features to a $4\times4$ grid, concatenates 13 public camera-calibration values, and applies hidden layers of widths 512 and 256. Its outputs are the complete tree generalized position and velocity: 25/24 coordinates for Stewart and 22/21 for Delta. Training uses standardized state MSE for 60 epochs, AdamW with learning rate $3\times10^{-4}$ and weight decay $10^{-4}$, and batch size 256. Only the free-root quaternion is normalized. This seed-specific head supplies recurrent state feedback during forecasting; the independently calibrated heads below provide the common measurement interface. Their comparison holds the entire predicted feature trajectory fixed.
+
+The AC predictor uses eight-frame clips, teacher-forced feature L1 loss plus a two-step autoregressive L1 loss, and AdamW with weight decay 0.04 and maximum learning rate $4.25\times10^{-4}$. Each family and seed receives 3,000 sequence exposures with batch size eight and final-checkpoint forecasting: Stewart uses 386 updates over 15 epochs across 210 videos, with 60 exposures in the last epoch; Delta uses 400 updates over 50 epochs across 60 videos. The learning rate follows a cosine schedule fixed at initialization for the complete 15/50-epoch run, with warmup for the first 5\% of epochs (at least one epoch). Parameters use float32 and forward arithmetic uses bfloat16 autocast.
+
+At test time, the model observes three RGB frames and predicts the remaining 117 at 30 Hz with a seven-frame autoregressive context, using public camera calibration and planned actuator commands. The audit measures this combined encoder, predictor, and physical-readout pathway. Because its outputs are discrete latent features, physical states are the common evaluation interface; RGB reconstruction and continuous-time ODE solvers belong to the other model pathways. Figure~\ref{app:spatial-traces} shows the first registered test trajectory of each family.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/spatial_vjepa_overview.pdf}
+\caption{Five training camera views of Stewart (top) and Delta (bottom). Each row shows frame zero from the first registered training assembly in its low-speed condition. All views show the same physical state; only the camera changes. The full recorded frames are shown without cropping.}
+\label{app:spatial-overview}
+\end{figure*}
+
+\subsection{Reaction-free forces in multiple dimensions}
+Spatial closure is represented by attachment-point gaps $\phi(q)\in\R^{3m}$ and velocity Jacobian $J$. The free-root quaternion uses its tangent angular velocity, so the velocity dimension is one smaller than the stored position dimension. With generalized acceleration $a$, the rigid-body equation is
+\begin{equation}
+Ma+c+G=Bu_A+Q_{\rm ext}+Q_f+J\T\lambda.
+\end{equation}
+An orthonormal basis $N$ of $\ker J$ eliminates $\lambda$. At a regular configuration where $N\T B$ is square and nonsingular, the actuator-equivalent residual follows from
+\begin{equation}
+N\T B\,r_u=N\T(M\hat a+c+G-Q_{\rm ext}-Q_f)-N\T B\,u_A.
+\end{equation}
+The basis choice cancels in the solution: replacing $N$ by $NR$ for invertible $R$ multiplies both sides by $R\T$. All rigid-body terms are constructed independently from the reference geometry and body properties. The position servo, including its supplied feedforward term and saturation, is reevaluated at the predicted actuator position and velocity. Stewart's six prismatic drives give force residuals in N; Delta's three rotary drives give torque residuals in N\,m. Physical energy uses the same body model, and power is $(Bu_A+Q_{\rm ext}+Q_f)\T\hat v$.
+
+\paragraph{Metrics and calibration.}
+Closure, $J\hat v$, and $J\hat a+\dot J\hat v$ use the maximum Euclidean attachment-gap norm over points and evaluated times. Their tolerances are 1 mm, 0.01 m/s, and 0.1 m/s$^2$. Point error is Euclidean RMSE over all future samples and the specified markers: platform center plus rod origins for Stewart; platform center, elbows, and distal rod endpoints for Delta. Its tolerance is 10 mm. Effort RMSE averages actuator channels and evaluated times, with thresholds 7.5 N and 0.75 N\,m. The energy threshold is $0.01u_{\max}\sum_j\operatorname{range}(q_{{\rm cmd},j})$, using each registered command trajectory.
+
+Generalized velocities use centered configuration differences; a seven-frame, degree-three Savitzky--Golay filter smooths velocities and differentiates them for acceleration. Point prediction uses frames 3--119 (zero-based); differentiated mechanics uses frames 3--116, and work is anchored at frame 3. All 150 reference trajectories per family meet the six criteria with either exact or 30 Hz sampled derivatives. For sampled derivatives, maximum effort errors are 0.0765 N for Stewart and 0.0220 N\,m for Delta, with maximum energy defects of 0.0530 and 0.0681 J. Exact recorded derivatives give maximal effort residuals of $6.20\times10^{-14}$ N and $1.11\times10^{-14}$ N\,m, respectively.
+
+\paragraph{Reconstruction and coverage.}
+The post-hoc intervention retains Stewart's predicted platform pose or Delta's predicted platform position and reconstructs the legs on the declared branch after the complete rollout. CAD/IK reconstruction succeeds on 450/450 Stewart and 450/450 Delta forecasts; differentiated-constraint checks leave 450 and 432 mechanically measurable cases. Mean coordinate corrections are 2.32/2.64 mm for Stewart/Delta, and reconstructed point errors are 31.75/25.68 mm (Table~\ref{app:spatial-ac-seeds}). Scores retain all 450 forecasts per family; SI residuals average mechanically measurable cases within each seed and then weight seeds equally.
+
+\paragraph{Paired prediction and interpretation.}
+The mean native-minus-persistence point error is $+2.57$ mm for Stewart and $+4.49$ mm for Delta. The corresponding 95\% intervals are $[-0.18,6.64]$ and $[2.21,7.62]$ mm. We use 10,000 hierarchical bootstrap draws, resampling the three training seeds and 50 test identities while retaining all three conditions of each identity together. The readout contrasts below hold the predicted feature trajectories fixed, isolating how coordinate recovery changes these forecasts' physical measurements.
+
+The public camera framing uses the source trajectory bounds, and controller feedforward is supplied as part of the calibrated command rule. Future reference states, measured actuator forces, masses, inertias, and friction coefficients are reserved for evaluation. Spatial results use their own actuator scales and sampling definitions alongside the planar study's common diagnostic categories.
+
+\begin{table}[t]
+\caption{V-JEPA + AC on 50 test assemblies per family, three conditions and three seeds. Scores give the mean $\pm$ seed SD; coverage retains all 450 forecasts. CAD reconstruction is a separate intervention.}
+\label{app:spatial-ac-scores}
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Family & Native $S_{\rm comp}$ & CAD $S_{\rm comp}$ & Mech. & Joint\\
+\midrule
+\input{tables/spatial_ac_rows}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table*}[t]
+\caption{V-JEPA + AC by seed on 150 trajectories per family. Point errors and correction costs are in mm; effort is in N for Stewart and N\,m for Delta, and energy is in J. All scores retain the full registered denominator; CAD residuals average mechanically measurable cases.}
+\label{app:spatial-ac-seeds}
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Family & Seed & Native $S_{\rm comp}$ & CAD $S_{\rm comp}$ & Mech. & Correction & Raw point & CAD point & Effort & Energy\\
+\midrule
+\input{tables/spatial_ac_seed_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Frozen-feature readout intervention}
+\label{app:ac-readout}
+To separate coordinate recovery from feature forecasting, we decode all 900 saved AC rollouts with both the internal feedback head and the fixed calibrated measurement head. The internal head provides all recurrent state feedback throughout the rollout. All readout contrasts use the same saved feature trajectories from FP32 checkpoints with BF16 forecast arithmetic, and alternative heads are applied after the complete rollout. Correct-video features pass through the same heads, CAD reconstruction, and 30 Hz differentiator as predicted features, so each mechanical comparison pairs the same trajectory and measurement path.
+
+The CAD-coordinate head estimates offsets from the public nominal configuration, using the training protocol in Section~\ref{app:lingbot}. For Delta, a reset-relative linear head instead maps feature changes from the first observed frame to coordinate changes from the known reset pose. It is fitted on 12 front-view training clips at 384 pixels. Six disjoint calibration clips select ridge regularization from $\{10^{-4},10^{-3},10^{-2},10^{-1},1\}$ by coordinate, velocity, and acceleration error; six further clips provide independent verification. This readout retains framewise coordinates without smoothing or geometric projection, and its objective uses coordinate supervision. Inverse kinematics remains a separate intervention applied to every head. Table~\ref{app:ac-readout-table} retains all 450 forecasts per family. Reference replay comprises 150 distinct videos with the shared calibrated head, and $150\times3$ measurements with the seed-specific internal heads.
+
+\begin{table*}[t]
+\caption{Three independently trained AC predictors with internal and calibrated physical readouts. Reference and forecast features share each measurement head. Point errors are in mm; effort is in N for Stewart and N\,m for Delta, and energy is in J. Raw/CAD scores distinguish unconstrained decoded coordinates from their subsequent CAD/IK reconstruction. SI residuals average the mechanically measurable cases.}
+\label{app:ac-readout-table}
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllrrrrrrr}
+\toprule
+Family & Readout & Input & \multicolumn{2}{c}{Point RMSE} & \multicolumn{2}{c}{$S_{\rm comp}$} & \multicolumn{3}{c}{After CAD reconstruction}\\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(l){8-10}
+& & & Raw & CAD & Raw & CAD & Mech. & Effort & Energy\\
+\midrule
+\input{tables/vjepa_readout_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Correct-video closure residuals average 2.41/3.12 mm for Stewart/Delta before reconstruction, locating part of the native admissibility gap in coordinate recovery. Matched replay then quantifies the measurement floor for force and energy: Table~\ref{app:ac-reference} pairs reference and forecast residuals on the same mechanically measurable reconstructed trajectories. The score denominator remains all 450 forecasts, while the fixed-feature readout contrast isolates the contribution of coordinate recovery.
+
+\begin{table}[t]
+\caption{Matched AC reference and forecast mechanics after calibrated readout and CAD/IK reconstruction. Each mean first averages the measurable cases within a seed, then averages seeds. Effort is in N for Stewart and N\,m for Delta; energy is in J.}
+\label{app:ac-reference}
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrr}
+\toprule
+& & \multicolumn{2}{c}{Effort} & \multicolumn{2}{c}{Energy}\\
+Family & Pairs & Ref. & Pred. & Ref. & Pred.\\
+\midrule
+\input{tables/spatial_ac_reference_rows}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{LingBot-VA generation and fixed-budget adaptation}
+\label{app:lingbot}
+\paragraph{Cohort and model.}
+The generative study evaluates 50 Stewart and 50 Delta test assemblies. Each identity has low-speed, rated, and increased-load trajectories, giving 150 tests per family and 300 in total. Assembly identities are disjoint from the training and validation partitions; the three operating conditions remain grouped by identity. The same 210 Stewart and 60 Delta training videos cover five camera views, while testing uses the front view.
+
+We use the released LingBot-VA base model~\cite{li2026causal}, whose shared Transformer contains 5,088,872,670 parameters. Zero-shot generation uses the public base weights. Adaptation updates all Transformer parameters with the native joint video/action flow-matching objective, while freezing the VAE and text encoder. Each 120-frame training video is resized to $256\times256$; repeating its last frame gives 121 frames for VAE encoding into 31 latent frames.
+
+\paragraph{Training and replication.}
+Each of seeds 42, 43, and 44 starts independently from the pretrained weights and completes 50 updates. AdamW uses learning rate $10^{-5}$, $\beta=(0.9,0.95)$, weight decay 0.1, and $\epsilon=10^{-8}$, with ten warmup updates. Microbatch size one and eight-step gradient accumulation give effective batch size eight and 400 sequence exposures per seed. Parameters and optimizer states use FP32, with BF16 forward arithmetic. We evaluate the prescribed 0- and 50-update checkpoints. Table~\ref{app:lingbot-seeds} reports all three repetitions; score dispersion is the sample standard deviation across seeds.
+
+\paragraph{Native causal generation and command interface.}
+Each test uses the last image of the common three-frame prefix as LingBot's single-image initialization. The remaining 117 frames are generated at 30 Hz and $256\times256$ using eight chunks of four latent frames, five video denoising steps, and classifier-free guidance scale five. Public actuator position commands are resampled to 60 Hz and normalized by the training set's first and 99th percentiles for each family. Stewart occupies action channels 14--19 and Delta channels 14--16, with zero-based indexing; unused channels are zero-filled and masked in the training loss. The native causal order generates each video chunk before inserting its known planned commands into the action cache for subsequent chunks. Generation seeds are paired by training-seed/test-case identity across checkpoints. The three zero-shot repetitions share the base weights and vary generation randomness; the adapted repetitions additionally vary training randomness. All 1,800 videos are finite, comprising 210,600 generated future frames.
+
+\paragraph{Calibrated RGB readout.}
+Both reference and generated images enter the same frozen V-JEPA 2.1-B/16 encoder at 384 pixels. Stewart uses a CAD-coordinate head trained for 240 epochs on front-view training videos at 256 and 384 pixels, with AdamW, learning rate $3\times10^{-4}$ decaying to $3\times10^{-6}$, and weight decay $10^{-4}$. Its six-clip verification point RMSE is 2.65 mm.
+
+Delta uses the public CAD reset pose and the observed first frame to anchor absolute position. A linear ridge head maps differences from the first-frame features to unconstrained coordinate offsets; training uses the 12 original front-view training videos. Six calibration clips select the ridge coefficient from $\{10^{-4},10^{-3},10^{-2},10^{-1},1\}$ by position and derivative errors, choosing $10^{-2}$ after kernel-trace normalization. Six disjoint verification clips assess the frozen configuration. No force, energy, or closure objective enters this fit.
+
+For the orthographic camera, platform surface correspondences provide motion in the image plane, while feature regression supplies depth along the camera axis. Nominal CAD visibility defines candidate surface pixels; pyramidal Lucas--Kanade tracking uses a nine-pixel window, three pyramid levels, and a 0.35-pixel forward--backward check. The median displacement of at least four valid correspondences determines image-plane translation. Coordinates remain framewise; the registered derivative estimator is applied during auditing. Native coordinates are scored before the separate CAD/IK reconstruction.
+
+\paragraph{Image prediction and persistence.}
+Whole-image RGB MSE averages all pixels and channels in $[0,1]$ over the 117 future frames, then weights test cases equally. The motion mask contains pixels whose reference future RGB differs from the last observed image by more than $2/255$ in any channel. Last-frame image persistence gives MSE $29.92/13.73\times10^{-4}$ and motion-mask MSE $2.512/1.447\times10^{-2}$ for Stewart/Delta. Both checkpoints exceed these baselines. Adaptation lowers whole-image MSE by 12.6\%/2.1\%, while motion-mask MSE increases by 4.0\%/7.2\%. The improvement in global image similarity therefore does not extend to the moving foreground.
+
+Point persistence freezes the last physical readout of each sequence. Figure~6c in the main paper plots every finite forecast's point error minus its own persistence error. The means remain close to zero for Stewart and positive for Delta; reconstructed point RMSE at 50 updates is 29.92/23.24 mm. These paired comparisons retain identical future time supports and coordinate definitions.
+
+\begin{table*}[t]
+\caption{LingBot results by seed on 150 test trajectories per family. RGB MSE uses $10^{-4}$ units and motion-mask MSE $10^{-2}$. Native and CAD scores retain all 150 cases; force and energy means use the mechanically measurable CAD subset. Effort is in N for Stewart and N\,m for Delta; energy is in J.}
+\label{app:lingbot-seeds}
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Family & Updates & Seed & RGB & Motion & Native $S_{\rm comp}$ & CAD $S_{\rm comp}$ & Mech. & Effort & Energy\\
+\midrule
+\input{tables/spatial_expansion_seed_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{Reconstruction and coverage.}
+The frozen measurement path, engineering targets, and CAD/IK intervention are common to both checkpoints. Every available native readout violates closure, so native mechanics coverage is zero. Stewart supplies 450/450 finite native readouts and mechanically measurable reconstructions at each checkpoint. Delta's finite native readouts increase from 374 to 442 out of 450. Its reachable reconstructions increase from 372 to 428, and differentiated-constraint checks leave 359 and 424 mechanically measurable cases. Unavailable readouts and failed reconstructions remain in the full score denominator.
+
+Table~\ref{app:lingbot-components} separates correction cost from the six reconstructed contributions. Stewart's reconstructed $S_{\rm comp}$ stays near 54; Delta rises from $43.37\pm1.17$ to $51.92\pm1.17$. The latter gain is concentrated in coverage and kinematic consistency: its effort contribution remains below 0.4 out of 100. Strict joint qualification is zero for every seed, family, checkpoint, and measurement track. Reference replay below measures the image-to-mechanics instrument under the same conditions.
+
+\begin{table*}[t]
+\caption{LingBot reconstruction and score components. Counts pool three seeds (450 registered cases per row). Correction and point errors are in mm and average available cases within seed, then across seeds. $G,V,A,D,E,P$ are reconstructed closure, velocity, acceleration, effort, energy, and point scores on a 0--100 scale; their mean is $S_{\rm comp}$.}
+\label{app:lingbot-components}
+\centering\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llrrrrrrrrrrr}
+\toprule
+Family & Updates & Readout & Reach. & Correction & Point & CAD point & $G$ & $V$ & $A$ & $D$ & $E$ & $P$\\
+\midrule
+\input{tables/spatial_expansion_detail_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{Continuous scoring and measurement calibration}
+\label{app:measurement}
+\subsection{One continuous score at fixed engineering targets}
+Each criterion reduces a trajectory to its registered nonnegative SI error, which the continuous map $s(\rho)=100/(1+\rho^2)$ scores using $\rho=r/\tau$. For multiple channels, $\rho$ is the largest channel-wise error-to-tolerance ratio. The primary $S_{\rm comp}$ averages all six contributions over registered trajectories with equal condition, family, and seed weights. Missing measurements contribute zero to this fixed denominator and case count, while their raw physical errors are reported as N/A.
+
+The map assigns 100, 50, and 20 points at errors of zero, one, and two tolerances, respectively, capturing improvements such as KeyCLD's RK4 gains even when strict joint qualification remains zero. Three perfectly satisfied criteria contribute 50 points to the composite, while raw residuals, physical coverage, and the joint rate show which requirements still fail. Native predictions and reconstructed trajectories use the same scoring rule, with their results reported separately to expose the effect of correction.
+
+Reconstruction introduces public geometry into saved predictions. In the overview figure, KeyCLD at 256 pixels receives 50.00 points from reconstructed closure and its two differentiated constraints, and 3.10 from effort, energy, and tracking combined. Adapted LingBot receives 48.15 and 4.97 points from these respective groups, with missing cases retained. Their similar totals, 53.10 and 53.12, thus reflect different component profiles on different tasks. The planar and spatial targets normalize each task's engineering requirements; model comparisons within a task retain the same mechanisms, commands, and targets.
+
+Engineering targets describe the task, mechanism, and actuator. They remain fixed across models and input resolutions within a task; spatial effort and work targets use the registered actuator and command scales. Measurement calibration instead describes the camera, reader, derivative estimator, and operating range. We fit instruments on training identities, select processing on development references, and replay correct videos through the same path as generated videos. Reference replay reveals systematic bias and temporal variation. Measurement configurations are compared on identical reference videos and saved forecasts, with forecasting weights held fixed. Reference RMSE is neither subtracted from model RMSE nor used to enlarge engineering targets.
+
+For a calibrated horizontal field of view $L$, pixel spacing is $L/N$ when $L$ spans pixel edges, or $L/(N-1)$ when it spans first and last pixel centers. The planar corpus uses the latter convention with $L=1.30$ m. Pixel spacing converts image positions into meters, whereas localization accuracy depends on the reader and can be subpixel. Coordinate bias, covariance, temporal dependence, and the nonlinear measurement path govern propagation into velocity, acceleration, effort, and work. Hard geometric constraints independently determine rod-length preservation.
+
+\paragraph{Two sources of uncertainty.}
+Seed/assembly bootstrap intervals describe variation in model results under a fixed measurement path, while calibration quantiles characterize that path's reference errors. Whole-trajectory summaries preserve coordinate bias, centered spread, and temporal dependence. For the CAD-coordinate head, empirical 95th percentiles from six calibration clips per family are 2.39/3.79 mm on Stewart/Delta and cover 2/6 and 3/6 verification clips. This verification coverage measures the transfer of empirical error levels to new identities, complementing the bootstrap intervals on model performance.
+
+\subsection{64-pixel reference replay and independent readouts}
+The planar calibration partition contains 18 identities and 54 clips. We divide it by identity into nine calibration and nine verification mechanisms, retaining all three conditions per identity. Spatial readout calibration uses the eight original validation identities: four for calibration and four for verification, giving 12 clips in each group. Each spatial family therefore contributes six verification clips. We replay all 90 planar or 120 spatial frames, retain the registered future interval, and measure differentiation on a common interior support. Trajectory-level summaries retain temporal dependence. Development comparisons use these held-out references; frozen reference replay evaluates the 100 spatial test identities at each model's input resolution.
+
+KeyCLD's permutation and CON's affine map are parts of their declared model interfaces. To ablate their influence, an independent planar image reader predicts three unconstrained heatmaps from RGB alone. Its U-Net uses widths 16/32/64/96, GroupNorm, and soft-argmax coordinates. Training uses the 813 original training sequences, 32 epochs, batch 128, and AdamW with learning rate $0.002$ decaying to $0.0002$. It receives no geometry or physical constraints. Eight further epochs add a balanced mixture of clean and degraded training frames: Gaussian blur with $\sigma\in[0.2,1.5]$, contrast in $[0.5,1.1]$, and noise of $1/255$ standard deviation. Both checkpoints are evaluated on the same verification frames.
+
+\begin{table}[t]
+\caption{Planar reader ablation on 27 verification sequences. Entries are mean Euclidean point RMSE (mm). Augmentation targets image degradation without imposing closure.}
+\label{app:reader-quality}
+\centering\small
+\begin{tabular}{lrr}
+\toprule
+Reference image quality & Clean-trained & Augmented\\
+\midrule
+\input{tables/reader_quality_rows}
+\bottomrule
+\end{tabular}
+\end{table}
+
+Augmentation reduces degradation-induced errors while preserving about 2 mm clean-image precision (Table~\ref{app:reader-quality}). Applying this frozen reader to saved forecasts and paired correct videos reveals large forecast coordinate errors alongside 2.13 mm reference localization error. The discrepancy therefore persists through a common measurement path. Table~\ref{app:reader-paired} retains all registered cases, including 13 nonfinite KeyCLD forecasts.
+
+\begin{table}[t]
+\caption{Matched public-reader ablation, 108 planar test clips per seed. Point: Euclidean RMSE from the common frozen RGB reader; torque and energy: the projected phase diagnostic below. Means use finite cases. Reference replay measures the instrument's own residuals.}
+\label{app:reader-paired}
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrr}
+\toprule
+RGB source & Finite & \shortstack{Point\\(mm)} & \shortstack{Torque\\(N\,m)} & \shortstack{Energy\\(J)}\\
+\midrule
+\input{tables/reader_paired_rows}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Numerical differentiation and sensitivity controls}
+Exact sampled trajectories isolate differentiation from visual localization. On 54 independent 30 Hz references, a seven-frame cubic Savitzky--Golay estimator passes all six criteria on 40/54 trajectories. A quintic interpolating spline passes 54/54 on the same trajectories. Worst-case velocity and acceleration constraint errors fall from $0.0219$ m/s and $2.119$ m/s$^2$ to $0.000281$ m/s and $0.0249$ m/s$^2$. Its worst-case torque and energy errors are $0.00298$ N\,m and $0.01291$ J. A 5 mm radial displacement, $0.8\times$ time scaling, and a $0.5$ N\,m force offset remain detectable in all 54 controls.
+
+Differentiating image-derived coordinates also amplifies localization noise. For the geometric intervention only, we fit crank phase locally and reconstruct derivatives analytically on the manifold. We select window length and polynomial degree by development position, velocity, and acceleration error, subject to all 54 exact-state development trajectories still passing. This selects a seven-frame cubic phase estimator; a 21-frame cubic fit lowers image-derived residuals but fails the exact-state preservation requirement. Native point and closure errors are computed before this intervention.
+
+On the 27 clean verification clips, the phase estimator reduces mean reference-image torque error from 1.94 to 0.74 N\,m and energy error from 2.25 to 0.51 J. It preserves 54/54 exact-state passes and detects the time-scaling, 1 Hz phase, and force-offset controls. Its acceleration gain falls from 0.965 at 1 Hz to 0.720 at 3 Hz, motivating joint reporting with the unfiltered coordinate diagnostic. The remaining correct-video force and energy errors exceed engineering targets, so Table~\ref{app:reader-paired} characterizes the combined forecasting and RGB measurement path. Native-ODE derivatives and exact-state controls provide the complementary tests that isolate constitutive response from visual localization.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=.96\textwidth]{figures/calibration_overview.pdf}
+\caption{Measurement controls. (a) Planar reader training with and without degradation augmentation. (b) Exact-coordinate differentiation errors relative to engineering targets. (c) Absolute-coordinate and CAD-coordinate heads at 256-pixel input resolution. (d) Coordinate-spline and cubic-phase differentiation of correct videos. Identical reference trajectories separate measurement accuracy from forecasting performance; configuration details and sensitivity controls are given in the text.}
+\label{app:calibration-figure}
+\end{figure*}
+
+\subsection{Spatial coordinate-head comparisons}
+We compare two unconstrained coordinate readers on the same 256-pixel verification videos (Table~\ref{app:observer-ablation}). The absolute-coordinate head uses the state-regression configuration in Section~\ref{app:spatial}: 60 training epochs and all five training views. The CAD-coordinate head predicts free offsets from a public CAD origin, using front-view training at two input resolutions for 240 epochs (Section~\ref{app:lingbot}). Both share frozen V-JEPA features and use no closure loss or inverse-kinematics projection. This compares complete measurement configurations, including their training protocols. A third condition aligns the CAD-coordinate output with a known observed reset pose. The Stewart audit uses the CAD-coordinate head. Delta combines reset-relative feature regression with image-plane tracking, using the known reset pose; Table~\ref{app:delta-components} separates these components.
+
+\begin{table}[t]
+\caption{Coordinate-head verification, six clips per family. Point RMSE is in mm; coverage counts mechanically measurable reconstructions. The alignment row additionally uses a known initial pose.}
+\label{app:observer-ablation}
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrr}
+\toprule
+Configuration & Stewart & Delta & S cov. & D cov.\\
+\midrule
+\input{tables/observer_ablation_rows}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Delta measurement components.}
+The independent verification set isolates the contributions of reset-relative regression and image-plane tracking (Table~\ref{app:delta-components}). Tracking reduces torque residuals from 2.14 to 0.81 N\,m and work--energy defects from 0.83 to 0.18 J. Exact sampled-state controls give 0.014 N\,m and 0.023 J, separating numerical differentiation from image localization. A held-reset negative control has zero work defect but 12.13 N\,m torque error, illustrating why the effort and energy criteria complement each other.
+
+\begin{table}[t]
+\caption{Delta readout components on six independent verification clips. All rows use the same CAD reconstruction and derivative estimator. Point is full-marker Euclidean RMSE in mm; effort is in N\,m and energy in J. The held reset is a coordinate persistence control.}
+\label{app:delta-components}
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrr}
+\toprule
+Input / configuration & Point & Effort & Energy\\
+\midrule
+\input{tables/delta_measurement_rows}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Matched reference replay.}
+All 300 correct videos pass through the same frozen family-specific readout, CAD reconstruction, and derivative estimator as the generated videos. Reference reconstructions are mechanically measurable on all 150 trajectories per family. Their point RMSE is 1.83 mm for Stewart and 2.25 mm for Delta, compared with 29.92/23.24 mm for adapted generated videos. Exact-state and sampled-state controls quantify the numerical contribution independently of RGB localization (Table~\ref{app:spatial-controls}).
+
+Table~\ref{app:spatial-reference} pairs reference and generated mechanical residuals on identical cases within each seed. At 50 updates, generated effort error exceeds reference error on all 450 Stewart and 424 Delta pairs. The means are 3.009 versus 40.513 N and 0.733 versus 12.319 N\,m. Delta's sampled-state differentiation control contributes 0.0145 N\,m, so the large generated torque discrepancy is well separated from both numerical and correct-video residuals.
+
+Work--energy defects increase from 0.605 to 1.640 J for Stewart and from 0.203 to 1.206 J for Delta; the generated defect is larger on 390/450 and 330/424 pairs. Delta's 0.203 J paired reference residual includes RGB coordinate recovery, CAD reconstruction, and numerical processing; the sampled-state control yields 0.0253 J (Table~\ref{app:spatial-controls}). The reference RGB path meets the energy target on 48/150 Stewart and 63/150 Delta trajectories, whereas exact and sampled states pass throughout. These controls distinguish the full measurement error from its numerical contribution. The zero- and 50-update Delta means use different measurable subsets; their coverage and per-seed values accompany the mechanical summaries. The frozen-feature intervention in Section~\ref{app:ac-readout} provides the corresponding separation of coordinate recovery and predictive error for V-JEPA + AC.
+
+\begin{table}[t]
+\caption{Matched LingBot mechanics after CAD reconstruction. Reference and generated videos use identical cases and processing. Values average per-seed available-case means; $n$ pools the three seeds out of 450 registered cases. Effort is in N (Stewart) or N\,m (Delta); energy is in J.}
+\label{app:spatial-reference}
+\centering\small
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{llrrrrr}
+\toprule
+& & & \multicolumn{2}{c}{Effort RMS} & \multicolumn{2}{c}{Energy defect}\\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Family & Updates & $n$ & Ref. & Gen. & Ref. & Gen.\\
+\midrule
+\input{tables/spatial_reference_rows}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table*}[t]
+\caption{Spatial measurement controls on all 300 reference trajectories. Exact derivatives isolate the mechanics evaluator; 30 Hz configuration differences additionally test differentiation; reference RGB + CAD includes the frozen visual measurement path. Point RMSE is in mm, effort in N (Stewart) or N\,m (Delta), and energy in J. Pass counts use each family's 150 distinct trajectories.}
+\label{app:spatial-controls}
+\centering\small
+\begin{tabular}{llrrrrr}
+\toprule
+Family & Input & Point & Effort & Energy & Effort pass & Energy pass\\
+\midrule
+\input{tables/spatial_expansion_control_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{Matched 64/256-pixel experiments}
+\label{app:resolution}
+\subsection{Shared observations and native training budgets}
+The two resolutions sample the original $640\times640$ renders directly, using the same affine camera map, $1.30$ m field of view, frame times, actuator commands, physical labels, and assembly partitions. Each resolution contains 1,029 sequences: 813 training, 54 validation, 54 independent calibration, and 108 test sequences. Pixel-center spacing is $20.635/5.098$ mm at $64/256$ pixels. Localization can be subpixel, and the engineering tolerances remain identical across the two grids.
+
+All four model--resolution combinations complete three seeds (42--44), giving twelve video fits. Each resolution is trained from scratch and evaluated at the fixed final epoch. Table~\ref{app:resolution-budget} records the architecture size and optimization budget. CON retains its native dense image layers; KeyCLD retains its encoder, renderer, potential, input map, and point masses. The comparison therefore follows native model scaling with resolution. The fifteen exact-state fits are shared controls because their physical trajectories and objectives are independent of image size.
+
+\begin{table*}[t]
+\caption{Native video training at both resolutions. Counts are per seed; all rows use seeds 42--44 and the same 813 training sequences. Resolution changes image-layer capacity, while epochs, batches, sequence exposures, and the model-specific dynamical objectives stay fixed.}
+\label{app:resolution-budget}
+\centering\small
+\begin{tabular}{llrrrrrr}
+\toprule
+Model & Pixels & Parameters & Epochs & Batch & Updates & Sequence exposures & Forecast intervals\\
+\midrule
+KeyCLD & $64^2$ & 596,508 & 40 & 1 & 32,520 & 32,520 & 4 per window\\
+KeyCLD & $256^2$ & 2,378,268 & 40 & 1 & 32,520 & 32,520 & 4 per window\\
+CON & $64^2$ & 67,271,267 & 50 & 16 & 2,550 & 40,650 & 48 per sequence\\
+CON & $256^2$ & 1,075,870,307 & 50 & 16 & 2,550 & 40,650 & 48 per sequence\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+KeyCLD's reconstruction loss sums over pixels. Multiplying it by $(64/N)^2$ maintains its weight relative to the four-step dynamics and heatmap losses as width $N$ changes; the latter two weights remain one. CON's RGB losses already average over pixels and retain all released weights. Full-sequence objectives are accumulated before each update, using framewise rematerialization to control memory. Both resolutions use FP32 model training and the same registered optimization schedules. Forecasting uses the three-frame prefix and the common physical-time grid; no future reference state initializes a rollout.
+
+\subsection{Visual, coordinate, and continuous-score comparisons}
+Table~\ref{app:resolution-seeds} reports every seed and both measurement tracks. RGB and motion-mask errors average future frames 33--119, with the same temporal-variance mask rule at each resolution. Persistence is computed on the corresponding grid. Dividing each model's MSE by its same-resolution persistence MSE gives the normalized comparison in the main figure; it accounts for changes in the sampled image and foreground mask.
+
+\begin{table*}[t]
+\caption{All twelve native video fits. RGB MSE is in $10^{-4}$ and motion-mask MSE in $10^{-3}$. Continuous scores use the common six-term denominator, including zero contributions for unavailable terms. Each seed registers 108 test trajectories.}
+\label{app:resolution-seeds}
+\centering\small
+\begin{tabular}{llrrrrr}
+\toprule
+Model & Pixels & Seed & RGB MSE & Motion-mask MSE & Native $S_{\rm comp}$ & Reconstructed $S_{\rm comp}$\\
+\midrule
+\input{tables/resolution_seed_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+All 648 forecasts at 256 pixels are finite. Native physical coverage and joint qualification remain zero for both models at both resolutions. Table~\ref{app:resolution-components} explains the aggregate changes: velocity and acceleration consistency contribute most of the increased score, while physical point tracking remains poor. KeyCLD's native point RMSE changes from 229.2 to 233.9 mm, and CON's from 123.5 to 134.6 mm. Three-seed dispersion in Figure~\ref{app:resolution-ablation} complements the mean comparison.
+
+\begin{table*}[t]
+\caption{Continuous criterion scores (0--100), with equal seed/family/condition weighting. G/V/A are geometric, velocity, and acceleration consistency; F/E are effort and energy. Missing native F/E terms contribute zero. The arithmetic mean of the six component columns is native $S_{\rm comp}$.}
+\label{app:resolution-components}
+\centering\small
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Model & Pixels & G & V & A & F & E & Point & Native & Reconstructed\\
+\midrule
+\input{tables/resolution_component_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Geometric reconstruction requires mean coordinate corrections of 120.49/128.13 mm for KeyCLD at 64/256 pixels and 73.18/79.17 mm for CON. It restores complete measurement coverage for 311/324 and 324/324 KeyCLD cases, respectively, and 308/324 and 311/324 CON cases. At 256 pixels, reconstructed torque residuals average 6.229/6.691 N\,m and energy defects 1.201/10.470 J for KeyCLD/CON. Joint qualification remains zero. These measurements connect the improved appearance scores to the continuing cost of obtaining physically admissible motion.
+
+The six main-text time histories use S-A-109-P01 (low speed, seed 42), with the common crank readout and native derivatives at 240 Hz. Forecasting starts at 1.100 s; work is anchored at the last observed frame, 1.067 s.
+
+\subsection{Independent 256-pixel reader and derivative ablations}
+The independent U-Net retains widths 16/32/64/96, GroupNorm, and unconstrained soft-argmax joint coordinates. It is fitted on the 813 training sequences for 32 epochs with effective batch 128, Gaussian heatmap width 0.75 pixels, coordinate-loss weight 25, and learning rate $0.002$ decaying to $0.0002$. Training uses mixed precision with FP32 heatmaps/readouts. Evaluation uses FP32 with TF32 disabled. The frozen reader processes correct and generated RGB with the same settings.
+
+On the same 108 test clips, unprojected Euclidean point RMSE on correct RGB falls from 2.127 mm at 64 pixels to 0.334 mm at 256 pixels. Both values average each trajectory's Euclidean RMS over the same 87 future frames (1.100--3.967 s), using the reader calibrated for that resolution. The corresponding 256-pixel forecast errors are 194.994/208.454 mm for KeyCLD/CON, averaged over three seed means. This coordinate comparison precedes reconstruction and differentiation; Table~\ref{app:resolution-reader} reports maximum-channel SI errors on the common interior window.
+
+We compare Cartesian quintic differentiation, geometric reconstruction with Cartesian quintic derivatives, and geometric reconstruction with local cubic phase derivatives. Processing is selected on 54 validation sequences by position/velocity/acceleration error, subject to all 54 exact-coordinate references passing every SI criterion. The selected seven-frame cubic phase estimator is then checked on the independent 27 calibration and 27 verification sequences. It yields 16/27 and 14/27 joint passes on their correct RGB, while exact-coordinate replay retains 54/54 passes. Both resolutions use the same split roles; reader weights and derivative selection are frozen before testing.
+
+\begin{table*}[t]
+\caption{256-pixel measurement-path ablation on fixed videos. Correct RGB uses 108 unique test trajectories; each model uses 324 forecasts over three seeds. The same interior 80 frames (1.167--3.800 s) are evaluated throughout. Point is maximum-channel RMSE in mm; torque is in N\,m; energy is in J. Available-case means are balanced. Raw Cartesian force/energy means use only its 56 measurable reference clips; projected tracks use all registered clips.}
+\label{app:resolution-reader}
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrrrr}
+\toprule
+Video & Measurement path & $S_{\rm comp}$ & Coverage & Joint & Point & Torque & Energy\\
+\midrule
+\input{tables/resolution_reader_rows}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/resolution_ablation.pdf}
+\caption{Resolution and measurement-path ablations. (a--c) Each line connects one seed's 64/256-pixel results within a model; RGB uses same-resolution persistence, and point is native maximum-channel RMSE. (d--f) Frozen 256-pixel videos pass through Cartesian, projected-Cartesian, and projected-phase measurements; the score panel compares all three choices, while torque/energy compare the two projected paths on identical support. Scores retain every registered case; projected reference coverage is 108/108. Shaded bands mark engineering tolerances.}
+\label{app:resolution-ablation}
+\end{figure*}
+
+The phase path improves correct-video $S_{\rm comp}$ from 43.70 (Cartesian) and 82.69 (projected Cartesian) to 90.00, with 66/108 joint passes. It gives 0.144 mm point error, 0.116 N\,m torque error, and 0.057 J energy defect. Under that identical path, forecast point errors are 183.029/181.873 mm and torque residuals 6.565/6.585 N\,m for KeyCLD/CON. The 0.057 J reference energy defect remains close to the 0.05 J target, so paired energy values retain the instrument's contribution explicitly. Unprojected coordinates and the reconstructed SI paths thus expose a consistent gap between reference measurement accuracy and forecast accuracy.
+
+A future training objective could use the bounded penalty $\rho^2/(1+\rho^2)$ with fixed engineering scales, differentiable readout and work operators, and explicit invalid-state handling. The present experiments evaluate this continuous map after prediction.
+
+\FloatBarrier
+\clearpage
+{\small
+\bibliographystyle{ieeenat_fullname}
+\bibliography{references}
+}
+\end{document}

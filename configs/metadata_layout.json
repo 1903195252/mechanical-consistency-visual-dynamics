@@ -1,0 +1,18 @@
+{
+  "output/keycld_corpus/dataset_manifest.json": "data/manifests/planar.json",
+  "output/planar_resolution/256/dataset_manifest.json": "data/manifests/planar_256.json",
+  "output/model_expansion/spatial/dataset_manifest.json": "data/manifests/spatial_base.json",
+  "output/lingbot_expansion/dataset_manifest.json": "data/manifests/spatial_lingbot.json",
+  "output/vjepa_expansion/dataset_manifest.json": "data/manifests/spatial_vjepa.json",
+  "output/lingbot_expansion/training_manifest.json": "data/manifests/spatial_training.json",
+  "output/lingbot_expansion/protocol.json": "configs/lingbot.json",
+  "output/vjepa_expansion/protocol.json": "configs/vjepa.json",
+  "output/planar_resolution/protocol.json": "configs/planar_observations.json",
+  "output/planar_resolution/model_preflight.json": "configs/planar_capacity.json",
+  "output/keycld_corpus/protocol.json": "experiments/keycld_corpus/protocol.json",
+  "output/keycld_corpus/calibration.json": "results/planar/calibration.json",
+  "output/con_corpus/dynamics_extension/readout_calibration.json": "results/planar/readout_calibration.json",
+  "output/lingbot_expansion/measurement_protocol.json": "configs/spatial_measurement.json",
+  "output/model_expansion/lingbot_spatial/action_norm.json": "configs/lingbot_action_norm.json",
+  "output/model_expansion/lingbot_spatial/official_weight_manifest.json": "configs/lingbot_base_files.json"
+}

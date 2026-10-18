@@ -1,0 +1,574 @@
+{
+  "main": {
+    "pages": 9,
+    "US_Letter": true,
+    "anonymous_metadata": true,
+    "fonts_embedded": true,
+    "type3_fonts": false,
+    "unresolved_build_issues": [],
+    "references_start_page": 9,
+    "main_body_pages": 8,
+    "figure_table_pages": {
+      "fig:audit": 2,
+      "tab:criteria": 3,
+      "fig:mechanisms": 4,
+      "fig:shared-video": 5,
+      "tab:corpus": 5,
+      "tab:geometry-readout": 5,
+      "fig:corpus-residuals": 6,
+      "fig:constitutive": 7,
+      "fig:spatial": 8,
+      "tab:spatial": 8
+    },
+    "figure_count": 6,
+    "table_count": 3
+  },
+  "supplement": {
+    "pages": 26,
+    "US_Letter": true,
+    "anonymous_metadata": true,
+    "fonts_embedded": true,
+    "type3_fonts": false,
+    "unresolved_build_issues": [],
+    "references_start_page": 26,
+    "figure_count": 10,
+    "table_count": 35
+  },
+  "reference_order": {
+    "bibliography_order": "author_alphabetical",
+    "reference_keys": [
+      "assran2025vjepa2",
+      "bear2021physion",
+      "cranmer2020lagrangian",
+      "daems2024keycld",
+      "finzi2020constraints",
+      "gao2026lastexam",
+      "greydanus2019hamiltonian",
+      "gruver2022deconstructing",
+      "jain2026mechverse",
+      "jain2026rigidbench",
+      "li2025pisa",
+      "li2025worldmodelbench",
+      "li2026causal",
+      "lutter2019delan",
+      "motamed2026physicsiq",
+      "murlabadia2026vjepa2_1",
+      "stolzle2024con",
+      "todorov2012mujoco",
+      "toth2020hgn",
+      "tragoudaras2026morpheus",
+      "upadhyay2026worldbench",
+      "wang2026gauge",
+      "zhong2020images",
+      "zhong2020dissipative"
+    ],
+    "supplement_shares_main_numbers": true,
+    "style": "ieeenat_fullname",
+    "official_template_style": true,
+    "policy_checked_date": "2026-10-17",
+    "policy_source": "https://github.com/cvpr-org/author-kit/blob/main/sec/2_formatting.tex"
+  },
+  "rendered_figures": {
+    "unique_assembly_renders": 343,
+    "held_out_assemblies_highlighted": 36,
+    "atlas_display_identities": 36,
+    "atlas_grid_per_family": [
+      3,
+      4
+    ],
+    "motion_annotations_use_calibrated_poses": true,
+    "display_contrast_only": true,
+    "enlarged_examples": 3,
+    "spatial_examples": 2,
+    "drawio_native_image_cells": 3,
+    "assets_match_recorded_hashes": true,
+    "fig1_text_box_bounds": "Verified during deterministic diagram export",
+    "fig1_flow": {
+      "inputs_start_at_observation_nodes": true,
+      "shared_readout_bus": true,
+      "parallel_effort_energy_branches": true,
+      "kinematic_scores_bypass_mechanics_gate": true,
+      "evaluator_reference_has_no_path_to_models": true
+    },
+    "provenance": "sources/rendered_figure_sources.json"
+  },
+  "paired_resolution": {
+    "completed_256_runs": 6,
+    "full_budget_checkpoints": 6,
+    "forecast_files_recorded": 972,
+    "scored_256_test_cases": 648,
+    "case_component_values_recomputed": 7776,
+    "fixed_engineering_tolerances": [
+      0.001,
+      0.01,
+      0.1,
+      0.25,
+      0.05,
+      0.01
+    ],
+    "matched_case_identities": true,
+    "main_video_rows_verified": 4,
+    "merged_table_rows": 9,
+    "merged_table_original_cells_preserved": 135,
+    "common_reader_reference_cases": 108,
+    "reference_joint_passes": 66,
+    "model_joint_passes": 0,
+    "reference_duplicates_not_independent": true,
+    "raw_localization_comparison_verified": true,
+    "raw_localization_future_frames": 87,
+    "reference_localization_mm": [
+      2.127040140949257,
+      0.3337244830573288
+    ]
+  },
+  "four_model_overview": {
+    "criterion_scores_verified": 72,
+    "composite_summaries_verified": 12,
+    "mechanics_case_markers_verified": 6020,
+    "mechanics_cases": 3010,
+    "mechanics_quartile_boxes_verified": 12,
+    "coverage_counts": [
+      311,
+      324,
+      308,
+      311,
+      882,
+      874
+    ],
+    "protocol_groups": 2,
+    "criterion_mean_matches_composite": true,
+    "reference_50_is_not_joint_qualification": true,
+    "missing_terms_retained": true,
+    "canonical_scores_verified": true,
+    "source": "sources/model_overview.json"
+  },
+  "diagnostic_figure": {
+    "individual_error_bars": 150,
+    "test_trajectories": 50,
+    "readout_conditions": 3,
+    "unchanged_summary_statistics": true,
+    "source_hash_verified": true,
+    "provenance": "sources/diagnostic_figure_data.json"
+  },
+  "measured_dataset_dynamics": {
+    "test_cases": 108,
+    "conditions": 3,
+    "cases_per_condition": 36,
+    "interval_s": [
+      1.1,
+      3.966666666666667
+    ],
+    "source_hashes_and_trajectory_statistics_verified": true,
+    "absolute_work_is_excitation_not_energy_defect": true
+  },
+  "new_physical_visualizations": {
+    "assembly_coverage": 343,
+    "parameter_files_verified": 1029,
+    "state_checkpoints": 6,
+    "query_states_per_checkpoint": 648,
+    "kinetic_reference_poses": 44280,
+    "scope_and_source_hashes_verified": true
+  },
+  "visual_analysis": {
+    "test_trajectories": 50,
+    "source_hashes_verified": true,
+    "motion_area_percent": 17.06,
+    "motion_error_share_percent": 95.74,
+    "local_prediction_bootstrap": "2000 paired trajectory draws, seed 20261013",
+    "validation_error_and_test_coverage_distinguished": true
+  },
+  "corpus_evidence": {
+    "prediction_archives_checked": 1458,
+    "training_runs": 9,
+    "unique_evaluated_assemblies": 343,
+    "test_assemblies": 36,
+    "test_predictions_per_arm": 324,
+    "same_initialization_within_seed": true,
+    "original_physical_thresholds_preserved": true,
+    "controller_scale_clarification": "S-A/S-B use 5 Nm; S-J uses 12 Nm; 0.25 Nm remains the common absolute criterion"
+  },
+  "con_evidence": {
+    "training_runs": 6,
+    "per_case_test_reports_verified": 648,
+    "reported_prediction_archives": 972,
+    "same_manifest_calibration_thresholds_and_case_ids": true,
+    "training_inference_scoring_checkpoint_identities_match": true,
+    "both_arms_complete_physical_coverage": 0,
+    "force_energy_retained_as_unavailable": true,
+    "rgb_mse_reduction_percent": 37.645585347656294,
+    "raw_archive_recovery_verified": true
+  },
+  "dynamics_extension": {
+    "new_training_runs": 6,
+    "new_native_predictions_verified": 972,
+    "additional_trajectory_files_verified": 2877,
+    "raw_and_readout_case_pairs": 2268,
+    "fixed_inference_trajectories": 3888,
+    "paired_initialization_and_all_epoch_orders": true,
+    "raw_scores_reproduced": true,
+    "physical_readout_is_explicit_intervention": true,
+    "native_CON_force_energy_missingness_preserved": true
+  },
+  "main_two_model_visuals": {
+    "paired_integrator_panels": 6,
+    "paired_case_counts": [
+      324,
+      324,
+      324,
+      324,
+      315,
+      315
+    ],
+    "pass_region_is_per_criterion": true,
+    "energy_scatter_min_J": 0.01,
+    "annotated_means_and_paired_intervals_verified": true,
+    "native_and_geometric_readout_labels_verified": true,
+    "shared_control_readout_table_values_verified": true,
+    "shared_family_palette_markers_fonts_and_SI_axes": true,
+    "provenance": "sources/integrator_comparison_data.json and sources/dynamics_extension_evidence.json"
+  },
+  "revised_main_evidence": {
+    "visual_future_frames": [
+      33,
+      119
+    ],
+    "finite_forecasts": [
+      311,
+      324,
+      324,
+      324
+    ],
+    "visual_order": [
+      "KeyCLD 64",
+      "KeyCLD 256",
+      "CON 64",
+      "CON 256"
+    ],
+    "motion_mask_ratios_and_paired_RGB_mechanics_in_main_figure": true,
+    "native_main_table_arms": 9,
+    "native_readout_failures_unchanged": true,
+    "readout_point_column_checked": true,
+    "constitutive_panels": 3,
+    "capacity_diagnostic_insets": 2,
+    "geometric_correction_plot_page": 5,
+    "gain_check_failures_retained": true,
+    "same_case_dynamics_curves": 6,
+    "resolution_video_curves": 4,
+    "shared_state_curves": 2,
+    "matched_times_reconstruction_and_energy_anchor_verified": true,
+    "CON_in_method_visual_integrator_and_geometric_readout_comparisons": true,
+    "training_runs_checked": 27,
+    "training_budget_records": [
+      {
+        "model": "keycld",
+        "arm": "video_euler",
+        "seed": 42,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "keycld",
+        "arm": "video_euler",
+        "seed": 43,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "keycld",
+        "arm": "video_euler",
+        "seed": 44,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "keycld",
+        "arm": "state_euler",
+        "seed": 42,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "keycld",
+        "arm": "state_euler",
+        "seed": 43,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "keycld",
+        "arm": "state_euler",
+        "seed": 44,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "keycld",
+        "arm": "state_rk4",
+        "seed": 42,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "keycld",
+        "arm": "state_rk4",
+        "seed": 43,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "keycld",
+        "arm": "state_rk4",
+        "seed": 44,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "con",
+        "arm": "video_con_iae",
+        "seed": 42,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con",
+        "arm": "video_con_iae",
+        "seed": 43,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con",
+        "arm": "video_con_iae",
+        "seed": 44,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con",
+        "arm": "state_con_iae",
+        "seed": 42,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con",
+        "arm": "state_con_iae",
+        "seed": 43,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con",
+        "arm": "state_con_iae",
+        "seed": 44,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con_integrator",
+        "arm": "state_euler_con_iae",
+        "seed": 42,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con_integrator",
+        "arm": "state_euler_con_iae",
+        "seed": 43,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con_integrator",
+        "arm": "state_euler_con_iae",
+        "seed": 44,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con_integrator",
+        "arm": "state_rk4_con_iae",
+        "seed": 42,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con_integrator",
+        "arm": "state_rk4_con_iae",
+        "seed": 43,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con_integrator",
+        "arm": "state_rk4_con_iae",
+        "seed": 44,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "keycld",
+        "arm": "video_256",
+        "seed": 42,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "keycld",
+        "arm": "video_256",
+        "seed": 43,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "keycld",
+        "arm": "video_256",
+        "seed": 44,
+        "epochs": 40,
+        "updates": 32520,
+        "sequence_exposures": 32520
+      },
+      {
+        "model": "con",
+        "arm": "video_256",
+        "seed": 42,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con",
+        "arm": "video_256",
+        "seed": 43,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      },
+      {
+        "model": "con",
+        "arm": "video_256",
+        "seed": 44,
+        "epochs": 50,
+        "updates": 2550,
+        "sequence_exposures": 40650
+      }
+    ],
+    "equal_compute_or_convergence_not_asserted": true
+  },
+  "lingbot_spatial_extension": {
+    "test_assemblies": 100,
+    "test_trajectories": 300,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "checkpoints": [
+      0,
+      50
+    ],
+    "generated_videos": 1800,
+    "reference_videos": 300,
+    "updates_per_seed": 50,
+    "exposures_per_seed": 400,
+    "main_table_cells": 42,
+    "supplement_cells": 242,
+    "adaptation_points": 1800,
+    "matched_mechanics_points": 1748,
+    "all_scores_recomputed_from_case_errors": true,
+    "failures_retained": true,
+    "source_hashes_verified": true,
+    "paired_reference_measurements_verified": true,
+    "paired_ratio_distributions_verified": true,
+    "geometry_overlays_verified": true,
+    "zoom_membership_verified": true,
+    "predictive_cohort_matched": true,
+    "old_lingbot_results_removed": true
+  },
+  "method_comparisons": {
+    "historical_observer_labels_removed": true,
+    "training_configuration_differences_disclosed": true
+  },
+  "unified_scoring": {
+    "version": "continuous-si-1",
+    "primary_score": "continuous engineering-tolerance ratio",
+    "binary_composite_active": false,
+    "measurement_normalized_alternate_score": false,
+    "nine_main_arm_scores_verified": true,
+    "eight_lingbot_main_scores_and_separate_AC_scores_verified": true,
+    "reference_replay_numbers_verified": true,
+    "calibration_quantiles_distinguished_from_confidence_intervals": true,
+    "paired_observer_results_in_supplement": true,
+    "high_resolution_model_training_completed": true,
+    "completed_resolutions_px": [
+      64,
+      256
+    ]
+  },
+  "vjepa_expansion": {
+    "test_assemblies": 100,
+    "test_trajectories": 300,
+    "forecasts": 900,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "family_fits": 6,
+    "exposures_per_family_seed": 3000,
+    "reference_videos": 300,
+    "numerical_reference_cases": 300,
+    "exact_and_sampled_reference_checks_passed": true,
+    "readout_case_measurements": 3000,
+    "shared_lingbot_test_cohort": true,
+    "calibration_disjoint": true,
+    "all_table_cells_recomputed": true
+  },
+  "checked_client_date": "2026-10-17",
+  "format_basis": "Official CVPR2026-v1(latex), revision 12909ae; generic anonymous CVPR draft",
+  "official_template": "https://github.com/cvpr-org/author-kit",
+  "official_page_rule": "https://cvpr.thecvf.com/Conferences/2026/AuthorGuidelines",
+  "year_specific_submission_readiness": "Not asserted; user requested CVPR format without selecting a submission year",
+  "citation_entries": 24,
+  "cited_entries": 24,
+  "evidence_counts_and_headline_values_checked": true,
+  "style_file_unchanged": "cvpr.sty and ieeenat_fullname.bst retained from the official revision; compatibility fix is isolated in preamble.tex",
+  "remaining_submission_metadata": [
+    "Author identities for a final version",
+    "Actual submission ID when registered"
+  ],
+  "scientific_scope": [
+    "Matched assembly data for KeyCLD and CON with distinct native budgets and physical readouts",
+    "Two architectures, four video resolution settings and five shared state arms, twenty-seven completed training runs",
+    "343 evaluated assemblies, three planar families, two joint topologies",
+    "Three corpus training seeds",
+    "Paired integration controls in both models; KeyCLD-specific friction and calibrated actuator interventions",
+    "CON periodic-regime migration and privileged affine-readout diagnostics",
+    "Native ODE diagnostic track",
+    "V-JEPA 2.1 + AC: 50 test assemblies per family, three conditions and three training seeds, 3,000 exposures per family/seed, calibrated feature readout and matched reference controls",
+    "LingBot-VA shared 5.1B backbone: zero-shot and fixed-budget full-Transformer adaptation, 50 updates and 400 exposures per seed, three seeds, 100 held-out assemblies, frozen calibrated RGB readout"
+  ]
+}

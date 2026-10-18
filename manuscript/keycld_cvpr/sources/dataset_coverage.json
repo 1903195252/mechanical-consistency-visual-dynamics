@@ -1,0 +1,3123 @@
+{
+  "source": "output/keycld_corpus/dataset_manifest.json",
+  "source_sha256": "231fd49b3837605a01906d66eabd951b296153ec700feff87dd4db4737d2827c",
+  "physical_parameter_hashes_verified": 1029,
+  "inertia_source": "output/keycld_corpus/kinetic_capacity_audit.json",
+  "inertia_source_sha256": "255f8e5736c11362181ef775cf133ed6715c4bae694279bc722b0857acef2789",
+  "assemblies": 343,
+  "splits": {
+    "test": 36,
+    "validation": 18,
+    "calibration": 18,
+    "train": 271
+  },
+  "sequence_counts": {
+    "train": 813,
+    "calibration": 54,
+    "validation": 54,
+    "test": 108
+  },
+  "poses_per_inertia_summary": 41,
+  "operating_conditions": {
+    "speed_rad_s": [
+      1,
+      3,
+      5
+    ],
+    "payload_multiplier": [
+      1,
+      1,
+      1.75
+    ]
+  },
+  "scope": "Rated-condition physical parameters; moving-body masses include mounted payload exactly once; median reduced inertia uses 41 recorded poses.",
+  "rows": [
+    {
+      "assembly_id": "S-A-001-P01",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 102.15110821934026,
+      "coupler_crank_length_ratio": 3.1099329629159307,
+      "moving_mass_kg": 1.1025898855112974,
+      "median_reduced_inertia_kg_m2": 0.0042999534379790484
+    },
+    {
+      "assembly_id": "S-A-002-P02",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 104.69438411719638,
+      "coupler_crank_length_ratio": 3.2578024673172545,
+      "moving_mass_kg": 1.0668657930857603,
+      "median_reduced_inertia_kg_m2": 0.004525467011122111
+    },
+    {
+      "assembly_id": "S-A-003-P03",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 129.1971544318796,
+      "coupler_crank_length_ratio": 3.2350902836635,
+      "moving_mass_kg": 1.1263057444109381,
+      "median_reduced_inertia_kg_m2": 0.007060192264461834
+    },
+    {
+      "assembly_id": "S-A-004-P04",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 90.6211851772458,
+      "coupler_crank_length_ratio": 3.4620068889280455,
+      "moving_mass_kg": 0.9521514866745239,
+      "median_reduced_inertia_kg_m2": 0.002963402520030784
+    },
+    {
+      "assembly_id": "S-A-005-P05",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 109.72850003226837,
+      "coupler_crank_length_ratio": 3.27274658612877,
+      "moving_mass_kg": 1.102516037798699,
+      "median_reduced_inertia_kg_m2": 0.005101686774729184
+    },
+    {
+      "assembly_id": "S-A-006-P06",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 97.66687394621103,
+      "coupler_crank_length_ratio": 3.5581773514737343,
+      "moving_mass_kg": 1.3108819722700504,
+      "median_reduced_inertia_kg_m2": 0.0051229261033512545
+    },
+    {
+      "assembly_id": "S-A-007-P07",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 107.23488449052087,
+      "coupler_crank_length_ratio": 3.315828313000202,
+      "moving_mass_kg": 0.8551120183989054,
+      "median_reduced_inertia_kg_m2": 0.0034729526165513105
+    },
+    {
+      "assembly_id": "S-A-008-P08",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 117.52447813161493,
+      "coupler_crank_length_ratio": 3.370091691602771,
+      "moving_mass_kg": 1.0682601790612893,
+      "median_reduced_inertia_kg_m2": 0.0057129275518081205
+    },
+    {
+      "assembly_id": "S-A-009-P09",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 130.90059581607915,
+      "coupler_crank_length_ratio": 3.4068802450380242,
+      "moving_mass_kg": 1.1404192874563015,
+      "median_reduced_inertia_kg_m2": 0.00752811074690773
+    },
+    {
+      "assembly_id": "S-A-010-P10",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 125.82602305691474,
+      "coupler_crank_length_ratio": 2.9613671673854047,
+      "moving_mass_kg": 1.0117142211912533,
+      "median_reduced_inertia_kg_m2": 0.006009846582959826
+    },
+    {
+      "assembly_id": "S-A-011-P11",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 131.06569763273703,
+      "coupler_crank_length_ratio": 3.2527834164222735,
+      "moving_mass_kg": 1.3537077626772542,
+      "median_reduced_inertia_kg_m2": 0.009142597733972269
+    },
+    {
+      "assembly_id": "S-A-012-P12",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 128.8362059642793,
+      "coupler_crank_length_ratio": 2.9242290726466753,
+      "moving_mass_kg": 1.2036559520170618,
+      "median_reduced_inertia_kg_m2": 0.0076069176739220045
+    },
+    {
+      "assembly_id": "S-A-013-P01",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 131.61028818671357,
+      "coupler_crank_length_ratio": 3.204942655592415,
+      "moving_mass_kg": 1.3056837926154201,
+      "median_reduced_inertia_kg_m2": 0.00893303586850953
+    },
+    {
+      "assembly_id": "S-A-014-P02",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 104.70884173027252,
+      "coupler_crank_length_ratio": 3.500143432353643,
+      "moving_mass_kg": 0.9820860195802233,
+      "median_reduced_inertia_kg_m2": 0.004163166426281202
+    },
+    {
+      "assembly_id": "S-A-015-P03",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 114.0466097198125,
+      "coupler_crank_length_ratio": 3.5789804170075725,
+      "moving_mass_kg": 1.0640592069484818,
+      "median_reduced_inertia_kg_m2": 0.005431925453901276
+    },
+    {
+      "assembly_id": "S-A-016-P04",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 121.13649347473573,
+      "coupler_crank_length_ratio": 3.515388327908147,
+      "moving_mass_kg": 1.2152830869794526,
+      "median_reduced_inertia_kg_m2": 0.007018819479943416
+    },
+    {
+      "assembly_id": "S-A-017-P05",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 126.72706101414677,
+      "coupler_crank_length_ratio": 3.53950200370124,
+      "moving_mass_kg": 1.1408273420186417,
+      "median_reduced_inertia_kg_m2": 0.00702493555994647
+    },
+    {
+      "assembly_id": "S-A-018-P06",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 99.40959840834672,
+      "coupler_crank_length_ratio": 3.463336045135615,
+      "moving_mass_kg": 1.093767395882076,
+      "median_reduced_inertia_kg_m2": 0.004220847849947925
+    },
+    {
+      "assembly_id": "S-A-019-P07",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 123.83542076600853,
+      "coupler_crank_length_ratio": 3.5795124021762668,
+      "moving_mass_kg": 1.2207972023986222,
+      "median_reduced_inertia_kg_m2": 0.00712573401492547
+    },
+    {
+      "assembly_id": "S-A-020-P08",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 134.7492254821635,
+      "coupler_crank_length_ratio": 3.3399508987019635,
+      "moving_mass_kg": 1.1983051396933808,
+      "median_reduced_inertia_kg_m2": 0.008683644649529603
+    },
+    {
+      "assembly_id": "S-A-021-P09",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 135.49979139096266,
+      "coupler_crank_length_ratio": 3.1274115204870934,
+      "moving_mass_kg": 1.3739403295139325,
+      "median_reduced_inertia_kg_m2": 0.010185590889430822
+    },
+    {
+      "assembly_id": "S-A-022-P10",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 103.59981347573668,
+      "coupler_crank_length_ratio": 3.22195011020954,
+      "moving_mass_kg": 1.0030288400584602,
+      "median_reduced_inertia_kg_m2": 0.004059412241914638
+    },
+    {
+      "assembly_id": "S-A-023-P11",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 129.22366633905708,
+      "coupler_crank_length_ratio": 3.1232107331041097,
+      "moving_mass_kg": 1.3117349768182085,
+      "median_reduced_inertia_kg_m2": 0.008496538620319762
+    },
+    {
+      "assembly_id": "S-A-024-P12",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 120.6865459080296,
+      "coupler_crank_length_ratio": 3.3653139858169245,
+      "moving_mass_kg": 1.2301504845468307,
+      "median_reduced_inertia_kg_m2": 0.007042590044015201
+    },
+    {
+      "assembly_id": "S-A-025-P01",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 133.19456973036282,
+      "coupler_crank_length_ratio": 3.2246223240850984,
+      "moving_mass_kg": 1.298046717033211,
+      "median_reduced_inertia_kg_m2": 0.008425570589558602
+    },
+    {
+      "assembly_id": "S-A-026-P02",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 115.27649976148595,
+      "coupler_crank_length_ratio": 3.3831318979205545,
+      "moving_mass_kg": 1.2802286289256044,
+      "median_reduced_inertia_kg_m2": 0.006822274693350578
+    },
+    {
+      "assembly_id": "S-A-027-P03",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 131.96800758752318,
+      "coupler_crank_length_ratio": 3.190846853680266,
+      "moving_mass_kg": 0.9933493658535714,
+      "median_reduced_inertia_kg_m2": 0.006669195590190951
+    },
+    {
+      "assembly_id": "S-A-028-P04",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 151.3473470819605,
+      "coupler_crank_length_ratio": 2.880447501540582,
+      "moving_mass_kg": 1.1188437028431384,
+      "median_reduced_inertia_kg_m2": 0.009501059353723062
+    },
+    {
+      "assembly_id": "S-A-029-P05",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 104.04004660561587,
+      "coupler_crank_length_ratio": 2.9447925797442065,
+      "moving_mass_kg": 1.0828904299145645,
+      "median_reduced_inertia_kg_m2": 0.004467032384991035
+    },
+    {
+      "assembly_id": "S-A-030-P06",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 115.36118581500564,
+      "coupler_crank_length_ratio": 3.169614301455777,
+      "moving_mass_kg": 1.1844429257826947,
+      "median_reduced_inertia_kg_m2": 0.006179651017031656
+    },
+    {
+      "assembly_id": "S-A-031-P07",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 138.6422867422639,
+      "coupler_crank_length_ratio": 3.030087441972685,
+      "moving_mass_kg": 1.0824873870299057,
+      "median_reduced_inertia_kg_m2": 0.0076239450180411944
+    },
+    {
+      "assembly_id": "S-A-032-P08",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 148.98652743872495,
+      "coupler_crank_length_ratio": 2.959678529686271,
+      "moving_mass_kg": 1.2374419330024031,
+      "median_reduced_inertia_kg_m2": 0.01060336616239723
+    },
+    {
+      "assembly_id": "S-A-033-P09",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 148.71394064600983,
+      "coupler_crank_length_ratio": 2.9218500644752847,
+      "moving_mass_kg": 1.2546379080583725,
+      "median_reduced_inertia_kg_m2": 0.01002286929818536
+    },
+    {
+      "assembly_id": "S-A-034-P10",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 113.61002171918605,
+      "coupler_crank_length_ratio": 3.0400996103355227,
+      "moving_mass_kg": 1.0204235556027983,
+      "median_reduced_inertia_kg_m2": 0.004935278648514283
+    },
+    {
+      "assembly_id": "S-A-035-P11",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 134.15630361748399,
+      "coupler_crank_length_ratio": 3.2044963361289662,
+      "moving_mass_kg": 1.2782049362650536,
+      "median_reduced_inertia_kg_m2": 0.008866463903184477
+    },
+    {
+      "assembly_id": "S-A-036-P12",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 113.95740638330567,
+      "coupler_crank_length_ratio": 3.3979610677425165,
+      "moving_mass_kg": 1.2894991413023078,
+      "median_reduced_inertia_kg_m2": 0.006624094417842663
+    },
+    {
+      "assembly_id": "S-A-037-P01",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 109.52744525545768,
+      "coupler_crank_length_ratio": 3.144024543770031,
+      "moving_mass_kg": 1.1964071454274858,
+      "median_reduced_inertia_kg_m2": 0.005408319988367496
+    },
+    {
+      "assembly_id": "S-A-038-P02",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 118.62823332800787,
+      "coupler_crank_length_ratio": 2.9749300115321673,
+      "moving_mass_kg": 1.1066967172778437,
+      "median_reduced_inertia_kg_m2": 0.006009810688222409
+    },
+    {
+      "assembly_id": "S-A-039-P03",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 133.45763371126043,
+      "coupler_crank_length_ratio": 3.0923317860339705,
+      "moving_mass_kg": 1.40402368789251,
+      "median_reduced_inertia_kg_m2": 0.009966141264864236
+    },
+    {
+      "assembly_id": "S-A-040-P04",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 120.14170034761447,
+      "coupler_crank_length_ratio": 3.242759145266279,
+      "moving_mass_kg": 1.106022671831645,
+      "median_reduced_inertia_kg_m2": 0.006206897920793342
+    },
+    {
+      "assembly_id": "S-A-041-P05",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 112.14061114949477,
+      "coupler_crank_length_ratio": 3.69131176237418,
+      "moving_mass_kg": 1.099736591742203,
+      "median_reduced_inertia_kg_m2": 0.005425365725514796
+    },
+    {
+      "assembly_id": "S-A-042-P06",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 102.4290697548995,
+      "coupler_crank_length_ratio": 3.72777795612437,
+      "moving_mass_kg": 1.1865708313372436,
+      "median_reduced_inertia_kg_m2": 0.004984027754086789
+    },
+    {
+      "assembly_id": "S-A-043-P07",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 136.64328280752184,
+      "coupler_crank_length_ratio": 3.3772395418169645,
+      "moving_mass_kg": 1.223777399655034,
+      "median_reduced_inertia_kg_m2": 0.008860004645234945
+    },
+    {
+      "assembly_id": "S-A-044-P08",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 97.57287213211336,
+      "coupler_crank_length_ratio": 3.244661432746453,
+      "moving_mass_kg": 1.0896989720534187,
+      "median_reduced_inertia_kg_m2": 0.003946660298631207
+    },
+    {
+      "assembly_id": "S-A-045-P09",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 90.68403219320606,
+      "coupler_crank_length_ratio": 3.467545810310982,
+      "moving_mass_kg": 0.8814607772205213,
+      "median_reduced_inertia_kg_m2": 0.0027096897280830174
+    },
+    {
+      "assembly_id": "S-A-046-P10",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 125.467305134566,
+      "coupler_crank_length_ratio": 3.2526116299124124,
+      "moving_mass_kg": 1.3561575959941798,
+      "median_reduced_inertia_kg_m2": 0.008388319743355195
+    },
+    {
+      "assembly_id": "S-A-047-P11",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 117.57824527022849,
+      "coupler_crank_length_ratio": 2.943600962897374,
+      "moving_mass_kg": 1.1905145286126784,
+      "median_reduced_inertia_kg_m2": 0.006305509455228718
+    },
+    {
+      "assembly_id": "S-A-048-P12",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 125.793710074639,
+      "coupler_crank_length_ratio": 3.089256776162502,
+      "moving_mass_kg": 1.151150807567901,
+      "median_reduced_inertia_kg_m2": 0.007087177697111059
+    },
+    {
+      "assembly_id": "S-A-049-P01",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 98.69216444616167,
+      "coupler_crank_length_ratio": 3.249941872424639,
+      "moving_mass_kg": 1.0084466243796562,
+      "median_reduced_inertia_kg_m2": 0.0037507457824546885
+    },
+    {
+      "assembly_id": "S-A-050-P02",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 116.69401276575283,
+      "coupler_crank_length_ratio": 3.142508960223411,
+      "moving_mass_kg": 1.1186061353153145,
+      "median_reduced_inertia_kg_m2": 0.0056141099330699815
+    },
+    {
+      "assembly_id": "S-A-051-P03",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 109.39695720329438,
+      "coupler_crank_length_ratio": 3.5049704347126744,
+      "moving_mass_kg": 1.0985669640124371,
+      "median_reduced_inertia_kg_m2": 0.005159037185422531
+    },
+    {
+      "assembly_id": "S-A-052-P04",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 94.55707665684879,
+      "coupler_crank_length_ratio": 3.503662140604206,
+      "moving_mass_kg": 1.0929773094970316,
+      "median_reduced_inertia_kg_m2": 0.00380062152099326
+    },
+    {
+      "assembly_id": "S-A-053-P05",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 126.38031697297475,
+      "coupler_crank_length_ratio": 3.154825179121306,
+      "moving_mass_kg": 1.3245818827886053,
+      "median_reduced_inertia_kg_m2": 0.008190032242975893
+    },
+    {
+      "assembly_id": "S-A-054-P06",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 123.68084985162008,
+      "coupler_crank_length_ratio": 2.932167054041035,
+      "moving_mass_kg": 1.1829677677389003,
+      "median_reduced_inertia_kg_m2": 0.0067654501468832045
+    },
+    {
+      "assembly_id": "S-A-055-P07",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 131.89315496461307,
+      "coupler_crank_length_ratio": 2.903803347014965,
+      "moving_mass_kg": 1.1397200385440545,
+      "median_reduced_inertia_kg_m2": 0.007655596527278608
+    },
+    {
+      "assembly_id": "S-A-056-P08",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 140.76460302847647,
+      "coupler_crank_length_ratio": 3.157710278838768,
+      "moving_mass_kg": 1.3975519560704714,
+      "median_reduced_inertia_kg_m2": 0.011126003217304106
+    },
+    {
+      "assembly_id": "S-A-057-P09",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 131.287802660515,
+      "coupler_crank_length_ratio": 3.2883835501787986,
+      "moving_mass_kg": 1.379602743566399,
+      "median_reduced_inertia_kg_m2": 0.009541582953785635
+    },
+    {
+      "assembly_id": "S-A-058-P10",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 143.0129553987207,
+      "coupler_crank_length_ratio": 3.1963858361387327,
+      "moving_mass_kg": 1.0326444638749512,
+      "median_reduced_inertia_kg_m2": 0.007948355764941937
+    },
+    {
+      "assembly_id": "S-A-059-P11",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 101.24238477006682,
+      "coupler_crank_length_ratio": 3.2032067543389195,
+      "moving_mass_kg": 1.1990632632908849,
+      "median_reduced_inertia_kg_m2": 0.004615787083905476
+    },
+    {
+      "assembly_id": "S-A-060-P12",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 124.51435893249092,
+      "coupler_crank_length_ratio": 3.4589887899444043,
+      "moving_mass_kg": 1.1694631558431328,
+      "median_reduced_inertia_kg_m2": 0.007329968313638519
+    },
+    {
+      "assembly_id": "S-A-061-P01",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 103.39943109783249,
+      "coupler_crank_length_ratio": 3.4013505896269582,
+      "moving_mass_kg": 1.1720368307534719,
+      "median_reduced_inertia_kg_m2": 0.004845009020555958
+    },
+    {
+      "assembly_id": "S-A-062-P02",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 97.04815278023779,
+      "coupler_crank_length_ratio": 3.5775677816187574,
+      "moving_mass_kg": 1.0192004103585763,
+      "median_reduced_inertia_kg_m2": 0.0035839753874230247
+    },
+    {
+      "assembly_id": "S-A-063-P03",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 113.92682804375124,
+      "coupler_crank_length_ratio": 3.731536248667295,
+      "moving_mass_kg": 1.296595850882329,
+      "median_reduced_inertia_kg_m2": 0.006701500460736712
+    },
+    {
+      "assembly_id": "S-A-064-P04",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 122.42240535731156,
+      "coupler_crank_length_ratio": 2.9444373094495897,
+      "moving_mass_kg": 1.0796722274606967,
+      "median_reduced_inertia_kg_m2": 0.006037754087152979
+    },
+    {
+      "assembly_id": "S-A-065-P05",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 122.64215162362876,
+      "coupler_crank_length_ratio": 3.0744794518199963,
+      "moving_mass_kg": 1.0272793494292005,
+      "median_reduced_inertia_kg_m2": 0.005651050776078631
+    },
+    {
+      "assembly_id": "S-A-066-P06",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 94.59435372072517,
+      "coupler_crank_length_ratio": 3.4134361241200084,
+      "moving_mass_kg": 1.104604783755243,
+      "median_reduced_inertia_kg_m2": 0.003900663340957459
+    },
+    {
+      "assembly_id": "S-A-067-P07",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 126.49682499597125,
+      "coupler_crank_length_ratio": 3.3277365189448656,
+      "moving_mass_kg": 1.2074955482036773,
+      "median_reduced_inertia_kg_m2": 0.007517193842752976
+    },
+    {
+      "assembly_id": "S-A-068-P08",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 103.51575085728422,
+      "coupler_crank_length_ratio": 3.0871316543734837,
+      "moving_mass_kg": 0.980094487062831,
+      "median_reduced_inertia_kg_m2": 0.003912458696254584
+    },
+    {
+      "assembly_id": "S-A-069-P09",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 117.05035749005403,
+      "coupler_crank_length_ratio": 3.319432932298811,
+      "moving_mass_kg": 0.992930781018275,
+      "median_reduced_inertia_kg_m2": 0.005215975377679579
+    },
+    {
+      "assembly_id": "S-A-070-P10",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 101.24787020021765,
+      "coupler_crank_length_ratio": 3.1530309402771883,
+      "moving_mass_kg": 1.153154598968054,
+      "median_reduced_inertia_kg_m2": 0.004466367393860699
+    },
+    {
+      "assembly_id": "S-A-071-P11",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 138.88957154590375,
+      "coupler_crank_length_ratio": 3.021167765242967,
+      "moving_mass_kg": 1.0851868155326694,
+      "median_reduced_inertia_kg_m2": 0.007710844974064273
+    },
+    {
+      "assembly_id": "S-A-072-P12",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 119.04853889613439,
+      "coupler_crank_length_ratio": 3.4751746746899093,
+      "moving_mass_kg": 1.183069193823686,
+      "median_reduced_inertia_kg_m2": 0.006272139578689127
+    },
+    {
+      "assembly_id": "S-A-073-P01",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 132.24319292149994,
+      "coupler_crank_length_ratio": 3.2433411898529685,
+      "moving_mass_kg": 1.2408937147887502,
+      "median_reduced_inertia_kg_m2": 0.008354718257762348
+    },
+    {
+      "assembly_id": "S-A-074-P02",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 90.31672807283277,
+      "coupler_crank_length_ratio": 3.743637769617314,
+      "moving_mass_kg": 0.9142555171373965,
+      "median_reduced_inertia_kg_m2": 0.0029958521486561263
+    },
+    {
+      "assembly_id": "S-A-075-P03",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 109.1180090721009,
+      "coupler_crank_length_ratio": 3.522212802925295,
+      "moving_mass_kg": 1.0032548235703573,
+      "median_reduced_inertia_kg_m2": 0.004606315200758612
+    },
+    {
+      "assembly_id": "S-A-076-P04",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 102.42295646139156,
+      "coupler_crank_length_ratio": 3.2532993062225444,
+      "moving_mass_kg": 0.9181044151132272,
+      "median_reduced_inertia_kg_m2": 0.0036678892901939597
+    },
+    {
+      "assembly_id": "S-A-077-P05",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 86.22322102572382,
+      "coupler_crank_length_ratio": 3.633645326536338,
+      "moving_mass_kg": 0.9553471396682092,
+      "median_reduced_inertia_kg_m2": 0.00278765869453986
+    },
+    {
+      "assembly_id": "S-A-078-P06",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 107.82286603200934,
+      "coupler_crank_length_ratio": 3.2190244775294428,
+      "moving_mass_kg": 1.035131966702994,
+      "median_reduced_inertia_kg_m2": 0.004415062328710044
+    },
+    {
+      "assembly_id": "S-A-079-P07",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 117.4318155790815,
+      "coupler_crank_length_ratio": 3.0490130282730474,
+      "moving_mass_kg": 1.2173641688563042,
+      "median_reduced_inertia_kg_m2": 0.006330133554835382
+    },
+    {
+      "assembly_id": "S-A-080-P08",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 116.60178467912573,
+      "coupler_crank_length_ratio": 3.2006576511350087,
+      "moving_mass_kg": 1.187256232569337,
+      "median_reduced_inertia_kg_m2": 0.006180722322794051
+    },
+    {
+      "assembly_id": "S-A-081-P09",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 111.20653635726589,
+      "coupler_crank_length_ratio": 2.8637736056935834,
+      "moving_mass_kg": 0.9404342414545943,
+      "median_reduced_inertia_kg_m2": 0.004368373917910959
+    },
+    {
+      "assembly_id": "S-A-082-P10",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 129.16441445497622,
+      "coupler_crank_length_ratio": 3.0421845427629735,
+      "moving_mass_kg": 1.1310723588111218,
+      "median_reduced_inertia_kg_m2": 0.00702975200124596
+    },
+    {
+      "assembly_id": "S-A-083-P11",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 116.72267278065854,
+      "coupler_crank_length_ratio": 3.414946220434144,
+      "moving_mass_kg": 1.2943387252628944,
+      "median_reduced_inertia_kg_m2": 0.006961426583596761
+    },
+    {
+      "assembly_id": "S-A-084-P12",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 143.6583619401496,
+      "coupler_crank_length_ratio": 2.957438149575179,
+      "moving_mass_kg": 1.1859759207182698,
+      "median_reduced_inertia_kg_m2": 0.00908200088357933
+    },
+    {
+      "assembly_id": "S-A-085-P01",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 132.48224339759233,
+      "coupler_crank_length_ratio": 3.338481951267289,
+      "moving_mass_kg": 1.349562510016875,
+      "median_reduced_inertia_kg_m2": 0.008899835481066399
+    },
+    {
+      "assembly_id": "S-A-086-P02",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 118.11221118002608,
+      "coupler_crank_length_ratio": 3.131265347433006,
+      "moving_mass_kg": 1.015562629431844,
+      "median_reduced_inertia_kg_m2": 0.005152794125149685
+    },
+    {
+      "assembly_id": "S-A-087-P03",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 119.93887458356168,
+      "coupler_crank_length_ratio": 3.1155252453416638,
+      "moving_mass_kg": 1.382069695209597,
+      "median_reduced_inertia_kg_m2": 0.007825964220927033
+    },
+    {
+      "assembly_id": "S-A-088-P04",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 145.74210288619545,
+      "coupler_crank_length_ratio": 3.113045500057047,
+      "moving_mass_kg": 1.406587189653043,
+      "median_reduced_inertia_kg_m2": 0.011464907726631718
+    },
+    {
+      "assembly_id": "S-A-089-P05",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 101.84283434809448,
+      "coupler_crank_length_ratio": 3.182990952726547,
+      "moving_mass_kg": 0.8827437336138514,
+      "median_reduced_inertia_kg_m2": 0.00332672973442168
+    },
+    {
+      "assembly_id": "S-A-090-P06",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 113.60790931646488,
+      "coupler_crank_length_ratio": 3.5776381940081765,
+      "moving_mass_kg": 1.245581130236862,
+      "median_reduced_inertia_kg_m2": 0.0066219080491213165
+    },
+    {
+      "assembly_id": "S-A-091-P07",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 95.07452697316273,
+      "coupler_crank_length_ratio": 3.5643894486127192,
+      "moving_mass_kg": 0.9964474863251163,
+      "median_reduced_inertia_kg_m2": 0.003536757452436172
+    },
+    {
+      "assembly_id": "S-A-092-P08",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 136.52980454460464,
+      "coupler_crank_length_ratio": 3.0345002729624726,
+      "moving_mass_kg": 1.180698166005301,
+      "median_reduced_inertia_kg_m2": 0.008126100910615233
+    },
+    {
+      "assembly_id": "S-A-093-P09",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 109.97981401307376,
+      "coupler_crank_length_ratio": 3.3953532085195124,
+      "moving_mass_kg": 1.1212696467596759,
+      "median_reduced_inertia_kg_m2": 0.005316675320615708
+    },
+    {
+      "assembly_id": "S-A-094-P10",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 102.83939007449376,
+      "coupler_crank_length_ratio": 3.25628628333692,
+      "moving_mass_kg": 0.98942738146598,
+      "median_reduced_inertia_kg_m2": 0.004102794316698738
+    },
+    {
+      "assembly_id": "S-A-095-P11",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 127.49876607525923,
+      "coupler_crank_length_ratio": 3.1542951128206593,
+      "moving_mass_kg": 0.939851052800719,
+      "median_reduced_inertia_kg_m2": 0.005729144178770054
+    },
+    {
+      "assembly_id": "S-A-096-P12",
+      "family": "S-A",
+      "split": "train",
+      "crank_length_mm": 105.5373568710517,
+      "coupler_crank_length_ratio": 3.8093433221838624,
+      "moving_mass_kg": 1.0706371077184094,
+      "median_reduced_inertia_kg_m2": 0.00491252387367687
+    },
+    {
+      "assembly_id": "S-A-097-P01",
+      "family": "S-A",
+      "split": "calibration",
+      "crank_length_mm": 110.87159876409847,
+      "coupler_crank_length_ratio": 3.1086212221904153,
+      "moving_mass_kg": 1.061729860929642,
+      "median_reduced_inertia_kg_m2": 0.0046885203018480984
+    },
+    {
+      "assembly_id": "S-A-098-P02",
+      "family": "S-A",
+      "split": "calibration",
+      "crank_length_mm": 131.10562970529875,
+      "coupler_crank_length_ratio": 3.399297159926965,
+      "moving_mass_kg": 1.4453827441544176,
+      "median_reduced_inertia_kg_m2": 0.009922392610706755
+    },
+    {
+      "assembly_id": "S-A-099-P03",
+      "family": "S-A",
+      "split": "calibration",
+      "crank_length_mm": 97.40039952258162,
+      "coupler_crank_length_ratio": 3.5725333939562645,
+      "moving_mass_kg": 1.0426420082242793,
+      "median_reduced_inertia_kg_m2": 0.003778925207206636
+    },
+    {
+      "assembly_id": "S-A-100-P04",
+      "family": "S-A",
+      "split": "calibration",
+      "crank_length_mm": 123.44803724542777,
+      "coupler_crank_length_ratio": 2.9271790975797702,
+      "moving_mass_kg": 1.0758336949693097,
+      "median_reduced_inertia_kg_m2": 0.006180578031835945
+    },
+    {
+      "assembly_id": "S-A-101-P05",
+      "family": "S-A",
+      "split": "calibration",
+      "crank_length_mm": 116.68567254429983,
+      "coupler_crank_length_ratio": 3.4309774494931546,
+      "moving_mass_kg": 1.1182314785478034,
+      "median_reduced_inertia_kg_m2": 0.005855794982478029
+    },
+    {
+      "assembly_id": "S-A-102-P06",
+      "family": "S-A",
+      "split": "calibration",
+      "crank_length_mm": 105.70672829836101,
+      "coupler_crank_length_ratio": 3.451645275501308,
+      "moving_mass_kg": 1.0336071360377113,
+      "median_reduced_inertia_kg_m2": 0.004375547363478401
+    },
+    {
+      "assembly_id": "S-A-103-P07",
+      "family": "S-A",
+      "split": "validation",
+      "crank_length_mm": 123.55543048123592,
+      "coupler_crank_length_ratio": 3.4449687937556805,
+      "moving_mass_kg": 1.1271615323069408,
+      "median_reduced_inertia_kg_m2": 0.006594301061174864
+    },
+    {
+      "assembly_id": "S-A-104-P08",
+      "family": "S-A",
+      "split": "validation",
+      "crank_length_mm": 128.76311641646316,
+      "coupler_crank_length_ratio": 3.0810684664817427,
+      "moving_mass_kg": 1.342422985035291,
+      "median_reduced_inertia_kg_m2": 0.008346135156682939
+    },
+    {
+      "assembly_id": "S-A-105-P09",
+      "family": "S-A",
+      "split": "validation",
+      "crank_length_mm": 131.85456893538682,
+      "coupler_crank_length_ratio": 3.3337658021428704,
+      "moving_mass_kg": 1.4001884927049923,
+      "median_reduced_inertia_kg_m2": 0.009354180093721623
+    },
+    {
+      "assembly_id": "S-A-106-P10",
+      "family": "S-A",
+      "split": "validation",
+      "crank_length_mm": 99.68344776069671,
+      "coupler_crank_length_ratio": 3.3789140854874122,
+      "moving_mass_kg": 0.8484407731452963,
+      "median_reduced_inertia_kg_m2": 0.0031509571484616317
+    },
+    {
+      "assembly_id": "S-A-107-P11",
+      "family": "S-A",
+      "split": "validation",
+      "crank_length_mm": 102.71192936556224,
+      "coupler_crank_length_ratio": 3.6370484876924176,
+      "moving_mass_kg": 0.9322172339415215,
+      "median_reduced_inertia_kg_m2": 0.003698709020862834
+    },
+    {
+      "assembly_id": "S-A-108-P12",
+      "family": "S-A",
+      "split": "validation",
+      "crank_length_mm": 108.0536592125029,
+      "coupler_crank_length_ratio": 3.1345357942783494,
+      "moving_mass_kg": 0.899669740378561,
+      "median_reduced_inertia_kg_m2": 0.003879923366817785
+    },
+    {
+      "assembly_id": "S-A-109-P01",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 105.60332476689248,
+      "coupler_crank_length_ratio": 3.473534552642913,
+      "moving_mass_kg": 0.9197002920651537,
+      "median_reduced_inertia_kg_m2": 0.003720659456201393
+    },
+    {
+      "assembly_id": "S-A-110-P02",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 148.2926796592182,
+      "coupler_crank_length_ratio": 2.9882781956080473,
+      "moving_mass_kg": 1.1212288034748985,
+      "median_reduced_inertia_kg_m2": 0.009464654911860612
+    },
+    {
+      "assembly_id": "S-A-111-P03",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 120.70465082115867,
+      "coupler_crank_length_ratio": 3.5380735672319155,
+      "moving_mass_kg": 1.1165728357777636,
+      "median_reduced_inertia_kg_m2": 0.006407010110524191
+    },
+    {
+      "assembly_id": "S-A-112-P04",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 113.06622183689582,
+      "coupler_crank_length_ratio": 3.3985740874110615,
+      "moving_mass_kg": 1.2940630094796688,
+      "median_reduced_inertia_kg_m2": 0.006509920407690597
+    },
+    {
+      "assembly_id": "S-A-113-P05",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 146.20480077500875,
+      "coupler_crank_length_ratio": 3.079416683009273,
+      "moving_mass_kg": 1.4176198586402649,
+      "median_reduced_inertia_kg_m2": 0.011330575090780802
+    },
+    {
+      "assembly_id": "S-A-114-P06",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 125.55586840666888,
+      "coupler_crank_length_ratio": 2.910576748430706,
+      "moving_mass_kg": 1.1335139418580902,
+      "median_reduced_inertia_kg_m2": 0.006744720856706683
+    },
+    {
+      "assembly_id": "S-A-115-P07",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 107.73155527975307,
+      "coupler_crank_length_ratio": 3.504889293494414,
+      "moving_mass_kg": 0.8802569817240238,
+      "median_reduced_inertia_kg_m2": 0.0036459127028291988
+    },
+    {
+      "assembly_id": "S-A-116-P08",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 125.81187704338767,
+      "coupler_crank_length_ratio": 3.0920935398228644,
+      "moving_mass_kg": 1.1760108713829582,
+      "median_reduced_inertia_kg_m2": 0.007332875982987963
+    },
+    {
+      "assembly_id": "S-A-117-P09",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 106.24797264924659,
+      "coupler_crank_length_ratio": 3.328984138161079,
+      "moving_mass_kg": 1.1985582984549428,
+      "median_reduced_inertia_kg_m2": 0.005512123355674594
+    },
+    {
+      "assembly_id": "S-A-118-P10",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 126.27146537802234,
+      "coupler_crank_length_ratio": 3.522314946386116,
+      "moving_mass_kg": 1.3206238506242278,
+      "median_reduced_inertia_kg_m2": 0.008061277115610818
+    },
+    {
+      "assembly_id": "S-A-119-P11",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 103.38613001744605,
+      "coupler_crank_length_ratio": 3.4017352185959377,
+      "moving_mass_kg": 1.0440506668815135,
+      "median_reduced_inertia_kg_m2": 0.004396253862562356
+    },
+    {
+      "assembly_id": "S-A-120-P12",
+      "family": "S-A",
+      "split": "test",
+      "crank_length_mm": 135.0708446685375,
+      "coupler_crank_length_ratio": 3.348603384380323,
+      "moving_mass_kg": 1.0070818729355047,
+      "median_reduced_inertia_kg_m2": 0.006583715321569183
+    },
+    {
+      "assembly_id": "S-B-001-P01",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 69.14623137648235,
+      "coupler_crank_length_ratio": 3.138013003131824,
+      "moving_mass_kg": 1.2153067657868477,
+      "median_reduced_inertia_kg_m2": 0.0030434848058037063
+    },
+    {
+      "assembly_id": "S-B-002-P02",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 76.90673311865721,
+      "coupler_crank_length_ratio": 3.4150251945430234,
+      "moving_mass_kg": 1.2087029262435935,
+      "median_reduced_inertia_kg_m2": 0.003826362948109931
+    },
+    {
+      "assembly_id": "S-B-003-P03",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 84.12243858419899,
+      "coupler_crank_length_ratio": 3.540448277594926,
+      "moving_mass_kg": 1.3388620454536966,
+      "median_reduced_inertia_kg_m2": 0.004929799144971593
+    },
+    {
+      "assembly_id": "S-B-004-P04",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 75.3409377244807,
+      "coupler_crank_length_ratio": 3.5051163830536938,
+      "moving_mass_kg": 1.2140811271724297,
+      "median_reduced_inertia_kg_m2": 0.003711044618269138
+    },
+    {
+      "assembly_id": "S-B-005-P05",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 104.37391734607971,
+      "coupler_crank_length_ratio": 3.3499267261474563,
+      "moving_mass_kg": 1.2734102349629828,
+      "median_reduced_inertia_kg_m2": 0.006309111063679213
+    },
+    {
+      "assembly_id": "S-B-006-P06",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 99.62989499690454,
+      "coupler_crank_length_ratio": 3.5400205552176747,
+      "moving_mass_kg": 1.3220163761811596,
+      "median_reduced_inertia_kg_m2": 0.006747453344089776
+    },
+    {
+      "assembly_id": "S-B-007-P07",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 102.84241310174694,
+      "coupler_crank_length_ratio": 3.597987782851173,
+      "moving_mass_kg": 1.3562154265543769,
+      "median_reduced_inertia_kg_m2": 0.00646322888339794
+    },
+    {
+      "assembly_id": "S-B-008-P08",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 103.19053754306654,
+      "coupler_crank_length_ratio": 3.5781824396505906,
+      "moving_mass_kg": 1.4227570984878435,
+      "median_reduced_inertia_kg_m2": 0.007771443562002478
+    },
+    {
+      "assembly_id": "S-B-009-P09",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 90.24534586919948,
+      "coupler_crank_length_ratio": 2.949510608368577,
+      "moving_mass_kg": 1.3005702522625389,
+      "median_reduced_inertia_kg_m2": 0.005047024882256529
+    },
+    {
+      "assembly_id": "S-B-010-P10",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 86.54237706978084,
+      "coupler_crank_length_ratio": 3.4462979001217233,
+      "moving_mass_kg": 1.3746861177902794,
+      "median_reduced_inertia_kg_m2": 0.005285695609017644
+    },
+    {
+      "assembly_id": "S-B-011-P11",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 102.34408159788933,
+      "coupler_crank_length_ratio": 3.5110079479836633,
+      "moving_mass_kg": 1.3365463528500188,
+      "median_reduced_inertia_kg_m2": 0.00667294752580378
+    },
+    {
+      "assembly_id": "S-B-012-P12",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 83.93940845836222,
+      "coupler_crank_length_ratio": 3.55657784490355,
+      "moving_mass_kg": 1.348706220008181,
+      "median_reduced_inertia_kg_m2": 0.004918979579561367
+    },
+    {
+      "assembly_id": "S-B-013-P01",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 104.04996088796997,
+      "coupler_crank_length_ratio": 2.9787539040379305,
+      "moving_mass_kg": 1.393213535762201,
+      "median_reduced_inertia_kg_m2": 0.0073053469286085875
+    },
+    {
+      "assembly_id": "S-B-014-P02",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 97.98499050648523,
+      "coupler_crank_length_ratio": 3.5099011494970203,
+      "moving_mass_kg": 1.3986359893670803,
+      "median_reduced_inertia_kg_m2": 0.007248755944619397
+    },
+    {
+      "assembly_id": "S-B-015-P03",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 97.65280569626452,
+      "coupler_crank_length_ratio": 3.5242551287940502,
+      "moving_mass_kg": 1.3154505326147166,
+      "median_reduced_inertia_kg_m2": 0.006788420269422086
+    },
+    {
+      "assembly_id": "S-B-016-P04",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 99.54588657661012,
+      "coupler_crank_length_ratio": 3.5934303101421285,
+      "moving_mass_kg": 1.2957203561945785,
+      "median_reduced_inertia_kg_m2": 0.006073885150160656
+    },
+    {
+      "assembly_id": "S-B-017-P05",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 67.38892201276369,
+      "coupler_crank_length_ratio": 3.3447525491470342,
+      "moving_mass_kg": 1.24507883155389,
+      "median_reduced_inertia_kg_m2": 0.002743066965776232
+    },
+    {
+      "assembly_id": "S-B-018-P06",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 94.00060979069448,
+      "coupler_crank_length_ratio": 2.9977248254348368,
+      "moving_mass_kg": 1.2171752639831186,
+      "median_reduced_inertia_kg_m2": 0.005671338909272782
+    },
+    {
+      "assembly_id": "S-B-019-P07",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 98.22745680722555,
+      "coupler_crank_length_ratio": 3.014730821146701,
+      "moving_mass_kg": 1.3305528928101213,
+      "median_reduced_inertia_kg_m2": 0.006069070404402343
+    },
+    {
+      "assembly_id": "S-B-020-P08",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 101.18799605581405,
+      "coupler_crank_length_ratio": 3.1287801161864732,
+      "moving_mass_kg": 1.22847880131303,
+      "median_reduced_inertia_kg_m2": 0.005635193159443483
+    },
+    {
+      "assembly_id": "S-B-021-P09",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 72.14636267844259,
+      "coupler_crank_length_ratio": 3.2449826581058336,
+      "moving_mass_kg": 1.251651495667537,
+      "median_reduced_inertia_kg_m2": 0.0034231424213806206
+    },
+    {
+      "assembly_id": "S-B-022-P10",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 99.14142375919937,
+      "coupler_crank_length_ratio": 2.977038362409174,
+      "moving_mass_kg": 1.2815960191233466,
+      "median_reduced_inertia_kg_m2": 0.006398662624250258
+    },
+    {
+      "assembly_id": "S-B-023-P11",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 78.07493084573761,
+      "coupler_crank_length_ratio": 3.5707918887875607,
+      "moving_mass_kg": 1.164367737195628,
+      "median_reduced_inertia_kg_m2": 0.0036788408407686123
+    },
+    {
+      "assembly_id": "S-B-024-P12",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 85.35760575259367,
+      "coupler_crank_length_ratio": 3.2292367433765286,
+      "moving_mass_kg": 1.2721750147402715,
+      "median_reduced_inertia_kg_m2": 0.0047939064455042426
+    },
+    {
+      "assembly_id": "S-B-025-P01",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 84.27607953032427,
+      "coupler_crank_length_ratio": 3.4221802513763553,
+      "moving_mass_kg": 1.3585485338084182,
+      "median_reduced_inertia_kg_m2": 0.004719737087891072
+    },
+    {
+      "assembly_id": "S-B-026-P02",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 97.23646321960308,
+      "coupler_crank_length_ratio": 3.2559537697436625,
+      "moving_mass_kg": 1.3802889246779477,
+      "median_reduced_inertia_kg_m2": 0.006842062450594889
+    },
+    {
+      "assembly_id": "S-B-027-P03",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 67.23302006964971,
+      "coupler_crank_length_ratio": 3.0802240730734667,
+      "moving_mass_kg": 1.2172205647207281,
+      "median_reduced_inertia_kg_m2": 0.002782277310662426
+    },
+    {
+      "assembly_id": "S-B-028-P04",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 98.1840826604512,
+      "coupler_crank_length_ratio": 2.9235707393594796,
+      "moving_mass_kg": 1.2176401040136238,
+      "median_reduced_inertia_kg_m2": 0.005815411418617815
+    },
+    {
+      "assembly_id": "S-B-029-P05",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 75.82820569499569,
+      "coupler_crank_length_ratio": 3.374842580521056,
+      "moving_mass_kg": 1.3331346951592538,
+      "median_reduced_inertia_kg_m2": 0.004060316189749763
+    },
+    {
+      "assembly_id": "S-B-030-P06",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 87.54189858165704,
+      "coupler_crank_length_ratio": 3.299522458684059,
+      "moving_mass_kg": 1.2340929138050272,
+      "median_reduced_inertia_kg_m2": 0.0050254043812954135
+    },
+    {
+      "assembly_id": "S-B-031-P07",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 71.69391616071984,
+      "coupler_crank_length_ratio": 3.1012857405766763,
+      "moving_mass_kg": 1.2801272618067383,
+      "median_reduced_inertia_kg_m2": 0.0034174909349404554
+    },
+    {
+      "assembly_id": "S-B-032-P08",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 102.8931929773596,
+      "coupler_crank_length_ratio": 2.9555715526529,
+      "moving_mass_kg": 1.307472098675261,
+      "median_reduced_inertia_kg_m2": 0.0065013192198764376
+    },
+    {
+      "assembly_id": "S-B-033-P09",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 94.57309203198277,
+      "coupler_crank_length_ratio": 2.9558676923422036,
+      "moving_mass_kg": 1.308486882738146,
+      "median_reduced_inertia_kg_m2": 0.005342136462843097
+    },
+    {
+      "assembly_id": "S-B-034-P10",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 89.32372925016249,
+      "coupler_crank_length_ratio": 3.048948350245564,
+      "moving_mass_kg": 1.250963501734907,
+      "median_reduced_inertia_kg_m2": 0.005340240547690618
+    },
+    {
+      "assembly_id": "S-B-035-P11",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 99.71851653058295,
+      "coupler_crank_length_ratio": 3.264842111227137,
+      "moving_mass_kg": 1.3824752392960016,
+      "median_reduced_inertia_kg_m2": 0.007215641994359499
+    },
+    {
+      "assembly_id": "S-B-036-P12",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 74.60449765703193,
+      "coupler_crank_length_ratio": 3.062146060133125,
+      "moving_mass_kg": 1.1629420854545,
+      "median_reduced_inertia_kg_m2": 0.0035307620977564794
+    },
+    {
+      "assembly_id": "S-B-039-P03",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 77.79836660175496,
+      "coupler_crank_length_ratio": 3.083800933867053,
+      "moving_mass_kg": 1.308517967713723,
+      "median_reduced_inertia_kg_m2": 0.004353594200229683
+    },
+    {
+      "assembly_id": "S-B-040-P04",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 101.87496634166044,
+      "coupler_crank_length_ratio": 3.0892741498161427,
+      "moving_mass_kg": 1.2835638981398683,
+      "median_reduced_inertia_kg_m2": 0.00687079065984903
+    },
+    {
+      "assembly_id": "S-B-043-P07",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 81.6963195203101,
+      "coupler_crank_length_ratio": 3.391277993284185,
+      "moving_mass_kg": 1.273924727133123,
+      "median_reduced_inertia_kg_m2": 0.00445165798707612
+    },
+    {
+      "assembly_id": "S-B-044-P08",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 97.73919192438917,
+      "coupler_crank_length_ratio": 3.0866116183229853,
+      "moving_mass_kg": 1.2741295248248758,
+      "median_reduced_inertia_kg_m2": 0.006372840824162528
+    },
+    {
+      "assembly_id": "S-B-045-P09",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 88.12049069401073,
+      "coupler_crank_length_ratio": 3.568781312264554,
+      "moving_mass_kg": 1.407514865162721,
+      "median_reduced_inertia_kg_m2": 0.005310204399364742
+    },
+    {
+      "assembly_id": "S-B-046-P10",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 65.88730765809568,
+      "coupler_crank_length_ratio": 2.902542240492871,
+      "moving_mass_kg": 1.136142383546005,
+      "median_reduced_inertia_kg_m2": 0.002294595708094616
+    },
+    {
+      "assembly_id": "S-B-047-P11",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 83.62578925574337,
+      "coupler_crank_length_ratio": 3.562394803109976,
+      "moving_mass_kg": 1.233184327248455,
+      "median_reduced_inertia_kg_m2": 0.004051832625853191
+    },
+    {
+      "assembly_id": "S-B-048-P12",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 102.7330861447423,
+      "coupler_crank_length_ratio": 2.9727493927641375,
+      "moving_mass_kg": 1.3857727779071118,
+      "median_reduced_inertia_kg_m2": 0.007503010347018765
+    },
+    {
+      "assembly_id": "S-B-049-P01",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 95.82482617062804,
+      "coupler_crank_length_ratio": 3.2352954234048967,
+      "moving_mass_kg": 1.3520805028846148,
+      "median_reduced_inertia_kg_m2": 0.005963762314699327
+    },
+    {
+      "assembly_id": "S-B-050-P02",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 65.4829538646085,
+      "coupler_crank_length_ratio": 3.1700013537104317,
+      "moving_mass_kg": 1.18967134408056,
+      "median_reduced_inertia_kg_m2": 0.0027235643751818196
+    },
+    {
+      "assembly_id": "S-B-051-P03",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 83.20402230252094,
+      "coupler_crank_length_ratio": 2.9816797218988103,
+      "moving_mass_kg": 1.220467052592586,
+      "median_reduced_inertia_kg_m2": 0.00428518043193858
+    },
+    {
+      "assembly_id": "S-B-052-P04",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 103.38807468155065,
+      "coupler_crank_length_ratio": 3.112789072702856,
+      "moving_mass_kg": 1.2506012927242207,
+      "median_reduced_inertia_kg_m2": 0.006489111119203407
+    },
+    {
+      "assembly_id": "S-B-053-P05",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 99.45371615932048,
+      "coupler_crank_length_ratio": 3.055572422058441,
+      "moving_mass_kg": 1.3128960724572298,
+      "median_reduced_inertia_kg_m2": 0.006733986436891033
+    },
+    {
+      "assembly_id": "S-B-054-P06",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 101.12131263003901,
+      "coupler_crank_length_ratio": 3.549176532528393,
+      "moving_mass_kg": 1.3855886479619306,
+      "median_reduced_inertia_kg_m2": 0.007452027559759059
+    },
+    {
+      "assembly_id": "S-B-055-P07",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 75.2684039261423,
+      "coupler_crank_length_ratio": 3.5677148345137755,
+      "moving_mass_kg": 1.1781066371360014,
+      "median_reduced_inertia_kg_m2": 0.003559519136062524
+    },
+    {
+      "assembly_id": "S-B-056-P08",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 95.05226838482939,
+      "coupler_crank_length_ratio": 3.1995653715330685,
+      "moving_mass_kg": 1.1950065387510698,
+      "median_reduced_inertia_kg_m2": 0.005271009758377063
+    },
+    {
+      "assembly_id": "S-B-057-P09",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 87.933653207734,
+      "coupler_crank_length_ratio": 3.239685220942122,
+      "moving_mass_kg": 1.3240870749666138,
+      "median_reduced_inertia_kg_m2": 0.005307137789905722
+    },
+    {
+      "assembly_id": "S-B-058-P10",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 88.18274528039709,
+      "coupler_crank_length_ratio": 3.1140932578523746,
+      "moving_mass_kg": 1.3506207939986083,
+      "median_reduced_inertia_kg_m2": 0.005513539121194643
+    },
+    {
+      "assembly_id": "S-B-059-P11",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 93.16591399215964,
+      "coupler_crank_length_ratio": 3.1007897343335737,
+      "moving_mass_kg": 1.2381328993337175,
+      "median_reduced_inertia_kg_m2": 0.005735180281236949
+    },
+    {
+      "assembly_id": "S-B-060-P12",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 81.31602364822052,
+      "coupler_crank_length_ratio": 3.1939799441325323,
+      "moving_mass_kg": 1.285957315655065,
+      "median_reduced_inertia_kg_m2": 0.004266997908331746
+    },
+    {
+      "assembly_id": "S-B-061-P01",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 97.64477256417744,
+      "coupler_crank_length_ratio": 3.402648394418958,
+      "moving_mass_kg": 1.3636982637738408,
+      "median_reduced_inertia_kg_m2": 0.006751315927742659
+    },
+    {
+      "assembly_id": "S-B-062-P02",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 89.5017413159452,
+      "coupler_crank_length_ratio": 3.1741903058071377,
+      "moving_mass_kg": 1.2309738799263545,
+      "median_reduced_inertia_kg_m2": 0.00446623319032587
+    },
+    {
+      "assembly_id": "S-B-063-P03",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 91.05737802096388,
+      "coupler_crank_length_ratio": 3.5906258531954274,
+      "moving_mass_kg": 1.2552636906111987,
+      "median_reduced_inertia_kg_m2": 0.004908528386454179
+    },
+    {
+      "assembly_id": "S-B-064-P04",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 93.14651774935403,
+      "coupler_crank_length_ratio": 2.9748974615153707,
+      "moving_mass_kg": 1.3628980315840344,
+      "median_reduced_inertia_kg_m2": 0.006150091823833895
+    },
+    {
+      "assembly_id": "S-B-065-P05",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 104.1654587066197,
+      "coupler_crank_length_ratio": 2.9369549768684675,
+      "moving_mass_kg": 1.3726502998622574,
+      "median_reduced_inertia_kg_m2": 0.0072410155320987366
+    },
+    {
+      "assembly_id": "S-B-066-P06",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 90.69393776818065,
+      "coupler_crank_length_ratio": 3.261131270744141,
+      "moving_mass_kg": 1.254831218249922,
+      "median_reduced_inertia_kg_m2": 0.00464857856121027
+    },
+    {
+      "assembly_id": "S-B-067-P07",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 88.34462852779532,
+      "coupler_crank_length_ratio": 3.193074143134644,
+      "moving_mass_kg": 1.4180026012837799,
+      "median_reduced_inertia_kg_m2": 0.005763510527522899
+    },
+    {
+      "assembly_id": "S-B-068-P08",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 65.89042547024567,
+      "coupler_crank_length_ratio": 3.1026222500387575,
+      "moving_mass_kg": 1.1975718919823735,
+      "median_reduced_inertia_kg_m2": 0.0029206034283872774
+    },
+    {
+      "assembly_id": "S-B-069-P09",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 74.93396419699634,
+      "coupler_crank_length_ratio": 3.252238697500599,
+      "moving_mass_kg": 1.1935955440969992,
+      "median_reduced_inertia_kg_m2": 0.0034413892125118614
+    },
+    {
+      "assembly_id": "S-B-070-P10",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 95.54817217908356,
+      "coupler_crank_length_ratio": 3.395424032062243,
+      "moving_mass_kg": 1.296983013446424,
+      "median_reduced_inertia_kg_m2": 0.0059868285946186916
+    },
+    {
+      "assembly_id": "S-B-071-P11",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 93.21785271238255,
+      "coupler_crank_length_ratio": 3.4275382324421257,
+      "moving_mass_kg": 1.3666913025884209,
+      "median_reduced_inertia_kg_m2": 0.006414108558605144
+    },
+    {
+      "assembly_id": "S-B-072-P12",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 97.7365255738622,
+      "coupler_crank_length_ratio": 3.4656236151178565,
+      "moving_mass_kg": 1.4434594795643851,
+      "median_reduced_inertia_kg_m2": 0.006868555613220218
+    },
+    {
+      "assembly_id": "S-B-073-P01",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 74.84846812495,
+      "coupler_crank_length_ratio": 3.360064183932843,
+      "moving_mass_kg": 1.2249971144836551,
+      "median_reduced_inertia_kg_m2": 0.003233395846894771
+    },
+    {
+      "assembly_id": "S-B-074-P02",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 97.42562743038164,
+      "coupler_crank_length_ratio": 2.994059446253281,
+      "moving_mass_kg": 1.4027888380155034,
+      "median_reduced_inertia_kg_m2": 0.006951581991232609
+    },
+    {
+      "assembly_id": "S-B-075-P03",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 87.35532973394805,
+      "coupler_crank_length_ratio": 3.394700472002384,
+      "moving_mass_kg": 1.2412413314775517,
+      "median_reduced_inertia_kg_m2": 0.004801066893823285
+    },
+    {
+      "assembly_id": "S-B-076-P04",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 79.68122732141727,
+      "coupler_crank_length_ratio": 3.491461531869335,
+      "moving_mass_kg": 1.2603526434120271,
+      "median_reduced_inertia_kg_m2": 0.003751012314063878
+    },
+    {
+      "assembly_id": "S-B-077-P05",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 81.21259327908156,
+      "coupler_crank_length_ratio": 2.918398262631101,
+      "moving_mass_kg": 1.2821383426630617,
+      "median_reduced_inertia_kg_m2": 0.004244840222140127
+    },
+    {
+      "assembly_id": "S-B-078-P06",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 66.20594743122932,
+      "coupler_crank_length_ratio": 3.184457596944701,
+      "moving_mass_kg": 1.2317586921573995,
+      "median_reduced_inertia_kg_m2": 0.0027179797312616738
+    },
+    {
+      "assembly_id": "S-B-079-P07",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 99.54270655043655,
+      "coupler_crank_length_ratio": 2.94509019739922,
+      "moving_mass_kg": 1.2425941440903068,
+      "median_reduced_inertia_kg_m2": 0.00568616679470269
+    },
+    {
+      "assembly_id": "S-B-080-P08",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 97.43790352585769,
+      "coupler_crank_length_ratio": 3.417732623856499,
+      "moving_mass_kg": 1.3621733315108413,
+      "median_reduced_inertia_kg_m2": 0.006721516661189281
+    },
+    {
+      "assembly_id": "S-B-081-P09",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 89.57740718024041,
+      "coupler_crank_length_ratio": 3.4132903862738497,
+      "moving_mass_kg": 1.3316030053585162,
+      "median_reduced_inertia_kg_m2": 0.005325038389554177
+    },
+    {
+      "assembly_id": "S-B-082-P10",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 87.8335373921151,
+      "coupler_crank_length_ratio": 2.9544881531937017,
+      "moving_mass_kg": 1.1575416145677058,
+      "median_reduced_inertia_kg_m2": 0.004426854909749912
+    },
+    {
+      "assembly_id": "S-B-083-P11",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 98.51146960247698,
+      "coupler_crank_length_ratio": 2.9261960243651983,
+      "moving_mass_kg": 1.3082992063261263,
+      "median_reduced_inertia_kg_m2": 0.005570274054664964
+    },
+    {
+      "assembly_id": "S-B-084-P12",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 71.44404552467383,
+      "coupler_crank_length_ratio": 3.0186986444513644,
+      "moving_mass_kg": 1.2554343124262708,
+      "median_reduced_inertia_kg_m2": 0.003415899820239869
+    },
+    {
+      "assembly_id": "S-B-085-P01",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 65.76588192415646,
+      "coupler_crank_length_ratio": 3.1240221886650326,
+      "moving_mass_kg": 1.1696378990123155,
+      "median_reduced_inertia_kg_m2": 0.0024282027555727797
+    },
+    {
+      "assembly_id": "S-B-086-P02",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 92.58594234594972,
+      "coupler_crank_length_ratio": 3.417586690458766,
+      "moving_mass_kg": 1.3337489205854205,
+      "median_reduced_inertia_kg_m2": 0.005886773063609236
+    },
+    {
+      "assembly_id": "S-B-087-P03",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 96.3246250661457,
+      "coupler_crank_length_ratio": 3.190550746323667,
+      "moving_mass_kg": 1.1913467795647559,
+      "median_reduced_inertia_kg_m2": 0.0055453134463104075
+    },
+    {
+      "assembly_id": "S-B-088-P04",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 79.34716740503187,
+      "coupler_crank_length_ratio": 2.979706507910625,
+      "moving_mass_kg": 1.2375554998986418,
+      "median_reduced_inertia_kg_m2": 0.0035791446276321735
+    },
+    {
+      "assembly_id": "S-B-089-P05",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 99.18833589809903,
+      "coupler_crank_length_ratio": 3.3184758515479986,
+      "moving_mass_kg": 1.4259243511874096,
+      "median_reduced_inertia_kg_m2": 0.006896890642521458
+    },
+    {
+      "assembly_id": "S-B-090-P06",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 65.54529058084937,
+      "coupler_crank_length_ratio": 3.3649647911970493,
+      "moving_mass_kg": 1.3130993558103863,
+      "median_reduced_inertia_kg_m2": 0.003094960529563702
+    },
+    {
+      "assembly_id": "S-B-091-P07",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 79.08079820310428,
+      "coupler_crank_length_ratio": 3.3326252063365756,
+      "moving_mass_kg": 1.200300503730424,
+      "median_reduced_inertia_kg_m2": 0.0037738005089539353
+    },
+    {
+      "assembly_id": "S-B-092-P08",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 102.73431618623266,
+      "coupler_crank_length_ratio": 3.0068730915853044,
+      "moving_mass_kg": 1.2945114873932657,
+      "median_reduced_inertia_kg_m2": 0.006946833160395246
+    },
+    {
+      "assembly_id": "S-B-093-P09",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 100.46683326160219,
+      "coupler_crank_length_ratio": 3.463138756917548,
+      "moving_mass_kg": 1.3491663648874879,
+      "median_reduced_inertia_kg_m2": 0.006640104263338649
+    },
+    {
+      "assembly_id": "S-B-094-P10",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 103.60088006114896,
+      "coupler_crank_length_ratio": 3.3116533531109034,
+      "moving_mass_kg": 1.2659458236886634,
+      "median_reduced_inertia_kg_m2": 0.0069397299336177885
+    },
+    {
+      "assembly_id": "S-B-095-P11",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 69.06326674810335,
+      "coupler_crank_length_ratio": 3.317225607676594,
+      "moving_mass_kg": 1.1409268817812959,
+      "median_reduced_inertia_kg_m2": 0.002765153429178369
+    },
+    {
+      "assembly_id": "S-B-096-P12",
+      "family": "S-B",
+      "split": "train",
+      "crank_length_mm": 94.6795072202386,
+      "coupler_crank_length_ratio": 3.5127689124660497,
+      "moving_mass_kg": 1.3673469318821563,
+      "median_reduced_inertia_kg_m2": 0.005947581560697119
+    },
+    {
+      "assembly_id": "S-B-097-P01",
+      "family": "S-B",
+      "split": "calibration",
+      "crank_length_mm": 91.17770529876586,
+      "coupler_crank_length_ratio": 3.4038991118547806,
+      "moving_mass_kg": 1.3432670200154344,
+      "median_reduced_inertia_kg_m2": 0.005057347003954186
+    },
+    {
+      "assembly_id": "S-B-098-P02",
+      "family": "S-B",
+      "split": "calibration",
+      "crank_length_mm": 76.75620643668614,
+      "coupler_crank_length_ratio": 3.2837631575006867,
+      "moving_mass_kg": 1.2411198078519934,
+      "median_reduced_inertia_kg_m2": 0.0035571486097342275
+    },
+    {
+      "assembly_id": "S-B-099-P03",
+      "family": "S-B",
+      "split": "calibration",
+      "crank_length_mm": 79.6962999680279,
+      "coupler_crank_length_ratio": 2.951453950696217,
+      "moving_mass_kg": 1.2191681322006376,
+      "median_reduced_inertia_kg_m2": 0.003559212382155176
+    },
+    {
+      "assembly_id": "S-B-100-P04",
+      "family": "S-B",
+      "split": "calibration",
+      "crank_length_mm": 104.38136713359953,
+      "coupler_crank_length_ratio": 3.0507313414925075,
+      "moving_mass_kg": 1.3487824368889538,
+      "median_reduced_inertia_kg_m2": 0.007254280584386727
+    },
+    {
+      "assembly_id": "S-B-101-P05",
+      "family": "S-B",
+      "split": "calibration",
+      "crank_length_mm": 90.53864812499138,
+      "coupler_crank_length_ratio": 3.139422166502077,
+      "moving_mass_kg": 1.1578136648167594,
+      "median_reduced_inertia_kg_m2": 0.004789065491377267
+    },
+    {
+      "assembly_id": "S-B-102-P06",
+      "family": "S-B",
+      "split": "calibration",
+      "crank_length_mm": 94.74146590639536,
+      "coupler_crank_length_ratio": 3.060118134933949,
+      "moving_mass_kg": 1.312624388024607,
+      "median_reduced_inertia_kg_m2": 0.00555616750824947
+    },
+    {
+      "assembly_id": "S-B-103-P07",
+      "family": "S-B",
+      "split": "validation",
+      "crank_length_mm": 88.75824245860207,
+      "coupler_crank_length_ratio": 3.469895707037423,
+      "moving_mass_kg": 1.343250036211133,
+      "median_reduced_inertia_kg_m2": 0.005390610255062615
+    },
+    {
+      "assembly_id": "S-B-104-P08",
+      "family": "S-B",
+      "split": "validation",
+      "crank_length_mm": 104.53823447273928,
+      "coupler_crank_length_ratio": 2.9773979368791097,
+      "moving_mass_kg": 1.3279613967129085,
+      "median_reduced_inertia_kg_m2": 0.007057214006229302
+    },
+    {
+      "assembly_id": "S-B-105-P09",
+      "family": "S-B",
+      "split": "validation",
+      "crank_length_mm": 71.89280062961299,
+      "coupler_crank_length_ratio": 3.4738639246750416,
+      "moving_mass_kg": 1.3159045183821572,
+      "median_reduced_inertia_kg_m2": 0.0035063380601797864
+    },
+    {
+      "assembly_id": "S-B-106-P10",
+      "family": "S-B",
+      "split": "validation",
+      "crank_length_mm": 86.43941646788863,
+      "coupler_crank_length_ratio": 3.3747390532824952,
+      "moving_mass_kg": 1.3217641987323065,
+      "median_reduced_inertia_kg_m2": 0.005081414142258759
+    },
+    {
+      "assembly_id": "S-B-107-P11",
+      "family": "S-B",
+      "split": "validation",
+      "crank_length_mm": 77.36985164481457,
+      "coupler_crank_length_ratio": 3.3613625291460925,
+      "moving_mass_kg": 1.2178379084217101,
+      "median_reduced_inertia_kg_m2": 0.003629113753101485
+    },
+    {
+      "assembly_id": "S-B-108-P12",
+      "family": "S-B",
+      "split": "validation",
+      "crank_length_mm": 104.40966318585556,
+      "coupler_crank_length_ratio": 3.4356649559958603,
+      "moving_mass_kg": 1.46362829314299,
+      "median_reduced_inertia_kg_m2": 0.007676057137275953
+    },
+    {
+      "assembly_id": "S-B-109-P01",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 79.22427380064678,
+      "coupler_crank_length_ratio": 3.5013342271704424,
+      "moving_mass_kg": 1.2742687066601932,
+      "median_reduced_inertia_kg_m2": 0.004238707484536719
+    },
+    {
+      "assembly_id": "S-B-110-P02",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 94.5291542963442,
+      "coupler_crank_length_ratio": 3.2068329610331903,
+      "moving_mass_kg": 1.3286805344718902,
+      "median_reduced_inertia_kg_m2": 0.005616297998905502
+    },
+    {
+      "assembly_id": "S-B-111-P03",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 77.73995635097259,
+      "coupler_crank_length_ratio": 3.1194581138284416,
+      "moving_mass_kg": 1.2993691165406305,
+      "median_reduced_inertia_kg_m2": 0.0040842093783288085
+    },
+    {
+      "assembly_id": "S-B-112-P04",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 87.31233452822612,
+      "coupler_crank_length_ratio": 3.4846736043817996,
+      "moving_mass_kg": 1.2691759517453376,
+      "median_reduced_inertia_kg_m2": 0.00483080698895911
+    },
+    {
+      "assembly_id": "S-B-113-P05",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 92.13628807094183,
+      "coupler_crank_length_ratio": 3.448283715884698,
+      "moving_mass_kg": 1.2604512914417647,
+      "median_reduced_inertia_kg_m2": 0.005256076619082146
+    },
+    {
+      "assembly_id": "S-B-114-P06",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 83.04466814646923,
+      "coupler_crank_length_ratio": 3.35981332404103,
+      "moving_mass_kg": 1.210221853464109,
+      "median_reduced_inertia_kg_m2": 0.004031997045006144
+    },
+    {
+      "assembly_id": "S-B-115-P07",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 80.63926257101178,
+      "coupler_crank_length_ratio": 3.4698057432309626,
+      "moving_mass_kg": 1.2944673005505405,
+      "median_reduced_inertia_kg_m2": 0.004038766905445172
+    },
+    {
+      "assembly_id": "S-B-116-P08",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 83.33855332462431,
+      "coupler_crank_length_ratio": 2.9879648178415446,
+      "moving_mass_kg": 1.1644988796017564,
+      "median_reduced_inertia_kg_m2": 0.0041786295245668055
+    },
+    {
+      "assembly_id": "S-B-117-P09",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 76.98607947135444,
+      "coupler_crank_length_ratio": 3.3940946434702703,
+      "moving_mass_kg": 1.2375990765854847,
+      "median_reduced_inertia_kg_m2": 0.0038726801318438556
+    },
+    {
+      "assembly_id": "S-B-118-P10",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 77.30032537415265,
+      "coupler_crank_length_ratio": 3.5478784020026466,
+      "moving_mass_kg": 1.2619997187988818,
+      "median_reduced_inertia_kg_m2": 0.004091984868125835
+    },
+    {
+      "assembly_id": "S-B-119-P11",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 70.69843199076567,
+      "coupler_crank_length_ratio": 2.950185043340077,
+      "moving_mass_kg": 1.0794146990200824,
+      "median_reduced_inertia_kg_m2": 0.0028508663727842996
+    },
+    {
+      "assembly_id": "S-B-120-P12",
+      "family": "S-B",
+      "split": "test",
+      "crank_length_mm": 95.07428749519755,
+      "coupler_crank_length_ratio": 3.1750254386316006,
+      "moving_mass_kg": 1.2986230735130344,
+      "median_reduced_inertia_kg_m2": 0.0060159912863306615
+    },
+    {
+      "assembly_id": "S-J-001-P01",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 258.73421347226275,
+      "coupler_crank_length_ratio": 0.8158458197523254,
+      "moving_mass_kg": 1.0759007531256817,
+      "median_reduced_inertia_kg_m2": 0.024980859007603936
+    },
+    {
+      "assembly_id": "S-J-002-P02",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 229.5659854775654,
+      "coupler_crank_length_ratio": 0.838633453717317,
+      "moving_mass_kg": 0.967641636648716,
+      "median_reduced_inertia_kg_m2": 0.018344623878456354
+    },
+    {
+      "assembly_id": "S-J-003-P03",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 244.21988101778965,
+      "coupler_crank_length_ratio": 0.8123798470317879,
+      "moving_mass_kg": 0.9841539649734055,
+      "median_reduced_inertia_kg_m2": 0.020790292976829338
+    },
+    {
+      "assembly_id": "S-J-004-P04",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 299.38677766333507,
+      "coupler_crank_length_ratio": 0.852542219197668,
+      "moving_mass_kg": 1.1554427359400194,
+      "median_reduced_inertia_kg_m2": 0.03581780489955441
+    },
+    {
+      "assembly_id": "S-J-005-P05",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 300.0001124857777,
+      "coupler_crank_length_ratio": 0.8267010491599686,
+      "moving_mass_kg": 1.1384397167205704,
+      "median_reduced_inertia_kg_m2": 0.037563614900152
+    },
+    {
+      "assembly_id": "S-J-006-P06",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 289.07134468458145,
+      "coupler_crank_length_ratio": 0.8231949787900131,
+      "moving_mass_kg": 1.0742177739115288,
+      "median_reduced_inertia_kg_m2": 0.030537524461085465
+    },
+    {
+      "assembly_id": "S-J-007-P07",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 237.84775470524696,
+      "coupler_crank_length_ratio": 0.8745046013378068,
+      "moving_mass_kg": 1.1488269890074663,
+      "median_reduced_inertia_kg_m2": 0.023372038344821197
+    },
+    {
+      "assembly_id": "S-J-008-P08",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 256.82756680308364,
+      "coupler_crank_length_ratio": 0.806808359116975,
+      "moving_mass_kg": 0.9537987727553041,
+      "median_reduced_inertia_kg_m2": 0.021911437582795398
+    },
+    {
+      "assembly_id": "S-J-009-P09",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 286.33097511514876,
+      "coupler_crank_length_ratio": 0.9012198966619165,
+      "moving_mass_kg": 1.0364468759817398,
+      "median_reduced_inertia_kg_m2": 0.03015021360040793
+    },
+    {
+      "assembly_id": "S-J-010-P10",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 270.43184539073775,
+      "coupler_crank_length_ratio": 0.826875155439848,
+      "moving_mass_kg": 1.2452678752431474,
+      "median_reduced_inertia_kg_m2": 0.033224450006295404
+    },
+    {
+      "assembly_id": "S-J-011-P11",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 290.34105254222675,
+      "coupler_crank_length_ratio": 0.8328950573720266,
+      "moving_mass_kg": 1.0773938850034837,
+      "median_reduced_inertia_kg_m2": 0.03075305476986835
+    },
+    {
+      "assembly_id": "S-J-012-P12",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 254.51500413180722,
+      "coupler_crank_length_ratio": 0.8178725387445802,
+      "moving_mass_kg": 0.999600673665471,
+      "median_reduced_inertia_kg_m2": 0.022553471580575368
+    },
+    {
+      "assembly_id": "S-J-013-P01",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 272.437205815524,
+      "coupler_crank_length_ratio": 0.8808419704978889,
+      "moving_mass_kg": 0.9875797180811383,
+      "median_reduced_inertia_kg_m2": 0.0266923978654954
+    },
+    {
+      "assembly_id": "S-J-014-P02",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 242.02916246063845,
+      "coupler_crank_length_ratio": 0.8394038246310198,
+      "moving_mass_kg": 1.0143542434801893,
+      "median_reduced_inertia_kg_m2": 0.0207686526680093
+    },
+    {
+      "assembly_id": "S-J-015-P03",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 273.19275607208687,
+      "coupler_crank_length_ratio": 0.8425181951613171,
+      "moving_mass_kg": 0.9989141771606833,
+      "median_reduced_inertia_kg_m2": 0.026791457779990212
+    },
+    {
+      "assembly_id": "S-J-016-P04",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 227.94242144202894,
+      "coupler_crank_length_ratio": 0.8873557147647761,
+      "moving_mass_kg": 1.0188380199602975,
+      "median_reduced_inertia_kg_m2": 0.019021060540403527
+    },
+    {
+      "assembly_id": "S-J-017-P05",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 258.668699953927,
+      "coupler_crank_length_ratio": 0.8960637508408968,
+      "moving_mass_kg": 0.8822960425278231,
+      "median_reduced_inertia_kg_m2": 0.019456382866498718
+    },
+    {
+      "assembly_id": "S-J-018-P06",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 254.18738838248672,
+      "coupler_crank_length_ratio": 0.8437627617126091,
+      "moving_mass_kg": 1.090964576779165,
+      "median_reduced_inertia_kg_m2": 0.02620906879473242
+    },
+    {
+      "assembly_id": "S-J-019-P07",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 274.94936848810386,
+      "coupler_crank_length_ratio": 0.8642449449017292,
+      "moving_mass_kg": 0.9796941611868253,
+      "median_reduced_inertia_kg_m2": 0.0266965401334206
+    },
+    {
+      "assembly_id": "S-J-020-P08",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 277.16332368569704,
+      "coupler_crank_length_ratio": 0.8469112038583235,
+      "moving_mass_kg": 0.9222034423339451,
+      "median_reduced_inertia_kg_m2": 0.024158310076932255
+    },
+    {
+      "assembly_id": "S-J-021-P09",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 224.77887274326463,
+      "coupler_crank_length_ratio": 0.8864903234423963,
+      "moving_mass_kg": 0.9722818034434925,
+      "median_reduced_inertia_kg_m2": 0.017547668231564357
+    },
+    {
+      "assembly_id": "S-J-022-P10",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 271.0546070760447,
+      "coupler_crank_length_ratio": 0.8368391225871715,
+      "moving_mass_kg": 1.044289735741497,
+      "median_reduced_inertia_kg_m2": 0.027996258511193542
+    },
+    {
+      "assembly_id": "S-J-023-P11",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 212.7543251772472,
+      "coupler_crank_length_ratio": 0.8346138035566538,
+      "moving_mass_kg": 1.0442212502847912,
+      "median_reduced_inertia_kg_m2": 0.01782016541146756
+    },
+    {
+      "assembly_id": "S-J-024-P12",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 279.63652344332064,
+      "coupler_crank_length_ratio": 0.8539141435879147,
+      "moving_mass_kg": 1.0811513288930898,
+      "median_reduced_inertia_kg_m2": 0.029815970220018258
+    },
+    {
+      "assembly_id": "S-J-025-P01",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 256.65185676983685,
+      "coupler_crank_length_ratio": 0.8217605394904652,
+      "moving_mass_kg": 1.1135908004975086,
+      "median_reduced_inertia_kg_m2": 0.025654477811128246
+    },
+    {
+      "assembly_id": "S-J-026-P02",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 283.63031820559195,
+      "coupler_crank_length_ratio": 0.9059483311318872,
+      "moving_mass_kg": 1.1481304302207191,
+      "median_reduced_inertia_kg_m2": 0.034806680869318374
+    },
+    {
+      "assembly_id": "S-J-027-P03",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 269.55184116601833,
+      "coupler_crank_length_ratio": 0.8416318943559922,
+      "moving_mass_kg": 1.0358353501279898,
+      "median_reduced_inertia_kg_m2": 0.026969992763480537
+    },
+    {
+      "assembly_id": "S-J-028-P04",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 220.0028856367953,
+      "coupler_crank_length_ratio": 0.8584562686358734,
+      "moving_mass_kg": 0.876066896753479,
+      "median_reduced_inertia_kg_m2": 0.014829924422685156
+    },
+    {
+      "assembly_id": "S-J-029-P05",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 279.24231354643075,
+      "coupler_crank_length_ratio": 0.8043419343118545,
+      "moving_mass_kg": 1.1680775782081836,
+      "median_reduced_inertia_kg_m2": 0.031731369519739344
+    },
+    {
+      "assembly_id": "S-J-030-P06",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 273.9570804347059,
+      "coupler_crank_length_ratio": 0.8364612460495222,
+      "moving_mass_kg": 0.9311519316852459,
+      "median_reduced_inertia_kg_m2": 0.0239854626174665
+    },
+    {
+      "assembly_id": "S-J-031-P07",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 210.5850788368336,
+      "coupler_crank_length_ratio": 0.8623362357360946,
+      "moving_mass_kg": 1.0719577246251766,
+      "median_reduced_inertia_kg_m2": 0.017407331847024685
+    },
+    {
+      "assembly_id": "S-J-032-P08",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 234.74143461499983,
+      "coupler_crank_length_ratio": 0.8581362777265149,
+      "moving_mass_kg": 1.0857027250498197,
+      "median_reduced_inertia_kg_m2": 0.021413455751124175
+    },
+    {
+      "assembly_id": "S-J-033-P09",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 286.0079890363829,
+      "coupler_crank_length_ratio": 0.8657736277582306,
+      "moving_mass_kg": 1.14699418934908,
+      "median_reduced_inertia_kg_m2": 0.03348583031008059
+    },
+    {
+      "assembly_id": "S-J-034-P10",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 290.9603532913721,
+      "coupler_crank_length_ratio": 0.8733926388695128,
+      "moving_mass_kg": 1.128837448569917,
+      "median_reduced_inertia_kg_m2": 0.03493249801440674
+    },
+    {
+      "assembly_id": "S-J-035-P11",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 259.1905826031445,
+      "coupler_crank_length_ratio": 0.869814260078274,
+      "moving_mass_kg": 1.0947832933481192,
+      "median_reduced_inertia_kg_m2": 0.026942456454371103
+    },
+    {
+      "assembly_id": "S-J-036-P12",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 236.7274732649604,
+      "coupler_crank_length_ratio": 0.8126294851376221,
+      "moving_mass_kg": 0.9722160038504735,
+      "median_reduced_inertia_kg_m2": 0.01939681218453225
+    },
+    {
+      "assembly_id": "S-J-037-P01",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 264.52127689614196,
+      "coupler_crank_length_ratio": 0.8298344936962372,
+      "moving_mass_kg": 0.9517024804926245,
+      "median_reduced_inertia_kg_m2": 0.02404973395324273
+    },
+    {
+      "assembly_id": "S-J-038-P02",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 270.1574285332353,
+      "coupler_crank_length_ratio": 0.8004230407549644,
+      "moving_mass_kg": 1.1287065188188654,
+      "median_reduced_inertia_kg_m2": 0.029161110086869557
+    },
+    {
+      "assembly_id": "S-J-039-P03",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 258.08523653767105,
+      "coupler_crank_length_ratio": 0.835983595398929,
+      "moving_mass_kg": 1.0426172639495026,
+      "median_reduced_inertia_kg_m2": 0.024482506461025105
+    },
+    {
+      "assembly_id": "S-J-040-P04",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 222.35087613069115,
+      "coupler_crank_length_ratio": 0.8931647985785688,
+      "moving_mass_kg": 1.0933372864068511,
+      "median_reduced_inertia_kg_m2": 0.018457302748071162
+    },
+    {
+      "assembly_id": "S-J-041-P05",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 290.9860751688463,
+      "coupler_crank_length_ratio": 0.8349774219275204,
+      "moving_mass_kg": 1.1454795628228185,
+      "median_reduced_inertia_kg_m2": 0.03416841721875784
+    },
+    {
+      "assembly_id": "S-J-042-P06",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 250.02036019470987,
+      "coupler_crank_length_ratio": 0.8617127030101256,
+      "moving_mass_kg": 1.0335317565407462,
+      "median_reduced_inertia_kg_m2": 0.021904984551777067
+    },
+    {
+      "assembly_id": "S-J-043-P07",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 272.33213938536136,
+      "coupler_crank_length_ratio": 0.8539492526335383,
+      "moving_mass_kg": 0.9162953666324494,
+      "median_reduced_inertia_kg_m2": 0.02411866584855629
+    },
+    {
+      "assembly_id": "S-J-044-P08",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 267.6994358890568,
+      "coupler_crank_length_ratio": 0.8106109479960829,
+      "moving_mass_kg": 1.1761880106327183,
+      "median_reduced_inertia_kg_m2": 0.030479309735022678
+    },
+    {
+      "assembly_id": "S-J-045-P09",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 266.398321188041,
+      "coupler_crank_length_ratio": 0.853491141241764,
+      "moving_mass_kg": 1.2820295229302794,
+      "median_reduced_inertia_kg_m2": 0.0321850738647754
+    },
+    {
+      "assembly_id": "S-J-046-P10",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 243.6747698575781,
+      "coupler_crank_length_ratio": 0.8840448939506892,
+      "moving_mass_kg": 0.9634506621364642,
+      "median_reduced_inertia_kg_m2": 0.020772679248674313
+    },
+    {
+      "assembly_id": "S-J-047-P11",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 294.9391934087304,
+      "coupler_crank_length_ratio": 0.8622334106966589,
+      "moving_mass_kg": 1.1193137401371165,
+      "median_reduced_inertia_kg_m2": 0.03438123073153928
+    },
+    {
+      "assembly_id": "S-J-048-P12",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 261.1477915402831,
+      "coupler_crank_length_ratio": 0.8522421112299212,
+      "moving_mass_kg": 1.0763474627942968,
+      "median_reduced_inertia_kg_m2": 0.025658393051552417
+    },
+    {
+      "assembly_id": "S-J-049-P01",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 300.3335773792392,
+      "coupler_crank_length_ratio": 0.8377438381222204,
+      "moving_mass_kg": 1.0151166564350445,
+      "median_reduced_inertia_kg_m2": 0.02945804259327473
+    },
+    {
+      "assembly_id": "S-J-050-P02",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 245.33014942579553,
+      "coupler_crank_length_ratio": 0.8664049878038881,
+      "moving_mass_kg": 1.0241254222307394,
+      "median_reduced_inertia_kg_m2": 0.020782402181532413
+    },
+    {
+      "assembly_id": "S-J-051-P03",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 267.90297445554523,
+      "coupler_crank_length_ratio": 0.8660342648475621,
+      "moving_mass_kg": 1.167771959003856,
+      "median_reduced_inertia_kg_m2": 0.03134985177199438
+    },
+    {
+      "assembly_id": "S-J-052-P04",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 269.193554746417,
+      "coupler_crank_length_ratio": 0.8556224112558718,
+      "moving_mass_kg": 1.3653112398186822,
+      "median_reduced_inertia_kg_m2": 0.0371323118186625
+    },
+    {
+      "assembly_id": "S-J-053-P05",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 267.3744860828306,
+      "coupler_crank_length_ratio": 0.8822821278390185,
+      "moving_mass_kg": 1.2610226616385805,
+      "median_reduced_inertia_kg_m2": 0.03222159211887844
+    },
+    {
+      "assembly_id": "S-J-054-P06",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 229.4827082275743,
+      "coupler_crank_length_ratio": 0.8470014367839508,
+      "moving_mass_kg": 0.9993768690331218,
+      "median_reduced_inertia_kg_m2": 0.019352305122195948
+    },
+    {
+      "assembly_id": "S-J-055-P07",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 256.9906825902535,
+      "coupler_crank_length_ratio": 0.8454108799497048,
+      "moving_mass_kg": 1.242833037936088,
+      "median_reduced_inertia_kg_m2": 0.029943019046331128
+    },
+    {
+      "assembly_id": "S-J-056-P08",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 268.8982365397145,
+      "coupler_crank_length_ratio": 0.8783766572708134,
+      "moving_mass_kg": 1.1486909074925586,
+      "median_reduced_inertia_kg_m2": 0.031157561374506072
+    },
+    {
+      "assembly_id": "S-J-057-P09",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 260.65762174280013,
+      "coupler_crank_length_ratio": 0.7908766441677211,
+      "moving_mass_kg": 0.9810852428996839,
+      "median_reduced_inertia_kg_m2": 0.0238990536684047
+    },
+    {
+      "assembly_id": "S-J-058-P10",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 263.7672008687175,
+      "coupler_crank_length_ratio": 0.8502804728092982,
+      "moving_mass_kg": 1.226728409435704,
+      "median_reduced_inertia_kg_m2": 0.0302135889092541
+    },
+    {
+      "assembly_id": "S-J-059-P11",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 222.18811042207312,
+      "coupler_crank_length_ratio": 0.8676157011965746,
+      "moving_mass_kg": 0.9074590508085176,
+      "median_reduced_inertia_kg_m2": 0.016061543149440874
+    },
+    {
+      "assembly_id": "S-J-060-P12",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 228.4571064952295,
+      "coupler_crank_length_ratio": 0.8758931466763276,
+      "moving_mass_kg": 1.0692339733707257,
+      "median_reduced_inertia_kg_m2": 0.019207526820822125
+    },
+    {
+      "assembly_id": "S-J-061-P01",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 267.4491603529935,
+      "coupler_crank_length_ratio": 0.8290177730781451,
+      "moving_mass_kg": 0.9760918849781606,
+      "median_reduced_inertia_kg_m2": 0.024232837637572096
+    },
+    {
+      "assembly_id": "S-J-062-P02",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 278.2458908732107,
+      "coupler_crank_length_ratio": 0.8722340963901414,
+      "moving_mass_kg": 1.3136567276114777,
+      "median_reduced_inertia_kg_m2": 0.03939689477974246
+    },
+    {
+      "assembly_id": "S-J-063-P03",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 298.98166675575874,
+      "coupler_crank_length_ratio": 0.8398820408351446,
+      "moving_mass_kg": 1.2587743533507538,
+      "median_reduced_inertia_kg_m2": 0.040800350357981546
+    },
+    {
+      "assembly_id": "S-J-064-P04",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 295.25303863112697,
+      "coupler_crank_length_ratio": 0.8461832413302683,
+      "moving_mass_kg": 1.29842045435382,
+      "median_reduced_inertia_kg_m2": 0.039078802799143185
+    },
+    {
+      "assembly_id": "S-J-065-P05",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 258.4194125640137,
+      "coupler_crank_length_ratio": 0.8499303547832583,
+      "moving_mass_kg": 1.0802383342361421,
+      "median_reduced_inertia_kg_m2": 0.0273945792542154
+    },
+    {
+      "assembly_id": "S-J-066-P06",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 243.49049810581255,
+      "coupler_crank_length_ratio": 0.8521460291872132,
+      "moving_mass_kg": 0.9992934068152547,
+      "median_reduced_inertia_kg_m2": 0.019863593558137962
+    },
+    {
+      "assembly_id": "S-J-067-P07",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 231.33045198404778,
+      "coupler_crank_length_ratio": 0.8874330217625036,
+      "moving_mass_kg": 0.8722848425020793,
+      "median_reduced_inertia_kg_m2": 0.016822540955338354
+    },
+    {
+      "assembly_id": "S-J-068-P08",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 298.26514174730045,
+      "coupler_crank_length_ratio": 0.8085163253132333,
+      "moving_mass_kg": 1.024812300795368,
+      "median_reduced_inertia_kg_m2": 0.03207445837439889
+    },
+    {
+      "assembly_id": "S-J-069-P09",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 292.11933060721753,
+      "coupler_crank_length_ratio": 0.8269427041454993,
+      "moving_mass_kg": 1.0490082910412837,
+      "median_reduced_inertia_kg_m2": 0.03076961834543692
+    },
+    {
+      "assembly_id": "S-J-070-P10",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 222.82559711957254,
+      "coupler_crank_length_ratio": 0.8973217122534698,
+      "moving_mass_kg": 1.0600363032461158,
+      "median_reduced_inertia_kg_m2": 0.01876871647131229
+    },
+    {
+      "assembly_id": "S-J-071-P11",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 239.81985697965723,
+      "coupler_crank_length_ratio": 0.8685314619434773,
+      "moving_mass_kg": 1.010059126313113,
+      "median_reduced_inertia_kg_m2": 0.021593851551504242
+    },
+    {
+      "assembly_id": "S-J-072-P12",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 227.1611195523002,
+      "coupler_crank_length_ratio": 0.8410540377152727,
+      "moving_mass_kg": 0.8288767704868166,
+      "median_reduced_inertia_kg_m2": 0.013930134291923732
+    },
+    {
+      "assembly_id": "S-J-073-P01",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 228.47823886192714,
+      "coupler_crank_length_ratio": 0.8748735315917384,
+      "moving_mass_kg": 0.9163778826685633,
+      "median_reduced_inertia_kg_m2": 0.01725551046646586
+    },
+    {
+      "assembly_id": "S-J-074-P02",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 243.47174916633776,
+      "coupler_crank_length_ratio": 0.8371256939571596,
+      "moving_mass_kg": 0.9368038227579063,
+      "median_reduced_inertia_kg_m2": 0.01927525050957717
+    },
+    {
+      "assembly_id": "S-J-075-P03",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 265.8970683537409,
+      "coupler_crank_length_ratio": 0.8941564972758662,
+      "moving_mass_kg": 1.2813785363146382,
+      "median_reduced_inertia_kg_m2": 0.034248976631135096
+    },
+    {
+      "assembly_id": "S-J-076-P04",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 241.84787202627098,
+      "coupler_crank_length_ratio": 0.8808132420221899,
+      "moving_mass_kg": 1.1705879346355508,
+      "median_reduced_inertia_kg_m2": 0.023538452165853062
+    },
+    {
+      "assembly_id": "S-J-077-P05",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 238.26162823429104,
+      "coupler_crank_length_ratio": 0.8351751371384772,
+      "moving_mass_kg": 1.0559329401781563,
+      "median_reduced_inertia_kg_m2": 0.022181025766981964
+    },
+    {
+      "assembly_id": "S-J-078-P06",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 244.3289297214992,
+      "coupler_crank_length_ratio": 0.8557375097858355,
+      "moving_mass_kg": 1.1483551548627222,
+      "median_reduced_inertia_kg_m2": 0.024590544042152596
+    },
+    {
+      "assembly_id": "S-J-079-P07",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 305.06334251321994,
+      "coupler_crank_length_ratio": 0.836347668944418,
+      "moving_mass_kg": 1.1821321674956553,
+      "median_reduced_inertia_kg_m2": 0.03850190558806503
+    },
+    {
+      "assembly_id": "S-J-080-P08",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 301.38697820159456,
+      "coupler_crank_length_ratio": 0.8228628167628863,
+      "moving_mass_kg": 1.3355855857734045,
+      "median_reduced_inertia_kg_m2": 0.04140615850526845
+    },
+    {
+      "assembly_id": "S-J-081-P09",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 280.1565821101661,
+      "coupler_crank_length_ratio": 0.8276082292285087,
+      "moving_mass_kg": 1.2384104886304008,
+      "median_reduced_inertia_kg_m2": 0.03382402165466567
+    },
+    {
+      "assembly_id": "S-J-082-P10",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 245.3373359653196,
+      "coupler_crank_length_ratio": 0.8296057422600955,
+      "moving_mass_kg": 1.020517600352275,
+      "median_reduced_inertia_kg_m2": 0.022299563079687064
+    },
+    {
+      "assembly_id": "S-J-096-P12",
+      "family": "S-J",
+      "split": "train",
+      "crank_length_mm": 269.679443002513,
+      "coupler_crank_length_ratio": 0.8942368119612165,
+      "moving_mass_kg": 1.1069963461945425,
+      "median_reduced_inertia_kg_m2": 0.02746892024180919
+    },
+    {
+      "assembly_id": "S-J-097-P01",
+      "family": "S-J",
+      "split": "calibration",
+      "crank_length_mm": 236.44590506557708,
+      "coupler_crank_length_ratio": 0.8392604130244133,
+      "moving_mass_kg": 1.0824655790829827,
+      "median_reduced_inertia_kg_m2": 0.02127697826888631
+    },
+    {
+      "assembly_id": "S-J-098-P02",
+      "family": "S-J",
+      "split": "calibration",
+      "crank_length_mm": 256.39925069718896,
+      "coupler_crank_length_ratio": 0.7961543676690533,
+      "moving_mass_kg": 1.2559622390885785,
+      "median_reduced_inertia_kg_m2": 0.029220085280836024
+    },
+    {
+      "assembly_id": "S-J-099-P03",
+      "family": "S-J",
+      "split": "calibration",
+      "crank_length_mm": 242.790902444748,
+      "coupler_crank_length_ratio": 0.8913583488640195,
+      "moving_mass_kg": 0.9167642673565578,
+      "median_reduced_inertia_kg_m2": 0.018851330205233444
+    },
+    {
+      "assembly_id": "S-J-100-P04",
+      "family": "S-J",
+      "split": "calibration",
+      "crank_length_mm": 223.93381421196662,
+      "coupler_crank_length_ratio": 0.8699032145368173,
+      "moving_mass_kg": 0.9233183727320728,
+      "median_reduced_inertia_kg_m2": 0.016532255859211874
+    },
+    {
+      "assembly_id": "S-J-101-P05",
+      "family": "S-J",
+      "split": "calibration",
+      "crank_length_mm": 226.4922837406259,
+      "coupler_crank_length_ratio": 0.8754961199768108,
+      "moving_mass_kg": 0.8613703963538653,
+      "median_reduced_inertia_kg_m2": 0.014685620712267975
+    },
+    {
+      "assembly_id": "S-J-102-P06",
+      "family": "S-J",
+      "split": "calibration",
+      "crank_length_mm": 251.24271496252277,
+      "coupler_crank_length_ratio": 0.8582670667644134,
+      "moving_mass_kg": 0.8680864357832598,
+      "median_reduced_inertia_kg_m2": 0.019260115464356534
+    },
+    {
+      "assembly_id": "S-J-103-P07",
+      "family": "S-J",
+      "split": "validation",
+      "crank_length_mm": 221.8960002814392,
+      "coupler_crank_length_ratio": 0.7959269722100639,
+      "moving_mass_kg": 1.0371554704819834,
+      "median_reduced_inertia_kg_m2": 0.018789670234659755
+    },
+    {
+      "assembly_id": "S-J-104-P08",
+      "family": "S-J",
+      "split": "validation",
+      "crank_length_mm": 250.71745883296904,
+      "coupler_crank_length_ratio": 0.853031189396277,
+      "moving_mass_kg": 0.9498153243866689,
+      "median_reduced_inertia_kg_m2": 0.02113612719592719
+    },
+    {
+      "assembly_id": "S-J-105-P09",
+      "family": "S-J",
+      "split": "validation",
+      "crank_length_mm": 242.89874522726208,
+      "coupler_crank_length_ratio": 0.8949765511700556,
+      "moving_mass_kg": 1.0653998904895738,
+      "median_reduced_inertia_kg_m2": 0.023001536349918947
+    },
+    {
+      "assembly_id": "S-J-106-P10",
+      "family": "S-J",
+      "split": "validation",
+      "crank_length_mm": 233.73028590236845,
+      "coupler_crank_length_ratio": 0.8189590603787917,
+      "moving_mass_kg": 1.0356518603706593,
+      "median_reduced_inertia_kg_m2": 0.019481093702699254
+    },
+    {
+      "assembly_id": "S-J-107-P11",
+      "family": "S-J",
+      "split": "validation",
+      "crank_length_mm": 262.2213086367429,
+      "coupler_crank_length_ratio": 0.8525997349173532,
+      "moving_mass_kg": 0.9738452213256109,
+      "median_reduced_inertia_kg_m2": 0.023329426931518182
+    },
+    {
+      "assembly_id": "S-J-108-P12",
+      "family": "S-J",
+      "split": "validation",
+      "crank_length_mm": 288.55937259802243,
+      "coupler_crank_length_ratio": 0.8811096310253783,
+      "moving_mass_kg": 1.0752404463325242,
+      "median_reduced_inertia_kg_m2": 0.029807092701731163
+    },
+    {
+      "assembly_id": "S-J-109-P01",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 273.33749516214186,
+      "coupler_crank_length_ratio": 0.827877476320287,
+      "moving_mass_kg": 1.1801298199516659,
+      "median_reduced_inertia_kg_m2": 0.031032894626458564
+    },
+    {
+      "assembly_id": "S-J-110-P02",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 235.6213596196522,
+      "coupler_crank_length_ratio": 0.7945177440564652,
+      "moving_mass_kg": 1.0900610125372174,
+      "median_reduced_inertia_kg_m2": 0.02179549444986809
+    },
+    {
+      "assembly_id": "S-J-111-P03",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 260.84430443985497,
+      "coupler_crank_length_ratio": 0.802302199289851,
+      "moving_mass_kg": 1.1078014501532523,
+      "median_reduced_inertia_kg_m2": 0.02567359973795481
+    },
+    {
+      "assembly_id": "S-J-112-P04",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 255.65772804709147,
+      "coupler_crank_length_ratio": 0.789579105397224,
+      "moving_mass_kg": 1.0267745814922908,
+      "median_reduced_inertia_kg_m2": 0.023863655688796816
+    },
+    {
+      "assembly_id": "S-J-113-P05",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 245.4135407953524,
+      "coupler_crank_length_ratio": 0.8670517489101583,
+      "moving_mass_kg": 0.9700877005128983,
+      "median_reduced_inertia_kg_m2": 0.021122776777945322
+    },
+    {
+      "assembly_id": "S-J-114-P06",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 278.64676549693127,
+      "coupler_crank_length_ratio": 0.8459241505271807,
+      "moving_mass_kg": 1.0680850511186308,
+      "median_reduced_inertia_kg_m2": 0.030129151776139708
+    },
+    {
+      "assembly_id": "S-J-115-P07",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 285.6431279766168,
+      "coupler_crank_length_ratio": 0.8561799552689435,
+      "moving_mass_kg": 1.1881435464883907,
+      "median_reduced_inertia_kg_m2": 0.03438692027003594
+    },
+    {
+      "assembly_id": "S-J-116-P08",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 257.0346382701851,
+      "coupler_crank_length_ratio": 0.8321743663561463,
+      "moving_mass_kg": 1.0491719623068914,
+      "median_reduced_inertia_kg_m2": 0.025548178745354005
+    },
+    {
+      "assembly_id": "S-J-117-P09",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 214.9096307893604,
+      "coupler_crank_length_ratio": 0.8377822262348501,
+      "moving_mass_kg": 0.9188893130541151,
+      "median_reduced_inertia_kg_m2": 0.015440558556524238
+    },
+    {
+      "assembly_id": "S-J-118-P10",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 249.57307008690802,
+      "coupler_crank_length_ratio": 0.8736794342261581,
+      "moving_mass_kg": 1.0681630291819113,
+      "median_reduced_inertia_kg_m2": 0.023995138556912605
+    },
+    {
+      "assembly_id": "S-J-119-P11",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 287.0448947987356,
+      "coupler_crank_length_ratio": 0.840433006799084,
+      "moving_mass_kg": 1.2384933320419886,
+      "median_reduced_inertia_kg_m2": 0.035720061180160426
+    },
+    {
+      "assembly_id": "S-J-120-P12",
+      "family": "S-J",
+      "split": "test",
+      "crank_length_mm": 240.6356783300831,
+      "coupler_crank_length_ratio": 0.8481679904948588,
+      "moving_mass_kg": 1.113265343333093,
+      "median_reduced_inertia_kg_m2": 0.02358915295897721
+    }
+  ]
+}

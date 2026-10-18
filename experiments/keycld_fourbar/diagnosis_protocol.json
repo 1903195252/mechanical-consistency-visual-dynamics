@@ -1,0 +1,34 @@
+{
+  "purpose": "Controlled diagnosis of the completed seed-42 four-bar run; no baseline replacement",
+  "checkpoint_sha256": "b7b65abfc5df9d6befc49952e8ee92021a9ffc9d1d1d2ca17cbc155874ad5f50",
+  "test_indices": [500, 549],
+  "semantic_mapping_indices": [450, 499],
+  "training_performed": false,
+  "fixed": ["epoch-40 weights", "all 50 ID tests", "original geometry and actions", "original train-only VPT threshold", "50 timestamps and first-three-frame forecast context"],
+  "visual": {
+    "controls": ["encoder and renderer on every true frame", "last observed image persistence", "training-mean image"],
+    "semantics": "Fixed declared B,C,P order and best global permutation selected on validation only; no affine fit or test fitting",
+    "metrics": ["image MSE and VPT", "keypoint position RMSE in metres", "distance and midpoint residuals", "foreground MSE using per-test temporal variance mask"]
+  },
+  "learned_integrator": {
+    "controls": ["official odeint", "RK4 with 1, 4, 16 substeps", "Euler with 1, 4, 16 substeps"],
+    "metrics": ["paired VPT differences", "paired future image MSE differences", "position difference from odeint", "constraint drift"],
+    "note": "Inference integrator changes alone cannot test the effect of Euler inside training."
+  },
+  "local_dynamics": {
+    "controls": ["teacher-forced encoded states, four-step Euler", "teacher-forced encoded states, four-step RK4 with 4 substeps", "latent persistence"],
+    "note": "Uses future images to reset local state; diagnostic only. Targets are latent encodings, not physical state labels."
+  },
+  "physical_oracle": {
+    "controls": ["independent reduced equation with DOP853 and exact initial velocity", "same equation and central-difference initial velocity", "Euler with 1, 4, 16 substeps", "RK4 with 4 substeps", "learned acceleration on exact physical keypoints"],
+    "metrics": ["hinge position RMSE", "crank phase error", "initial velocity error", "point acceleration relative error"],
+    "note": "Oracle controls use evaluator-only states and physics parameters. Learned acceleration at true keypoints is an out-of-domain probe if the semantic check fails."
+  },
+  "statistics": "Per-sequence paired bootstrap, 2000 draws, seed 20261010; 95% percentile interval. One training seed only.",
+  "interpretation": [
+    "A benefit from framewise reconstruction supports an accumulation/dynamics bottleneck relative to the autoencoder, but does not prove accurate physical state recognition.",
+    "Agreement of converged inference solvers rules against inference integration as the main bottleneck of this checkpoint.",
+    "Physical-oracle solver and initial-velocity interventions isolate numerical and sampling effects in a known-correct dynamics system.",
+    "No closed-chain-specific causal conclusion without a matched topology control; no training-integrator causal conclusion without retraining."
+  ]
+}

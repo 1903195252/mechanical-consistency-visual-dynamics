@@ -1,0 +1,26 @@
+{
+  "scoring_version": "continuous-si-1",
+  "source_hashes": {
+    "experiments/mechanism_corpus/__init__.py": "3c9eabb31eae91c694252fb2d27f57dd52d1c1e72f2371e96179c027fba27d71",
+    "experiments/mechanism_corpus/catalog.py": "8d6fce28a20478858f0d136ec878c4f1dcd96d84aeb3b167060e7977bc1cebc3",
+    "experiments/mechanism_corpus/fourbar.py": "6c633329e34c0a389b83463a22e4f39ec4599052ef4ac8d9e420b247b7be7393",
+    "experiments/mechanism_corpus/slider_crank.py": "292c848c8c50326f62bc7fbbf16408b5d81a8a718ee6d343f331b14542e8a836",
+    "experiments/mechanism_corpus/double_crank.py": "32376ffc0d232c76e097947a5e772932a7f4d369cb759583a75bc59c616689d3",
+    "experiments/mechanism_corpus/solids.py": "3c1856cc6c68c43b891e4bc07b0660747730c98cff4c8a060c1fe2dbe092c565",
+    "experiments/fourbar/mechanics.py": "988d4b8586669cc5f17863c5ab02faeaed704293d1e2698f61541c0345429cdf",
+    "experiments/fourbar/geometry.py": "80346ed66f94f61ff861b9a93b7a875788a98f463ef84307f708ed6b28df5fa4",
+    "experiments/keycld_corpus/physics_score.py": "fb84a5f06787565b32e58606b5ef3b4cbf895a799c8432379a252f1d769a0e4f",
+    "experiments/con_corpus/crank_readout.py": "05b67d9d47dee889a6050cb736dce9aa248684ea4d9786622517e444aeadba2d",
+    "experiments/con_corpus/score_readout.py": "1509ee82741d50d8e340f0414b70105cedea6657ad22c163898ed78aba1cc35c",
+    "experiments/keycld_corpus/prepare.py": "4ab66dbee88e25e7b20876fc8dc004053cb7eb1269df13607ce01b748cdd6863",
+    "experiments/closed_chain_eval/continuous.py": "d33f88a68327deb4384e1559f849e50ac6d0b30f2997481429353a3dd8ecaa28",
+    "experiments/closed_chain_eval/score_reports.py": "a7aa5f7a8b0122c4009284bedf8402547e195bdbe8a70930717d8829642914db",
+    "experiments/closed_chain_eval/rescore_continuous.py": "d7cfccddf2ddc13a8b5d9647a3f894781349282afa0a4fbb6090d22961971a1e",
+    "experiments/planar_resolution/score.py": "209b52dd02ce5ae4dc08928a574baa2cfc5bae0684df323b67f111f1d32f6ed8",
+    "experiments/planar_resolution/bind_evaluator.py": "321464da6108fd2a59388f0c3ba4a62df9da2bae8a7872b2b41930e5fb06f31c"
+  },
+  "calibration_hashes": {
+    "output/keycld_corpus/calibration.json": "62707fc1aa17bf097a3e513cbf4296a34f98aba94e2b8da2bd5a1f91b2b0e8ea",
+    "output/con_corpus/dynamics_extension/readout_calibration.json": "5fdb5414fc5add97b1e8ddc1346ffa5d6240702fad4df650cdbd888d66700d22"
+  }
+}

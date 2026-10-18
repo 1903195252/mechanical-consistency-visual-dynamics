@@ -1,0 +1,70 @@
+{
+  "protocol": "KeyCLD paper procedure transferred to a planar four-bar, first underactuated experiment",
+  "official_commit": "426c99a53d597e81044e4ce77214cd3aa6b92b64",
+  "paper": "Neurocomputing 573 (2024), 127175; Appendices D/E",
+  "dataset": {
+    "training_runs": 450,
+    "validation_runs": 50,
+    "heldout_test_runs": 50,
+    "heavy_payload_test_runs": 20,
+    "friction_test_runs": 20,
+    "frames_per_run": 50,
+    "sample_dt_s": 0.01,
+    "image_size": 64,
+    "initial_crank_angle_range_rad": [-3.141592653589793, 3.141592653589793],
+    "initial_crank_velocity_range_rad_s": [-0.1, 0.1],
+    "constant_torque_range_Nm": [-2.0, 2.0],
+    "zero_action_probability": 0.2,
+    "physics_timestep_s": 0.000010416666666666666,
+    "equality_solref_s": 0.000025,
+    "main_friction": "zero; aligned with the conservative paper setting",
+    "control": "underactuated: constant action [tau_A, 0, 0]",
+    "renderer": "MuJoCo RGB, camera parallel to XZ motion plane, no state markers",
+    "training_labels": "RGB sequences and constant actions only; state/physics truth stored separately"
+  },
+  "model": {
+    "num_keypoints": 3,
+    "keypoint_order": ["B", "C", "coupler_midpoint"],
+    "num_action_dimensions": 3,
+    "action_channels": ["tau_A", "tau_B_zero", "tau_D_zero"],
+    "constraint_rank": 5,
+    "geometry_given": true,
+    "constraint_form": "three constant-distance constraints plus two midpoint coordinates",
+    "hidden_dimensions": 32,
+    "mass_model": "official learned point masses",
+    "friction_network_added": false
+  },
+  "training": {
+    "seed": 42,
+    "epochs": 40,
+    "batch_size": 1,
+    "visual_learning_rate": 0.0003,
+    "dynamics_learning_rate": 0.00006,
+    "gradient_element_clip": 5.0,
+    "optimizer": "official Optax Adam groups, with optimizer state retained between updates",
+    "loss": "unchanged official reconstruction + dynamics + heatmap BCE",
+    "dynamics_weight": 1.0,
+    "bce_weight": 1.0,
+    "num_predicted_steps": 4,
+    "solver": "official explicit Euler",
+    "augmentation": "official random 0..7 rotate/flip per frame with heatmap unaugmentation",
+    "checkpoint_selection": "final epoch 40, fixed before testing; no test-guided selection"
+  },
+  "evaluation": {
+    "observed_frames": 3,
+    "prediction_frames": 50,
+    "solver": "official JAX odeint",
+    "validation_metric": "official VPT index, threshold from the original 500 train+validation clips",
+    "heldout_metric": "same VPT function, threshold from training clips only",
+    "independent_physics": "additional metrics; not substituted for paper VPT",
+    "semantic_caution": "Learned keypoints are not guaranteed to coincide with physical hinges; physical interpretation requires a separate check."
+  },
+  "recorded_differences": [
+    "Mechanism topology, rendering geometry, physical parameters and constraint function necessarily change.",
+    "Three moving bars require a sufficiently expressive three-point representation; the two-point smoke-test setup is not reused.",
+    "Additional untouched test trajectories are added to the paper's 450/50 train/validation split.",
+    "Official optimizer update discards its returned state; retaining it repairs Adam implementation to match the stated paper algorithm.",
+    "A fixed recorded seed replaces an unrecorded randomly chosen seed.",
+    "Logging is local and W&B disabled; numerical libraries use the already deployed compatible versions."
+  ]
+}

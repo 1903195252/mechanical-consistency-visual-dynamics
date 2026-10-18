@@ -1,0 +1,170 @@
+{
+  "schema_version": "2.0.0",
+  "dataset_name": "mechanism_corpus",
+  "target_assemblies": 700,
+  "target_videos": 10500,
+  "videos_per_assembly": 15,
+  "tiers": {
+    "S": {
+      "assemblies": 600,
+      "categories": 5,
+      "per_category": 120,
+      "independent_dof": [
+        1,
+        2
+      ],
+      "scope": "Planar or 2.5D, limited contact"
+    },
+    "H": {
+      "assemblies": 100,
+      "categories": 2,
+      "per_category": 50,
+      "independent_dof": [
+        3,
+        6
+      ],
+      "scope": "Genuine spatial assembly with parallel/closed chains or multiple spatial axes"
+    }
+  },
+  "categories": [
+    {
+      "code": "S-A",
+      "name": "四杆曲柄摇杆机构",
+      "implementation": "fourbar",
+      "dof": 1,
+      "subtypes": [
+        "offset_layers",
+        "ribbed_mount",
+        "counterweight"
+      ],
+      "core_equation": "two loop-closure equations and constrained rigid-body dynamics"
+    },
+    {
+      "code": "S-B",
+      "name": "曲柄滑块机构",
+      "implementation": "slider_crank",
+      "dof": 1,
+      "subtypes": [
+        "inline",
+        "offset",
+        "crosshead"
+      ],
+      "core_equation": "slider guide and crank-coupler closure"
+    },
+    {
+      "code": "S-C",
+      "name": "直齿/斜齿齿轮传动",
+      "implementation": "gear_pair",
+      "dof": 1,
+      "subtypes": [
+        "spur",
+        "helical"
+      ],
+      "core_equation": "involute geometry, pitch-center distance and signed gear ratio"
+    },
+    {
+      "code": "S-E",
+      "name": "凸轮-从动件",
+      "implementation": "cam_follower",
+      "dof": 1,
+      "subtypes": [
+        "roller",
+        "flat_follower"
+      ],
+      "core_equation": "cam law, normal contact and follower spring balance"
+    },
+    {
+      "code": "S-J",
+      "name": "平行四边形/双曲柄机构",
+      "implementation": "parallelogram",
+      "dof": 1,
+      "subtypes": [
+        "parallel_link",
+        "double_crank"
+      ],
+      "core_equation": "parallel-link closure and matched shaft rotation"
+    },
+    {
+      "code": "H-A",
+      "name": "斯图尔特平台",
+      "implementation": "stewart",
+      "dof": 6,
+      "spatial_realization": "six variable-length UPS legs connecting two rigid platforms"
+    },
+    {
+      "code": "H-B",
+      "name": "Delta 并联机构",
+      "implementation": "delta",
+      "dof": 3,
+      "spatial_realization": "three spatial parallelogram legs and translational end platform"
+    }
+  ],
+  "views": [
+    "front",
+    "side",
+    "top",
+    "isometric",
+    "tracking_closeup"
+  ],
+  "conditions": [
+    "low_speed",
+    "rated",
+    "limit_or_load"
+  ],
+  "video_index_rule": "V = 5 * condition_index + view_index + 1; V01-V05 low, V06-V10 rated, V11-V15 stress",
+  "assembly_id_rule": "T-C-NNN-Pnn; NNN is unique inside each class; Pnn identifies the assigned hardware recipe, not extra counted assemblies",
+  "split_rule": "80/10/10 percent by assembly within each category; all 15 views/conditions of an assembly remain in the same split",
+  "render": {
+    "engine": "BLENDER_EEVEE",
+    "width": 640,
+    "height": 640,
+    "fps": 30,
+    "duration_s": 4,
+    "frames": 120,
+    "codec": "h264",
+    "crf": 18
+  },
+  "physics": {
+    "units": "SI",
+    "record_hz": 240,
+    "default_timestep_s": 0.00020833333333333335,
+    "model_authority": "MuJoCo trajectories; Blender replays exported body transforms",
+    "contact_and_topology_events_recorded": true
+  },
+  "data_contract": {
+    "model_inputs": [
+      "video_prefix",
+      "camera_calibration",
+      "commanded_actions",
+      "text_description",
+      "declared_geometry_if_track_allows"
+    ],
+    "evaluator_only": [
+      "SI_mass_and_inertia",
+      "full_states",
+      "actual_generalized_forces",
+      "constraint_reactions",
+      "contact_forces",
+      "future_reference",
+      "mode_transition_logs"
+    ],
+    "actions": "Log controller commands and realized actuator forces separately; feedback-derived future torques are not silently included as planned actions"
+  },
+  "quality_gates": [
+    "Distinct physical geometry/structure; camera, color or file-name changes do not count as new assemblies",
+    "SI part dimensions, mating datums, clearances, rigid-body ownership, mass, COM and inertia",
+    "Complete frame/joint graph and constraint-rank independent DOF audit",
+    "Positive masses/inertias, reachable motion, no unintended interpenetration or solver divergence",
+    "Independent mechanism-specific geometric and dynamic equations, and work-energy audit with explicit contact/compliance terms",
+    "Three independently simulated conditions, five calibrated views per condition",
+    "Blender part poses agree with exported physics transforms at all rendered frames",
+    "Decoded video dimensions, fps, frame count, finite state metadata and complete lineage",
+    "Per-template visual inspection before releasing a production batch"
+  ],
+  "seed_namespace_aliases": {
+    "H-A": "M-A",
+    "H-B": "M-B"
+  },
+  "legacy_design": "output/mechanism_corpus/archives/naming_SMH_v1/specification.json",
+  "naming_policy": "S = planar/2.5D; H = spatial closed-chain/parallel. Unimplemented original categories are archival plans, not active data."
+}

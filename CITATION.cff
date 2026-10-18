@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using this audit framework."
+type: software
+title: "Mechanical Consistency in Visual Dynamics"
+authors:
+  - family-names: Gu
+    given-names: Qibin
+    affiliation: Nanjing Tech University
+  - family-names: Yan
+    given-names: Yunfeng
+    affiliation: Zhejiang University
+preferred-citation:
+  type: unpublished
+  title: "Beyond Geometric Closure: Measuring and Diagnosing Mechanical Consistency in Visual Dynamics"
+  authors:
+    - family-names: Gu
+      given-names: Qibin
+    - family-names: Yan
+      given-names: Yunfeng
+  year: 2026
+repository-code: "https://github.com/1903195252/mechanical-consistency-visual-dynamics"

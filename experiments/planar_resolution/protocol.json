@@ -1,0 +1,122 @@
+{
+  "id": "planar-resolution-native-v1",
+  "purpose": "Paired 64/256 pixel evidence on visual prediction, coordinate anchoring and SI mechanics",
+  "resolutions_new": [
+    256
+  ],
+  "reference_resolution": 64,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "new_primary_video_runs": 6,
+  "dataset": {
+    "assemblies": 343,
+    "sequences_per_resolution": 1029,
+    "splits": {
+      "train": 813,
+      "validation": 54,
+      "calibration": 54,
+      "test": 108
+    },
+    "families": [
+      "S-A",
+      "S-B",
+      "S-J"
+    ],
+    "conditions": [
+      "low_speed",
+      "rated",
+      "limit_or_load"
+    ],
+    "source_rgb": "original 640x640 calibrated RGB; never 64px upsampling",
+    "full_fov_m": 1.3,
+    "grid_convention": "first/last pixel centers",
+    "training_frames": 50,
+    "evaluation_frames": 90,
+    "prefix_frames": 3,
+    "fps": 30,
+    "paired_fields": [
+      "assembly_id",
+      "split",
+      "category",
+      "condition",
+      "state_labels_sha256",
+      "physics_reference_sha256",
+      "physical_parameters_sha256",
+      "source_video_sha256"
+    ]
+  },
+  "models": {
+    "KeyCLD": {
+      "arm": "video_euler",
+      "epochs": 40,
+      "batch_size": 1,
+      "updates_per_seed": 32520,
+      "sequence_exposures_per_seed": 32520,
+      "forecast_training_steps": 4,
+      "architecture": "native encoder, renderer, point masses, potential, input matrix and hard constraints",
+      "loss": "complete upstream reconstruction + dynamics + BCE",
+      "reconstruction_multiplier": "(64 / image_width)^2; preserve the 64px pixel-sum weight",
+      "dynamics_weight": 1.0,
+      "bce_weight": 1.0,
+      "memory": "stream entire sequences; rematerialize per-frame independent CNNs; one update after complete loss",
+      "visual_lr": 0.0003,
+      "dynamics_lr": 6e-05,
+      "gradient_element_clip": 5.0
+    },
+    "CON": {
+      "arm": "video_con_iae",
+      "epochs": 50,
+      "batch_size": 16,
+      "updates_per_seed": 2550,
+      "sequence_exposures_per_seed": 40650,
+      "last_batch_size": 13,
+      "architecture": "native beta-VAE stride (1,1), 8D CON-IAE, 14D command, original dense layers",
+      "loss": "complete upstream beta-VAE and 48-step dynamical reconstruction; MSE already pixel-averaged",
+      "optimizer_and_weights": "experiments/con_corpus/protocol.json training; unchanged",
+      "solver": "Dopri5 constant dt 0.01 s",
+      "memory": "stream batches; large-memory GPU preflight required; never silently resize inputs or replace dense layers"
+    }
+  },
+  "selection": "fixed final epoch; no test selection; each resolution trained from scratch",
+  "exact_state_controls": "reuse frozen resolution-independent state runs; do not count as new high-resolution training",
+  "public_reader": {
+    "per_resolution": true,
+    "fit_split": "train",
+    "development_split": "validation",
+    "calibration_and_verification": "same assembly-disjoint halves of the 54 independent calibration sequences",
+    "controls": [
+      "exact states and derivatives",
+      "sampled exact coordinates with differentiation",
+      "correct RGB through matched reader",
+      "frozen model RGB through that same reader",
+      "reader/derivative replacement on fixed predictions"
+    ],
+    "failure_action": "optimize the measurement chain on development identities and repeat independent calibration if instrument error can change the conclusion"
+  },
+  "scoring": {
+    "version": "continuous-si-1",
+    "component": "1 / (1 + (error/tolerance)^2)",
+    "main": "100/6 times the family/condition/seed-balanced sum of measurable component scores",
+    "missing": "zero contribution; retain all registered cases and six-component denominator",
+    "auxiliary": [
+      "strict joint qualification",
+      "physical coverage",
+      "raw SI error",
+      "RGB and motion-mask MSE",
+      "persistence",
+      "coordinate correction"
+    ],
+    "tolerances": {
+      "closure_m": 0.001,
+      "velocity_m_s": 0.01,
+      "acceleration_m_s2": 0.1,
+      "torque_Nm": 0.25,
+      "energy_J": 0.05,
+      "point_m": 0.01
+    },
+    "resolution_changes_tolerances": false
+  }
+}

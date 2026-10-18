@@ -1,0 +1,33 @@
+{
+  "purpose": "Equation-based friction, SI-identifiability and mechanism-transfer evaluation",
+  "weights": "Frozen original video epoch-40 checkpoint and frozen RK4 physical-state component checkpoint",
+  "training_performed": false,
+  "trajectory_seeds": [1000, 1019],
+  "runs_per_condition": 20,
+  "conditions": ["nominal", "viscous", "coulomb", "mixed_friction", "heavy_payload", "dense_bars", "geometry_scaled", "crank_slider"],
+  "pairing": "Same initial crank angle, initial crank speed and constant motor torque for each seed in every condition",
+  "physics_timestep_s": 0.000010416666666666666,
+  "equality_solref_s": 0.000025,
+  "sample_dt_s": 0.01,
+  "frames": 50,
+  "image_size": 64,
+  "camera": "Same calibrated camera and normalization as source training",
+  "mass_conditions": {"nominal_payload_kg": 0.08, "heavy_payload_kg": 0.25, "bar_density_multiplier": 1.5},
+  "geometry_scale": 0.8,
+  "new_mechanism": "3R+1P crank-slider, same crank/coupler lengths, slider mass equals the source rocker mass, known target constraints provided",
+  "geometry_gate_m": 0.0001,
+  "gate_basis": "Five times the fixed 20 micrometre data-audit bound, selected before model evaluation; not a universal benchmark tolerance",
+  "primary_metric": "Equivalent crank motor torque error gamma^T(M a+c+G-Q_ext-Q_fric)-tau_A in N*m, gamma=dq/dtheta and gamma_1=1",
+  "equation_terms": "Inertia, velocity-quadratic, gravity, friction, external force and motor torque reported separately",
+  "friction_probe": {"angles": 73, "speed_magnitudes_rad_s": [0.25, 1.0, 4.0, 12.0], "method": "Matched +/- speed, same pose and torque; odd acceleration isolates friction"},
+  "inertia_probe": {"angles": 73, "actions_Nm": [-1.0, 0.0, 1.0], "speed_rad_s": 0.0, "method": "I_eff=1/(d alpha/d tau); reject nonpositive gains explicitly"},
+  "parameter_control": {"fit_seeds": [1000, 1011], "test_seeds": [1012, 1019], "method": "Independent physical regressor with exact states, nonnegative least squares; audit rank before interpreting individual masses/friction coefficients"},
+  "SI_mass_policy": "Native point masses have a mass/potential/input-map scale gauge. Report this structural nonidentifiability, and separately evaluate behavior-implied SI inertia; do not call raw parameters identified SI body masses.",
+  "scope": [
+    "Video model sees three prefix images and the constant action. State component sees exact prefix state and is explicitly a diagnostic.",
+    "Mass, inertia and friction truth are evaluator-only, never model inputs.",
+    "Cross-topology test adapts only the given geometric constraint callback with identical learned weights and dimensions.",
+    "Target mechanism training, topology discovery, Delta/Stewart coverage and multi-seed training claims are not included.",
+    "Parameter controls using ground-truth states verify excitation/identifiability; they are not video-learning model scores."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "default_style": "industrial",
+  "geometry": {"circular_segments": 96, "bevel_segments": 4, "shaft_to_bore_ratio": 0.6},
+  "studio": {
+    "background_rgb": [0.72, 0.76, 0.81],
+    "world_strength": 0.35,
+    "exposure": -0.45,
+    "lights": [
+      {"name": "Large key softbox", "position_m": [-0.15, -0.65, 1.15], "power_W": 42, "size_m": 0.65, "color_rgb": [1.0, 0.94, 0.86]},
+      {"name": "Cool fill softbox", "position_m": [0.75, -0.35, 0.75], "power_W": 20, "size_m": 0.6, "color_rgb": [0.85, 0.92, 1.0]},
+      {"name": "Edge strip light", "position_m": [0.3, 0.4, 1.1], "power_W": 36, "size_m": 0.5, "color_rgb": [1.0, 1.0, 1.0]}
+    ]
+  },
+  "presentation": {"width": 1600, "height": 1200, "cycles_samples": 96, "camera_offset_m": [0.64, -1.0, 0.55], "ortho_scale_m": 0.81},
+  "styles": {
+    "industrial": {
+      "description": "Blue crank, amber coupler, green rocker; graphite frame and brushed aluminum",
+      "link_rgb": [[0.025, 0.22, 0.48], [0.76, 0.25, 0.035], [0.025, 0.3, 0.16]],
+      "frame_rgb": [0.055, 0.072, 0.095], "aluminum_rgb": [0.47, 0.52, 0.58],
+      "floor_rgb": [0.62, 0.66, 0.71], "lettering_rgb": [0.8, 0.85, 0.9]
+    },
+    "graphite": {
+      "description": "Navy crank, copper coupler, silver rocker; dark graphite frame",
+      "link_rgb": [[0.025, 0.075, 0.15], [0.48, 0.18, 0.065], [0.47, 0.52, 0.58]],
+      "frame_rgb": [0.035, 0.045, 0.06], "aluminum_rgb": [0.32, 0.37, 0.43],
+      "floor_rgb": [0.55, 0.59, 0.64], "lettering_rgb": [0.78, 0.84, 0.9]
+    },
+    "light": {
+      "description": "Blue crank, orange coupler, teal rocker; pale aluminum frame",
+      "link_rgb": [[0.02, 0.2, 0.46], [0.7, 0.22, 0.03], [0.025, 0.28, 0.29]],
+      "frame_rgb": [0.5, 0.55, 0.61], "aluminum_rgb": [0.62, 0.68, 0.74],
+      "floor_rgb": [0.72, 0.75, 0.8], "lettering_rgb": [0.84, 0.89, 0.95]
+    }
+  }
+}

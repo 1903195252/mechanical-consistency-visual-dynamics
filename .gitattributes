@@ -1,0 +1,12 @@
+* text=auto
+*.py text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.md text eol=lf
+*.tex text eol=lf
+*.pdf binary
+*.png binary
+
+# Preserve the byte-level digest of the canonical measurement export.
+/results/continuous/case_scores.csv -text

@@ -1,0 +1,22 @@
+{
+  "keycld": {
+    "url": "https://github.com/rdaems/keycld.git",
+    "commit": "426c99a53d597e81044e4ce77214cd3aa6b92b64",
+    "path": "output/upstream/keycld"
+  },
+  "con": {
+    "url": "https://github.com/tud-phi/uncovering-iss-coupled-oscillator-networks-from-pixels.git",
+    "commit": "cef5441f0201ed28e3ac9e1d3e7d4de7d52c4a30",
+    "path": "output/model_expansion/upstream/coupled_oscillators"
+  },
+  "vjepa": {
+    "url": "https://github.com/facebookresearch/vjepa2.git",
+    "commit": "204698b45b3712590f06245fbfba32d3be539812",
+    "path": "output/model_expansion/upstream/vjepa2"
+  },
+  "lingbot": {
+    "url": "https://github.com/Robbyant/lingbot-va.git",
+    "commit": "7c6ffa9bfc4b83582cafc860fab4c82cc7deeeeb",
+    "path": "output/model_expansion/upstream/lingbot_va"
+  }
+}

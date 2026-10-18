@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "name": "calibrated-rgb-si-20261017",
+  "training_protocol_sha256": "4a3a0e8324b3abddff5b72d16faa1e283c16822b552d5ea317d478465e9c92c5",
+  "reader_by_family": {
+    "H-A": "frozen CAD-conditioned V-JEPA coordinate head",
+    "H-B": "reset-relative V-JEPA depth plus image-only Lucas-Kanade plane displacement"
+  },
+  "Delta_coordinate_smoothing": false,
+  "fit_new_test_labels": false,
+  "subtract_reference_RMSE": false,
+  "CAD_IK_intervention_separately_scored": true,
+  "reference_and_generated_same_instrument": true,
+  "files": {
+    "output/lingbot_expansion/delta_instrument/no_coordinate_smoothing/relative_head.npz": {
+      "sha256": "097ba0b315b9e866bf042090224b0afeeb05d8799bfae28b4d2982f33cfa7be0",
+      "bytes": 1958789
+    },
+    "output/lingbot_expansion/delta_instrument/no_coordinate_smoothing/selection.json": {
+      "sha256": "0109cc9ea86389a25c896b2bc32f174eab4b68ba361440f8f2c27b090e7eb684",
+      "bytes": 4712
+    },
+    "output/lingbot_expansion/delta_instrument/no_coordinate_smoothing/optical/fusion_selection.json": {
+      "sha256": "a3418aacdc4d8dfa74b7db97935499e7bfc28bbbbfc55f99c016de526d00c764",
+      "bytes": 3288
+    },
+    "output/lingbot_expansion/delta_instrument/no_coordinate_smoothing/optical/verification_summary.json": {
+      "sha256": "45edbe811ea4440fb09ba4bda77e22435ce9f5d641c2d840e0beaaba4b068da7",
+      "bytes": 30296
+    },
+    "output/closed_chain_eval/visual_calibration/optimization/geometry_spatial_reader/H-A_head.pt": {
+      "sha256": "19dfcd012b15e572d97519e7637324cb6cbfe26c2d43044566ce658a0e4c27c0",
+      "bytes": 25799967
+    },
+    "experiments/lingbot_expansion/delta_instrument.py": {
+      "sha256": "c0aa62c2f4132b1da4183d09e63e6a7541627eeaa95d734d4f7db663342af2e0",
+      "bytes": 6003
+    },
+    "experiments/lingbot_expansion/delta_optical.py": {
+      "sha256": "a430adce5365914e7dc866dc9411b0ac2fd91f9ffc46389c22762bc119ab8229",
+      "bytes": 11861
+    },
+    "experiments/lingbot_expansion/delta_raymap.py": {
+      "sha256": "11d5a7c56ca13790c8e275af49885a9210b9f810314787eef2c67fd29097e39d",
+      "bytes": 2114
+    },
+    "experiments/lingbot_expansion/evaluate.py": {
+      "sha256": "5f1752d66d6e7e0a0141293d32f1870556215bf96352e917483e0ce66efac940",
+      "bytes": 13290
+    }
+  }
+}

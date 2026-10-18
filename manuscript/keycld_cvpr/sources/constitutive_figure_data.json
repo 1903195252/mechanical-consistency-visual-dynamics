@@ -1,0 +1,241 @@
+{
+  "sources": [
+    {
+      "path": "output/keycld_corpus/runs/state_euler_seed42/constitutive_probe.json",
+      "sha256": "ad0617407f6cdf0943aade9ee0e89249b522db7809da5be91d084d36a6cf72e8"
+    },
+    {
+      "path": "output/keycld_corpus/runs/state_euler_seed43/constitutive_probe.json",
+      "sha256": "1cef820161f2560340c72b28c169ca1def939f2729f8286c5844d32855b82183"
+    },
+    {
+      "path": "output/keycld_corpus/runs/state_euler_seed44/constitutive_probe.json",
+      "sha256": "29ab92e1647101ecfb2acc28b0467e85b798f637b19742ca36b251f4ba4e4f42"
+    },
+    {
+      "path": "output/keycld_corpus/runs/state_rk4_seed42/constitutive_probe.json",
+      "sha256": "28696b520ab318d853b2d1982e7dea24f4e046eed52bd41b100e34d04d09a7a1"
+    },
+    {
+      "path": "output/keycld_corpus/runs/state_rk4_seed43/constitutive_probe.json",
+      "sha256": "60baf4e65d1a37f0220f2082cc99f076be632226563e644cfaa77d585d3ddb2b"
+    },
+    {
+      "path": "output/keycld_corpus/runs/state_rk4_seed44/constitutive_probe.json",
+      "sha256": "389d2d8001038383f280800905c8ebea3a33f87568e39c030dee354d02170207"
+    },
+    {
+      "path": "experiments/keycld_corpus/constitutive_probe.py",
+      "sha256": "f1232b1b7ff8d0ea54cc459b0afb0e73749e7db66293589b6938e456e0a20408"
+    },
+    {
+      "path": "output/keycld_corpus/kinetic_capacity_audit.json",
+      "sha256": "255f8e5736c11362181ef775cf133ed6715c4bae694279bc722b0857acef2789"
+    },
+    {
+      "path": "output/keycld_fourbar/extended_dynamics/field_probes.json",
+      "sha256": "70e311a0634395954d83b0c2b0302fa991f5490c5038e742ac547fee92e21181"
+    },
+    {
+      "path": "output/con_corpus/dynamics_extension/physical_case_metrics.csv",
+      "sha256": "468abaa055699f3909a5bb9069fd17c7e0dd4d5ebb7b33d8d8c4e988308c4785"
+    },
+    {
+      "path": "output/con_corpus/dynamics_extension/summary.json",
+      "sha256": "85774dfafa4e3a47260a23b50f5d44c56a8a6c0d73ac9e5fe245985708b56865"
+    }
+  ],
+  "unique_query_states": 648,
+  "checkpoints": 6,
+  "all_learned_velocity_odd_responses_zero": true,
+  "reference_friction_equivalent_torque_RMS_Nm": 0.03884722071193655,
+  "positive_gain_counts": [
+    445,
+    458,
+    443,
+    570,
+    570,
+    575
+  ],
+  "inertia_relative_error_medians": [
+    74.2431305979326,
+    73.67949891506677,
+    73.89691183959789,
+    115.38811609749357,
+    113.44840600498833,
+    120.11613222122921
+  ],
+  "inertia_relative_error_means": [
+    220.2805651345424,
+    325.584617648057,
+    243.99221955289715,
+    210.18665053276956,
+    206.8732805527432,
+    224.86513193667554
+  ],
+  "capacity_assemblies": 360,
+  "capacity_conditions": 1080,
+  "capacity_poses": 44280,
+  "shared_point_mass_relative_RMS": 0.22548959104709346,
+  "maximum_per_condition_relative_RMS": 1.5456535480769783e-15,
+  "family_shared_relative_RMS": {
+    "S-A": 0.1413022127912876,
+    "S-B": 0.3004305339221324,
+    "S-J": 0.20569843450863814
+  },
+  "relative_RMS_definition": "sqrt(mean((I_fit/I_reference - 1)^2)), equally weighted recorded poses",
+  "scope": "Figure 5 panels a,b are frozen state-component interventions. Panel c is a reference-only kinetic representation fit. Figure 3(d) compares the cost of the same geometric-readout intervention on both models.",
+  "layout": {
+    "constitutive_evidence": {
+      "panels": 3,
+      "rows": 1,
+      "columns": 3
+    },
+    "geometric_readout_cost": {
+      "destination": "Figure 3(d), Section 5.3",
+      "panels": 1
+    }
+  },
+  "sampling": "All query states and capacity poses retained; no score-based selection or outlier removal.",
+  "actuator_panel": "Pooled usable-response inertia-ratio ECDFs with a separate failed-gain-check bar; 1944 queries per arm, no discarded failures.",
+  "gain_check": "Usable iff finite and k_tau > 1e-8. False flags include near-zero and nonfinite gains; they do not establish exclusively wrong-sign responses.",
+  "pooled_response": {
+    "state_euler": {
+      "total": 1944,
+      "positive": 1346,
+      "unusable_gain_percent": 30.761316872427983,
+      "positive_inertia_ratio_median": 74.90341569265739
+    },
+    "state_rk4": {
+      "total": 1944,
+      "positive": 1715,
+      "unusable_gain_percent": 11.779835390946502,
+      "positive_inertia_ratio_median": 117.25880708770288
+    }
+  },
+  "inset_layout": {
+    "axes_bounds": [
+      [
+        0.65,
+        0.13,
+        0.28,
+        0.23
+      ],
+      [
+        0.56,
+        0.12,
+        0.34,
+        0.38
+      ]
+    ],
+    "style": "Inset frames remain inside the parent panels; only panel b uses grey association lines",
+    "association_semantics": {
+      "a": "The zero-response point band is associated with the separate 100 Hz friction diagnostic; the inset is not a coordinate zoom.",
+      "b": "The entire response panel is associated with the complementary failed-gain fraction; failures have no assigned inertia-ratio coordinates."
+    },
+    "render_clearance": "Full inset and label bounds avoid main traces, ideal guides, panel titles, and odd-response points",
+    "parent_frames": {
+      "a": {
+        "coordinate_system": "data",
+        "bounds": [
+          -91.98983302457893,
+          -5,
+          68.17069602368781,
+          10
+        ]
+      },
+      "b": {
+        "coordinate_system": "axes",
+        "bounds": [
+          0,
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    "diagnostic_frame_bounds": [
+      [
+        0.5068669270565663,
+        0.02755713159968476,
+        0.46432900382920816,
+        0.42872931442080364
+      ],
+      [
+        0.4970995648747738,
+        0.10153073286052017,
+        0.4402765786137661,
+        0.5036209613869186
+      ]
+    ]
+  },
+  "correction_panel": "Native-to-geometric-readout coordinate RMS, all finite cases; box whiskers retain min/max, diamonds are balanced means. This is the specified intervention cost, not nearest-manifold distance.",
+  "odd_acceleration_inset": {
+    "reference_RMS_rad_s2": [
+      195.20992489832764,
+      3.5382702918083346,
+      197.64096225536548
+    ],
+    "learned_RMS_rad_s2": [
+      0,
+      0,
+      0
+    ],
+    "conditions": [
+      "viscous",
+      "coulomb",
+      "mixed_friction"
+    ],
+    "encoding": "Reference horizontal bars and endpoint circles; model crosses at zero",
+    "axis_scale": "symlog",
+    "linear_threshold_rad_s2": 1
+  },
+  "capacity_insets": {
+    "fit_comparison": {
+      "axes_bounds": [
+        0.23,
+        0.7,
+        0.24,
+        0.23
+      ],
+      "separate_statistic": "Maximum relative RMS over all 1080 separate condition fits",
+      "shared_statistic": "Pooled relative RMS over all 44280 poses",
+      "values_percent": [
+        1.5456535480769783e-13,
+        22.548959104709347
+      ]
+    },
+    "shared_by_family": {
+      "axes_bounds": [
+        0.67,
+        0.12,
+        0.29,
+        0.27
+      ],
+      "families": [
+        "S-A",
+        "S-B",
+        "S-J"
+      ],
+      "values_percent": [
+        14.13022127912876,
+        30.043053392213242,
+        20.569843450863814
+      ]
+    },
+    "diagnostic_frame_bounds": [
+      [
+        0.004844108678521586,
+        0.5975571315996847,
+        0.5044584917942925,
+        0.43759456264775387
+      ],
+      [
+        0.5832576146914734,
+        0.01755713159968475,
+        0.4244715969438446,
+        0.47759456264775413
+      ]
+    ]
+  }
+}

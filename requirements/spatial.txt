@@ -1,0 +1,15 @@
+# Shared V-JEPA feature/observer environment. Use the appropriate PyTorch CUDA wheels.
+torch==2.9.0
+torchvision==0.24.0
+numpy==1.26.4
+scipy
+mujoco==3.2.3
+opencv-python==4.10.0.84
+matplotlib
+Pillow
+einops
+pyyaml
+transformers==4.55.2
+safetensors
+ftfy
+timm

@@ -1,0 +1,867 @@
+{
+  "schema": "vjepa-spatial-three-seeds-3000-exposures",
+  "protocol": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "sequence_exposures_per_family_seed": 3000,
+    "batch_size": 8,
+    "test_identities_per_family": 50,
+    "test_cases_per_family_seed": 150,
+    "training_frames": 8,
+    "observed_frames": 3,
+    "future_steps": 117,
+    "fps": 30,
+    "input_resolution": 384,
+    "model": "V-JEPA 2.1-B frozen official encoder + full released 24-layer AC predictor",
+    "predictor_initialization": "random family-specific action-conditioned predictor",
+    "objective": "7-step teacher feature L1 plus 2-step autoregressive feature L1",
+    "physical_feedback": "seed-specific training-supervised head; external instrument applied after forecasting",
+    "readout": "Fixed calibrated CAD-coordinate Stewart head and 384px reset-relative Delta ridge",
+    "comparison": "same test identities, commands, seeds, horizon as LingBot; native training budgets retained",
+    "manifest_sha256": "7822ee97a0850aa256a1b0efa1a5b9846cc8c2f441791c02f712d9e7e23315f9",
+    "instrument_checkpoints": {
+      "output/closed_chain_eval/visual_calibration/optimization/geometry_spatial_reader/H-A_head.pt": "19dfcd012b15e572d97519e7637324cb6cbfe26c2d43044566ce658a0e4c27c0",
+      "output/closed_chain_eval/visual_calibration/vjepa_readout_replay/calibration/H-B_relative_head.npz": "c104e5ac2cbce2b4762a1b6c22604a9f96eafb8c5f5bc5442d34368b77706e2e"
+    },
+    "encoder_checkpoint_sha256": "848a77c33cc9e6649ed2119c9bea1e2c569bcdab9539ff3e7c02ccc2959ddf4d",
+    "cosine_schedule": "Fixed complete 15/50-epoch schedule from initialization for Stewart/Delta; 5% epoch warmup",
+    "reference_controls": [
+      "300 matched correct videos",
+      "300 exact-state derivatives",
+      "300 30Hz state-differentiation controls",
+      "seed-specific internal feedback readouts applied to reference and predicted features"
+    ]
+  },
+  "groups": {
+    "H-A_native": {
+      "registered_cases": 450,
+      "correction_mm": {
+        "mean": 27.330505000342825,
+        "sd": 8.389501707137224
+      },
+      "branches": {
+        "native": {
+          "score": {
+            "mean": 1.663145270445485,
+            "sd": 0.10261378987414009
+          },
+          "components": {
+            "geometry": 0.1816947059140497,
+            "constraint_velocity": 0.8376406230039378,
+            "constraint_acceleration": 0.28367616841942883,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 8.675860125335493
+          },
+          "finite": 450,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 40.20739069529737,
+          "velocity_constraint_max_m_s": 0.1609680755892323,
+          "acceleration_constraint_max_m_s2": 2.7886526364093864,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 33.112227311821385
+        },
+        "kinematic_intervention": {
+          "score": {
+            "mean": 43.508805375626075,
+            "sd": 3.8024744597737272
+          },
+          "components": {
+            "geometry": 100.0,
+            "constraint_velocity": 82.72968358820629,
+            "constraint_acceleration": 68.66687988194542,
+            "dynamics": 1.1662703335704638,
+            "energy": 2.4301638124099196,
+            "prediction": 6.059834637624411
+          },
+          "finite": 450,
+          "measurable": 343,
+          "joint": 0,
+          "geometry_max_mm": 1.6073882081344503e-13,
+          "velocity_constraint_max_m_s": 0.00433847491076851,
+          "acceleration_constraint_max_m_s2": 0.07132017819626695,
+          "effort_rmse": 72.86538016060747,
+          "work_energy_max_J": 11.35437690741511,
+          "point_rmse_mm": 44.59278724646324
+        },
+        "readout_persistence": {
+          "score": {
+            "mean": 16.299463334149355,
+            "sd": 0.12092143260206704
+          },
+          "components": {
+            "geometry": 9.456118404485062,
+            "constraint_velocity": 59.7161704589675,
+            "constraint_acceleration": 18.085111542250505,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 10.539379599193078
+          },
+          "finite": 450,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 4.820291959314989,
+          "velocity_constraint_max_m_s": 0.009287732827219272,
+          "acceleration_constraint_max_m_s2": 0.29763399179299815,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 29.242096881917735
+        }
+      }
+    },
+    "H-A_calibrated": {
+      "registered_cases": 450,
+      "correction_mm": {
+        "mean": 2.318146207373316,
+        "sd": 0.35222711699577647
+      },
+      "branches": {
+        "native": {
+          "score": {
+            "mean": 6.199857142437544,
+            "sd": 0.6854734508819975
+          },
+          "components": {
+            "geometry": 6.461530704669843,
+            "constraint_velocity": 17.23227564249058,
+            "constraint_acceleration": 4.162721398689576,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 9.342615108775258
+          },
+          "finite": 450,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 4.206977891110827,
+          "velocity_constraint_max_m_s": 0.02243665957265545,
+          "acceleration_constraint_max_m_s2": 0.49148999731095994,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 31.832823903575232
+        },
+        "kinematic_intervention": {
+          "score": {
+            "mean": 55.10799405521856,
+            "sd": 1.7065483030697453
+          },
+          "components": {
+            "geometry": 100.0,
+            "constraint_velocity": 99.34100720119083,
+            "constraint_acceleration": 98.42313739052781,
+            "dynamics": 3.210686725108467,
+            "energy": 20.269218363626393,
+            "prediction": 9.403914650857855
+          },
+          "finite": 450,
+          "measurable": 450,
+          "joint": 0,
+          "geometry_max_mm": 1.450055063909793e-13,
+          "velocity_constraint_max_m_s": 0.0007029767607187384,
+          "acceleration_constraint_max_m_s2": 0.010793138808168895,
+          "effort_rmse": 41.967231374407625,
+          "work_energy_max_J": 1.503687399785785,
+          "point_rmse_mm": 31.753665214356648
+        },
+        "readout_persistence": {
+          "score": {
+            "mean": 54.94965188485881,
+            "sd": 0.0
+          },
+          "components": {
+            "geometry": 64.18801898815165,
+            "constraint_velocity": 96.39840080709742,
+            "constraint_acceleration": 73.66326068621305,
+            "dynamics": 2.9333376690991657,
+            "energy": 81.99299694066703,
+            "prediction": 10.52189621792454
+          },
+          "finite": 450,
+          "measurable": 369,
+          "joint": 0,
+          "geometry_max_mm": 0.7644563664997532,
+          "velocity_constraint_max_m_s": 0.0018583307205063636,
+          "acceleration_constraint_max_m_s2": 0.06026259751181006,
+          "effort_rmse": 39.00419493342433,
+          "work_energy_max_J": 0.0030988543681744504,
+          "point_rmse_mm": 29.263342965259508
+        }
+      }
+    },
+    "H-A_reference_internal": {
+      "registered_cases": 450,
+      "correction_mm": {
+        "mean": 4.03103154088005,
+        "sd": 0.19699410184633456
+      },
+      "branches": {
+        "native": {
+          "score": {
+            "mean": 15.626891611730075,
+            "sd": 0.31550016703564043
+          },
+          "components": {
+            "geometry": 1.3267616607398405,
+            "constraint_velocity": 3.642860306193746,
+            "constraint_acceleration": 0.5263028822456111,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 88.26542482120125
+          },
+          "finite": 450,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 9.545768521152704,
+          "velocity_constraint_max_m_s": 0.05656288867107733,
+          "acceleration_constraint_max_m_s2": 1.5238996913485507,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 3.5877541435481866
+        },
+        "kinematic_intervention": {
+          "score": {
+            "mean": 71.32271774849613,
+            "sd": 0.33347428473681656
+          },
+          "components": {
+            "geometry": 100.0,
+            "constraint_velocity": 97.59432378771555,
+            "constraint_acceleration": 94.82259024044795,
+            "dynamics": 44.99613042176452,
+            "energy": 7.7925897107087705,
+            "prediction": 82.73067233034003
+          },
+          "finite": 450,
+          "measurable": 450,
+          "joint": 1,
+          "geometry_max_mm": 1.5223267462043472e-13,
+          "velocity_constraint_max_m_s": 0.0013762798636673304,
+          "acceleration_constraint_max_m_s2": 0.020981225578030626,
+          "effort_rmse": 8.881675619178969,
+          "work_energy_max_J": 2.185584022470954,
+          "point_rmse_mm": 4.518333154853316
+        },
+        "readout_persistence": {
+          "score": {
+            "mean": 16.28842255048806,
+            "sd": 0.08661430588620915
+          },
+          "components": {
+            "geometry": 9.453696802005602,
+            "constraint_velocity": 59.611894706135075,
+            "constraint_acceleration": 18.125512496935645,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 10.539431297852033
+          },
+          "finite": 450,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 4.817343401441942,
+          "velocity_constraint_max_m_s": 0.009331097463190934,
+          "acceleration_constraint_max_m_s2": 0.2977861899488352,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 29.242023522994643
+        }
+      }
+    },
+    "H-B_native": {
+      "registered_cases": 450,
+      "correction_mm": {
+        "mean": 25.843865510127426,
+        "sd": 2.3310714326929842
+      },
+      "branches": {
+        "native": {
+          "score": {
+            "mean": 2.782210062326143,
+            "sd": 1.2563797983827374
+          },
+          "components": {
+            "geometry": 0.14209453639013303,
+            "constraint_velocity": 2.8001912260582533,
+            "constraint_acceleration": 0.80426810518959,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 12.94670650631888
+          },
+          "finite": 450,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 40.37614880827843,
+          "velocity_constraint_max_m_s": 0.08622340011947215,
+          "acceleration_constraint_max_m_s2": 1.8149145492780079,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 27.09676480269235
+        },
+        "kinematic_intervention": {
+          "score": {
+            "mean": 38.08752790553805,
+            "sd": 3.093214794306238
+          },
+          "components": {
+            "geometry": 88.8888888888889,
+            "constraint_velocity": 70.04719658638801,
+            "constraint_acceleration": 61.55645985132626,
+            "dynamics": 0.23787974679618484,
+            "energy": 0.12155225676951194,
+            "prediction": 7.673190103059501
+          },
+          "finite": 400,
+          "measurable": 287,
+          "joint": 0,
+          "geometry_max_mm": 3.974334112571939e-13,
+          "velocity_constraint_max_m_s": 0.0059759538569908845,
+          "acceleration_constraint_max_m_s2": 0.09567277048764876,
+          "effort_rmse": 14.647622196081997,
+          "work_energy_max_J": 6.4288324769484255,
+          "point_rmse_mm": 38.28916496719358
+        },
+        "readout_persistence": {
+          "score": {
+            "mean": 16.434841449242768,
+            "sd": 1.8270521974504723
+          },
+          "components": {
+            "geometry": 0.9155313077013267,
+            "constraint_velocity": 64.97318230291243,
+            "constraint_acceleration": 17.595638137141822,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 15.12469694770104
+          },
+          "finite": 450,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 28.451420685963388,
+          "velocity_constraint_max_m_s": 0.007653446569272852,
+          "acceleration_constraint_max_m_s2": 0.2612892362246794,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 24.007208528285233
+        }
+      }
+    },
+    "H-B_calibrated": {
+      "registered_cases": 450,
+      "correction_mm": {
+        "mean": 2.637201214413162,
+        "sd": 0.6736222145757801
+      },
+      "branches": {
+        "native": {
+          "score": {
+            "mean": 10.395379261229914,
+            "sd": 5.340685933140263
+          },
+          "components": {
+            "geometry": 5.128451449456758,
+            "constraint_velocity": 31.95550992474088,
+            "constraint_acceleration": 11.401659322682583,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 13.886654870499266
+          },
+          "finite": 450,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 5.012846166092715,
+          "velocity_constraint_max_m_s": 0.01858421275990309,
+          "acceleration_constraint_max_m_s2": 0.4347104746359766,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 25.872539918927938
+        },
+        "kinematic_intervention": {
+          "score": {
+            "mean": 50.05039452844678,
+            "sd": 2.7109286267660293
+          },
+          "components": {
+            "geometry": 100.0,
+            "constraint_velocity": 94.9422507097164,
+            "constraint_acceleration": 89.99398507867458,
+            "dynamics": 0.40767007521005977,
+            "energy": 0.9676854089000272,
+            "prediction": 13.990775898179583
+          },
+          "finite": 450,
+          "measurable": 432,
+          "joint": 0,
+          "geometry_max_mm": 4.061705179858828e-13,
+          "velocity_constraint_max_m_s": 0.0017599003941243575,
+          "acceleration_constraint_max_m_s2": 0.028210090867266627,
+          "effort_rmse": 12.424923739608905,
+          "work_energy_max_J": 2.462015921369342,
+          "point_rmse_mm": 25.67593131185436
+        },
+        "readout_persistence": {
+          "score": {
+            "mean": 64.58661854088471,
+            "sd": 0.0
+          },
+          "components": {
+            "geometry": 92.45211374017698,
+            "constraint_velocity": 97.5499311145215,
+            "constraint_acceleration": 80.919089154303,
+            "dynamics": 0.35001069150976677,
+            "energy": 98.2621092573886,
+            "prediction": 17.986457287408435
+          },
+          "finite": 450,
+          "measurable": 444,
+          "joint": 0,
+          "geometry_max_mm": 0.27468723734991035,
+          "velocity_constraint_max_m_s": 0.0014906560832494765,
+          "acceleration_constraint_max_m_s2": 0.04793797757414311,
+          "effort_rmse": 12.649922060370715,
+          "work_energy_max_J": 0.00736471159791919,
+          "point_rmse_mm": 21.380800985711357
+        }
+      }
+    },
+    "H-B_reference_internal": {
+      "registered_cases": 450,
+      "correction_mm": {
+        "mean": 21.403859809536154,
+        "sd": 0.34687476509205245
+      },
+      "branches": {
+        "native": {
+          "score": {
+            "mean": 10.095558421962307,
+            "sd": 0.34826881812868665
+          },
+          "components": {
+            "geometry": 0.391686822102192,
+            "constraint_velocity": 5.559589143704675,
+            "constraint_acceleration": 1.0462120753156274,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 53.57586249065135
+          },
+          "finite": 450,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 31.807466587501974,
+          "velocity_constraint_max_m_s": 0.047402353073495614,
+          "acceleration_constraint_max_m_s2": 1.1675685605430803,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 10.285326272390645
+        },
+        "kinematic_intervention": {
+          "score": {
+            "mean": 36.96726689418767,
+            "sd": 0.2839559784068237
+          },
+          "components": {
+            "geometry": 71.1111111111111,
+            "constraint_velocity": 65.509254961869,
+            "constraint_acceleration": 59.69051262420097,
+            "dynamics": 1.0164780955744215,
+            "energy": 0.12437885403366337,
+            "prediction": 24.35186571833681
+          },
+          "finite": 320,
+          "measurable": 298,
+          "joint": 0,
+          "geometry_max_mm": 4.018065924656516e-13,
+          "velocity_constraint_max_m_s": 0.0025690843108967594,
+          "acceleration_constraint_max_m_s2": 0.04265220008758614,
+          "effort_rmse": 9.335126343065172,
+          "work_energy_max_J": 4.94781369895015,
+          "point_rmse_mm": 19.230826081949946
+        },
+        "readout_persistence": {
+          "score": {
+            "mean": 16.366402062535105,
+            "sd": 1.7313314061432699
+          },
+          "components": {
+            "geometry": 0.9217452964869953,
+            "constraint_velocity": 64.60153516689108,
+            "constraint_acceleration": 17.550165732002714,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 15.124966179829826
+          },
+          "finite": 450,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 28.451181355028435,
+          "velocity_constraint_max_m_s": 0.007714246681534424,
+          "acceleration_constraint_max_m_s2": 0.2621089877961917,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 24.00673808360102
+        }
+      }
+    }
+  },
+  "reference": {
+    "H-A": {
+      "registered": 150,
+      "branches": {
+        "native": {
+          "score": 28.877537747986377,
+          "components": {
+            "geometry": 18.5328612522244,
+            "constraint_velocity": 46.2136311532705,
+            "constraint_acceleration": 12.871340555829724,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 95.64739352659362
+          },
+          "finite": 150,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 2.4103799693869457,
+          "velocity_constraint_max_m_s": 0.011406256359977345,
+          "acceleration_constraint_max_m_s2": 0.2844528198828308,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 2.06625732537786
+        },
+        "kinematic_intervention": {
+          "score": 86.46233171012516,
+          "components": {
+            "geometry": 100.0,
+            "constraint_velocity": 99.3360264330121,
+            "constraint_acceleration": 98.77154944963418,
+            "dynamics": 84.92075365849983,
+            "energy": 39.364133284603774,
+            "prediction": 96.38152743500105
+          },
+          "finite": 150,
+          "measurable": 150,
+          "joint": 48,
+          "geometry_max_mm": 1.5360495980541627e-13,
+          "velocity_constraint_max_m_s": 0.0006949277812201091,
+          "acceleration_constraint_max_m_s2": 0.009517239183782944,
+          "effort_rmse": 3.1081645716725785,
+          "work_energy_max_J": 0.6272899265024667,
+          "point_rmse_mm": 1.8793897506262571
+        },
+        "readout_persistence": {
+          "score": 54.948843632386804,
+          "components": {
+            "geometry": 64.18534874869401,
+            "constraint_velocity": 96.3984612522316,
+            "constraint_acceleration": 73.66101786853346,
+            "dynamics": 2.9333368875163766,
+            "energy": 81.99299248710275,
+            "prediction": 10.521904550242622
+          },
+          "finite": 150,
+          "measurable": 123,
+          "joint": 0,
+          "geometry_max_mm": 0.7645017390911427,
+          "velocity_constraint_max_m_s": 0.0018582225151094673,
+          "acceleration_constraint_max_m_s2": 0.06026585084492895,
+          "effort_rmse": 39.00419948518959,
+          "work_energy_max_J": 0.0031000670797548227,
+          "point_rmse_mm": 29.26333216628398
+        }
+      },
+      "correction_mm": 1.0479546454492528
+    },
+    "H-B": {
+      "registered": 150,
+      "branches": {
+        "native": {
+          "score": 27.84505456822483,
+          "components": {
+            "geometry": 12.234273100711926,
+            "constraint_velocity": 46.41289437181621,
+            "constraint_acceleration": 20.12158727248362,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 88.30157266433721
+          },
+          "finite": 150,
+          "measurable": 0,
+          "joint": 0,
+          "geometry_max_mm": 3.12136390161799,
+          "velocity_constraint_max_m_s": 0.011557588749680712,
+          "acceleration_constraint_max_m_s2": 0.21485327760195982,
+          "effort_rmse": null,
+          "work_energy_max_J": null,
+          "point_rmse_mm": 3.5877395297910257
+        },
+        "kinematic_intervention": {
+          "score": 67.1082806609832,
+          "components": {
+            "geometry": 100.0,
+            "constraint_velocity": 98.57738168021174,
+            "constraint_acceleration": 97.10347658346453,
+            "dynamics": 13.696312031098044,
+            "energy": 3.492306318841858,
+            "prediction": 89.78020735228296
+          },
+          "finite": 150,
+          "measurable": 150,
+          "joint": 0,
+          "geometry_max_mm": 4.1118904259474276e-13,
+          "velocity_constraint_max_m_s": 0.0010310666665933864,
+          "acceleration_constraint_max_m_s2": 0.015149060830747265,
+          "effort_rmse": 2.071840163951081,
+          "work_energy_max_J": 0.9896491015991955,
+          "point_rmse_mm": 3.323111727864626
+        },
+        "readout_persistence": {
+          "score": 64.58793457237937,
+          "components": {
+            "geometry": 92.45878949783052,
+            "constraint_velocity": 97.54977701807948,
+            "constraint_acceleration": 80.92000314827996,
+            "dynamics": 0.3500146727066198,
+            "energy": 98.26258954735017,
+            "prediction": 17.986433550029535
+          },
+          "finite": 150,
+          "measurable": 148,
+          "joint": 0,
+          "geometry_max_mm": 0.27457740062579145,
+          "velocity_constraint_max_m_s": 0.0014907433379420015,
+          "acceleration_constraint_max_m_s2": 0.04793632114024899,
+          "effort_rmse": 12.649855529627242,
+          "work_energy_max_J": 0.007356984588581211,
+          "point_rmse_mm": 21.380820261979334
+        }
+      },
+      "correction_mm": 1.3774604853868566
+    }
+  },
+  "training": [
+    {
+      "family": "H-A",
+      "seed": 42,
+      "epoch": 15,
+      "loss": 0.45756492018699646,
+      "updates": 386,
+      "sequence_exposures": 3000,
+      "elapsed_s": 398.4112304523587
+    },
+    {
+      "family": "H-A",
+      "seed": 43,
+      "epoch": 15,
+      "loss": 0.5520597696304321,
+      "updates": 386,
+      "sequence_exposures": 3000,
+      "elapsed_s": 397.82659961655736
+    },
+    {
+      "family": "H-A",
+      "seed": 44,
+      "epoch": 15,
+      "loss": 0.4310026168823242,
+      "updates": 386,
+      "sequence_exposures": 3000,
+      "elapsed_s": 392.27885740995407
+    },
+    {
+      "family": "H-B",
+      "seed": 42,
+      "epoch": 50,
+      "loss": 0.45171794295310974,
+      "updates": 400,
+      "sequence_exposures": 3000,
+      "elapsed_s": 406.7604608684778
+    },
+    {
+      "family": "H-B",
+      "seed": 43,
+      "epoch": 50,
+      "loss": 0.6541879177093506,
+      "updates": 400,
+      "sequence_exposures": 3000,
+      "elapsed_s": 409.030715405941
+    },
+    {
+      "family": "H-B",
+      "seed": 44,
+      "epoch": 50,
+      "loss": 0.2852446138858795,
+      "updates": 400,
+      "sequence_exposures": 3000,
+      "elapsed_s": 402.47950284183025
+    }
+  ],
+  "validation": [
+    {
+      "family": "H-A",
+      "seed": 42,
+      "point_mm": 5.10343622105817
+    },
+    {
+      "family": "H-A",
+      "seed": 43,
+      "point_mm": 4.377302345043669
+    },
+    {
+      "family": "H-A",
+      "seed": 44,
+      "point_mm": 5.315586206658433
+    },
+    {
+      "family": "H-B",
+      "seed": 42,
+      "point_mm": 20.537930463130277
+    },
+    {
+      "family": "H-B",
+      "seed": 43,
+      "point_mm": 20.612366497516632
+    },
+    {
+      "family": "H-B",
+      "seed": 44,
+      "point_mm": 20.62501742814978
+    }
+  ],
+  "paired": {
+    "H-A": {
+      "count": 450,
+      "means": {
+        "reference_effort": 3.1081645716725785,
+        "model_effort": 41.967231374407625,
+        "reference_energy_J": 0.6272899265024667,
+        "model_energy_J": 1.503687399785785
+      },
+      "higher": {
+        "effort": 450,
+        "energy_J": 355
+      }
+    },
+    "H-B": {
+      "count": 432,
+      "means": {
+        "reference_effort": 2.0831673575986094,
+        "model_effort": 12.424923739608905,
+        "reference_energy_J": 0.9850481693337801,
+        "model_energy_J": 2.462015921369342
+      },
+      "higher": {
+        "effort": 432,
+        "energy_J": 369
+      }
+    }
+  },
+  "point": {
+    "H-A": {
+      "mean_mm": 2.5694809383157238,
+      "ci95_mm": [
+        -0.1831540460594974,
+        6.639493234743428
+      ]
+    },
+    "H-B": {
+      "mean_mm": 4.491738933216581,
+      "ci95_mm": [
+        2.2094410065762737,
+        7.623940945899558
+      ]
+    }
+  },
+  "controls": {
+    "H-A": {
+      "reference_exact": {
+        "cases": 150,
+        "joint": 150,
+        "geometry_max_mm": 9.611297488603363e-05,
+        "velocity_constraint_max_m_s": 6.224741669034347e-07,
+        "acceleration_constraint_max_m_s2": 9.106793500754948e-06,
+        "effort_rmse": 4.990573495789659e-14,
+        "work_energy_max_J": 0.006447820029947157,
+        "point_rmse_mm": 0.0
+      },
+      "reference_30Hz": {
+        "cases": 150,
+        "joint": 150,
+        "geometry_max_mm": 9.611297488603363e-05,
+        "velocity_constraint_max_m_s": 0.0002130258923897099,
+        "acceleration_constraint_max_m_s2": 0.0024587328996939733,
+        "effort_rmse": 0.047748427600708424,
+        "work_energy_max_J": 0.02531861213570848,
+        "point_rmse_mm": 0.0
+      }
+    },
+    "H-B": {
+      "reference_exact": {
+        "cases": 150,
+        "joint": 150,
+        "geometry_max_mm": 9.296278176102829e-05,
+        "velocity_constraint_max_m_s": 4.3812198490131527e-07,
+        "acceleration_constraint_max_m_s2": 5.401660055361723e-06,
+        "effort_rmse": 8.204111160752667e-15,
+        "work_energy_max_J": 0.005609124006723273,
+        "point_rmse_mm": 0.0
+      },
+      "reference_30Hz": {
+        "cases": 150,
+        "joint": 150,
+        "geometry_max_mm": 9.296278176102829e-05,
+        "velocity_constraint_max_m_s": 0.0001660177802420865,
+        "acceleration_constraint_max_m_s2": 0.0015318867083150807,
+        "effort_rmse": 0.014468444752825023,
+        "work_energy_max_J": 0.025334830304288986,
+        "point_rmse_mm": 0.0
+      }
+    }
+  },
+  "sources": {
+    "output/vjepa_expansion/protocol.json": "096e101809ae8dde48b4da8468ab279267d449a08fb8c72a4c7f780e1c108bb9",
+    "output/vjepa_expansion/dataset_manifest.json": "7822ee97a0850aa256a1b0efa1a5b9846cc8c2f441791c02f712d9e7e23315f9",
+    "output/closed_chain_eval/visual_calibration/optimization/geometry_spatial_reader/specification.json": "5d83dd309bdb246b1d007574673027d7ab3e88b52052963a52355b2ef5656d06",
+    "output/closed_chain_eval/visual_calibration/vjepa_readout_replay/calibration/selection.json": "ea577314b9f289fa28faf86352061e0eaf6b4b4cf560821c568bac2f54962cce",
+    "output/closed_chain_eval/visual_calibration/vjepa_readout_replay/calibration/verification.json": "d8ff8f3bf6f2c64766a3b4663a588ee828d2e90ca26629f8903e03c1ca238807",
+    "output/vjepa_expansion/reference/calibrated/H-A_score.json": "11a179e3132e417d433418f4de270dc8296389b6b6507c7f9adaa6008651760e",
+    "output/vjepa_expansion/reference/controls/H-A_calibrate.json": "7ab17dfd38b80d7386b14b0dbafe32dac6583a1082125fead1edfbf653603b2a",
+    "output/vjepa_expansion/seed_42/H-A_measurement_complete.json": "850de1439dae48a69988657bfe76c01a264f27c3d3cbf93460480d2a67f9360b",
+    "output/vjepa_expansion/seed_42/H-A_training.json": "3a0c8db1445bf4627e94d505ac0ae416dda33d11c10bd772ba53e3948425b758",
+    "output/vjepa_expansion/seed_42/H-A_readout_validation.json": "291ccab7498f026be65d33eb3523f658aa01fc708e72a543886a667788ec47ee",
+    "output/vjepa_expansion/seed_42/native/H-A_score.json": "18de179432a96318ceff2e59dfcea05e595d8efea708b70c011ae83f87c8c4b0",
+    "output/vjepa_expansion/seed_42/calibrated/H-A_score.json": "386b1d4a5ff81a2b3fd6a4904fb9afbcd846b7a66db2e05f06a0b54dc37eadd7",
+    "output/vjepa_expansion/seed_42/reference_internal/H-A_score.json": "ae0278afa34e055e52f4f7baa3cdc00307b08c79efcc2eacc042a73ba09706e2",
+    "output/vjepa_expansion/seed_43/H-A_measurement_complete.json": "24875afd7f423634156cdcb8fc09569342f73ee49a8d6568f81f959f666ce567",
+    "output/vjepa_expansion/seed_43/H-A_training.json": "b1414760e58d6b37d652ef63b00fd1336b5997830ea5148e1c80bdcdd4e1641d",
+    "output/vjepa_expansion/seed_43/H-A_readout_validation.json": "63bc7005638afd5b70faf23ab31d87794e9e4c8a3fea9f64faeebec18c97678d",
+    "output/vjepa_expansion/seed_43/native/H-A_score.json": "36d376b57ee69d21b7ad8b2afdbf36028de9c70479e71687b7649b7c8b122a35",
+    "output/vjepa_expansion/seed_43/calibrated/H-A_score.json": "f6a48c8930b9eaba513f2536d6b63876391d5d972c4c703e3abba92bcc09793a",
+    "output/vjepa_expansion/seed_43/reference_internal/H-A_score.json": "e9838999804345543e31ef4c82f8fc7c2640ae0471781ee7517a914afbb01864",
+    "output/vjepa_expansion/seed_44/H-A_measurement_complete.json": "07cbf1b67701ca0cce6e0395fc5c5579406a746bae9ee16089ebb08ec449f194",
+    "output/vjepa_expansion/seed_44/H-A_training.json": "fb2a7cd63190544fad711d4b4de9a8240fcff81babae5cbc043626ba63091379",
+    "output/vjepa_expansion/seed_44/H-A_readout_validation.json": "bf2e333e8333fdbbc6657665b5aa9091a3c7171549febb95520da7afc9d064f5",
+    "output/vjepa_expansion/seed_44/native/H-A_score.json": "8ad7b288ca0d59c2655770dacab20e6ab05645f07d315aa4e2030b4dea074a94",
+    "output/vjepa_expansion/seed_44/calibrated/H-A_score.json": "28c6d789db5b0e346c8b5c955d76b90e90d374ee243bcdd659e8df8811f13e19",
+    "output/vjepa_expansion/seed_44/reference_internal/H-A_score.json": "32f88ea8abc2e5dc00b0a229c0aeb388fc4d57617e4b1756107ac9c0c3de47d5",
+    "output/vjepa_expansion/reference/calibrated/H-B_score.json": "9cd0ee3f314a40ac1809ae18b0f52c507d91597d1523d30586dca6069020b7d7",
+    "output/vjepa_expansion/reference/controls/H-B_calibrate.json": "324a463d7b7be6ae7ad8b05e5ea57fbc7097b04ccab3f1e4437c5a363774e3a6",
+    "output/vjepa_expansion/seed_42/H-B_measurement_complete.json": "cbfb34e924db7e8f5ce7e03dabeda9a371fa4da3ac680b83271195998fd6187c",
+    "output/vjepa_expansion/seed_42/H-B_training.json": "6b14e42509b1fdf4c4d2f97d8d68e71c26700e401fec328d9d1d6eeba715074d",
+    "output/vjepa_expansion/seed_42/H-B_readout_validation.json": "6e4d08e58247552a346ec8d171c7fc4a67ca917791c04e6b28651e232a7675cb",
+    "output/vjepa_expansion/seed_42/native/H-B_score.json": "151ec73730a3cb9b7a9ef0f859afa14812794c3b8239be53f78b9b7b70e7e1d1",
+    "output/vjepa_expansion/seed_42/calibrated/H-B_score.json": "0a94e6e297b21ba880df94cdec49c5b468b1c1bf4da45e4fa63289ae492eabf3",
+    "output/vjepa_expansion/seed_42/reference_internal/H-B_score.json": "b536111bbf292fc88259493f7ebed0d317ff907a844a9c0980eb263a779978f8",
+    "output/vjepa_expansion/seed_43/H-B_measurement_complete.json": "4a9caeb8effe65e8d8287c9bbd442ee151a26c83a1e275d2df7aefab2da82d9f",
+    "output/vjepa_expansion/seed_43/H-B_training.json": "fb76a41ca1f9a2770335d145eafab1302dd0235e86bec7ccdc6bae9c93a26b6c",
+    "output/vjepa_expansion/seed_43/H-B_readout_validation.json": "afa4ed8f28846b325988d684800a265b7138ec11b6404374bd4ab44555cc50af",
+    "output/vjepa_expansion/seed_43/native/H-B_score.json": "c316a498c7a1380fef7f7aed283893016bcf19258a4fcfb1c8b331acb8931dd6",
+    "output/vjepa_expansion/seed_43/calibrated/H-B_score.json": "dbb598c02bdeaa8eba86c613478318435e26bd453fe3d2cc490c587b01e92b30",
+    "output/vjepa_expansion/seed_43/reference_internal/H-B_score.json": "ffd83cfb82649845ac0f97e4d80dacd761c441ef2c010ed0983ece58d5a2c780",
+    "output/vjepa_expansion/seed_44/H-B_measurement_complete.json": "b4193c6e887f655a5d74d75e6e762b517cf46e5487333c37f1c7909aca15db79",
+    "output/vjepa_expansion/seed_44/H-B_training.json": "b05d9f38f47ef7be13b3e85d3e93a546b0622e2c95e77a5c03587590342c5acd",
+    "output/vjepa_expansion/seed_44/H-B_readout_validation.json": "a5aa6e886add24b718c161177bb48648dfac1b421fd7d6023eaff865572246ed",
+    "output/vjepa_expansion/seed_44/native/H-B_score.json": "51b597799bc078c971f5c9c03c7acf6a0204f36e86ba14a7ed54c0fce8edd767",
+    "output/vjepa_expansion/seed_44/calibrated/H-B_score.json": "f749f5412b4af30238d87b371733f6090df8dd9ff4d8e20b2bed0207d0b08c3e",
+    "output/vjepa_expansion/seed_44/reference_internal/H-B_score.json": "081b03e7753079fac4987e0102371c1a0d18c3427d88758dfc5df23acfacd687"
+  }
+}

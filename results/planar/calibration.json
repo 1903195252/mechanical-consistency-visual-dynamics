@@ -1,0 +1,5509 @@
+{
+  "protocol_sha256": "7a4867635ce5d9aa6cf190e19990f3e40873e0fbf9de08f499ac3003c93457a5",
+  "dataset_manifest_sha256": "231fd49b3837605a01906d66eabd951b296153ec700feff87dd4db4737d2827c",
+  "passed": true,
+  "model_result": false,
+  "summaries": {
+    "oracle": {
+      "passed": 54,
+      "total": 54,
+      "maxima": {
+        "geometry_m": 7.231814188352059e-06,
+        "velocity_m_s": 3.844302794819745e-05,
+        "acceleration_m_s2": 0.0006969950878294304,
+        "force_balance_Nm": 2.0646179053558965e-05,
+        "work_energy_J": 0.00022349848236147274,
+        "prediction_m": 0.0
+      }
+    },
+    "persistence": {
+      "passed": 0,
+      "total": 54,
+      "maxima": {
+        "geometry_m": 2.962872084177892e-06,
+        "velocity_m_s": 0.0,
+        "acceleration_m_s2": 0.0,
+        "force_balance_Nm": 13.479665468707015,
+        "work_energy_J": 0.0,
+        "prediction_m": 0.3002232263223373
+      }
+    },
+    "time_scaled_0.8": {
+      "passed": 0,
+      "total": 54,
+      "maxima": {
+        "geometry_m": 7.731964749180253e-06,
+        "velocity_m_s": 2.4729901361091116e-05,
+        "acceleration_m_s2": 0.00045640372249869594,
+        "force_balance_Nm": 11.598111494495205,
+        "work_energy_J": 133.96849619163592,
+        "prediction_m": 0.254263718858636
+      }
+    }
+  },
+  "rows": [
+    {
+      "case_id": "S-A-097-P01__low_speed",
+      "assembly_id": "S-A-097-P01",
+      "category": "S-A",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.0683355983198695e-07,
+            "velocity_m_s": 8.642444002210235e-08,
+            "acceleration_m_s2": 4.8613316115335595e-06,
+            "force_balance_Nm": 1.913559636835714e-08,
+            "work_energy_J": 1.5243812796494893e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.913559636835714e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0013519501582927736,
+            "coriolis": 0.000822758303298372,
+            "gravity": 0.32972145324700725,
+            "minus_friction": 0.032349977737456403,
+            "minus_external": 0.006416792896295946,
+            "minus_motor": 0.3121859623819685
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 7.733450496649752e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 2.1403066640901707,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.14963182261299582
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.1403066640901707,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.13660374456450863,
+            "minus_friction": 0.0,
+            "minus_external": 0.003702919525663252,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.0870285088726561e-07,
+            "velocity_m_s": 5.984637876522407e-08,
+            "acceleration_m_s2": 3.285771616520689e-06,
+            "force_balance_Nm": 0.468516343571255,
+            "work_energy_J": 1.257130155897529,
+            "prediction_m": 0.02884864939562999
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.468516343571255,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0009613865886644789,
+            "coriolis": 0.000549023990347774,
+            "gravity": 0.36198595529106364,
+            "minus_friction": 0.02790911727048871,
+            "minus_external": 0.006806783346875902,
+            "minus_motor": 0.19089955904960104
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-097-P01__rated",
+      "assembly_id": "S-A-097-P01",
+      "category": "S-A",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.2078478179300411e-06,
+            "velocity_m_s": 2.5080496776570774e-06,
+            "acceleration_m_s2": 4.016630093309226e-05,
+            "force_balance_Nm": 3.1542776986675793e-07,
+            "work_energy_J": 1.0721332321272925e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 3.1542776986675793e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.012379630119232737,
+            "coriolis": 0.011365326945266686,
+            "gravity": 0.32686827455658707,
+            "minus_friction": 0.08022233612643832,
+            "minus_external": 0.006378369978552517,
+            "minus_motor": 0.35733238348304813
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 5.050641090353913e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.4262307947786725,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.13102314944190746
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.4262307947786725,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.4193335337570587,
+            "minus_friction": 0.0,
+            "minus_external": 0.006897261021611105,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.3147092752796574e-06,
+            "velocity_m_s": 1.739381701361111e-06,
+            "acceleration_m_s2": 3.20950703642053e-05,
+            "force_balance_Nm": 1.2012392979062327,
+            "work_energy_J": 8.278588576326882,
+            "prediction_m": 0.0754439532353124
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.2012392979062327,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.007616296584337929,
+            "coriolis": 0.007899837809704649,
+            "gravity": 0.3346753470863149,
+            "minus_friction": 0.0662932829596346,
+            "minus_external": 0.006264477103149301,
+            "minus_motor": 1.284360702333335
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-097-P01__limit_or_load",
+      "assembly_id": "S-A-097-P01",
+      "category": "S-A",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 3.544668674970719e-06,
+            "velocity_m_s": 1.3425671311477664e-05,
+            "acceleration_m_s2": 9.986550841850282e-05,
+            "force_balance_Nm": 2.0982424998915943e-06,
+            "work_energy_J": 3.186312924874368e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.0982424998915943e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.041261478893141815,
+            "coriolis": 0.0464897815470028,
+            "gravity": 0.36868113660012375,
+            "minus_friction": 0.13324204023731964,
+            "minus_external": 0.006590836303634705,
+            "minus_motor": 0.4360388654583192
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 2.7382845441126236e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 4.677082311911019,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.1269236707753178
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 4.677082311911019,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.3153817844094615,
+            "minus_friction": 0.0,
+            "minus_external": 0.007535903679519526,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 3.857990548750134e-06,
+            "velocity_m_s": 8.371084054247867e-06,
+            "acceleration_m_s2": 0.0001235036100115405,
+            "force_balance_Nm": 1.9978061804250142,
+            "work_energy_J": 22.84915546265248,
+            "prediction_m": 0.10972797562674791
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9978061804250142,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.025448310404326074,
+            "coriolis": 0.02775869913087059,
+            "gravity": 0.37126898551425025,
+            "minus_friction": 0.1082272927496436,
+            "minus_external": 0.006575460330465086,
+            "minus_motor": 2.1425395237764544
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-098-P02__low_speed",
+      "assembly_id": "S-A-098-P02",
+      "category": "S-A",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.6055952395399586e-07,
+            "velocity_m_s": 1.2704576257749393e-07,
+            "acceleration_m_s2": 6.843777730398388e-06,
+            "force_balance_Nm": 2.253884171894683e-08,
+            "work_energy_J": 2.5284124394175933e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.253884171894683e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.004979298608955397,
+            "coriolis": 0.00210932446713724,
+            "gravity": 0.5207456354592543,
+            "minus_friction": 0.034469679454755014,
+            "minus_external": 0.006907233053543006,
+            "minus_motor": 0.5019191042766984
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 8.597012512989721e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 1.915786862635944,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.16552332939642111
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.915786862635944,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.08464757792815782,
+            "minus_friction": 0.0,
+            "minus_external": 0.00043444056410149454,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.6811247322001677e-07,
+            "velocity_m_s": 9.120370101385484e-08,
+            "acceleration_m_s2": 4.8784895581322985e-06,
+            "force_balance_Nm": 0.5069690454895984,
+            "work_energy_J": 1.4671662868091988,
+            "prediction_m": 0.04032572531826817
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.5069690454895984,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0035272772857696086,
+            "coriolis": 0.0014648795121173905,
+            "gravity": 0.5777271357263585,
+            "minus_friction": 0.02994829757519191,
+            "minus_external": 0.007524335536992905,
+            "minus_motor": 0.22855168713190072
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-098-P02__rated",
+      "assembly_id": "S-A-098-P02",
+      "category": "S-A",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.2324966432997186e-06,
+            "velocity_m_s": 2.7155340904197784e-06,
+            "acceleration_m_s2": 4.4973616841909804e-05,
+            "force_balance_Nm": 3.2631981372496823e-07,
+            "work_energy_J": 1.6391693775097416e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 3.2631981372496823e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.02252791297497644,
+            "coriolis": 0.020860730896262485,
+            "gravity": 0.5527306133405162,
+            "minus_friction": 0.07922344152883733,
+            "minus_external": 0.00735726928357254,
+            "minus_motor": 0.5787530761490292
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 8.202138208623921e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.828180318144744,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.15600861187469195
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.828180318144744,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.8179714215773013,
+            "minus_friction": 0.0,
+            "minus_external": 0.010208896567440255,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.3407832603062886e-06,
+            "velocity_m_s": 1.8316181446143792e-06,
+            "acceleration_m_s2": 3.6540031481228735e-05,
+            "force_balance_Nm": 1.2028365792795432,
+            "work_energy_J": 8.318336278207056,
+            "prediction_m": 0.0905538160797768
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.2028365792795432,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.015247060263043413,
+            "coriolis": 0.014635270153361198,
+            "gravity": 0.5810159852409672,
+            "minus_friction": 0.06568519991580392,
+            "minus_external": 0.007530734983120708,
+            "minus_motor": 1.3402393846217295
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-098-P02__limit_or_load",
+      "assembly_id": "S-A-098-P02",
+      "category": "S-A",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 3.7566556772006265e-06,
+            "velocity_m_s": 1.3688574499603773e-05,
+            "acceleration_m_s2": 0.00010776523412743453,
+            "force_balance_Nm": 2.6010809052445914e-06,
+            "work_energy_J": 5.565133025076108e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.6010809052445914e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.07650760449085152,
+            "coriolis": 0.08054590044684347,
+            "gravity": 0.6164706854731911,
+            "minus_friction": 0.1303356315161038,
+            "minus_external": 0.00771306681346974,
+            "minus_motor": 0.6915808209528753
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 2.4239470655107453e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 4.688850956091079,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.15220561324073184
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 4.688850956091079,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.30492684019602684,
+            "minus_friction": 0.0,
+            "minus_external": 0.006222203712893101,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 4.085419532617873e-06,
+            "velocity_m_s": 8.870053492498335e-06,
+            "acceleration_m_s2": 0.00013549778032280173,
+            "force_balance_Nm": 1.9903629098899993,
+            "work_energy_J": 22.66889115448293,
+            "prediction_m": 0.12709464124273948
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9903629098899993,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.04844252770960193,
+            "coriolis": 0.05020183257412344,
+            "gravity": 0.6198933379004299,
+            "minus_friction": 0.10654186707826764,
+            "minus_external": 0.00767291532303215,
+            "minus_motor": 2.2234972478757764
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-099-P03__low_speed",
+      "assembly_id": "S-A-099-P03",
+      "category": "S-A",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 9.124131317150841e-08,
+            "velocity_m_s": 7.07693279836203e-08,
+            "acceleration_m_s2": 4.337368585051841e-06,
+            "force_balance_Nm": 1.6647310769051285e-08,
+            "work_energy_J": 1.0752238323030738e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.6647310769051285e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0011769582179774756,
+            "coriolis": 0.0007198127699205247,
+            "gravity": 0.28436376967998656,
+            "minus_friction": 0.03241337332487884,
+            "minus_external": 0.005466280817430569,
+            "minus_motor": 0.263111301718246
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 6.92603284169202e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 1.9786342469924276,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.1183829490937688
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9786342469924276,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.02215540529288451,
+            "minus_friction": 0.0,
+            "minus_external": 0.0007896522853125774,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 9.271162532131783e-08,
+            "velocity_m_s": 4.131715472436656e-08,
+            "acceleration_m_s2": 3.0920607984524264e-06,
+            "force_balance_Nm": 0.45880961062736647,
+            "work_energy_J": 1.2034726487835206,
+            "prediction_m": 0.02982170432152237
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.45880961062736647,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0008357267025876724,
+            "coriolis": 0.00050024362138508,
+            "gravity": 0.31398718441937645,
+            "minus_friction": 0.027860176121646176,
+            "minus_external": 0.006063808054875964,
+            "minus_motor": 0.224001310337258
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-099-P03__rated",
+      "assembly_id": "S-A-099-P03",
+      "category": "S-A",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.0346636014624266e-06,
+            "velocity_m_s": 2.1203359307496516e-06,
+            "acceleration_m_s2": 3.418635617742199e-05,
+            "force_balance_Nm": 2.165811546632403e-07,
+            "work_energy_J": 6.408725426287898e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.165811546632403e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.008392795653322694,
+            "coriolis": 0.008804161007228995,
+            "gravity": 0.2852183054120802,
+            "minus_friction": 0.07906942839155463,
+            "minus_external": 0.00554585523288266,
+            "minus_motor": 0.3045785731700529
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 5.721393517288398e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.433671863677099,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.11236209812496001
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.433671863677099,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.42575372168489517,
+            "minus_friction": 0.0,
+            "minus_external": 0.0079181419922057,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.1266354697503367e-06,
+            "velocity_m_s": 1.4206578228133e-06,
+            "acceleration_m_s2": 2.8084932942240308e-05,
+            "force_balance_Nm": 1.20280681900869,
+            "work_energy_J": 8.302650514709928,
+            "prediction_m": 0.06681824745090326
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.20280681900869,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0055078236501574385,
+            "coriolis": 0.0061601484635574015,
+            "gravity": 0.3007229766343636,
+            "minus_friction": 0.0653935129061442,
+            "minus_external": 0.005726431167752608,
+            "minus_motor": 1.2694297264647862
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-099-P03__limit_or_load",
+      "assembly_id": "S-A-099-P03",
+      "category": "S-A",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 3.0017938291160284e-06,
+            "velocity_m_s": 1.0544532806445586e-05,
+            "acceleration_m_s2": 7.87658294831611e-05,
+            "force_balance_Nm": 1.2812385348838792e-06,
+            "work_energy_J": 2.81562065732599e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.2812385348838792e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.030081305866623168,
+            "coriolis": 0.035728017576977335,
+            "gravity": 0.3302240389837099,
+            "minus_friction": 0.130291507432588,
+            "minus_external": 0.005806995973398798,
+            "minus_motor": 0.3928044833458847
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.6804201591891221e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 4.863307899691361,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.11316062408297389
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 4.863307899691361,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.13261548128012643,
+            "minus_friction": 0.0,
+            "minus_external": 0.004076619028513373,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 3.26667475764042e-06,
+            "velocity_m_s": 6.809511183034903e-06,
+            "acceleration_m_s2": 0.00010273964500193352,
+            "force_balance_Nm": 1.9949546247882795,
+            "work_energy_J": 22.788336079625317,
+            "prediction_m": 0.09469147918659884
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9949546247882795,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.018762689686486707,
+            "coriolis": 0.022203871514250025,
+            "gravity": 0.33220291675112096,
+            "minus_friction": 0.1062520416997514,
+            "minus_external": 0.005794445510677583,
+            "minus_motor": 2.144888894615673
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-100-P04__low_speed",
+      "assembly_id": "S-A-100-P04",
+      "category": "S-A",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.2850313052537032e-07,
+            "velocity_m_s": 1.003174936267184e-07,
+            "acceleration_m_s2": 5.648448249035744e-06,
+            "force_balance_Nm": 2.4831206122909317e-08,
+            "work_energy_J": 1.56092520564588e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.4831206122909317e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0023004745888593604,
+            "coriolis": 0.0009965343540455564,
+            "gravity": 0.365511748132387,
+            "minus_friction": 0.03383252987241432,
+            "minus_external": 0.007046798193874287,
+            "minus_motor": 0.34578869931448075
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 7.718882294449614e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 1.950332896702213,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.14536025016910611
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.950332896702213,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.050278125737538204,
+            "minus_friction": 0.0,
+            "minus_external": 0.0006110224397512611,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.3232919043870695e-07,
+            "velocity_m_s": 6.331527811067324e-08,
+            "acceleration_m_s2": 4.053995141323221e-06,
+            "force_balance_Nm": 0.47553013288588936,
+            "work_energy_J": 1.2917639548126338,
+            "prediction_m": 0.03814339525471954
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.47553013288588936,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.001630553991212039,
+            "coriolis": 0.0006813639890031509,
+            "gravity": 0.4054167151715087,
+            "minus_friction": 0.029287923692584844,
+            "minus_external": 0.0077839351394434625,
+            "minus_motor": 0.20248242176536865
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-100-P04__rated",
+      "assembly_id": "S-A-100-P04",
+      "category": "S-A",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.3350065535266964e-06,
+            "velocity_m_s": 2.8332355969225927e-06,
+            "acceleration_m_s2": 4.2841678588601704e-05,
+            "force_balance_Nm": 3.603906064774166e-07,
+            "work_energy_J": 1.073777576998669e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 3.603906064774166e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.013879338200619653,
+            "coriolis": 0.01369087778392186,
+            "gravity": 0.37182360224478483,
+            "minus_friction": 0.0806890955137396,
+            "minus_external": 0.007201115296530306,
+            "minus_motor": 0.3955715649027088
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 7.953507430435991e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.569085782851108,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.14349195292101133
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.569085782851108,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.5588295492792726,
+            "minus_friction": 0.0,
+            "minus_external": 0.010256233571833404,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.4527449678225501e-06,
+            "velocity_m_s": 1.908483135199423e-06,
+            "acceleration_m_s2": 3.634602305432484e-05,
+            "force_balance_Nm": 1.2030552242849866,
+            "work_energy_J": 8.3092727519555,
+            "prediction_m": 0.08510897906296191
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.2030552242849866,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.00940061308514888,
+            "coriolis": 0.009586317996375514,
+            "gravity": 0.39228859885071793,
+            "minus_friction": 0.06702833358631327,
+            "minus_external": 0.0074203350994290875,
+            "minus_motor": 1.2880617862129973
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-100-P04__limit_or_load",
+      "assembly_id": "S-A-100-P04",
+      "category": "S-A",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 3.951621559528107e-06,
+            "velocity_m_s": 1.4524899855295989e-05,
+            "acceleration_m_s2": 0.00011212200322197673,
+            "force_balance_Nm": 2.289048069502076e-06,
+            "work_energy_J": 4.024168986216381e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.289048069502076e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.048583562372324536,
+            "coriolis": 0.054138078075498045,
+            "gravity": 0.4146876167415183,
+            "minus_friction": 0.13364331873483803,
+            "minus_external": 0.007569506136503126,
+            "minus_motor": 0.48723408629286447
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 2.001635081017028e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 4.817026282123967,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.1432799793590656
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 4.817026282123967,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.17736055918584412,
+            "minus_friction": 0.0,
+            "minus_external": 0.005613158690188349,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 4.299966755938467e-06,
+            "velocity_m_s": 9.41320442490278e-06,
+            "acceleration_m_s2": 0.00014081549563505977,
+            "force_balance_Nm": 1.993791413942374,
+            "work_energy_J": 22.75033581277539,
+            "prediction_m": 0.11971201602673906
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.993791413942374,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.030388646473985148,
+            "coriolis": 0.03358610508233648,
+            "gravity": 0.4177423005596847,
+            "minus_friction": 0.1092362766281361,
+            "minus_external": 0.0075591798627085306,
+            "minus_motor": 2.1675175454122813
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-101-P05__low_speed",
+      "assembly_id": "S-A-101-P05",
+      "category": "S-A",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.1838308039413548e-07,
+            "velocity_m_s": 9.464193544152646e-08,
+            "acceleration_m_s2": 5.361154044060439e-06,
+            "force_balance_Nm": 1.847353362375928e-08,
+            "work_energy_J": 1.7453473888373594e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.847353362375928e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0016893612047817824,
+            "coriolis": 0.0010714164842503316,
+            "gravity": 0.3637352343480155,
+            "minus_friction": 0.03243562573495566,
+            "minus_external": 0.006650908419580167,
+            "minus_motor": 0.3472108157196831
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 8.680915231096265e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 2.166179802314583,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.15962696526205514
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.166179802314583,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.16212574322021475,
+            "minus_friction": 0.0,
+            "minus_external": 0.0040540590943687884,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.2132212950932697e-07,
+            "velocity_m_s": 6.783616438653529e-08,
+            "acceleration_m_s2": 3.6164408584553755e-06,
+            "force_balance_Nm": 0.47449043567914323,
+            "work_energy_J": 1.289647289469377,
+            "prediction_m": 0.030794400368189718
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.47449043567914323,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0012012023656850803,
+            "coriolis": 0.0007194399372424658,
+            "gravity": 0.39687074430967517,
+            "minus_friction": 0.028022459128702513,
+            "minus_external": 0.006965152897533984,
+            "minus_motor": 0.18531490177557158
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-101-P05__rated",
+      "assembly_id": "S-A-101-P05",
+      "category": "S-A",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.2175395726066185e-06,
+            "velocity_m_s": 2.5192786041259577e-06,
+            "acceleration_m_s2": 4.226111481308206e-05,
+            "force_balance_Nm": 2.7960395196089204e-07,
+            "work_energy_J": 1.2184115759317216e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.7960395196089204e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.013638972934008972,
+            "coriolis": 0.012926102492935177,
+            "gravity": 0.3611116314606412,
+            "minus_friction": 0.07950156540965085,
+            "minus_external": 0.006575882593318893,
+            "minus_motor": 0.39143484466206524
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 5.019165332798003e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.463405615025346,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.1378784503131761
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.463405615025346,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.4564792023872852,
+            "minus_friction": 0.0,
+            "minus_external": 0.00692641263806122,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.3251009817749626e-06,
+            "velocity_m_s": 1.7493774391538728e-06,
+            "acceleration_m_s2": 3.30484412288725e-05,
+            "force_balance_Nm": 1.2011253965953166,
+            "work_energy_J": 8.279037695981675,
+            "prediction_m": 0.07964838411144819
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.2011253965953166,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.008405772825377038,
+            "coriolis": 0.00891548457437702,
+            "gravity": 0.3690547694141902,
+            "minus_friction": 0.06563642825798027,
+            "minus_external": 0.006437333372471749,
+            "minus_motor": 1.2913277947571897
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-101-P05__limit_or_load",
+      "assembly_id": "S-A-101-P05",
+      "category": "S-A",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 3.589820940952393e-06,
+            "velocity_m_s": 1.32897484717296e-05,
+            "acceleration_m_s2": 9.723441743942264e-05,
+            "force_balance_Nm": 1.9437308159688437e-06,
+            "work_energy_J": 3.13012152868275e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9437308159688437e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.04463255890878383,
+            "coriolis": 0.051915282775252924,
+            "gravity": 0.40638510748614454,
+            "minus_friction": 0.13158774158723405,
+            "minus_external": 0.006779349970231676,
+            "minus_motor": 0.47143268082126616
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 2.962872084177892e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 4.630909210537218,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.13312922498287938
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 4.630909210537218,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.3610646177651275,
+            "minus_friction": 0.0,
+            "minus_external": 0.008026171697652316,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 3.906508602102843e-06,
+            "velocity_m_s": 8.311207901794413e-06,
+            "acceleration_m_s2": 0.00012270782123084857,
+            "force_balance_Nm": 1.9978290851828053,
+            "work_energy_J": 22.853690455920212,
+            "prediction_m": 0.11548434251456659
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9978290851828053,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.02778157864900096,
+            "coriolis": 0.03111281020672225,
+            "gravity": 0.4092479861623601,
+            "minus_friction": 0.10694493854347667,
+            "minus_external": 0.006762471617816725,
+            "minus_motor": 2.147221802363012
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-102-P06__low_speed",
+      "assembly_id": "S-A-102-P06",
+      "category": "S-A",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.0469240990795825e-07,
+            "velocity_m_s": 7.633177627576095e-08,
+            "acceleration_m_s2": 4.9138148905472314e-06,
+            "force_balance_Nm": 2.164878957157032e-08,
+            "work_energy_J": 1.0717104038659997e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.164878957157032e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0015561911237231866,
+            "coriolis": 0.0008034719554882875,
+            "gravity": 0.306583497210145,
+            "minus_friction": 0.03324556188338307,
+            "minus_external": 0.005946643897572032,
+            "minus_motor": 0.28683231109596075
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 6.829007309638868e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 1.8718751512458396,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.13056291659217378
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.8718751512458396,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.12728735628922075,
+            "minus_friction": 0.0,
+            "minus_external": 0.0008374924649399682,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.0583868215174874e-07,
+            "velocity_m_s": 3.726132364564301e-08,
+            "acceleration_m_s2": 3.5515993701349506e-06,
+            "force_balance_Nm": 0.4562360456863804,
+            "work_energy_J": 1.1883042944952673,
+            "prediction_m": 0.03543060789811786
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.4562360456863804,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0010934997406748888,
+            "coriolis": 0.0005660484911010508,
+            "gravity": 0.32836420319638376,
+            "minus_friction": 0.028588874431018,
+            "minus_external": 0.006551155765036224,
+            "minus_motor": 0.2646159256810809
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-102-P06__rated",
+      "assembly_id": "S-A-102-P06",
+      "category": "S-A",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.133115855200817e-06,
+            "velocity_m_s": 2.333902853199662e-06,
+            "acceleration_m_s2": 3.615200133675274e-05,
+            "force_balance_Nm": 2.522424483563819e-07,
+            "work_energy_J": 5.650668750023513e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.522424483563819e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.008867323230740536,
+            "coriolis": 0.00968363460418663,
+            "gravity": 0.3098616524602201,
+            "minus_friction": 0.0797118484609718,
+            "minus_external": 0.0060633620623287724,
+            "minus_motor": 0.32430166944467936
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 6.982523080290015e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.479736523398647,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.11362735947455231
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.479736523398647,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.4703648124075857,
+            "minus_friction": 0.0,
+            "minus_external": 0.009371710991062529,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.2342582088598064e-06,
+            "velocity_m_s": 1.534205972993694e-06,
+            "acceleration_m_s2": 3.102878999977272e-05,
+            "force_balance_Nm": 1.2036906855650304,
+            "work_energy_J": 8.316435944093246,
+            "prediction_m": 0.07500723852429181
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.2036906855650304,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0060567445095716,
+            "coriolis": 0.006720087792893884,
+            "gravity": 0.32777498181285325,
+            "minus_friction": 0.06604037816662532,
+            "minus_external": 0.006369727612083345,
+            "minus_motor": 1.2708169845660255
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-A-102-P06__limit_or_load",
+      "assembly_id": "S-A-102-P06",
+      "category": "S-A",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 3.308348508035408e-06,
+            "velocity_m_s": 1.1227416056262797e-05,
+            "acceleration_m_s2": 8.725800742849412e-05,
+            "force_balance_Nm": 1.320411614430552e-06,
+            "work_energy_J": 3.080350053075165e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.320411614430552e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.030663086818143746,
+            "coriolis": 0.035797373165339944,
+            "gravity": 0.3405288767127289,
+            "minus_friction": 0.13078989342050718,
+            "minus_external": 0.006275285564840954,
+            "minus_motor": 0.40431718795433125
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.158138689894006e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 4.9681376565756095,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.11852263577456128
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 4.9681376565756095,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.029143923125783254,
+            "minus_friction": 0.0,
+            "minus_external": 0.0027184202986079258,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 3.6006899762908162e-06,
+            "velocity_m_s": 7.5389962160174175e-06,
+            "acceleration_m_s2": 0.00011286134140737732,
+            "force_balance_Nm": 1.99271521491945,
+            "work_energy_J": 22.733543870209097,
+            "prediction_m": 0.10170146910531196
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.99271521491945,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.01926807191036252,
+            "coriolis": 0.02331644764676713,
+            "gravity": 0.34220505041393123,
+            "minus_friction": 0.10702348728196942,
+            "minus_external": 0.006260076315496412,
+            "minus_motor": 2.155711995950364
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-097-P01__low_speed",
+      "assembly_id": "S-B-097-P01",
+      "category": "S-B",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 7.969618243119925e-08,
+            "velocity_m_s": 4.920169193799565e-08,
+            "acceleration_m_s2": 4.286175091795356e-06,
+            "force_balance_Nm": 2.3054411737555502e-08,
+            "work_energy_J": 5.445506546242207e-07,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.3054411737555502e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.001654821660039869,
+            "coriolis": 0.0005213688957864447,
+            "gravity": 0.17701508959417497,
+            "minus_friction": 0.04404021851537262,
+            "minus_external": 0.001910130676358656,
+            "minus_motor": 0.15345982010346834
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.760675027995262e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 1.900578754787495,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.09544460143130606
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.900578754787495,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.09835986565921967,
+            "minus_friction": 0.0,
+            "minus_external": 0.0010613795532851353,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 8.675987434036969e-08,
+            "velocity_m_s": 3.73817932231687e-08,
+            "acceleration_m_s2": 2.6716786042004733e-06,
+            "force_balance_Nm": 0.42536767151163835,
+            "work_energy_J": 1.0341255426920086,
+            "prediction_m": 0.02910063614655735
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.42536767151163835,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0009466657640473956,
+            "coriolis": 0.00031788384401696676,
+            "gravity": 0.17621482971977648,
+            "minus_friction": 0.03918357139213523,
+            "minus_external": 0.0019014952490702122,
+            "minus_motor": 0.3420115890456441
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-097-P01__rated",
+      "assembly_id": "S-B-097-P01",
+      "category": "S-B",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 9.473660484982105e-07,
+            "velocity_m_s": 1.7267661363089999e-06,
+            "acceleration_m_s2": 3.2383032516997604e-05,
+            "force_balance_Nm": 2.0275358499502825e-07,
+            "work_energy_J": 4.052836360596279e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.0275358499502825e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.01821973065482661,
+            "coriolis": 0.006084264317244439,
+            "gravity": 0.17830263891941733,
+            "minus_friction": 0.10096716629476593,
+            "minus_external": 0.0019240243363235119,
+            "minus_motor": 0.1995786875967968
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 6.044713204977903e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.245708298887142,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.09989161455965412
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.245708298887142,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.24308522004766525,
+            "minus_friction": 0.0,
+            "minus_external": 0.002623078839476058,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.026580068008709e-06,
+            "velocity_m_s": 1.188155429413106e-06,
+            "acceleration_m_s2": 2.631028160695562e-05,
+            "force_balance_Nm": 1.1998994492373263,
+            "work_energy_J": 8.242894301789713,
+            "prediction_m": 0.06357835149076857
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.1998994492373263,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.01153368349170071,
+            "coriolis": 0.004116810526057165,
+            "gravity": 0.186622950246366,
+            "minus_friction": 0.08338816853177437,
+            "minus_external": 0.002013806975413181,
+            "minus_motor": 1.2739496034865136
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-097-P01__limit_or_load",
+      "assembly_id": "S-B-097-P01",
+      "category": "S-B",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 2.7223937438813905e-06,
+            "velocity_m_s": 8.970220513114291e-06,
+            "acceleration_m_s2": 6.698737522976226e-05,
+            "force_balance_Nm": 6.337686464936774e-07,
+            "work_energy_J": 3.1570817179082944e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 6.337686464936774e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.055193748929464215,
+            "coriolis": 0.022286102157798353,
+            "gravity": 0.18866370954691217,
+            "minus_friction": 0.16093244457506212,
+            "minus_external": 0.0019012716892736626,
+            "minus_motor": 0.2702324387358378
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.1715349482188664e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.060973557540927,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.1042818119391907
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.060973557540927,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.060365222798653265,
+            "minus_friction": 0.0,
+            "minus_external": 0.0006083347422745197,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 2.9496065725997944e-06,
+            "velocity_m_s": 6.098592781134625e-06,
+            "acceleration_m_s2": 8.583936476824132e-05,
+            "force_balance_Nm": 1.9910656896621095,
+            "work_energy_J": 22.69669344446051,
+            "prediction_m": 0.0873106188225951
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9910656896621095,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.03461947859754843,
+            "coriolis": 0.014072202538520678,
+            "gravity": 0.19051153737986312,
+            "minus_friction": 0.13202413840755017,
+            "minus_external": 0.0019198933031170386,
+            "minus_motor": 2.147687797632633
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-098-P02__low_speed",
+      "assembly_id": "S-B-098-P02",
+      "category": "S-B",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 6.15910465406877e-08,
+            "velocity_m_s": 3.407193993821954e-08,
+            "acceleration_m_s2": 3.5305912662820505e-06,
+            "force_balance_Nm": 1.4606539269951308e-08,
+            "work_energy_J": 3.992264548391411e-07,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.4606539269951308e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0012550735915849917,
+            "coriolis": 0.0002883606790544199,
+            "gravity": 0.12309342158051673,
+            "minus_friction": 0.03956201602973216,
+            "minus_external": 0.0016334436679757063,
+            "minus_motor": 0.09710299809472717
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 4.18119461276234e-09,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 1.9659743103621263,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.08086912025359522
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9659743103621263,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.03358008357556482,
+            "minus_friction": 0.0,
+            "minus_external": 0.0004456060623087211,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 6.691787807211469e-08,
+            "velocity_m_s": 2.506583777293719e-08,
+            "acceleration_m_s2": 2.2722906701416765e-06,
+            "force_balance_Nm": 0.4205191921473515,
+            "work_energy_J": 1.0122650190471876,
+            "prediction_m": 0.02299881379885282
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.4205191921473515,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0007063191283234435,
+            "coriolis": 0.00017142970766909047,
+            "gravity": 0.1277312599431747,
+            "minus_friction": 0.034139238599442595,
+            "minus_external": 0.0016949875556124905,
+            "minus_motor": 0.3460533906045356
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-098-P02__rated",
+      "assembly_id": "S-B-098-P02",
+      "category": "S-B",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 8.264991681605771e-07,
+            "velocity_m_s": 1.5347738192944258e-06,
+            "acceleration_m_s2": 2.6795318883822807e-05,
+            "force_balance_Nm": 1.2915087281156313e-07,
+            "work_energy_J": 2.875171299987489e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.2915087281156313e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.012889033427220087,
+            "coriolis": 0.0037858284911724822,
+            "gravity": 0.12052735874861631,
+            "minus_friction": 0.09513075449293769,
+            "minus_external": 0.0015993921400339506,
+            "minus_motor": 0.150632884673455
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 4.947379917408234e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.174899643436548,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.08745879963331894
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.174899643436548,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.17260912876247783,
+            "minus_friction": 0.0,
+            "minus_external": 0.002290514674071718,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 8.952630803360506e-07,
+            "velocity_m_s": 1.0267922302906118e-06,
+            "acceleration_m_s2": 2.2315679083790806e-05,
+            "force_balance_Nm": 1.1993865863811017,
+            "work_energy_J": 8.23851334009064,
+            "prediction_m": 0.052117673453237943
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.1993865863811017,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.00816627964653547,
+            "coriolis": 0.0025002526726783485,
+            "gravity": 0.12764377675939867,
+            "minus_friction": 0.07800220572589696,
+            "minus_external": 0.0016938266580538844,
+            "minus_motor": 1.2682849703841963
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-098-P02__limit_or_load",
+      "assembly_id": "S-B-098-P02",
+      "category": "S-B",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 2.34684739025548e-06,
+            "velocity_m_s": 7.640198649811142e-06,
+            "acceleration_m_s2": 5.7000904395876985e-05,
+            "force_balance_Nm": 4.4532940868769223e-07,
+            "work_energy_J": 2.128653934518887e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 4.4532940868769223e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.03857025400914428,
+            "coriolis": 0.013995436943047963,
+            "gravity": 0.13427198444244282,
+            "minus_friction": 0.15049955555091513,
+            "minus_external": 0.0016198768271203387,
+            "minus_motor": 0.21978067554855638
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 7.377990581258764e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.010317851657003,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.08960027281554458
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.010317851657003,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.010194859384702284,
+            "minus_friction": 0.0,
+            "minus_external": 0.00012299227230166173,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 2.5427452074455736e-06,
+            "velocity_m_s": 5.1930870889611106e-06,
+            "acceleration_m_s2": 7.348415237990052e-05,
+            "force_balance_Nm": 1.9937455158383282,
+            "work_energy_J": 22.767857493401607,
+            "prediction_m": 0.07470443314888126
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9937455158383282,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.02420028996333953,
+            "coriolis": 0.008862041447817715,
+            "gravity": 0.13578171671627184,
+            "minus_friction": 0.12313668770185003,
+            "minus_external": 0.0016380904577275458,
+            "minus_motor": 2.1293634449218755
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-099-P03__low_speed",
+      "assembly_id": "S-B-099-P03",
+      "category": "S-B",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 6.111480638226752e-08,
+            "velocity_m_s": 3.99374444869371e-08,
+            "acceleration_m_s2": 3.473533385447568e-06,
+            "force_balance_Nm": 1.512469871377056e-08,
+            "work_energy_J": 3.502220777273912e-07,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.512469871377056e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0012419233320864365,
+            "coriolis": 0.0002941217157066994,
+            "gravity": 0.12313904908110532,
+            "minus_friction": 0.040614139449924834,
+            "minus_external": 0.0016859512037177907,
+            "minus_motor": 0.10242327148997267
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.3278828897567152e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 1.9298275081046254,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.0845611345455488
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9298275081046254,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.06922470581959701,
+            "minus_friction": 0.0,
+            "minus_external": 0.0009477860757775393,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 6.662870072338123e-08,
+            "velocity_m_s": 3.114198916040454e-08,
+            "acceleration_m_s2": 2.153054753652539e-06,
+            "force_balance_Nm": 0.41656373788394313,
+            "work_energy_J": 0.9928015415855825,
+            "prediction_m": 0.024953834101976095
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.41656373788394313,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0007476672931431129,
+            "coriolis": 0.00018173667205716182,
+            "gravity": 0.12106475517607028,
+            "minus_friction": 0.0361897457235735,
+            "minus_external": 0.001657551128094704,
+            "minus_motor": 0.3651956507945729
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-099-P03__rated",
+      "assembly_id": "S-B-099-P03",
+      "category": "S-B",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 8.800401473940678e-07,
+            "velocity_m_s": 1.5660423104989656e-06,
+            "acceleration_m_s2": 2.8171887766087485e-05,
+            "force_balance_Nm": 1.4588849495933568e-07,
+            "work_energy_J": 2.657991183069308e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.4588849495933568e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.014147265422523468,
+            "coriolis": 0.003936110310509044,
+            "gravity": 0.12320712969829259,
+            "minus_friction": 0.09572032889632502,
+            "minus_external": 0.0016868833255699025,
+            "minus_motor": 0.15130271886596502
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 4.894081774564629e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.1681710752096786,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.08609443576189917
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.1681710752096786,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.16589966943332649,
+            "minus_friction": 0.0,
+            "minus_external": 0.002271405776353473,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 9.536117749342488e-07,
+            "velocity_m_s": 1.0946973733009832e-06,
+            "acceleration_m_s2": 2.327800077840394e-05,
+            "force_balance_Nm": 1.1993236058000545,
+            "work_energy_J": 8.237006718731896,
+            "prediction_m": 0.05562126724525129
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.1993236058000545,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.00897501240931269,
+            "coriolis": 0.0026912511206966328,
+            "gravity": 0.12861270062286445,
+            "minus_friction": 0.07935019514295949,
+            "minus_external": 0.0017608933887876318,
+            "minus_motor": 1.2690944337684307
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-099-P03__limit_or_load",
+      "assembly_id": "S-B-099-P03",
+      "category": "S-B",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 2.498046606375093e-06,
+            "velocity_m_s": 8.240341904667263e-06,
+            "acceleration_m_s2": 5.88019529354434e-05,
+            "force_balance_Nm": 5.340590249878608e-07,
+            "work_energy_J": 2.4812756391046076e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.340590249878608e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.04332705485873317,
+            "coriolis": 0.015584492217376494,
+            "gravity": 0.13569363227000306,
+            "minus_friction": 0.1535121508208481,
+            "minus_external": 0.0016599161706223255,
+            "minus_motor": 0.2234505334468902
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.1071590684252897e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.050608098326815,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.09055213853088531
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.050608098326815,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.04999649999731568,
+            "minus_friction": 0.0,
+            "minus_external": 0.0006115983294995698,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 2.7068080190872923e-06,
+            "velocity_m_s": 5.610573900426993e-06,
+            "acceleration_m_s2": 7.785496299679281e-05,
+            "force_balance_Nm": 1.9928954301760635,
+            "work_energy_J": 22.74305884054703,
+            "prediction_m": 0.07625126455458867
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9928954301760635,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.027268261067975655,
+            "coriolis": 0.009865150803295406,
+            "gravity": 0.13695180578042399,
+            "minus_friction": 0.12592238463199382,
+            "minus_external": 0.0016753071843379928,
+            "minus_motor": 2.1348867983678814
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-100-P04__low_speed",
+      "assembly_id": "S-B-100-P04",
+      "category": "S-B",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 8.984741012296737e-08,
+            "velocity_m_s": 5.44064393745751e-08,
+            "acceleration_m_s2": 4.991819039578865e-06,
+            "force_balance_Nm": 3.606462876499406e-08,
+            "work_energy_J": 6.33470906619138e-07,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 3.606462876499406e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0022174255498437203,
+            "coriolis": 0.000665103011858702,
+            "gravity": 0.20094558527714967,
+            "minus_friction": 0.04700429025174056,
+            "minus_external": 0.002177055106165192,
+            "minus_motor": 0.17576375941358505
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 9.102176568021036e-09,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 1.8963958483807684,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.10609117839656988
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.8963958483807684,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.10249372913320515,
+            "minus_friction": 0.0,
+            "minus_external": 0.0011104224860257847,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 9.74643429296762e-08,
+            "velocity_m_s": 4.077507463602657e-08,
+            "acceleration_m_s2": 3.1737133697682414e-06,
+            "force_balance_Nm": 0.43036618373826574,
+            "work_energy_J": 1.0581871721526426,
+            "prediction_m": 0.03335008116718677
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.43036618373826574,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0012737923514129102,
+            "coriolis": 0.00039084292273656556,
+            "gravity": 0.20291769617054942,
+            "minus_friction": 0.04150839963242331,
+            "minus_external": 0.0021984210599604865,
+            "minus_motor": 0.3283393562066004
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-100-P04__rated",
+      "assembly_id": "S-B-100-P04",
+      "category": "S-B",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.098534040178123e-06,
+            "velocity_m_s": 2.0143807979986114e-06,
+            "acceleration_m_s2": 3.664813751843436e-05,
+            "force_balance_Nm": 2.846509025387399e-07,
+            "work_energy_J": 5.3110215301188646e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.846509025387399e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.023902378920036018,
+            "coriolis": 0.008244382011840327,
+            "gravity": 0.20260506461277236,
+            "minus_friction": 0.10829857912597214,
+            "minus_external": 0.0021950339931171496,
+            "minus_motor": 0.2270027468718138
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 6.799289683501186e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.2836427180880525,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.1160510453077869
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.2836427180880525,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.2806026540825125,
+            "minus_friction": 0.0,
+            "minus_external": 0.0030400640055430186,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.1906300286246285e-06,
+            "velocity_m_s": 1.3801773051417659e-06,
+            "acceleration_m_s2": 3.010833156046432e-05,
+            "force_balance_Nm": 1.1999090563770696,
+            "work_energy_J": 8.237013864593766,
+            "prediction_m": 0.07250902738773096
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.1999090563770696,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.015274276502430566,
+            "coriolis": 0.005558017693707139,
+            "gravity": 0.21270147813728368,
+            "minus_friction": 0.08916251038178069,
+            "minus_external": 0.002304419071605818,
+            "minus_motor": 1.2811052861570855
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-100-P04__limit_or_load",
+      "assembly_id": "S-B-100-P04",
+      "category": "S-B",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 3.1684178766755444e-06,
+            "velocity_m_s": 1.0438238375851185e-05,
+            "acceleration_m_s2": 7.723494585313884e-05,
+            "force_balance_Nm": 9.61608762130369e-07,
+            "work_energy_J": 3.825493098863486e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 9.61608762130369e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.07337816442772561,
+            "coriolis": 0.031280287559263646,
+            "gravity": 0.22111016810599404,
+            "minus_friction": 0.1720373697464921,
+            "minus_external": 0.002180535961467333,
+            "minus_motor": 0.3105508183158735
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.2319125059501168e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.05834790574973,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.12018972984069067
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.05834790574973,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.05777811173481461,
+            "minus_friction": 0.0,
+            "minus_external": 0.000569794014914075,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 3.4321405505965963e-06,
+            "velocity_m_s": 7.108098622020306e-06,
+            "acceleration_m_s2": 0.00010002588877292618,
+            "force_balance_Nm": 1.9896738220417638,
+            "work_energy_J": 22.65364279947708,
+            "prediction_m": 0.10009082035443287
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9896738220417638,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.04631223013435203,
+            "coriolis": 0.019851757585966353,
+            "gravity": 0.2234263936182609,
+            "minus_friction": 0.1412437217998259,
+            "minus_external": 0.0022033780273371653,
+            "minus_motor": 2.1609962476972675
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-101-P05__low_speed",
+      "assembly_id": "S-B-101-P05",
+      "category": "S-B",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 7.1532181955547e-08,
+            "velocity_m_s": 3.750055332552119e-08,
+            "acceleration_m_s2": 4.186434670707894e-06,
+            "force_balance_Nm": 1.87123499426023e-08,
+            "work_energy_J": 4.078116302430601e-07,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.87123499426023e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0017699935308986298,
+            "coriolis": 0.0003339008366196086,
+            "gravity": 0.12508372830958042,
+            "minus_friction": 0.0420393849295919,
+            "minus_external": 0.0019283120704123343,
+            "minus_motor": 0.09755153198526591
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.590315679145249e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 1.9776788224500836,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.1001683727859312
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9776788224500836,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.021982294748202652,
+            "minus_friction": 0.0,
+            "minus_external": 0.00033888280171349663,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 7.748836033938389e-08,
+            "velocity_m_s": 2.620678347949269e-08,
+            "acceleration_m_s2": 2.746415282617616e-06,
+            "force_balance_Nm": 0.4217113370256878,
+            "work_energy_J": 1.0179305739047302,
+            "prediction_m": 0.026522415189454945
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.4217113370256878,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0010241345844207038,
+            "coriolis": 0.0001971884931561122,
+            "gravity": 0.13172328224913968,
+            "minus_friction": 0.03582927310995027,
+            "minus_external": 0.002030668565352415,
+            "minus_motor": 0.34108830097835174
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-101-P05__rated",
+      "assembly_id": "S-B-101-P05",
+      "category": "S-B",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 9.841813948252565e-07,
+            "velocity_m_s": 1.8406668736215452e-06,
+            "acceleration_m_s2": 3.132594541621881e-05,
+            "force_balance_Nm": 1.6054075814575444e-07,
+            "work_energy_J": 3.665099088584478e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.6054075814575444e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.01751854134803328,
+            "coriolis": 0.00456927054345581,
+            "gravity": 0.12178293424430817,
+            "minus_friction": 0.10202162305036223,
+            "minus_external": 0.0018774264666329454,
+            "minus_motor": 0.1584063909804876
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 5.752735686148647e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.178805287732871,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.10428468927851173
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.178805287732871,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.17609064435294286,
+            "minus_friction": 0.0,
+            "minus_external": 0.002714643379929184,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.0661291786617788e-06,
+            "velocity_m_s": 1.2206211855580504e-06,
+            "acceleration_m_s2": 2.632523510711118e-05,
+            "force_balance_Nm": 1.1990440537316167,
+            "work_energy_J": 8.227607953455935,
+            "prediction_m": 0.060878834906669614
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.1990440537316167,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.011173756688841144,
+            "coriolis": 0.002990541634552255,
+            "gravity": 0.1293023169206436,
+            "minus_friction": 0.08331879969107159,
+            "minus_external": 0.0019933465513056743,
+            "minus_motor": 1.2735094135205087
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-101-P05__limit_or_load",
+      "assembly_id": "S-B-101-P05",
+      "category": "S-B",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 2.7964495563082004e-06,
+            "velocity_m_s": 9.052697584130482e-06,
+            "acceleration_m_s2": 6.770805636864196e-05,
+            "force_balance_Nm": 5.902228869381634e-07,
+            "work_energy_J": 2.4076366835434904e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.902228869381634e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.05213989438583293,
+            "coriolis": 0.016536328143475547,
+            "gravity": 0.13632251906231516,
+            "minus_friction": 0.16011850733469205,
+            "minus_external": 0.0019177047216419438,
+            "minus_motor": 0.23277920268244176
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 6.959740811995907e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 4.998225400918266,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.10600491264022828
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 4.998225400918266,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.0017499813768071602,
+            "minus_friction": 0.0,
+            "minus_external": 2.4617704926318942e-05,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 3.029302950818824e-06,
+            "velocity_m_s": 6.1560446124391905e-06,
+            "acceleration_m_s2": 8.76186969803132e-05,
+            "force_balance_Nm": 1.993344574505814,
+            "work_energy_J": 22.747515250921126,
+            "prediction_m": 0.0883926504078557
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.993344574505814,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0329415853780659,
+            "coriolis": 0.01052544907959301,
+            "gravity": 0.1379126588563018,
+            "minus_friction": 0.1311003700123387,
+            "minus_external": 0.001940073869541896,
+            "minus_motor": 2.1354836351050577
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-102-P06__low_speed",
+      "assembly_id": "S-B-102-P06",
+      "category": "S-B",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 7.88486876901473e-08,
+            "velocity_m_s": 4.5030241616231935e-08,
+            "acceleration_m_s2": 4.5122030736561085e-06,
+            "force_balance_Nm": 2.914899023470989e-08,
+            "work_energy_J": 5.6787300789507e-07,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.914899023470989e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0019367684322448224,
+            "coriolis": 0.0005000460524085172,
+            "gravity": 0.17321934477281598,
+            "minus_friction": 0.04394235622661046,
+            "minus_external": 0.001990619932293802,
+            "minus_motor": 0.14600696961541995
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 7.234173704517843e-09,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 1.9388359310952938,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.09803210033409232
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9388359310952938,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.06046916313889133,
+            "minus_friction": 0.0,
+            "minus_external": 0.0006949057658154329,
+            "minus_motor": 2.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 8.530970074804856e-08,
+            "velocity_m_s": 3.243367870371239e-08,
+            "acceleration_m_s2": 2.9444978418059976e-06,
+            "force_balance_Nm": 0.42877753651839834,
+            "work_energy_J": 1.051419749103181,
+            "prediction_m": 0.029145924806291787
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 0.42877753651839834,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0011363831298911128,
+            "coriolis": 0.000286657855560188,
+            "gravity": 0.17927992260478848,
+            "minus_friction": 0.03789450462703664,
+            "minus_external": 0.0020602675057179195,
+            "minus_motor": 0.3231836708133122
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-102-P06__rated",
+      "assembly_id": "S-B-102-P06",
+      "category": "S-B",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.0107561543293286e-06,
+            "velocity_m_s": 1.8806739641255682e-06,
+            "acceleration_m_s2": 3.28580631643629e-05,
+            "force_balance_Nm": 2.2499686643754025e-07,
+            "work_energy_J": 4.707645101797997e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.2499686643754025e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.019639353379348384,
+            "coriolis": 0.006546013791076608,
+            "gravity": 0.17210982427803592,
+            "minus_friction": 0.10383314328872474,
+            "minus_external": 0.001977869430234725,
+            "minus_motor": 0.19862764851936848
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 6.106132936500863e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.247871605284124,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.10772143023516269
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.247871605284124,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.24505545176820534,
+            "minus_friction": 0.0,
+            "minus_external": 0.002816153515918443,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.095368238335226e-06,
+            "velocity_m_s": 1.2650432827591167e-06,
+            "acceleration_m_s2": 2.741617607472756e-05,
+            "force_balance_Nm": 1.1997528633128183,
+            "work_energy_J": 8.23747164424001,
+            "prediction_m": 0.06481422554598139
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.1997528633128183,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.012631827605028966,
+            "coriolis": 0.004345686310286924,
+            "gravity": 0.18193831534527508,
+            "minus_friction": 0.08506815996805817,
+            "minus_external": 0.0020908174976025915,
+            "minus_motor": 1.276096953531853
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-B-102-P06__limit_or_load",
+      "assembly_id": "S-B-102-P06",
+      "category": "S-B",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 2.8971201558869453e-06,
+            "velocity_m_s": 9.45919101418443e-06,
+            "acceleration_m_s2": 7.055641832982784e-05,
+            "force_balance_Nm": 7.852084619965061e-07,
+            "work_energy_J": 3.254458178592046e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 7.852084619965061e-07,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.05969109868269871,
+            "coriolis": 0.024162242135120738,
+            "gravity": 0.19071072013060306,
+            "minus_friction": 0.16355703040881006,
+            "minus_external": 0.001993627542901814,
+            "minus_motor": 0.27771306759313014
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 8.734147730060648e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 5.023249125984708,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.11032649463560186
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.023249125984708,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.023008601583098635,
+            "minus_friction": 0.0,
+            "minus_external": 0.00024052440160839667,
+            "minus_motor": 5.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 3.1395894768415644e-06,
+            "velocity_m_s": 6.451694840688397e-06,
+            "acceleration_m_s2": 9.133428507447678e-05,
+            "force_balance_Nm": 1.9915033021705282,
+            "work_energy_J": 22.704000238306843,
+            "prediction_m": 0.0917939474754448
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.9915033021705282,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.037919733586039873,
+            "coriolis": 0.015434438512013045,
+            "gravity": 0.19287200083292166,
+            "minus_friction": 0.13415052354528245,
+            "minus_external": 0.002016220865045079,
+            "minus_motor": 2.147419077860509
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-097-P01__low_speed",
+      "assembly_id": "S-J-097-P01",
+      "category": "S-J",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 9.769368189416205e-08,
+            "velocity_m_s": 6.42194564050995e-08,
+            "acceleration_m_s2": 4.126179399273963e-06,
+            "force_balance_Nm": 6.179999381801344e-08,
+            "work_energy_J": 2.7815932903685336e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 6.179999381801344e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0025455638684527505,
+            "coriolis": 0.0014807839448239975,
+            "gravity": 0.8039290641831975,
+            "minus_friction": 0.03546836927243798,
+            "minus_external": 0.016798665701697506,
+            "minus_motor": 0.797763541879952
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 3.446300358977972e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 11.390379007495063,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2711710422681638
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.390379007495063,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.5920439047188535,
+            "minus_friction": 0.0,
+            "minus_external": 0.01757708778608762,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 9.769006314996886e-08,
+            "velocity_m_s": 4.709751331681351e-08,
+            "acceleration_m_s2": 2.6609108143945398e-06,
+            "force_balance_Nm": 2.5329823698230816,
+            "work_energy_J": 6.17696240030151,
+            "prediction_m": 0.07254385198413202
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.5329823698230816,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0017071099916193195,
+            "coriolis": 0.0010555710358937207,
+            "gravity": 0.8220750291842743,
+            "minus_friction": 0.030916914494563078,
+            "minus_external": 0.01707019344023385,
+            "minus_motor": 1.9708129951193687
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-097-P01__rated",
+      "assembly_id": "S-J-097-P01",
+      "category": "S-J",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 2.3407429280974945e-06,
+            "velocity_m_s": 5.928989347602246e-06,
+            "acceleration_m_s2": 6.596684673226297e-05,
+            "force_balance_Nm": 4.520630344004873e-06,
+            "work_energy_J": 2.6743858376310214e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 4.520630344004873e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.11453523805869051,
+            "coriolis": 0.06691282218060993,
+            "gravity": 0.8888163324271332,
+            "minus_friction": 0.10509435932136639,
+            "minus_external": 0.022557366227070903,
+            "minus_motor": 0.9112374564144603
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 7.180291753949852e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 13.146551259361512,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.27106476655920625
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 13.146551259361512,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 1.123590101799967,
+            "minus_friction": 0.0,
+            "minus_external": 0.022961157561551968,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 2.5280402245475564e-06,
+            "velocity_m_s": 4.507047653874663e-06,
+            "acceleration_m_s2": 6.763883496843336e-05,
+            "force_balance_Nm": 7.21413959226011,
+            "work_energy_J": 50.21029007073207,
+            "prediction_m": 0.15978915797789783
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 7.21413959226011,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.08174042841789993,
+            "coriolis": 0.047593201249151076,
+            "gravity": 0.9591620255249309,
+            "minus_friction": 0.09004356360539786,
+            "minus_external": 0.024222667288778154,
+            "minus_motor": 7.250633226872786
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-097-P01__limit_or_load",
+      "assembly_id": "S-J-097-P01",
+      "category": "S-J",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 6.941614295319365e-06,
+            "velocity_m_s": 3.6606418884185064e-05,
+            "acceleration_m_s2": 0.0006454895115775094,
+            "force_balance_Nm": 1.8297143033359805e-05,
+            "work_energy_J": 0.00022349848236147274,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.8297143033359805e-05,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.42915266246054673,
+            "coriolis": 0.28902601655148563,
+            "gravity": 1.0014674136279942,
+            "minus_friction": 0.19105712093511593,
+            "minus_external": 0.02415781414914579,
+            "minus_motor": 1.1645530541371805
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.559834616277067e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 12.386181230805583,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2765295878719757
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 12.386181230805583,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.3739894138371779,
+            "minus_friction": 0.0,
+            "minus_external": 0.012191816968402967,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 7.429569470807085e-06,
+            "velocity_m_s": 2.358945342745355e-05,
+            "acceleration_m_s2": 0.0004343153037591588,
+            "force_balance_Nm": 11.51327170693548,
+            "work_energy_J": 132.87137195486693,
+            "prediction_m": 0.23432648428750263
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.51327170693548,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.2687378679500996,
+            "coriolis": 0.1695625652875986,
+            "gravity": 1.0371440292182335,
+            "minus_friction": 0.15237636411802924,
+            "minus_external": 0.024899161413127213,
+            "minus_motor": 11.726222590488863
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-098-P02__low_speed",
+      "assembly_id": "S-J-098-P02",
+      "category": "S-J",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 1.091817556919672e-07,
+            "velocity_m_s": 7.371895740181249e-08,
+            "acceleration_m_s2": 4.480612038008336e-06,
+            "force_balance_Nm": 7.426403495016088e-08,
+            "work_energy_J": 3.57785279492262e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 7.426403495016088e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0042998624156290344,
+            "coriolis": 0.0018827454156022702,
+            "gravity": 1.0315514977668492,
+            "minus_friction": 0.036180785708010796,
+            "minus_external": 0.018262955041393768,
+            "minus_motor": 1.0272839000156384
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 3.935703352109243e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 11.213288692017336,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2894042298321211
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.213288692017336,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.7675445380008088,
+            "minus_friction": 0.0,
+            "minus_external": 0.019166769981857415,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 1.0918175549767817e-07,
+            "velocity_m_s": 5.3606551077168914e-08,
+            "acceleration_m_s2": 2.921306538150505e-06,
+            "force_balance_Nm": 2.571583704629021,
+            "work_energy_J": 6.363448093409528,
+            "prediction_m": 0.0795677707097229
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.571583704629021,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0029169517567320578,
+            "coriolis": 0.0013407552792527675,
+            "gravity": 1.0599569743441375,
+            "minus_friction": 0.03151061509926833,
+            "minus_external": 0.01863728557551845,
+            "minus_motor": 1.868241089865106
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-098-P02__rated",
+      "assembly_id": "S-J-098-P02",
+      "category": "S-J",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 2.1914512035869915e-06,
+            "velocity_m_s": 5.252579193810391e-06,
+            "acceleration_m_s2": 5.834253139979363e-05,
+            "force_balance_Nm": 5.551746411848845e-06,
+            "work_energy_J": 2.7944424929149392e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.551746411848845e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.11401138132783593,
+            "coriolis": 0.07441009623626366,
+            "gravity": 1.132763461116956,
+            "minus_friction": 0.1030313964644272,
+            "minus_external": 0.023951452151957747,
+            "minus_motor": 1.1592360638345698
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 7.811805765312041e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 13.479665468707015,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2958129505121485
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 13.479665468707015,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 1.4545226308419164,
+            "minus_friction": 0.0,
+            "minus_external": 0.025142837865093637,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 2.3708318999116074e-06,
+            "velocity_m_s": 3.985781795790769e-06,
+            "acceleration_m_s2": 6.012934793399919e-05,
+            "force_balance_Nm": 7.217567451987484,
+            "work_energy_J": 50.27182823421961,
+            "prediction_m": 0.17315411504340703
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 7.217567451987484,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.08116942344893152,
+            "coriolis": 0.05263678848320911,
+            "gravity": 1.2232655819549858,
+            "minus_friction": 0.08783888593818673,
+            "minus_external": 0.02570280295849172,
+            "minus_motor": 7.261533560474732
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-098-P02__limit_or_load",
+      "assembly_id": "S-J-098-P02",
+      "category": "S-J",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 6.550945094330185e-06,
+            "velocity_m_s": 3.250081110560027e-05,
+            "acceleration_m_s2": 0.0004991432685862704,
+            "force_balance_Nm": 2.0646179053558965e-05,
+            "work_energy_J": 0.00019725376595181032,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.0646179053558965e-05,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.4219552153488898,
+            "coriolis": 0.32104814114098895,
+            "gravity": 1.2742450012725905,
+            "minus_friction": 0.18479932708209867,
+            "minus_external": 0.02552589124072618,
+            "minus_motor": 1.4395320014458313
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.661559889981623e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 12.478749350531332,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.3002232263223373
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 12.478749350531332,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.4655265152855038,
+            "minus_friction": 0.0,
+            "minus_external": 0.01322283524582799,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 7.0272623923506305e-06,
+            "velocity_m_s": 2.1004453323483902e-05,
+            "acceleration_m_s2": 0.0003600725867109626,
+            "force_balance_Nm": 11.405587022474338,
+            "work_energy_J": 131.49861259022154,
+            "prediction_m": 0.254263718858636
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.405587022474338,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.26623259319181475,
+            "coriolis": 0.18850530129651236,
+            "gravity": 1.3184187143559365,
+            "minus_friction": 0.14811982055433537,
+            "minus_external": 0.02633616653247833,
+            "minus_motor": 11.636913241488703
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-099-P03__low_speed",
+      "assembly_id": "S-J-099-P03",
+      "category": "S-J",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 9.412551882359566e-08,
+            "velocity_m_s": 6.238080812197296e-08,
+            "acceleration_m_s2": 4.162712958134758e-06,
+            "force_balance_Nm": 5.8971832812501994e-08,
+            "work_energy_J": 2.3887808848765957e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.8971832812501994e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.001921508422316796,
+            "coriolis": 0.0016006771595704604,
+            "gravity": 0.6868489240398272,
+            "minus_friction": 0.034734467653137514,
+            "minus_external": 0.017180541627555772,
+            "minus_motor": 0.6815596664996649
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 3.774638732134683e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 11.455279441392008,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2845045794965707
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.455279441392008,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.5257784094725046,
+            "minus_friction": 0.0,
+            "minus_external": 0.018942149135485004,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 9.412375059913991e-08,
+            "velocity_m_s": 4.6859515746737376e-08,
+            "acceleration_m_s2": 2.6398229587356813e-06,
+            "force_balance_Nm": 2.5116055721807338,
+            "work_energy_J": 6.074883861385038,
+            "prediction_m": 0.07388092110382284
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.5116055721807338,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0012647317815277712,
+            "coriolis": 0.0011396364376747832,
+            "gravity": 0.6980220755800772,
+            "minus_friction": 0.030228801564772315,
+            "minus_external": 0.017280159561474065,
+            "minus_motor": 2.0365944161950233
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-099-P03__rated",
+      "assembly_id": "S-J-099-P03",
+      "category": "S-J",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 2.459652370639942e-06,
+            "velocity_m_s": 6.265477961612532e-06,
+            "acceleration_m_s2": 6.986423011661482e-05,
+            "force_balance_Nm": 4.023451187177489e-06,
+            "work_energy_J": 2.460390100855747e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 4.023451187177489e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.10918001174239661,
+            "coriolis": 0.06718834555294893,
+            "gravity": 0.7653439506368283,
+            "minus_friction": 0.1045408116094806,
+            "minus_external": 0.0234371718202315,
+            "minus_motor": 0.7884597903484218
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 7.062033714477778e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 12.973695156526663,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2781300624971806
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 12.973695156526663,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.9506403214708891,
+            "minus_friction": 0.0,
+            "minus_external": 0.02305483505577305,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 2.6569017977928766e-06,
+            "velocity_m_s": 4.764450499041105e-06,
+            "acceleration_m_s2": 7.148022522185855e-05,
+            "force_balance_Nm": 7.212261993565635,
+            "work_energy_J": 50.17947801780583,
+            "prediction_m": 0.16380825642227423
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 7.212261993565635,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.07796333188213743,
+            "coriolis": 0.047858084500183744,
+            "gravity": 0.8247093477584094,
+            "minus_friction": 0.08964064598109345,
+            "minus_external": 0.02511017762946676,
+            "minus_motor": 7.247623641183726
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-099-P03__limit_or_load",
+      "assembly_id": "S-J-099-P03",
+      "category": "S-J",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 7.231814188352059e-06,
+            "velocity_m_s": 3.844302794819745e-05,
+            "acceleration_m_s2": 0.0006755276514355654,
+            "force_balance_Nm": 1.758700512875125e-05,
+            "work_energy_J": 0.00022118096680112664,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.758700512875125e-05,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.4223966403576425,
+            "coriolis": 0.307539831562826,
+            "gravity": 0.8988917402236615,
+            "minus_friction": 0.1902191034972654,
+            "minus_external": 0.025018164600491367,
+            "minus_motor": 1.0679006312895931
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.6496992404080313e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 12.368009070700714,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.284041406403485
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 12.368009070700714,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.3549531291290179,
+            "minus_friction": 0.0,
+            "minus_external": 0.013055941571696142,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 7.731964749180253e-06,
+            "velocity_m_s": 2.4729901361091116e-05,
+            "acceleration_m_s2": 0.0004547577715414506,
+            "force_balance_Nm": 11.551772801747845,
+            "work_energy_J": 133.35868525102046,
+            "prediction_m": 0.2406827191733928
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.551772801747845,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.2658918843266634,
+            "coriolis": 0.18062299477138075,
+            "gravity": 0.9334724739942318,
+            "minus_friction": 0.15166618835418716,
+            "minus_external": 0.025841104484606026,
+            "minus_motor": 11.757662788305813
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-100-P04__low_speed",
+      "assembly_id": "S-J-100-P04",
+      "category": "S-J",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 8.889648508980663e-08,
+            "velocity_m_s": 5.464747847142256e-08,
+            "acceleration_m_s2": 3.949921653011952e-06,
+            "force_balance_Nm": 5.2953126472791733e-08,
+            "work_energy_J": 2.29573782628556e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.2953126472791733e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0016817180240006873,
+            "coriolis": 0.0012133128623528376,
+            "gravity": 0.6443056980410314,
+            "minus_friction": 0.03414572403376029,
+            "minus_external": 0.01573812205794837,
+            "minus_motor": 0.633920153860016
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.7403966490192602e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 11.754421905931286,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.26112737176214545
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.754421905931286,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.2359756104102031,
+            "minus_friction": 0.0,
+            "minus_external": 0.009602483658510616,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 8.889648497878433e-08,
+            "velocity_m_s": 4.071967643990651e-08,
+            "acceleration_m_s2": 2.568450685594303e-06,
+            "force_balance_Nm": 2.523735355607973,
+            "work_energy_J": 6.136436605514634,
+            "prediction_m": 0.06359047032254937
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.523735355607973,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0011427783392765245,
+            "coriolis": 0.0008643228275043737,
+            "gravity": 0.677132251924717,
+            "minus_friction": 0.02960187675027914,
+            "minus_external": 0.016215245255275818,
+            "minus_motor": 1.9631913860294428
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-100-P04__rated",
+      "assembly_id": "S-J-100-P04",
+      "category": "S-J",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 2.33093250096017e-06,
+            "velocity_m_s": 6.033173227487269e-06,
+            "acceleration_m_s2": 6.829722860485857e-05,
+            "force_balance_Nm": 3.818705267884698e-06,
+            "work_energy_J": 2.1201814003224406e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 3.818705267884698e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.09774206749593484,
+            "coriolis": 0.05917382506207611,
+            "gravity": 0.7042465091778808,
+            "minus_friction": 0.10589356143028125,
+            "minus_external": 0.02138164683188459,
+            "minus_motor": 0.7299676743912945
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 6.914057417428676e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 12.907418219116728,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2631603304174945
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 12.907418219116728,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.8864023944426553,
+            "minus_friction": 0.0,
+            "minus_external": 0.02101582467407852,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 2.519456652888552e-06,
+            "velocity_m_s": 4.566388277363125e-06,
+            "acceleration_m_s2": 6.853085663655306e-05,
+            "force_balance_Nm": 7.210503568166943,
+            "work_energy_J": 50.15132104432344,
+            "prediction_m": 0.1511003299701847
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 7.210503568166943,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.06945001756945508,
+            "coriolis": 0.0418046243898957,
+            "gravity": 0.7671707666261931,
+            "minus_friction": 0.09043477442327838,
+            "minus_external": 0.022987027224457217,
+            "minus_motor": 7.251801139854899
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-100-P04__limit_or_load",
+      "assembly_id": "S-J-100-P04",
+      "category": "S-J",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 6.833180791754323e-06,
+            "velocity_m_s": 3.693391733867381e-05,
+            "acceleration_m_s2": 0.000677062354371326,
+            "force_balance_Nm": 1.6056303799128053e-05,
+            "work_energy_J": 0.0002033864073183178,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.6056303799128053e-05,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.3982996679355874,
+            "coriolis": 0.26972130216708196,
+            "gravity": 0.8649307592435171,
+            "minus_friction": 0.1941694724626976,
+            "minus_external": 0.023769455866465623,
+            "minus_motor": 1.00712343002937
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.7182369037860301e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 12.243911559490158,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2625299243821549
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 12.243911559490158,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.23258095767778883,
+            "minus_friction": 0.0,
+            "minus_external": 0.011330601812370082,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 7.304747024289293e-06,
+            "velocity_m_s": 2.367338198306418e-05,
+            "acceleration_m_s2": 0.00044450308413288605,
+            "force_balance_Nm": 11.577226923074708,
+            "work_energy_J": 133.69618255717438,
+            "prediction_m": 0.22370494242104144
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.577226923074708,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.2377117818525235,
+            "coriolis": 0.15798424976412054,
+            "gravity": 0.8780946412027145,
+            "minus_friction": 0.15329258288276537,
+            "minus_external": 0.023826701978907718,
+            "minus_motor": 11.770775349611757
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-101-P05__low_speed",
+      "assembly_id": "S-J-101-P05",
+      "category": "S-J",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 8.926275921194993e-08,
+            "velocity_m_s": 5.362122798047477e-08,
+            "acceleration_m_s2": 4.0406732625384494e-06,
+            "force_balance_Nm": 4.973932982276227e-08,
+            "work_energy_J": 2.139034591674971e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 4.973932982276227e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.001542393501849567,
+            "coriolis": 0.0011285274351514564,
+            "gravity": 0.5968602000449086,
+            "minus_friction": 0.03356561423900567,
+            "minus_external": 0.01585204418659251,
+            "minus_motor": 0.585333430078011
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 8.888932784278936e-09,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 11.930991574475767,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2812167347698706
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.930991574475767,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.06420815428583689,
+            "minus_friction": 0.0,
+            "minus_external": 0.004800271238395568,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 8.926017441845957e-08,
+            "velocity_m_s": 3.9780290059968704e-08,
+            "acceleration_m_s2": 2.64300817606824e-06,
+            "force_balance_Nm": 2.5226071615137644,
+            "work_energy_J": 6.133084540312555,
+            "prediction_m": 0.060127949280252314
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.5226071615137644,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0010613499507106322,
+            "coriolis": 0.0008015229797654329,
+            "gravity": 0.6388355759121386,
+            "minus_friction": 0.02898802175248545,
+            "minus_external": 0.01655865268543893,
+            "minus_motor": 1.9539395656675338
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-101-P05__rated",
+      "assembly_id": "S-J-101-P05",
+      "category": "S-J",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 2.395261214455102e-06,
+            "velocity_m_s": 6.218275886130321e-06,
+            "acceleration_m_s2": 7.026119172308266e-05,
+            "force_balance_Nm": 3.7424201836196097e-06,
+            "work_energy_J": 1.866342517631292e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 3.7424201836196097e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.09268385856567604,
+            "coriolis": 0.0584841304872841,
+            "gravity": 0.6404334910309368,
+            "minus_friction": 0.10661375669663073,
+            "minus_external": 0.021283561278230882,
+            "minus_motor": 0.6704211163959737
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 6.909055076109727e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 12.816363156331416,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.26745638199635696
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 12.816363156331416,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.7960409173446865,
+            "minus_friction": 0.0,
+            "minus_external": 0.020322238986731075,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 2.5854921520129803e-06,
+            "velocity_m_s": 4.696382346023637e-06,
+            "acceleration_m_s2": 7.038928505980125e-05,
+            "force_balance_Nm": 7.208888198651034,
+            "work_energy_J": 50.12554247390432,
+            "prediction_m": 0.1558656400405572
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 7.208888198651034,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.06524340802211256,
+            "coriolis": 0.040830382656385104,
+            "gravity": 0.7020812597270836,
+            "minus_friction": 0.09063405235675744,
+            "minus_external": 0.022918521285098623,
+            "minus_motor": 7.255025369125175
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-101-P05__limit_or_load",
+      "assembly_id": "S-J-101-P05",
+      "category": "S-J",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 6.989621239322785e-06,
+            "velocity_m_s": 3.8059761090197704e-05,
+            "acceleration_m_s2": 0.0006969950878294304,
+            "force_balance_Nm": 1.546991939843272e-05,
+            "work_energy_J": 0.0001939707234610566,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.546991939843272e-05,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.3835089367852897,
+            "coriolis": 0.26773481936104815,
+            "gravity": 0.8206402379280757,
+            "minus_friction": 0.1954369480359055,
+            "minus_external": 0.024177340848938595,
+            "minus_motor": 0.9611196451753523
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.927271027463151e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 12.169120858903472,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2626770911865969
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 12.169120858903472,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.1580709095617814,
+            "minus_friction": 0.0,
+            "minus_external": 0.011049949341691201,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 7.4500372775898605e-06,
+            "velocity_m_s": 2.42548194913839e-05,
+            "acceleration_m_s2": 0.00045640372249869594,
+            "force_balance_Nm": 11.598111494495205,
+            "work_energy_J": 133.96849619163592,
+            "prediction_m": 0.2268923186855495
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.598111494495205,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.22613738682153212,
+            "coriolis": 0.15681760888207655,
+            "gravity": 0.8242659851952382,
+            "minus_friction": 0.15371055223361457,
+            "minus_external": 0.02389329793595931,
+            "minus_motor": 11.782688519954936
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-102-P06__low_speed",
+      "assembly_id": "S-J-102-P06",
+      "category": "S-J",
+      "condition": "low_speed",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 9.571472670000247e-08,
+            "velocity_m_s": 6.717991337971776e-08,
+            "acceleration_m_s2": 4.168307010957635e-06,
+            "force_balance_Nm": 5.510603564432876e-08,
+            "work_energy_J": 2.243432412063484e-06,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 5.510603564432876e-08,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.00186554888506291,
+            "coriolis": 0.0014822584528691013,
+            "gravity": 0.6656236800823211,
+            "minus_friction": 0.03530127443151554,
+            "minus_external": 0.018114890157425713,
+            "minus_motor": 0.6629869759418952
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 5.0774455473412416e-08,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 11.360433385285134,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2995341293886296
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.360433385285134,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.6162167929910798,
+            "minus_friction": 0.0,
+            "minus_external": 0.02334982172378592,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 9.570904160871585e-08,
+            "velocity_m_s": 5.010227675902764e-08,
+            "acceleration_m_s2": 2.6116728841754762e-06,
+            "force_balance_Nm": 2.497323799929723,
+            "work_energy_J": 6.005190123309312,
+            "prediction_m": 0.07795918365433639
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 2.497323799929723,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0012085796164052686,
+            "coriolis": 0.0010545651425956522,
+            "gravity": 0.6658260628062165,
+            "minus_friction": 0.030796429516255632,
+            "minus_external": 0.01809351997552124,
+            "minus_motor": 2.0990699608522436
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-102-P06__rated",
+      "assembly_id": "S-J-102-P06",
+      "category": "S-J",
+      "condition": "rated",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 2.3239206595471185e-06,
+            "velocity_m_s": 5.643559294496291e-06,
+            "acceleration_m_s2": 6.195411263052559e-05,
+            "force_balance_Nm": 3.564071448866315e-06,
+            "work_energy_J": 2.2416415111692345e-05,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 3.564071448866315e-06,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.08448589915223467,
+            "coriolis": 0.055337457887857475,
+            "gravity": 0.7334730921257212,
+            "minus_friction": 0.10272604887102034,
+            "minus_external": 0.023840451773183287,
+            "minus_motor": 0.7607532338171566
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 6.88469874637887e-07,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 12.931928427375164,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.2815401399448756
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 12.931928427375164,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.9080573654312759,
+            "minus_friction": 0.0,
+            "minus_external": 0.023871061943883023,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 2.512464779308443e-06,
+            "velocity_m_s": 4.300264617610423e-06,
+            "acceleration_m_s2": 6.458939869341177e-05,
+            "force_balance_Nm": 7.212116461768732,
+            "work_energy_J": 50.17851654848061,
+            "prediction_m": 0.17192700417788534
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 7.212116461768732,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.06033160673563171,
+            "coriolis": 0.03942606073038158,
+            "gravity": 0.7852703868924263,
+            "minus_friction": 0.08796550201940319,
+            "minus_external": 0.025463744495833038,
+            "minus_motor": 7.244882208750487
+          }
+        }
+      }
+    },
+    {
+      "case_id": "S-J-102-P06__limit_or_load",
+      "assembly_id": "S-J-102-P06",
+      "category": "S-J",
+      "condition": "limit_or_load",
+      "controls": {
+        "oracle": {
+          "metrics": {
+            "geometry_m": 6.787079865594459e-06,
+            "velocity_m_s": 3.456819735657631e-05,
+            "acceleration_m_s2": 0.0005407651642360055,
+            "force_balance_Nm": 1.3858299285968426e-05,
+            "work_energy_J": 0.00015391878758597155,
+            "prediction_m": 0.0
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 1.3858299285968426e-05,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": true,
+            "work_energy_J": true,
+            "prediction_m": true
+          },
+          "joint_pass": true,
+          "equation_term_rms_Nm": {
+            "inertia": 0.3104482982101751,
+            "coriolis": 0.24585814118192245,
+            "gravity": 0.8248622078826671,
+            "minus_friction": 0.1841947300419029,
+            "minus_external": 0.024881228528576847,
+            "minus_motor": 0.9820953062984137
+          }
+        },
+        "persistence": {
+          "metrics": {
+            "geometry_m": 1.5972456036406069e-06,
+            "velocity_m_s": 0.0,
+            "acceleration_m_s2": 0.0,
+            "force_balance_Nm": 12.39498565192349,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.29135919088510354
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 12.39498565192349,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": true,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.0,
+            "coriolis": 0.0,
+            "gravity": 0.38109356824387924,
+            "minus_friction": 0.0,
+            "minus_external": 0.013892083679615162,
+            "minus_motor": 12.0
+          }
+        },
+        "time_scaled_0.8": {
+          "metrics": {
+            "geometry_m": 7.253811062424287e-06,
+            "velocity_m_s": 2.2324111443047077e-05,
+            "acceleration_m_s2": 0.00039119150962766845,
+            "force_balance_Nm": 11.572018338619161,
+            "work_energy_J": 133.6148677332798,
+            "prediction_m": 0.2477154956429707
+          },
+          "coverage": 1.0,
+          "future_samples": 689,
+          "failure_reason": null,
+          "raw_angle_equation_residual_rms_Nm": 11.572018338619161,
+          "passed": {
+            "geometry_m": true,
+            "velocity_m_s": true,
+            "acceleration_m_s2": true,
+            "force_balance_Nm": false,
+            "work_energy_J": false,
+            "prediction_m": false
+          },
+          "joint_pass": false,
+          "equation_term_rms_Nm": {
+            "inertia": 0.2028316277682095,
+            "coriolis": 0.14524595572738644,
+            "gravity": 0.8646459555013865,
+            "minus_friction": 0.14834344270829194,
+            "minus_external": 0.02607917254345547,
+            "minus_motor": 11.776858353842567
+          }
+        }
+      }
+    }
+  ],
+  "limits_SI": {
+    "geometry_m": 0.001,
+    "velocity_m_s": 0.01,
+    "acceleration_m_s2": 0.1,
+    "force_balance_Nm": 0.25,
+    "work_energy_J": 0.05,
+    "prediction_m": 0.01
+  },
+  "test_assemblies_used": false
+}

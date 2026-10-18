@@ -1,0 +1,1511 @@
+{
+  "stage": "verified_complete",
+  "protocol_sha256": "a0f4d4a80cfcb216d94bd60401ca65df653d54927717f76098d430f9d793e51c",
+  "paired_training": [
+    {
+      "seed": 42,
+      "initial_sha256": "e8c8eff2c93971b882fe143220ed26a76c223ae8577eda9fbd81baf5e49baf56",
+      "updates_each": 2550,
+      "sequence_exposures_each": 40650,
+      "identical_epoch_order": true
+    },
+    {
+      "seed": 43,
+      "initial_sha256": "5dd5cd1c7e0ec1d9e0b7ae48a15bc05e22b0c078b71de88865fa4a8a0072c58f",
+      "updates_each": 2550,
+      "sequence_exposures_each": 40650,
+      "identical_epoch_order": true
+    },
+    {
+      "seed": 44,
+      "initial_sha256": "2134a8c6657bd143d4c259e252059ab68a70bf0ca01f8b05b48f4b60ba9c700d",
+      "updates_each": 2550,
+      "sequence_exposures_each": 40650,
+      "identical_epoch_order": true
+    }
+  ],
+  "prediction_files_verified": 972,
+  "additional_trajectory_files_verified": 2877,
+  "native_score_reproduction": [
+    {
+      "model": "con",
+      "arm": "state_con_iae",
+      "seed": 42,
+      "max_absolute_metric_difference": 0.0
+    },
+    {
+      "model": "con",
+      "arm": "state_con_iae",
+      "seed": 43,
+      "max_absolute_metric_difference": 0.0
+    },
+    {
+      "model": "con",
+      "arm": "state_con_iae",
+      "seed": 44,
+      "max_absolute_metric_difference": 0.0
+    },
+    {
+      "model": "con",
+      "arm": "video_con_iae",
+      "seed": 42,
+      "max_absolute_metric_difference": 0.0
+    },
+    {
+      "model": "con",
+      "arm": "video_con_iae",
+      "seed": 43,
+      "max_absolute_metric_difference": 0.0
+    },
+    {
+      "model": "con",
+      "arm": "video_con_iae",
+      "seed": 44,
+      "max_absolute_metric_difference": 0.0
+    },
+    {
+      "model": "keycld",
+      "arm": "state_euler",
+      "seed": 42,
+      "max_absolute_metric_difference": 1.4210854715202004e-14
+    },
+    {
+      "model": "keycld",
+      "arm": "state_euler",
+      "seed": 43,
+      "max_absolute_metric_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "keycld",
+      "arm": "state_euler",
+      "seed": 44,
+      "max_absolute_metric_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "keycld",
+      "arm": "state_rk4",
+      "seed": 42,
+      "max_absolute_metric_difference": 1.7763568394002505e-15
+    },
+    {
+      "model": "keycld",
+      "arm": "state_rk4",
+      "seed": 43,
+      "max_absolute_metric_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "keycld",
+      "arm": "state_rk4",
+      "seed": 44,
+      "max_absolute_metric_difference": 1.7763568394002505e-15
+    },
+    {
+      "model": "keycld",
+      "arm": "video_euler",
+      "seed": 42,
+      "max_absolute_metric_difference": 0.0
+    },
+    {
+      "model": "keycld",
+      "arm": "video_euler",
+      "seed": 43,
+      "max_absolute_metric_difference": 5.551115123125783e-17
+    },
+    {
+      "model": "keycld",
+      "arm": "video_euler",
+      "seed": 44,
+      "max_absolute_metric_difference": 2.7755575615628914e-17
+    }
+  ],
+  "video": {
+    "keycld": {
+      "image": {
+        "framewise_reconstruction": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.00027099994066817303
+        },
+        "prefix_forecast": {
+          "valid": 311,
+          "total": 324,
+          "mean": 0.0004959466031801937
+        },
+        "persistence": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0004939898657315081
+        },
+        "train_mean_image": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0006472989410656186
+        }
+      },
+      "motion": {
+        "framewise_reconstruction": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.003479360888941488
+        },
+        "prefix_forecast": {
+          "valid": 311,
+          "total": 324,
+          "mean": 0.006084618383703634
+        },
+        "persistence": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.008555224545793324
+        },
+        "train_mean_image": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.00588065065402299
+        }
+      },
+      "local": {
+        "euler": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.005208401346855364
+        },
+        "rk4": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.005185929043844727
+        },
+        "latent_persistence": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.005272363240005092
+        }
+      },
+      "encoded_point": {
+        "valid": 324,
+        "total": 324,
+        "mean": 0.15341747890850763
+      },
+      "mean_point": {
+        "valid": 324,
+        "total": 324,
+        "mean": 0.12891161140826557
+      },
+      "forecast_minus_persistence": {
+        "valid": 311,
+        "total": 311,
+        "mean": 1.6997644790183878e-06,
+        "registered": 324,
+        "bootstrap_95pct": [
+          -6.713237312492266e-05,
+          5.873398916800937e-05
+        ]
+      }
+    },
+    "con": {
+      "image": {
+        "framewise_reconstruction": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.00027952079817037133
+        },
+        "prefix_forecast": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0003080244908715213
+        },
+        "persistence": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0004939898657315081
+        },
+        "train_mean_image": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0006472989410656186
+        }
+      },
+      "motion": {
+        "framewise_reconstruction": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.004279410170086476
+        },
+        "prefix_forecast": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.004517640697656251
+        },
+        "persistence": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.008555224545793324
+        },
+        "train_mean_image": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.00588065065402299
+        }
+      },
+      "local": {
+        "euler": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.014415526937359605
+        },
+        "rk4": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.014341381128865556
+        },
+        "latent_persistence": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.017604908564990054
+        }
+      },
+      "encoded_point": {
+        "valid": 324,
+        "total": 324,
+        "mean": 0.09185000941434242
+      },
+      "mean_point": {
+        "valid": 324,
+        "total": 324,
+        "mean": 0.12891161140826557
+      },
+      "forecast_minus_persistence": {
+        "valid": 324,
+        "total": 324,
+        "mean": -0.00018596537485998668,
+        "registered": 324,
+        "bootstrap_95pct": [
+          -0.00020173159631971572,
+          -0.0001712384916227556
+        ]
+      }
+    }
+  },
+  "video_common_finite": {
+    "keycld": {
+      "valid": 311,
+      "total": 324,
+      "mean": 0.0004959466031801937
+    },
+    "con": {
+      "valid": 311,
+      "total": 324,
+      "mean": 0.00030914330521838724
+    }
+  },
+  "con_minus_keycld_video_mse": {
+    "valid": 311,
+    "total": 311,
+    "mean": -0.00018680329796180636,
+    "registered": 324,
+    "bootstrap_95pct": [
+      -0.00024066694227619246,
+      -0.00011620239258423062
+    ]
+  },
+  "physics": {
+    "con_integrator/state_euler_con_iae": {
+      "raw": {
+        "complete": 0,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.12630643112364737
+          },
+          "velocity_m_s": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.12821249906581123
+          },
+          "acceleration_m_s2": {
+            "valid": 324,
+            "total": 324,
+            "mean": 1.2133751017916052
+          },
+          "force_balance_Nm": {
+            "valid": 0,
+            "total": 324,
+            "mean": null
+          },
+          "work_energy_J": {
+            "valid": 0,
+            "total": 324,
+            "mean": null
+          },
+          "prediction_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.12447512490134996
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 0.0,
+          "velocity_m_s": 0.0,
+          "acceleration_m_s2": 4.320987654320987,
+          "force_balance_Nm": 0.0,
+          "work_energy_J": 0.0,
+          "prediction_m": 0.0
+        },
+        "joint_passes": 0,
+        "failures": {
+          "physical_geometry_or_coordinate_coverage_incomplete": 324
+        }
+      },
+      "conditioned": {
+        "complete": 317,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 317,
+            "total": 324,
+            "mean": 1.472535565653339e-16
+          },
+          "velocity_m_s": {
+            "valid": 317,
+            "total": 324,
+            "mean": 6.716305579503658e-17
+          },
+          "acceleration_m_s2": {
+            "valid": 317,
+            "total": 324,
+            "mean": 1.9424755230385313e-15
+          },
+          "force_balance_Nm": {
+            "valid": 317,
+            "total": 324,
+            "mean": 6.027929172149657
+          },
+          "work_energy_J": {
+            "valid": 317,
+            "total": 324,
+            "mean": 11.847215400334692
+          },
+          "prediction_m": {
+            "valid": 317,
+            "total": 324,
+            "mean": 0.1330637936957875
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 97.83950617283949,
+          "velocity_m_s": 97.83950617283949,
+          "acceleration_m_s2": 97.83950617283949,
+          "force_balance_Nm": 0.0,
+          "work_energy_J": 0.0,
+          "prediction_m": 0.0
+        },
+        "joint_passes": 0,
+        "failures": {
+          "predicted_crank_direction_singular": 7
+        }
+      },
+      "correction_rms_m": {
+        "valid": 317,
+        "total": 324,
+        "mean": 0.05472883777576197
+      }
+    },
+    "con_integrator/state_rk4_con_iae": {
+      "raw": {
+        "complete": 0,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.14206630184727065
+          },
+          "velocity_m_s": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.14049978868034427
+          },
+          "acceleration_m_s2": {
+            "valid": 324,
+            "total": 324,
+            "mean": 1.067556930356193
+          },
+          "force_balance_Nm": {
+            "valid": 0,
+            "total": 324,
+            "mean": null
+          },
+          "work_energy_J": {
+            "valid": 0,
+            "total": 324,
+            "mean": null
+          },
+          "prediction_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.1373819488780237
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 0.0,
+          "velocity_m_s": 0.0,
+          "acceleration_m_s2": 3.3950617283950617,
+          "force_balance_Nm": 0.0,
+          "work_energy_J": 0.0,
+          "prediction_m": 0.0
+        },
+        "joint_passes": 0,
+        "failures": {
+          "physical_geometry_or_coordinate_coverage_incomplete": 324
+        }
+      },
+      "conditioned": {
+        "complete": 322,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 322,
+            "total": 324,
+            "mean": 1.4709520545117816e-16
+          },
+          "velocity_m_s": {
+            "valid": 322,
+            "total": 324,
+            "mean": 6.633154886319312e-17
+          },
+          "acceleration_m_s2": {
+            "valid": 322,
+            "total": 324,
+            "mean": 3.0701348873935846e-15
+          },
+          "force_balance_Nm": {
+            "valid": 322,
+            "total": 324,
+            "mean": 6.54134274776793
+          },
+          "work_energy_J": {
+            "valid": 322,
+            "total": 324,
+            "mean": 20.476444490820864
+          },
+          "prediction_m": {
+            "valid": 322,
+            "total": 324,
+            "mean": 0.1328582487510954
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 99.38271604938271,
+          "velocity_m_s": 99.38271604938271,
+          "acceleration_m_s2": 99.38271604938271,
+          "force_balance_Nm": 0.0,
+          "work_energy_J": 0.0,
+          "prediction_m": 0.0
+        },
+        "joint_passes": 0,
+        "failures": {
+          "predicted_crank_direction_singular": 2
+        }
+      },
+      "correction_rms_m": {
+        "valid": 322,
+        "total": 324,
+        "mean": 0.058009041760247355
+      }
+    },
+    "con/state_con_iae": {
+      "raw": {
+        "complete": 0,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.17039645468226966
+          },
+          "velocity_m_s": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.15995337593188635
+          },
+          "acceleration_m_s2": {
+            "valid": 324,
+            "total": 324,
+            "mean": 1.205865488408116
+          },
+          "force_balance_Nm": {
+            "valid": 0,
+            "total": 324,
+            "mean": null
+          },
+          "work_energy_J": {
+            "valid": 0,
+            "total": 324,
+            "mean": null
+          },
+          "prediction_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.14239026001543187
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 0.0,
+          "velocity_m_s": 0.0,
+          "acceleration_m_s2": 3.395061728395062,
+          "force_balance_Nm": 0.0,
+          "work_energy_J": 0.0,
+          "prediction_m": 0.0
+        },
+        "joint_passes": 0,
+        "failures": {
+          "physical_geometry_or_coordinate_coverage_incomplete": 324
+        }
+      },
+      "conditioned": {
+        "complete": 323,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 323,
+            "total": 324,
+            "mean": 1.4639820095690238e-16
+          },
+          "velocity_m_s": {
+            "valid": 323,
+            "total": 324,
+            "mean": 7.546294706303774e-17
+          },
+          "acceleration_m_s2": {
+            "valid": 323,
+            "total": 324,
+            "mean": 4.711286765461549e-15
+          },
+          "force_balance_Nm": {
+            "valid": 323,
+            "total": 324,
+            "mean": 6.548753118907934
+          },
+          "work_energy_J": {
+            "valid": 323,
+            "total": 324,
+            "mean": 23.282468272280695
+          },
+          "prediction_m": {
+            "valid": 323,
+            "total": 324,
+            "mean": 0.1322783012484274
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 99.69135802469134,
+          "velocity_m_s": 99.69135802469134,
+          "acceleration_m_s2": 99.69135802469134,
+          "force_balance_Nm": 0.0,
+          "work_energy_J": 0.0,
+          "prediction_m": 0.0
+        },
+        "joint_passes": 0,
+        "failures": {
+          "predicted_crank_direction_singular": 1
+        }
+      },
+      "correction_rms_m": {
+        "valid": 323,
+        "total": 324,
+        "mean": 0.06767539571199928
+      }
+    },
+    "con/video_con_iae": {
+      "raw": {
+        "complete": 0,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.1376700204073572
+          },
+          "velocity_m_s": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.06771143296659593
+          },
+          "acceleration_m_s2": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.35014554690393
+          },
+          "force_balance_Nm": {
+            "valid": 0,
+            "total": 324,
+            "mean": null
+          },
+          "work_energy_J": {
+            "valid": 0,
+            "total": 324,
+            "mean": null
+          },
+          "prediction_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.12348316310857145
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 0.0,
+          "velocity_m_s": 0.9259259259259258,
+          "acceleration_m_s2": 33.0246913580247,
+          "force_balance_Nm": 0.0,
+          "work_energy_J": 0.0,
+          "prediction_m": 0.0
+        },
+        "joint_passes": 0,
+        "failures": {
+          "physical_geometry_or_coordinate_coverage_incomplete": 324
+        }
+      },
+      "conditioned": {
+        "complete": 308,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 308,
+            "total": 324,
+            "mean": 1.4683717101270137e-16
+          },
+          "velocity_m_s": {
+            "valid": 308,
+            "total": 324,
+            "mean": 5.544191303603835e-17
+          },
+          "acceleration_m_s2": {
+            "valid": 308,
+            "total": 324,
+            "mean": 2.8940533076918348e-15
+          },
+          "force_balance_Nm": {
+            "valid": 308,
+            "total": 324,
+            "mean": 6.859291830020582
+          },
+          "work_energy_J": {
+            "valid": 308,
+            "total": 324,
+            "mean": 17.9601087623285
+          },
+          "prediction_m": {
+            "valid": 308,
+            "total": 324,
+            "mean": 0.1548331635822994
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 95.06172839506173,
+          "velocity_m_s": 95.06172839506173,
+          "acceleration_m_s2": 95.06172839506173,
+          "force_balance_Nm": 0.0,
+          "work_energy_J": 0.0,
+          "prediction_m": 0.0
+        },
+        "joint_passes": 0,
+        "failures": {
+          "predicted_crank_direction_singular": 16
+        }
+      },
+      "correction_rms_m": {
+        "valid": 308,
+        "total": 324,
+        "mean": 0.07318475141824517
+      }
+    },
+    "keycld/state_euler": {
+      "raw": {
+        "complete": 324,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 3.1427940797714086e-06
+          },
+          "velocity_m_s": {
+            "valid": 324,
+            "total": 324,
+            "mean": 1.2803842382431004e-06
+          },
+          "acceleration_m_s2": {
+            "valid": 324,
+            "total": 324,
+            "mean": 6.602838046243659e-06
+          },
+          "force_balance_Nm": {
+            "valid": 324,
+            "total": 324,
+            "mean": 4.563515760500913
+          },
+          "work_energy_J": {
+            "valid": 324,
+            "total": 324,
+            "mean": 22.453366249305507
+          },
+          "prediction_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.1390617879936369
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 100.0,
+          "velocity_m_s": 100.0,
+          "acceleration_m_s2": 100.0,
+          "force_balance_Nm": 8.333333333333332,
+          "work_energy_J": 0.0,
+          "prediction_m": 8.333333333333332
+        },
+        "joint_passes": 0,
+        "failures": {}
+      },
+      "conditioned": {
+        "complete": 324,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 1.4700175233462725e-16
+          },
+          "velocity_m_s": {
+            "valid": 324,
+            "total": 324,
+            "mean": 7.858564344748975e-17
+          },
+          "acceleration_m_s2": {
+            "valid": 324,
+            "total": 324,
+            "mean": 7.830488384037811e-16
+          },
+          "force_balance_Nm": {
+            "valid": 324,
+            "total": 324,
+            "mean": 4.563515656076175
+          },
+          "work_energy_J": {
+            "valid": 324,
+            "total": 324,
+            "mean": 22.453366113172297
+          },
+          "prediction_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.13906184789603163
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 100.0,
+          "velocity_m_s": 100.0,
+          "acceleration_m_s2": 100.0,
+          "force_balance_Nm": 8.333333333333332,
+          "work_energy_J": 0.0,
+          "prediction_m": 8.333333333333332
+        },
+        "joint_passes": 0,
+        "failures": {}
+      },
+      "correction_rms_m": {
+        "valid": 324,
+        "total": 324,
+        "mean": 9.08952232832599e-07
+      }
+    },
+    "keycld/state_rk4": {
+      "raw": {
+        "complete": 324,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 1.94650363597858e-06
+          },
+          "velocity_m_s": {
+            "valid": 324,
+            "total": 324,
+            "mean": 7.207385001201079e-07
+          },
+          "acceleration_m_s2": {
+            "valid": 324,
+            "total": 324,
+            "mean": 2.2630870513933178e-06
+          },
+          "force_balance_Nm": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.7148192600035057
+          },
+          "work_energy_J": {
+            "valid": 324,
+            "total": 324,
+            "mean": 2.9252825002235094
+          },
+          "prediction_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.016367540265656528
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 100.0,
+          "velocity_m_s": 100.0,
+          "acceleration_m_s2": 100.0,
+          "force_balance_Nm": 7.4074074074074066,
+          "work_energy_J": 0.0,
+          "prediction_m": 58.33333333333333
+        },
+        "joint_passes": 0,
+        "failures": {}
+      },
+      "conditioned": {
+        "complete": 324,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 1.4991437446713147e-16
+          },
+          "velocity_m_s": {
+            "valid": 324,
+            "total": 324,
+            "mean": 7.84680485607759e-17
+          },
+          "acceleration_m_s2": {
+            "valid": 324,
+            "total": 324,
+            "mean": 6.296999533860696e-16
+          },
+          "force_balance_Nm": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.7148195083092941
+          },
+          "work_energy_J": {
+            "valid": 324,
+            "total": 324,
+            "mean": 2.9252813444007817
+          },
+          "prediction_m": {
+            "valid": 324,
+            "total": 324,
+            "mean": 0.016367600011471257
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 100.0,
+          "velocity_m_s": 100.0,
+          "acceleration_m_s2": 100.0,
+          "force_balance_Nm": 7.4074074074074066,
+          "work_energy_J": 0.0,
+          "prediction_m": 58.33333333333333
+        },
+        "joint_passes": 0,
+        "failures": {}
+      },
+      "correction_rms_m": {
+        "valid": 324,
+        "total": 324,
+        "mean": 6.40222015586458e-07
+      }
+    },
+    "keycld/video_euler": {
+      "raw": {
+        "complete": 0,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 311,
+            "total": 324,
+            "mean": 0.22404495328890572
+          },
+          "velocity_m_s": {
+            "valid": 311,
+            "total": 324,
+            "mean": 0.024600052245985736
+          },
+          "acceleration_m_s2": {
+            "valid": 311,
+            "total": 324,
+            "mean": 0.11646192620315524
+          },
+          "force_balance_Nm": {
+            "valid": 0,
+            "total": 324,
+            "mean": null
+          },
+          "work_energy_J": {
+            "valid": 0,
+            "total": 324,
+            "mean": null
+          },
+          "prediction_m": {
+            "valid": 311,
+            "total": 324,
+            "mean": 0.22921403853237787
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 0.0,
+          "velocity_m_s": 22.22222222222222,
+          "acceleration_m_s2": 65.12345679012346,
+          "force_balance_Nm": 0.0,
+          "work_energy_J": 0.0,
+          "prediction_m": 0.0
+        },
+        "joint_passes": 0,
+        "failures": {
+          "physical_geometry_or_coordinate_coverage_incomplete": 311,
+          "nonfinite_prediction": 13
+        }
+      },
+      "conditioned": {
+        "complete": 311,
+        "total": 324,
+        "metrics": {
+          "geometry_m": {
+            "valid": 311,
+            "total": 324,
+            "mean": 1.240948359160495e-16
+          },
+          "velocity_m_s": {
+            "valid": 311,
+            "total": 324,
+            "mean": 5.475467737344628e-18
+          },
+          "acceleration_m_s2": {
+            "valid": 311,
+            "total": 324,
+            "mean": 3.284679171986703e-17
+          },
+          "force_balance_Nm": {
+            "valid": 311,
+            "total": 324,
+            "mean": 6.382972236311921
+          },
+          "work_energy_J": {
+            "valid": 311,
+            "total": 324,
+            "mean": 0.9213071521249484
+          },
+          "prediction_m": {
+            "valid": 311,
+            "total": 324,
+            "mean": 0.1947982352026758
+          }
+        },
+        "component_scores_100": {
+          "geometry_m": 95.98765432098764,
+          "velocity_m_s": 95.98765432098764,
+          "acceleration_m_s2": 95.98765432098764,
+          "force_balance_Nm": 0.0,
+          "work_energy_J": 17.28395061728395,
+          "prediction_m": 0.0
+        },
+        "joint_passes": 0,
+        "failures": {
+          "nonfinite_native_prediction": 13
+        }
+      },
+      "correction_rms_m": {
+        "valid": 311,
+        "total": 324,
+        "mean": 0.12049436191198326
+      }
+    }
+  },
+  "con_rk4_minus_euler": {
+    "raw/prediction_m": {
+      "valid": 324,
+      "total": 324,
+      "mean": 0.01290682397667376,
+      "registered": 324,
+      "bootstrap_95pct": [
+        0.006733620010216079,
+        0.023497116438922754
+      ]
+    },
+    "conditioned/force_balance_Nm": {
+      "valid": 315,
+      "total": 315,
+      "mean": 0.5599103554069562,
+      "registered": 324,
+      "bootstrap_95pct": [
+        -0.15773741314695594,
+        2.0703283772706875
+      ]
+    },
+    "conditioned/work_energy_J": {
+      "valid": 315,
+      "total": 315,
+      "mean": 9.083632759766244,
+      "registered": 324,
+      "bootstrap_95pct": [
+        -0.3699351640470661,
+        27.863105586432564
+      ]
+    }
+  },
+  "solver": {
+    "keycld": {
+      "euler_1": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.9598765432098766
+        },
+        "rgb_mse": {
+          "valid": 311,
+          "total": 324,
+          "mean": 0.0005170411216873136
+        },
+        "motion_mse": {
+          "valid": 311,
+          "total": 324,
+          "mean": 0.006111638677775909
+        },
+        "point_rmse_m": {
+          "valid": 311,
+          "total": 324,
+          "mean": 6388830249582.804
+        },
+        "native_difference_rmse_m": {
+          "valid": 299,
+          "total": 324,
+          "mean": 6388778960348.2705
+        },
+        "geometry_max_m": {
+          "valid": 311,
+          "total": 324,
+          "mean": 97126746463201.56
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 311,
+          "total": 324,
+          "mean": 97126746463201.38
+        }
+      },
+      "euler_4": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.9938271604938271
+        },
+        "rgb_mse": {
+          "valid": 322,
+          "total": 324,
+          "mean": 0.0004986902443511929
+        },
+        "motion_mse": {
+          "valid": 322,
+          "total": 324,
+          "mean": 0.006067607882112199
+        },
+        "point_rmse_m": {
+          "valid": 322,
+          "total": 324,
+          "mean": 0.15779695751390077
+        },
+        "native_difference_rmse_m": {
+          "valid": 310,
+          "total": 324,
+          "mean": 0.0012498083907085443
+        },
+        "geometry_max_m": {
+          "valid": 322,
+          "total": 324,
+          "mean": 0.25374648426146124
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 322,
+          "total": 324,
+          "mean": 0.054980324566403276
+        }
+      },
+      "euler_16": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.9969135802469135
+        },
+        "rgb_mse": {
+          "valid": 323,
+          "total": 324,
+          "mean": 0.0004963580095946098
+        },
+        "motion_mse": {
+          "valid": 323,
+          "total": 324,
+          "mean": 0.006063597431887097
+        },
+        "point_rmse_m": {
+          "valid": 323,
+          "total": 324,
+          "mean": 0.15655833567907804
+        },
+        "native_difference_rmse_m": {
+          "valid": 311,
+          "total": 324,
+          "mean": 0.00034654348920317254
+        },
+        "geometry_max_m": {
+          "valid": 323,
+          "total": 324,
+          "mean": 0.22510164377363573
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 323,
+          "total": 324,
+          "mean": 0.025055569982282592
+        }
+      },
+      "rk4_1": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.9907407407407407
+        },
+        "rgb_mse": {
+          "valid": 321,
+          "total": 324,
+          "mean": 0.0004977305649428753
+        },
+        "motion_mse": {
+          "valid": 321,
+          "total": 324,
+          "mean": 0.0060606606517064395
+        },
+        "point_rmse_m": {
+          "valid": 321,
+          "total": 324,
+          "mean": 701953923.556089
+        },
+        "native_difference_rmse_m": {
+          "valid": 309,
+          "total": 324,
+          "mean": 701953923.4000478
+        },
+        "geometry_max_m": {
+          "valid": 321,
+          "total": 324,
+          "mean": 8625080784.736742
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 321,
+          "total": 324,
+          "mean": 8625080784.53951
+        }
+      },
+      "rk4_4": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 1.0
+        },
+        "rgb_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.000495349765500169
+        },
+        "motion_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.006059594274064241
+        },
+        "point_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.15652021197500024
+        },
+        "native_difference_rmse_m": {
+          "valid": 311,
+          "total": 324,
+          "mean": 2.6586130213017875e-05
+        },
+        "geometry_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.22482608375286636
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.02474823695736947
+        }
+      },
+      "rk4_16": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 1.0
+        },
+        "rgb_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0004953507913339971
+        },
+        "motion_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.00605980401783343
+        },
+        "point_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.15652231101372943
+        },
+        "native_difference_rmse_m": {
+          "valid": 311,
+          "total": 324,
+          "mean": 3.3387705284702434e-06
+        },
+        "geometry_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.22482349706190977
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.024744429838553114
+        }
+      }
+    },
+    "con": {
+      "euler_1": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 1.0
+        },
+        "rgb_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.00030839557784196416
+        },
+        "motion_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0045185348203004815
+        },
+        "point_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.09867463625640978
+        },
+        "native_difference_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0017310684949942373
+        },
+        "geometry_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.13844571751511647
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.08268910550241394
+        }
+      },
+      "euler_4": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 1.0
+        },
+        "rgb_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0003080983863049317
+        },
+        "motion_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0045176769680455335
+        },
+        "point_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.09851354648768634
+        },
+        "native_difference_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0004099364101238106
+        },
+        "geometry_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.1378084154236987
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.08092919120891724
+        }
+      },
+      "euler_16": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 1.0
+        },
+        "rgb_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0003080422762378207
+        },
+        "motion_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.004517644601539981
+        },
+        "point_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0984819324449394
+        },
+        "native_difference_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.00010114835224394305
+        },
+        "geometry_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.13765567046631214
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.08051881001435825
+        }
+      },
+      "rk4_1": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 1.0
+        },
+        "rgb_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.00030802360001124906
+        },
+        "motion_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.004517630313673056
+        },
+        "point_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.09847207469754196
+        },
+        "native_difference_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 5.511851799006132e-08
+        },
+        "geometry_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.13760689584898153
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.08038638759954306
+        }
+      },
+      "rk4_4": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 1.0
+        },
+        "rgb_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.0003080236050727213
+        },
+        "motion_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.004517630247748908
+        },
+        "point_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.09847207345588818
+        },
+        "native_difference_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 1.2095748431838692e-08
+        },
+        "geometry_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.13760691070978429
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.08038637916341497
+        }
+      },
+      "rk4_16": {
+        "finite": {
+          "valid": 324,
+          "total": 324,
+          "mean": 1.0
+        },
+        "rgb_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.00030802360529472156
+        },
+        "motion_mse": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.004517630255502638
+        },
+        "point_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.09847207345070087
+        },
+        "native_difference_rmse_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 1.209216559687209e-08
+        },
+        "geometry_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.13760691074996892
+        },
+        "constraint_value_drift_max_m": {
+          "valid": 324,
+          "total": 324,
+          "mean": 0.080386379129329
+        }
+      }
+    }
+  },
+  "aggregation": "Equal seed/family/condition cells; finite-only error means with all registered denominators and failures reported; paired bootstrap 2000 seed/assembly draws, seed20261012.",
+  "manuscript_status": "Experiment evidence complete; manuscript reconciliation follows verification."
+}

@@ -1,0 +1,500 @@
+{
+  "comparison": {
+    "complete": true,
+    "completed_runs": 6,
+    "expected_runs": 6,
+    "models": [
+      {
+        "model": "keycld",
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "test_predictions": 324,
+        "finite_test": 324,
+        "native": {
+          "Scomp": {
+            "mean": 22.30180774598899,
+            "seed_standard_deviation": 12.084582322804069
+          },
+          "physical_coverage": 0,
+          "joint_qualified": 0,
+          "components": {
+            "geometry": {
+              "mean": 0.0030112368534270543,
+              "seed_standard_deviation": 0.00018690843712267641
+            },
+            "constraint_velocity": {
+              "mean": 56.81032260794434,
+              "seed_standard_deviation": 44.30109895506966
+            },
+            "constraint_acceleration": {
+              "mean": 76.79015835601002,
+              "seed_standard_deviation": 28.65624077283891
+            },
+            "dynamics": {
+              "mean": 0.0,
+              "seed_standard_deviation": 0.0
+            },
+            "energy": {
+              "mean": 0.0,
+              "seed_standard_deviation": 0.0
+            },
+            "prediction": {
+              "mean": 0.2073542751261387,
+              "seed_standard_deviation": 0.024068838366696647
+            }
+          }
+        },
+        "reconstructed": {
+          "Scomp": {
+            "mean": 53.098737140474874,
+            "seed_standard_deviation": 1.3532512500869869
+          },
+          "physical_coverage": 324,
+          "joint_qualified": 0,
+          "components": {
+            "geometry": {
+              "mean": 100.0,
+              "seed_standard_deviation": 0.0
+            },
+            "constraint_velocity": {
+              "mean": 100.0,
+              "seed_standard_deviation": 0.0
+            },
+            "constraint_acceleration": {
+              "mean": 100.0,
+              "seed_standard_deviation": 0.0
+            },
+            "dynamics": {
+              "mean": 0.6050129952257378,
+              "seed_standard_deviation": 0.029707768358375075
+            },
+            "energy": {
+              "mean": 17.547349731397027,
+              "seed_standard_deviation": 8.168254347061694
+            },
+            "prediction": {
+              "mean": 0.440060116226493,
+              "seed_standard_deviation": 0.02925476981132165
+            }
+          }
+        },
+        "visual": {
+          "rgb_mse": {
+            "mean": 0.00045178950834123957,
+            "seed_standard_deviation": 6.255464584952363e-05
+          },
+          "motion_mask_mse": {
+            "mean": 0.006050706053451624,
+            "seed_standard_deviation": 0.0009257689609053836
+          },
+          "persistence_rgb_mse": {
+            "mean": 0.0005042108717100712,
+            "seed_standard_deviation": 0.0
+          },
+          "persistence_motion_mask_mse": {
+            "mean": 0.008537421483736209,
+            "seed_standard_deviation": 0.0
+          }
+        }
+      },
+      {
+        "model": "con",
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "test_predictions": 324,
+        "finite_test": 324,
+        "native": {
+          "Scomp": {
+            "mean": 10.957036326147653,
+            "seed_standard_deviation": 2.5048272377433833
+          },
+          "physical_coverage": 0,
+          "joint_qualified": 0,
+          "components": {
+            "geometry": {
+              "mean": 0.008450554462435617,
+              "seed_standard_deviation": 0.0014869552864299153
+            },
+            "constraint_velocity": {
+              "mean": 7.216995082912038,
+              "seed_standard_deviation": 0.27161496036872507
+            },
+            "constraint_acceleration": {
+              "mean": 57.60388888467243,
+              "seed_standard_deviation": 14.725021725453454
+            },
+            "dynamics": {
+              "mean": 0.0,
+              "seed_standard_deviation": 0.0
+            },
+            "energy": {
+              "mean": 0.0,
+              "seed_standard_deviation": 0.0
+            },
+            "prediction": {
+              "mean": 0.9128834348390149,
+              "seed_standard_deviation": 0.07686118347655695
+            }
+          }
+        },
+        "reconstructed": {
+          "Scomp": {
+            "mean": 48.26065302151891,
+            "seed_standard_deviation": 1.5972901352087627
+          },
+          "physical_coverage": 311,
+          "joint_qualified": 0,
+          "components": {
+            "geometry": {
+              "mean": 95.98765432098766,
+              "seed_standard_deviation": 3.251744985448376
+            },
+            "constraint_velocity": {
+              "mean": 95.98765432098766,
+              "seed_standard_deviation": 3.251744985448376
+            },
+            "constraint_acceleration": {
+              "mean": 95.98765432098766,
+              "seed_standard_deviation": 3.251744985448376
+            },
+            "dynamics": {
+              "mean": 0.35157591567649876,
+              "seed_standard_deviation": 0.025801169864122123
+            },
+            "energy": {
+              "mean": 0.6041613822762484,
+              "seed_standard_deviation": 0.4123967012189037
+            },
+            "prediction": {
+              "mean": 0.6452178681977331,
+              "seed_standard_deviation": 0.07882013174824454
+            }
+          }
+        },
+        "visual": {
+          "rgb_mse": {
+            "mean": 0.00031674388343544483,
+            "seed_standard_deviation": 2.327950685880642e-06
+          },
+          "motion_mask_mse": {
+            "mean": 0.004654565162419192,
+            "seed_standard_deviation": 2.733759626139785e-05
+          },
+          "persistence_rgb_mse": {
+            "mean": 0.0005042108717100712,
+            "seed_standard_deviation": 0.0
+          },
+          "persistence_motion_mask_mse": {
+            "mean": 0.008537421483736209,
+            "seed_standard_deviation": 0.0
+          }
+        }
+      }
+    ],
+    "runs": [
+      {
+        "run": "keycld_256_seed42",
+        "model": "keycld",
+        "seed": 42,
+        "test_cases": 108,
+        "finite_test": 108,
+        "visual": {
+          "rgb_mse": 0.0004805059550023913,
+          "motion_mask_mse": 0.006557764112518204,
+          "persistence_rgb_mse": 0.0005042108717100712,
+          "persistence_motion_mask_mse": 0.008537421483736209
+        },
+        "checkpoint_sha256": "85c1c9886297366d0e7f53921d391d82cf437d53a0abf9868d386de1aba8d4ba",
+        "epochs": 40,
+        "updates": 32520,
+        "runtime_calibration_sha256": "0402075d499e80b374789f5e1bcf1f7db3aeb7c38338138a2f7e58bc87c36d0b",
+        "native": {
+          "Scomp": 33.37139803095824,
+          "components": {
+            "geometry": 0.0031253741951130197,
+            "constraint_velocity": 99.99999993578064,
+            "constraint_acceleration": 99.99996761641118,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 0.2252952593625064
+          },
+          "physical_coverage": 0,
+          "joint_qualified": 0
+        },
+        "reconstructed": {
+          "Scomp": 54.324317408732334,
+          "components": {
+            "geometry": 100.0,
+            "constraint_velocity": 100.0,
+            "constraint_acceleration": 100.0,
+            "dynamics": 0.5970999523224798,
+            "energy": 24.92129258848301,
+            "prediction": 0.42751191158851226
+          },
+          "physical_coverage": 108,
+          "joint_qualified": 0
+        }
+      },
+      {
+        "run": "keycld_256_seed43",
+        "model": "keycld",
+        "seed": 43,
+        "test_cases": 108,
+        "finite_test": 108,
+        "visual": {
+          "rgb_mse": 0.0003800326091920767,
+          "motion_mask_mse": 0.004982181770847766,
+          "persistence_rgb_mse": 0.0005042108717100712,
+          "persistence_motion_mask_mse": 0.008537421483736209
+        },
+        "checkpoint_sha256": "2e4b070266d66b738f2d3b919f38f245b492799e25d746c2c32bfdfeb5318c68",
+        "epochs": 40,
+        "updates": 32520,
+        "runtime_calibration_sha256": "0402075d499e80b374789f5e1bcf1f7db3aeb7c38338138a2f7e58bc87c36d0b",
+        "native": {
+          "Scomp": 24.124679224710743,
+          "components": {
+            "geometry": 0.003112800664416411,
+            "constraint_velocity": 58.95524379674822,
+            "constraint_acceleration": 85.60971701870317,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 0.18000173214862544
+          },
+          "physical_coverage": 0,
+          "joint_qualified": 0
+        },
+        "reconstructed": {
+          "Scomp": 51.64645090724534,
+          "components": {
+            "geometry": 100.0,
+            "constraint_velocity": 100.0,
+            "constraint_acceleration": 100.0,
+            "dynamics": 0.6378760784729742,
+            "energy": 8.767333620778762,
+            "prediction": 0.47349574422034074
+          },
+          "physical_coverage": 108,
+          "joint_qualified": 0
+        }
+      },
+      {
+        "run": "keycld_256_seed44",
+        "model": "keycld",
+        "seed": 44,
+        "test_cases": 108,
+        "finite_test": 108,
+        "visual": {
+          "rgb_mse": 0.0004948299608292507,
+          "motion_mask_mse": 0.006612172276988901,
+          "persistence_rgb_mse": 0.0005042108717100712,
+          "persistence_motion_mask_mse": 0.008537421483736209
+        },
+        "checkpoint_sha256": "154345931564576bb24fb7eb65da192b5f54473c4f0f16eca367f41a27ec7846",
+        "epochs": 40,
+        "updates": 32520,
+        "runtime_calibration_sha256": "72a060103e93ce77f2077572648c92a3c9745c0b16b5d6fb4c4265fcba946099",
+        "native": {
+          "Scomp": 9.409345982297992,
+          "components": {
+            "geometry": 0.0027955357007517327,
+            "constraint_velocity": 11.475724091304182,
+            "constraint_acceleration": 44.760790432915734,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 0.2167658338672842
+          },
+          "physical_coverage": 0,
+          "joint_qualified": 0
+        },
+        "reconstructed": {
+          "Scomp": 53.32544310544696,
+          "components": {
+            "geometry": 100.0,
+            "constraint_velocity": 100.0,
+            "constraint_acceleration": 100.0,
+            "dynamics": 0.5800629548817594,
+            "energy": 18.953422984929304,
+            "prediction": 0.41917269287062603
+          },
+          "physical_coverage": 108,
+          "joint_qualified": 0
+        }
+      },
+      {
+        "run": "con_256_seed42",
+        "model": "con",
+        "seed": 42,
+        "test_cases": 108,
+        "finite_test": 108,
+        "visual": {
+          "rgb_mse": 0.00031935339750446107,
+          "motion_mask_mse": 0.004683300304114474,
+          "persistence_rgb_mse": 0.0005042108717100712,
+          "persistence_motion_mask_mse": 0.008537421483736209
+        },
+        "checkpoint_sha256": "b5d92d841b3b172f9cc9012f12a7947fc2e9aaa478dc356830df754341828ce1",
+        "epochs": 50,
+        "updates": 2550,
+        "runtime_calibration_sha256": "0402075d499e80b374789f5e1bcf1f7db3aeb7c38338138a2f7e58bc87c36d0b",
+        "native": {
+          "Scomp": 9.286797622714673,
+          "components": {
+            "geometry": 0.007991144758492047,
+            "constraint_velocity": 6.993512614728715,
+            "constraint_acceleration": 47.89471892639361,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 0.824563050407221
+          },
+          "physical_coverage": 0,
+          "joint_qualified": 0
+        },
+        "reconstructed": {
+          "Scomp": 49.7449287223121,
+          "components": {
+            "geometry": 99.07407407407408,
+            "constraint_velocity": 99.07407407407408,
+            "constraint_acceleration": 99.07407407407408,
+            "dynamics": 0.3619029491753912,
+            "energy": 0.15391877305367763,
+            "prediction": 0.7315283894213492
+          },
+          "physical_coverage": 107,
+          "joint_qualified": 0
+        }
+      },
+      {
+        "run": "con_256_seed43",
+        "model": "con",
+        "seed": 43,
+        "test_cases": 108,
+        "finite_test": 108,
+        "visual": {
+          "rgb_mse": 0.0003148803942302173,
+          "motion_mask_mse": 0.0046515140792406685,
+          "persistence_rgb_mse": 0.0005042108717100712,
+          "persistence_motion_mask_mse": 0.008537421483736209
+        },
+        "checkpoint_sha256": "4c0c9e316d8e09a19777764f09d4936224c2b9309b87920ad6891bb50f624966",
+        "epochs": 50,
+        "updates": 2550,
+        "runtime_calibration_sha256": "0402075d499e80b374789f5e1bcf1f7db3aeb7c38338138a2f7e58bc87c36d0b",
+        "native": {
+          "Scomp": 9.747189542177042,
+          "components": {
+            "geometry": 0.010112999020977904,
+            "constraint_velocity": 7.138167755831816,
+            "constraint_acceleration": 50.37024492587316,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 0.9646115723362979
+          },
+          "physical_coverage": 0,
+          "joint_qualified": 0
+        },
+        "reconstructed": {
+          "Scomp": 46.57034324100553,
+          "components": {
+            "geometry": 92.5925925925926,
+            "constraint_velocity": 92.5925925925926,
+            "constraint_acceleration": 92.5925925925926,
+            "dynamics": 0.32221085660653404,
+            "energy": 0.6949985336654491,
+            "prediction": 0.6270722779834214
+          },
+          "physical_coverage": 100,
+          "joint_qualified": 0
+        }
+      },
+      {
+        "run": "con_256_seed44",
+        "model": "con",
+        "seed": 44,
+        "test_cases": 108,
+        "finite_test": 108,
+        "visual": {
+          "rgb_mse": 0.0003159978585716561,
+          "motion_mask_mse": 0.004628881103902435,
+          "persistence_rgb_mse": 0.0005042108717100712,
+          "persistence_motion_mask_mse": 0.008537421483736209
+        },
+        "checkpoint_sha256": "6c6601205f44039c226f61c65f0bc509f34a446e4c5a38fb16ff73985b2e77d4",
+        "epochs": 50,
+        "updates": 2550,
+        "runtime_calibration_sha256": "72a060103e93ce77f2077572648c92a3c9745c0b16b5d6fb4c4265fcba946099",
+        "native": {
+          "Scomp": 13.837121813551244,
+          "components": {
+            "geometry": 0.007247519607836897,
+            "constraint_velocity": 7.519304878175582,
+            "constraint_acceleration": 74.54670280175053,
+            "dynamics": 0.0,
+            "energy": 0.0,
+            "prediction": 0.9494756817735258
+          },
+          "physical_coverage": 0,
+          "joint_qualified": 0
+        },
+        "reconstructed": {
+          "Scomp": 48.466687101239096,
+          "components": {
+            "geometry": 96.2962962962963,
+            "constraint_velocity": 96.2962962962963,
+            "constraint_acceleration": 96.2962962962963,
+            "dynamics": 0.3706139412475711,
+            "energy": 0.9635668401096185,
+            "prediction": 0.5770529371884286
+          },
+          "physical_coverage": 104,
+          "joint_qualified": 0
+        }
+      }
+    ],
+    "missing_runs": [],
+    "scoring_version": "continuous-si-1",
+    "seed_weighting": "equal; within-seed family/condition-balanced scores",
+    "visual_support": "RGB errors use finite forecasts; finite counts remain explicit",
+    "updated_utc": "2026-10-16T17:38:45.401812+00:00"
+  },
+  "paired_external_measurement": {
+    "keycld_reference": {
+      "Scomp": 89.99541988501221,
+      "means": {
+        "force_balance_Nm": 0.11613344982954224,
+        "work_energy_J": 0.057091760917070154,
+        "prediction_m": 0.00014447653863019821
+      },
+      "joint_count": 198,
+      "total": 324
+    },
+    "keycld_generated": {
+      "Scomp": 50.850302442093785,
+      "means": {
+        "force_balance_Nm": 6.565042234105573,
+        "work_energy_J": 10.835170649732332,
+        "prediction_m": 0.18302891909907415
+      },
+      "joint_count": 0,
+      "total": 324
+    },
+    "con_generated": {
+      "Scomp": 50.99384646743488,
+      "means": {
+        "force_balance_Nm": 6.58511867169014,
+        "work_energy_J": 1.485036577257356,
+        "prediction_m": 0.1818730620066221
+      },
+      "joint_count": 0,
+      "total": 324
+    }
+  },
+  "local_report_verified": true,
+  "large_artifacts_recovery_status": "cloud/recovered_20261017/recovery_status.json"
+}

@@ -1,0 +1,101 @@
+{
+  "stage": "shape_preflight_complete",
+  "scientific_training_result": false,
+  "devices": [
+    "cpu:0"
+  ],
+  "rows": [
+    {
+      "model": "KeyCLD",
+      "resolution": 64,
+      "parameters": 596508,
+      "fp32_parameters_GiB": 0.0022221654653549194,
+      "fp32_params_grad_adam_lower_bound_GiB": 0.008888661861419678,
+      "input_batch_fp32_GiB": 0.002288818359375,
+      "epochs": 40,
+      "effective_batch": 1,
+      "updates_per_seed": 32520,
+      "sequence_exposures_per_seed": 32520,
+      "additional_activation_and_solver_memory": "not included in lower bound"
+    },
+    {
+      "model": "CON",
+      "resolution": 64,
+      "parameters": 67271267,
+      "fp32_parameters_GiB": 0.2506049983203411,
+      "fp32_params_grad_adam_lower_bound_GiB": 1.0024199932813644,
+      "input_batch_fp32_GiB": 0.03662109375,
+      "epochs": 50,
+      "effective_batch": 16,
+      "updates_per_seed": 2550,
+      "sequence_exposures_per_seed": 40650,
+      "additional_activation_and_solver_memory": "not included in lower bound"
+    },
+    {
+      "model": "KeyCLD",
+      "resolution": 256,
+      "parameters": 2378268,
+      "fp32_parameters_GiB": 0.00885973870754242,
+      "fp32_params_grad_adam_lower_bound_GiB": 0.03543895483016968,
+      "input_batch_fp32_GiB": 0.03662109375,
+      "epochs": 40,
+      "effective_batch": 1,
+      "updates_per_seed": 32520,
+      "sequence_exposures_per_seed": 32520,
+      "additional_activation_and_solver_memory": "not included in lower bound"
+    },
+    {
+      "model": "CON",
+      "resolution": 256,
+      "parameters": 1075870307,
+      "fp32_parameters_GiB": 4.007929217070341,
+      "fp32_params_grad_adam_lower_bound_GiB": 16.031716868281364,
+      "input_batch_fp32_GiB": 0.5859375,
+      "epochs": 50,
+      "effective_batch": 16,
+      "updates_per_seed": 2550,
+      "sequence_exposures_per_seed": 40650,
+      "additional_activation_and_solver_memory": "not included in lower bound"
+    },
+    {
+      "model": "KeyCLD",
+      "resolution": 512,
+      "parameters": 8079900,
+      "fp32_parameters_GiB": 0.03009997308254242,
+      "fp32_params_grad_adam_lower_bound_GiB": 0.12039989233016968,
+      "input_batch_fp32_GiB": 0.146484375,
+      "epochs": 40,
+      "effective_batch": 1,
+      "updates_per_seed": 32520,
+      "sequence_exposures_per_seed": 32520,
+      "additional_activation_and_solver_memory": "not included in lower bound"
+    },
+    {
+      "model": "CON",
+      "resolution": 512,
+      "parameters": 4303387235,
+      "fp32_parameters_GiB": 16.03136671707034,
+      "fp32_params_grad_adam_lower_bound_GiB": 64.12546686828136,
+      "input_batch_fp32_GiB": 2.34375,
+      "epochs": 50,
+      "effective_batch": 16,
+      "updates_per_seed": 2550,
+      "sequence_exposures_per_seed": 40650,
+      "additional_activation_and_solver_memory": "not included in lower bound"
+    }
+  ],
+  "high_resolution_video_runs": 12,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "state_controls": "reuse existing exact-state trajectories; no image-resolution dependence",
+  "constraints": [
+    "CON native dense encoder/decoder parameter count grows quadratically with width",
+    "KeyCLD renderer's trainable image seed grows quadratically with width",
+    "Streaming batches, rematerialization, and gradient accumulation preserve full objectives",
+    "KeyCLD pixel-sum reconstruction term needs an explicitly registered resolution scaling",
+    "No wall-clock estimate is available before a full-objective GPU update benchmark"
+  ]
+}

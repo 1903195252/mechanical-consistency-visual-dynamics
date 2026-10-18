@@ -1,0 +1,35 @@
+{
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "sequence_exposures_per_family_seed": 3000,
+  "batch_size": 8,
+  "test_identities_per_family": 50,
+  "test_cases_per_family_seed": 150,
+  "training_frames": 8,
+  "observed_frames": 3,
+  "future_steps": 117,
+  "fps": 30,
+  "input_resolution": 384,
+  "model": "V-JEPA 2.1-B frozen official encoder + full released 24-layer AC predictor",
+  "predictor_initialization": "random family-specific action-conditioned predictor",
+  "objective": "7-step teacher feature L1 plus 2-step autoregressive feature L1",
+  "physical_feedback": "seed-specific training-supervised head; external instrument applied after forecasting",
+  "readout": "Fixed calibrated CAD-coordinate Stewart head and 384px reset-relative Delta ridge",
+  "comparison": "same test identities, commands, seeds, horizon as LingBot; native training budgets retained",
+  "manifest_sha256": "7822ee97a0850aa256a1b0efa1a5b9846cc8c2f441791c02f712d9e7e23315f9",
+  "instrument_checkpoints": {
+    "output/closed_chain_eval/visual_calibration/optimization/geometry_spatial_reader/H-A_head.pt": "19dfcd012b15e572d97519e7637324cb6cbfe26c2d43044566ce658a0e4c27c0",
+    "output/closed_chain_eval/visual_calibration/vjepa_readout_replay/calibration/H-B_relative_head.npz": "c104e5ac2cbce2b4762a1b6c22604a9f96eafb8c5f5bc5442d34368b77706e2e"
+  },
+  "encoder_checkpoint_sha256": "848a77c33cc9e6649ed2119c9bea1e2c569bcdab9539ff3e7c02ccc2959ddf4d",
+  "cosine_schedule": "Fixed complete 15/50-epoch schedule from initialization for Stewart/Delta; 5% epoch warmup",
+  "reference_controls": [
+    "300 matched correct videos",
+    "300 exact-state derivatives",
+    "300 30Hz state-differentiation controls",
+    "seed-specific internal feedback readouts applied to reference and predicted features"
+  ]
+}

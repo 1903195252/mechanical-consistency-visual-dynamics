@@ -1,0 +1,11 @@
+-r spatial.txt
+torchaudio==2.9.0
+diffusers==0.36.0
+accelerate
+easydict
+tqdm
+imageio[ffmpeg]
+websockets
+msgpack
+wandb
+sentencepiece

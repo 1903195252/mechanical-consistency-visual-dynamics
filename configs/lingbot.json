@@ -1,0 +1,97 @@
+{
+  "schema_version": 2,
+  "model": "LingBot-VA official full 5.09B shared backbone",
+  "original_manifest_sha256": "844f3b9662960b779175a1a541cb120cc37c4fc672b6c046373c24494d43e381",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "checkpoints": [
+    0,
+    50
+  ],
+  "families": {
+    "H-A": {
+      "test_assemblies": 50,
+      "test_trajectories": 150,
+      "existing_test_assemblies": 5,
+      "additional_test_assemblies": 45
+    },
+    "H-B": {
+      "test_assemblies": 50,
+      "test_trajectories": 150,
+      "existing_test_assemblies": 5,
+      "additional_test_assemblies": 45
+    }
+  },
+  "training": {
+    "joint_families": true,
+    "full_parameter_adaptation": true,
+    "updates_per_seed": 50,
+    "total_updates": 150,
+    "batch_size": 8,
+    "microbatch_size": 1,
+    "accumulation_steps": 8,
+    "learning_rate": 1e-05,
+    "warmup_updates": 10,
+    "sequence_exposures_per_seed": 400,
+    "input_resolution": [
+      256,
+      256
+    ],
+    "native_video_action_objective": true,
+    "starting_checkpoint": "official pretrained weights independently for each seed",
+    "checkpoint_selection": "Both registered steps; no test-set selection",
+    "training_videos": 270,
+    "exact_resume": "FP32 model + AdamW + scheduler + RNG + data cursor; BF16 exports are evaluation-only"
+  },
+  "inference": {
+    "test_cases": 300,
+    "model_seed_checkpoint_cases": 1800,
+    "future_frames": 117,
+    "total_future_frames": 210600,
+    "fps": 30,
+    "observed_frames": 3,
+    "chunks": 8,
+    "denoising_steps": 5,
+    "guidance_scale": 5,
+    "generation_seed": "SHA256(lingbot60:<training_seed>:<video_id>), constant across checkpoints",
+    "zero_step": "One shared base weight set; three paired generation seed sets"
+  },
+  "evaluation": {
+    "scoring_version": "continuous-si-1",
+    "primary": "fixed-engineering-tolerance continuous Scomp",
+    "auxiliary": "strict joint qualification and physical coverage",
+    "reader": "frozen CAD-coordinate head plus frozen V-JEPA 2.1-B encoder",
+    "tracks": [
+      "native_coordinates",
+      "CAD_IK_reconstruction"
+    ],
+    "instrument_controls": [
+      "matched_reference_RGB",
+      "exact_states",
+      "sampled_state_derivatives"
+    ],
+    "fit_test_labels": false,
+    "subtract_reference_RMSE": false,
+    "statistical_unit": "assembly; three conditions are clustered within each identity",
+    "condition_and_family_balanced": true
+  },
+  "production": {
+    "new_assemblies": 90,
+    "new_videos": 270,
+    "views": [
+      "front"
+    ],
+    "source_resolution": [
+      640,
+      640
+    ],
+    "model_resize": "640 to 256 using INTER_AREA, identical to the existing experiment",
+    "full_physics_checks": true,
+    "full_360_pose_mesh_checks": true,
+    "original_corpus_modified": false,
+    "failed_cases": "Retain failures; do not silently replace sampled identities"
+  }
+}

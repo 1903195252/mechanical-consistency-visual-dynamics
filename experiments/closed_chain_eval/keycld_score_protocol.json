@@ -1,0 +1,62 @@
+{
+  "profile_id": "keycld_structured_ode_diagnostic_20261011",
+  "protocol_version": "0.1.0",
+  "purpose": "Numerical diagnostic scores for the current KeyCLD physical-keypoint interface, with new calibration and test trajectories",
+  "score_scope": "Video-conditioned structured keypoint output and separately state-supervised dynamics; not a common generated-video-reader leaderboard",
+  "calibration_seeds": [2000, 2011],
+  "test_seeds": [3000, 3019],
+  "conditions": ["nominal", "viscous", "coulomb", "mixed_friction", "heavy_payload", "dense_bars", "geometry_scaled", "crank_slider"],
+  "input_images": 3,
+  "image_size": 64,
+  "input_video_hz": 100,
+  "dense_output_hz": 1600,
+  "future_interval_s": [0.04, 0.5],
+  "physics_timestep_s": 0.000010416666666666666,
+  "reference_generator": "Independent ideal closed-chain DOP853 rtol=1e-10 atol=1e-12 max_step=0.002 s; MuJoCo renders exact poses and independently checks rigid mass/bias terms",
+  "energy_integration": "Exact constant motor work tau*delta(theta), exact constant world-force work F*delta(position), dense trapezoidal friction work; no finite-difference acceleration",
+  "native_derivatives": "Native ODE velocity/acceleration; independently verify derivative consistency on dense outputs. This is a separate diagnostic derivative track.",
+  "geometry_reader": "Declared physical B,C,midpoint interface and supplied world calibration. No ground-truth future alignment, IK correction, learned mass or force used by evaluator.",
+  "threshold_basis": "Engineering diagnostic tolerances fixed before new predictions; independent physical calibration checks measurement floor. These are project choices, not literature or industry standards.",
+  "limits_SI": {
+    "geometry": 0.001,
+    "constraint_velocity": 0.01,
+    "constraint_acceleration": 0.1,
+    "dynamics": 0.1,
+    "energy": 0.02,
+    "prediction": 0.01
+  },
+  "units": {
+    "geometry": "m",
+    "constraint_velocity": "m/s",
+    "constraint_acceleration": "m/s^2",
+    "dynamics": "N*m",
+    "energy": "J",
+    "prediction": "m"
+  },
+  "physical_interpretation_gate_m": 0.001,
+  "threshold_interpretation": {
+    "geometry": "1 mm maximum raw length/hinge error, no position projection",
+    "constraint_velocity": "1 cm/s RMS maximum constraint channel",
+    "constraint_acceleration": "0.1 m/s^2 RMS maximum constraint channel",
+    "dynamics": "0.1 N*m RMS motor torque residual, 5% of the fixed 2 N*m motor command limit",
+    "energy": "0.02 J maximum cumulative work-energy residual, 1% of the 2 N*m times 1 rad reference work",
+    "prediction": "1 cm per-channel RMS maximum physical point error"
+  },
+  "calibration_acceptance": "Every correct calibration trajectory must pass all six engineering tolerances; no model-dependent threshold inflation",
+  "controls": ["exact_physical_oracle", "static_initial_state", "time_scaled_physical_trajectory_0.8"],
+  "sensitivity_threshold_multipliers": [0.5, 1.0, 2.0],
+  "score": "100 * mean over mechanism families of mean over conditions of complete-trajectory joint pass rate",
+  "component_scores": "100 * the same macro average of each metric pass indicator; unavailable metric yields no verified pass and has a separate coverage count",
+  "derivative_audit": "5-point, quartic centered derivatives of dense Cartesian predicted points vs native derivatives; diagnostic, not a substitute for the independent equations",
+  "new_training": false,
+  "checkpoint_sha256": {
+    "video": "b7b65abfc5df9d6befc49952e8ee92021a9ffc9d1d1d2ca17cbc155874ad5f50",
+    "state_RK4": "087add5de75e92b384f550d4713ed6f64efd38a4409a9fb03b1e66ed97a55438"
+  },
+  "limitations": [
+    "One source training seed; new trajectory tests do not establish training-seed robustness",
+    "Original video latent keypoints may not be physical hinges; a failed declared output interface is not a proof all generated videos are physically wrong",
+    "Source training used zero friction and no variable-load context; these are frozen-transfer conditions",
+    "No Delta/Stewart evaluation and no common video reader is claimed"
+  ]
+}

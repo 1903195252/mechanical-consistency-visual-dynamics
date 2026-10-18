@@ -1,0 +1,17 @@
+{
+  "vjepa": {
+    "files": [
+      {
+        "path": "output/model_expansion/weights/vjepa2_1_vitb_dist_vitG_384.pt",
+        "url": "https://dl.fbaipublicfiles.com/vjepa2/vjepa2_1_vitb_dist_vitG_384.pt",
+        "bytes": 1664223428,
+        "sha256": "848a77c33cc9e6649ed2119c9bea1e2c569bcdab9539ff3e7c02ccc2959ddf4d"
+      }
+    ]
+  },
+  "lingbot": {
+    "directory": "output/model_expansion/weights/lingbot-va-base",
+    "revision": "5fbd004a61bac17d3764504f09e0b628fc2c0592",
+    "endpoint": "https://modelscope.cn/api/v1/models/Robbyant/lingbot-va-base/repo"
+  }
+}

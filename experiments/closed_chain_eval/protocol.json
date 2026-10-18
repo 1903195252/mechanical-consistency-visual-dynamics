@@ -1,0 +1,175 @@
+{
+  "protocol_id": "closed_chain_rigid_dynamics",
+  "version": "1.0.0",
+  "status": "canonical_continuous_scoring_with_independent_measurement_calibration",
+  "scope": "Fixed-base rigid holonomic closed chains; known forces; no impacts, backlash or deformable links in v0.1",
+  "implemented_mechanism_adapters": [
+    "planar_4R",
+    "planar_3R1P",
+    "planar_double_crank",
+    "Stewart",
+    "Delta"
+  ],
+  "not_yet_validated_mechanisms": [
+    "spatial_folding_linkages"
+  ],
+  "input_tracks": {
+    "video_primary": "Observed video prefix plus the same registered action/text/geometry information budget",
+    "state_diagnostic": "Exact observed state/velocity; separate component diagnostic, never a video model score"
+  },
+  "training_tracks": [
+    "frozen_released_checkpoint",
+    "source_trained_frozen",
+    "target_adapted"
+  ],
+  "information_policy_fields": [
+    "observed_duration_s",
+    "observed_frame_count",
+    "video_resolution",
+    "camera_views",
+    "action_channels_and_SI_calibration",
+    "known_future_action_schedule",
+    "text_content",
+    "provided_geometry",
+    "provided_topology",
+    "provided_physical_parameters",
+    "context_adaptation_rule",
+    "future_horizon_s"
+  ],
+  "sampling": {
+    "default_samples_per_prompt": 1,
+    "seed_manifest_required": true,
+    "best_of_K_selection_using_truth": false,
+    "additional_samples": "A separate fixed-K setting; retain and average all registered samples"
+  },
+  "measurement": {
+    "video_primary": "Common frozen calibrated reader over predicted videos; audit on held-out rendered truth",
+    "structured_state": "Registered physical-coordinate adapter; latent semantics calibrated using training/validation only",
+    "cross_reader_pooling": false,
+    "primary_derivatives": "Same registered time grid and differentiator within each comparison",
+    "implemented_differentiator": "registered per measurement pipeline: native analytic; calibrated quintic exact-state; calibrated phase fit as projection ablation; spatial manifold-aware differences",
+    "native_derivatives": "Optional separate diagnostic; cannot replace common derivatives in a pooled ranking",
+    "ground_truth_future_alignment": false,
+    "repair_or_manifold_projection": false,
+    "hidden_failed_frames": false,
+    "resolution_calibration": "Independent true-video replay at each native grid; pixel span is not a closure tolerance"
+  },
+  "core_metrics": {
+    "geometry": {
+      "expression": "phi(q)",
+      "reduction": "max_abs_per_channel_then_max_normalized_channel"
+    },
+    "constraint_velocity": {
+      "expression": "J(q) v",
+      "reduction": "rms_per_channel_then_max_normalized_channel"
+    },
+    "constraint_acceleration": {
+      "expression": "J(q) a + Jdot(q,v) v",
+      "reduction": "rms_per_channel_then_max_normalized_channel"
+    },
+    "dynamics": {
+      "expression": "N(q)^T (M(q) a + c(q,v) + G(q) - B(q) u - Qext - Qfric)",
+      "reduction": "rms_per_channel_then_max_normalized_channel"
+    },
+    "energy": {
+      "expression": "E(t)-E(t0)-integral[(B u+Qext+Qfric)^T v]dt",
+      "reduction": "max_abs_over_all_prefix_integrals"
+    },
+    "prediction": {
+      "expression": "predicted physical landmarks minus reference landmarks",
+      "reduction": "rms_per_channel_then_max_normalized_channel"
+    }
+  },
+  "normalization": {
+    "source": "Registered physical scales from training/calibration or engineering specification only",
+    "channel_units_required": true,
+    "zero_reference": "Use preregistered positive physical floor; never divide by a zero command",
+    "tangent_basis": "Fixed physical independent coordinates; record units and chart atlas",
+    "one_dof_motor_torque": "Only when s is the actual crank angle and N1=1; do not relabel arbitrary projected forces Nm"
+  },
+  "calibration": {
+    "calibration_id": null,
+    "formal_thresholds": null,
+    "old_keycld_geometry_gate_reusable_as_universal_threshold": false,
+    "required_controls": [
+      "Correct physical trajectory through the same reader/sampling/derivative pipeline",
+      "Static prediction on an excited trajectory",
+      "Geometry-preserving trajectory with wrong time scale or wrong action",
+      "Known mass/friction perturbations with documented magnitudes"
+    ],
+    "freeze_rule": "Freeze data split, reader, scales, engineering tolerances and statistical rules before new model test predictions",
+    "failure_of_measurement_floor": "Optimize the reader and numerical processing, verify held-out correct and faulty controls, and remeasure all paired predictions; engineering limits unchanged"
+  },
+  "scoring": {
+    "primary_output": "Scomp continuous tolerance-ratio score plus raw SI errors, coverage and failure reasons",
+    "per_trajectory_pass": "All six core metrics measured on the complete declared supports and within calibrated bounds",
+    "score_100": "(100/6) * sum_k balanced_mean_i [available_ik / (1 + (error_ik / tolerance_ik)^2)]",
+    "missing_core_metric": "Unverified, contributes no verified pass; keep cause distinct from demonstrated physical failure",
+    "missing_calibration": "score=null; report raw diagnostics only",
+    "partial_metric_mean": "Conditional on available trajectories, always accompanied by n/expected",
+    "parameter_heads": "Not mandatory for a black-box dynamics score; evaluated separately if physically identifiable",
+    "scoring_version": "continuous-si-1",
+    "auxiliary_score": "strict joint qualification S_wedge",
+    "alternate_observation_normalized_score": false,
+    "binary_composite_score": false,
+    "retired_snapshot": "output/closed_chain_eval/archive/pre_unified_scoring/manifest.json"
+  },
+  "diagnostic_modules": [
+    "Matched positive/negative velocity response for friction; assumptions and coverage explicit",
+    "Known SI action response for effective inertia; report nonpositive gains and all outliers",
+    "SI mass/friction parameter identification only after actuation-scale anchoring and regressor rank audit",
+    "Exact-state component control and fixed-sampling/integrator controls"
+  ],
+  "generalization_axes": [
+    "initial_state",
+    "geometry",
+    "payload",
+    "density_inertia",
+    "friction",
+    "action_waveform",
+    "mechanism_topology",
+    "combined_shift"
+  ],
+  "statistics": {
+    "unit": "trajectory, never frame",
+    "paired_comparisons": "Same held-out cases, input histories and controls",
+    "independent_training_seeds_for_confirmatory_comparison": 3,
+    "confidence_intervals": "95% paired cluster bootstrap; preserve condition pairing, cluster by training seed then trajectory",
+    "one_training_seed": "Conditional pilot evidence only; trajectory CI does not measure training uncertainty"
+  },
+  "reproducibility": [
+    "weights_sha256",
+    "source_sha256",
+    "test_manifest_sha256",
+    "adapter_sha256",
+    "reader_sha256",
+    "calibration_sha256",
+    "environment",
+    "compute_budget",
+    "all_case_statuses"
+  ],
+  "comparison_fields": [
+    "protocol_version",
+    "suite_id",
+    "test_manifest_sha256",
+    "input_track",
+    "training_track",
+    "information_policy_id",
+    "budget_policy_id",
+    "reader_id",
+    "derivative_policy_id",
+    "sampling_policy_id",
+    "calibration_id"
+  ],
+  "planar_resolution_extension": {
+    "widths": [
+      64,
+      256,
+      512
+    ],
+    "source": "original 640x640 calibrated RGB",
+    "same_assemblies_splits_FOV_physics": true,
+    "status_path": "output/planar_resolution/status.json",
+    "claims_require_completed_training_and_measurement": true
+  }
+}

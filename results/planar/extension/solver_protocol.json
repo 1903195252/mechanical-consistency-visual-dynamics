@@ -1,0 +1,40 @@
+{
+  "id": "paired-frozen-inference-solvers-v1",
+  "registered_unix_s": 1791902249.4735134,
+  "parent_protocol_sha256": "a0f4d4a80cfcb216d94bd60401ca65df653d54927717f76098d430f9d793e51c",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "models": [
+    "keycld",
+    "con"
+  ],
+  "cases": 108,
+  "solvers": {
+    "euler": [
+      1,
+      4,
+      16
+    ],
+    "rk4": [
+      1,
+      4,
+      16
+    ]
+  },
+  "initialization": "Exact stored native initial predicted position and velocity; same frozen weights and public command. No future truth.",
+  "forecast": "Start at middle observed frame31; future frames33..119; each frame interval1/30s.",
+  "metrics": [
+    "future RGB MSE",
+    "motion-pixel MSE",
+    "point RMSE",
+    "difference from native inference",
+    "raw geometry maximum",
+    "constraint-value drift from predicted initial state",
+    "finite count"
+  ],
+  "scope": "Frozen video checkpoints; inference solver ablation, separate from paired state training solver experiment.",
+  "timeout_initialization": "For native timeout placeholders without finite initial states, rerun the original three-frame initializer only; mark initial_source per case."
+}

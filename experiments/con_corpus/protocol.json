@@ -1,0 +1,116 @@
+{
+  "id": "con-corpus-planar-v1",
+  "registered_unix_s": 1791893763.7201314,
+  "official_commit": "cef5441f0201ed28e3ac9e1d3e7d4de7d52c4a30",
+  "model": "CON with input autoencoding (node-con-iae), official beta-VAE",
+  "dataset_manifest_sha256": "231fd49b3837605a01906d66eabd951b296153ec700feff87dd4db4737d2827c",
+  "counts": {
+    "train": 813,
+    "calibration": 54,
+    "validation": 54,
+    "test": 108
+  },
+  "dataset": "Identical 343 assemblies and 813/54/54/108 sequences as frozen KeyCLD corpus; no new video generation.",
+  "training": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "arms": [
+      "video_con_iae",
+      "state_con_iae"
+    ],
+    "epochs": 50,
+    "batch_size": 16,
+    "warmup_epochs": 5,
+    "latent_dim": 8,
+    "image_shape": [
+      64,
+      64,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "hidden_dim": 30,
+    "num_layers": 5,
+    "base_lr": 0.018486990918444367,
+    "weight_decay": 5.53401170454386e-05,
+    "loss_weights": {
+      "mse_z": 0.3733687489479885,
+      "mse_rec_static": 1.0,
+      "mse_rec_dynamic": 83.7248326772002,
+      "beta": 0.00020068384639167935,
+      "mse_tau_rec": 10.0
+    },
+    "checkpoint": "Final epoch 50; no test-based selection; full optimizer, PRNG, data-order resume.",
+    "last_batch": "Include every sequence; last batch uses its actual size.",
+    "solver": "Official Dopri5 with constant 0.01 s steps; complete 50-frame rollouts.",
+    "velocity": "Video: official encoder JVP of centered three-frame image difference; state: exact prefix velocity.",
+    "state_control": "Physical B/C/midpoint coordinates padded to dimension 8; only the official CON dynamics train. Privileged diagnostic, not video performance."
+  },
+  "inputs": {
+    "vector": [
+      "speed_command",
+      "servo_gain",
+      "servo_limit",
+      "external_Fx",
+      "external_Fz",
+      "A_x",
+      "A_z",
+      "D_x",
+      "D_z",
+      "l1",
+      "l2",
+      "l3",
+      "guide_offset",
+      "slider_flag"
+    ],
+    "fixed_scales": [
+      5,
+      12,
+      12,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "semantics": "Command-and-geometry-conditioned closed-loop system; input reconstruction is in declared normalized command units, not latent force calibration.",
+    "withheld": [
+      "masses",
+      "inertias",
+      "friction",
+      "future actual torque",
+      "future true states"
+    ],
+    "inference": "Only three real images are encoded; forecast from the middle observed frame; future time grid extends through original frame 119.",
+    "camera": "Same calibrated 64x64 images and known recorded-camera limitations as KeyCLD."
+  },
+  "evaluation": {
+    "primary_video": "Future RGB MSE and persistence, separately from latent-state diagnostics.",
+    "video_physical_readout": "One affine latent-to-point map fitted only on training labels after freezing; validation semantic error and raw geometry coverage reported. This is a privileged downstream readout diagnostic, not the public video-reader track; never feeds model predictions.",
+    "derivatives": "Native ODE derivatives at 240 Hz; same SI independent equations and thresholds as KeyCLD corpus.",
+    "limits_SI": {
+      "geometry_m": 0.001,
+      "velocity_m_s": 0.01,
+      "acceleration_m_s2": 0.1,
+      "force_balance_Nm": 0.25,
+      "work_energy_J": 0.05,
+      "prediction_m": 0.01
+    },
+    "coverage": "Raw geometry; no IK or projection. Unavailable SI values remain null with all test cases in denominator.",
+    "aggregation": "Family then condition equal weight; seeds and assembly clusters bootstrap, 2000 draws.",
+    "calibration": "Reuse hash-bound independently validated 54 calibration references; no model tuning on calibration or test.",
+    "comparison": "Matched data, cameras and commands; model-native training budgets and losses differ. Do not present as equal-update comparison."
+  },
+  "reference": "Official examples/training/train_planar_pcs_dynamics_autoencoder.py, long_horizon node-con-iae branch."
+}

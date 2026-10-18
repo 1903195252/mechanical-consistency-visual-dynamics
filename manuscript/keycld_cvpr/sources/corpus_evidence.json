@@ -1,0 +1,637 @@
+{
+  "dataset_counts": {
+    "train": 813,
+    "calibration": 54,
+    "validation": 54,
+    "test": 108
+  },
+  "assembly_splits": {
+    "test": 36,
+    "validation": 18,
+    "calibration": 18,
+    "train": 271
+  },
+  "evaluated_assemblies": 343,
+  "mechanism_families": 3,
+  "joint_topologies": 2,
+  "checked_prediction_archives": 1458,
+  "equal_initial_checkpoints_within_seed": true,
+  "summary": {
+    "video_euler": {
+      "seeds": 3,
+      "test_assemblies": 36,
+      "predictions": 324,
+      "complete_physical_trajectories": 0,
+      "composite_mean": 14.557613168724279,
+      "joint_pass": 0,
+      "criterion_pass_percent": {
+        "geometry_m": 0.0,
+        "velocity_m_s": 22.22222222222222,
+        "acceleration_m_s2": 65.12345679012346,
+        "force_balance_Nm": 0.0,
+        "work_energy_J": 0.0,
+        "prediction_m": 0.0
+      },
+      "criterion_measured": {
+        "geometry_m": 311,
+        "velocity_m_s": 311,
+        "acceleration_m_s2": 311,
+        "force_balance_Nm": 0,
+        "work_energy_J": 0,
+        "prediction_m": 311
+      },
+      "validation_point_rmse_m": [
+        0.16060038816625982,
+        0.15908563639413556,
+        0.16199235017778546
+      ],
+      "raw_metrics": {},
+      "per_family": {
+        "S-A": {
+          "pass_percent": {
+            "geometry_m": 0.0,
+            "velocity_m_s": 48.148148148148145,
+            "acceleration_m_s2": 68.51851851851852,
+            "force_balance_Nm": 0.0,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.0
+          },
+          "mean": {
+            "geometry_m": 0.34712444784927005,
+            "velocity_m_s": 0.012864740649672466,
+            "acceleration_m_s2": 0.08391108448412689,
+            "force_balance_Nm": null,
+            "work_energy_J": null,
+            "prediction_m": 0.23964155700908735
+          }
+        },
+        "S-B": {
+          "pass_percent": {
+            "geometry_m": 0.0,
+            "velocity_m_s": 8.333333333333334,
+            "acceleration_m_s2": 77.77777777777777,
+            "force_balance_Nm": 0.0,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.0
+          },
+          "mean": {
+            "geometry_m": 0.16097140192483567,
+            "velocity_m_s": 0.020660649111527048,
+            "acceleration_m_s2": 0.06196554487724454,
+            "force_balance_Nm": null,
+            "work_energy_J": null,
+            "prediction_m": 0.2097650529273535
+          }
+        },
+        "S-J": {
+          "pass_percent": {
+            "geometry_m": 0.0,
+            "velocity_m_s": 10.185185185185185,
+            "acceleration_m_s2": 49.074074074074076,
+            "force_balance_Nm": 0.0,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.0
+          },
+          "mean": {
+            "geometry_m": 0.16570183970691618,
+            "velocity_m_s": 0.03703266246906861,
+            "acceleration_m_s2": 0.17870563377474968,
+            "force_balance_Nm": null,
+            "work_energy_J": null,
+            "prediction_m": 0.2433758001989934
+          }
+        }
+      }
+    },
+    "state_euler": {
+      "seeds": 3,
+      "test_assemblies": 36,
+      "predictions": 324,
+      "complete_physical_trajectories": 324,
+      "composite_mean": 52.77777777777777,
+      "joint_pass": 0,
+      "criterion_pass_percent": {
+        "geometry_m": 100.0,
+        "velocity_m_s": 100.0,
+        "acceleration_m_s2": 100.0,
+        "force_balance_Nm": 8.333333333333334,
+        "work_energy_J": 0.0,
+        "prediction_m": 8.333333333333334
+      },
+      "criterion_measured": {
+        "geometry_m": 324,
+        "velocity_m_s": 324,
+        "acceleration_m_s2": 324,
+        "force_balance_Nm": 324,
+        "work_energy_J": 324,
+        "prediction_m": 324
+      },
+      "validation_point_rmse_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_metrics": {
+        "prediction_m": {
+          "mean": 0.1390617879936369,
+          "median": 0.09178954407945025,
+          "mean_95pct": [
+            0.13195356903402966,
+            0.14440347072926754
+          ]
+        },
+        "force_balance_Nm": {
+          "mean": 4.563515760500913,
+          "median": 3.348467896126939,
+          "mean_95pct": [
+            4.318310143456547,
+            4.749055718268701
+          ]
+        },
+        "work_energy_J": {
+          "mean": 22.453366249305503,
+          "median": 17.151670742388625,
+          "mean_95pct": [
+            20.58659234207148,
+            24.379873233302767
+          ]
+        }
+      },
+      "per_family": {
+        "S-A": {
+          "pass_percent": {
+            "geometry_m": 100.0,
+            "velocity_m_s": 100.0,
+            "acceleration_m_s2": 100.0,
+            "force_balance_Nm": 25.0,
+            "work_energy_J": 0.0,
+            "prediction_m": 25.0
+          },
+          "mean": {
+            "geometry_m": 2.2735441895133206e-06,
+            "velocity_m_s": 8.007548204654988e-07,
+            "acceleration_m_s2": 2.8795399535311596e-06,
+            "force_balance_Nm": 1.9065447288766872,
+            "work_energy_J": 9.535387813692527,
+            "prediction_m": 0.06920046410840158
+          }
+        },
+        "S-B": {
+          "pass_percent": {
+            "geometry_m": 100.0,
+            "velocity_m_s": 100.0,
+            "acceleration_m_s2": 100.0,
+            "force_balance_Nm": 0.0,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.0
+          },
+          "mean": {
+            "geometry_m": 1.978280550376967e-06,
+            "velocity_m_s": 7.937105588556403e-07,
+            "acceleration_m_s2": 3.2358689893543565e-06,
+            "force_balance_Nm": 3.171815165631508,
+            "work_energy_J": 38.039838801076684,
+            "prediction_m": 0.08130512264141228
+          }
+        },
+        "S-J": {
+          "pass_percent": {
+            "geometry_m": 100.0,
+            "velocity_m_s": 100.0,
+            "acceleration_m_s2": 100.0,
+            "force_balance_Nm": 0.0,
+            "work_energy_J": 0.0,
+            "prediction_m": 0.0
+          },
+          "mean": {
+            "geometry_m": 5.176557499423938e-06,
+            "velocity_m_s": 2.2466873354081614e-06,
+            "acceleration_m_s2": 1.3693105195845464e-05,
+            "force_balance_Nm": 8.612187386994545,
+            "work_energy_J": 19.784872133147307,
+            "prediction_m": 0.26667977723109687
+          }
+        }
+      }
+    },
+    "state_rk4": {
+      "seeds": 3,
+      "test_assemblies": 36,
+      "predictions": 324,
+      "complete_physical_trajectories": 324,
+      "composite_mean": 60.956790123456784,
+      "joint_pass": 0,
+      "criterion_pass_percent": {
+        "geometry_m": 100.0,
+        "velocity_m_s": 100.0,
+        "acceleration_m_s2": 100.0,
+        "force_balance_Nm": 7.407407407407407,
+        "work_energy_J": 0.0,
+        "prediction_m": 58.333333333333336
+      },
+      "criterion_measured": {
+        "geometry_m": 324,
+        "velocity_m_s": 324,
+        "acceleration_m_s2": 324,
+        "force_balance_Nm": 324,
+        "work_energy_J": 324,
+        "prediction_m": 324
+      },
+      "validation_point_rmse_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_metrics": {
+        "prediction_m": {
+          "mean": 0.016367540265656528,
+          "median": 0.008723986428026225,
+          "mean_95pct": [
+            0.014598968319877727,
+            0.017925318228989438
+          ]
+        },
+        "force_balance_Nm": {
+          "mean": 0.7148192600035058,
+          "median": 0.3656618177494425,
+          "mean_95pct": [
+            0.6382257473962469,
+            0.7667228669970066
+          ]
+        },
+        "work_energy_J": {
+          "mean": 2.9252825002235094,
+          "median": 1.40559817171134,
+          "mean_95pct": [
+            2.5651352503936358,
+            3.2376990657091005
+          ]
+        }
+      },
+      "per_family": {
+        "S-A": {
+          "pass_percent": {
+            "geometry_m": 100.0,
+            "velocity_m_s": 100.0,
+            "acceleration_m_s2": 100.0,
+            "force_balance_Nm": 17.59259259259259,
+            "work_energy_J": 0.0,
+            "prediction_m": 42.592592592592595
+          },
+          "mean": {
+            "geometry_m": 1.8453800314343668e-06,
+            "velocity_m_s": 5.85606043645242e-07,
+            "acceleration_m_s2": 1.5009698497706773e-06,
+            "force_balance_Nm": 0.3196542993289184,
+            "work_energy_J": 1.5438448680314247,
+            "prediction_m": 0.012906367549191748
+          }
+        },
+        "S-B": {
+          "pass_percent": {
+            "geometry_m": 100.0,
+            "velocity_m_s": 100.0,
+            "acceleration_m_s2": 100.0,
+            "force_balance_Nm": 0.0,
+            "work_energy_J": 0.0,
+            "prediction_m": 35.18518518518518
+          },
+          "mean": {
+            "geometry_m": 1.6577048144153338e-06,
+            "velocity_m_s": 6.222561294629785e-07,
+            "acceleration_m_s2": 2.266942672784066e-06,
+            "force_balance_Nm": 1.4338968684066966,
+            "work_energy_J": 6.227590388801424,
+            "prediction_m": 0.03248474431537025
+          }
+        },
+        "S-J": {
+          "pass_percent": {
+            "geometry_m": 100.0,
+            "velocity_m_s": 100.0,
+            "acceleration_m_s2": 100.0,
+            "force_balance_Nm": 4.62962962962963,
+            "work_energy_J": 0.0,
+            "prediction_m": 97.22222222222223
+          },
+          "mean": {
+            "geometry_m": 2.336426062086041e-06,
+            "velocity_m_s": 9.543533272521028e-07,
+            "acceleration_m_s2": 3.0213486316252116e-06,
+            "force_balance_Nm": 0.3909066122749022,
+            "work_energy_J": 1.0044122438376792,
+            "prediction_m": 0.003711508932407586
+          }
+        }
+      }
+    }
+  },
+  "paired_integrator_changes": {
+    "prediction_m": {
+      "euler_mean": 0.1390617879936369,
+      "rk4_mean": 0.016367540265656528,
+      "rk4_minus_euler": -0.12269424772798036,
+      "paired_95pct": [
+        -0.1281747223955473,
+        -0.11520883363707939
+      ],
+      "relative_reduction_percent": 88.23002314165164
+    },
+    "force_balance_Nm": {
+      "euler_mean": 4.563515760500913,
+      "rk4_mean": 0.7148192600035058,
+      "rk4_minus_euler": -3.848696500497407,
+      "paired_95pct": [
+        -4.059498417226671,
+        -3.5780929592989956
+      ],
+      "relative_reduction_percent": 84.33621581433863
+    },
+    "work_energy_J": {
+      "euler_mean": 22.453366249305503,
+      "rk4_mean": 2.9252825002235094,
+      "rk4_minus_euler": -19.528083749081993,
+      "paired_95pct": [
+        -21.744458249543552,
+        -17.373421438816134
+      ],
+      "relative_reduction_percent": 86.97174193061589
+    }
+  },
+  "inference_coverage": {
+    "video_euler": [
+      {
+        "seed": 42,
+        "test_finite": 108,
+        "test_timeouts": 0,
+        "validation_timeouts": 0
+      },
+      {
+        "seed": 43,
+        "test_finite": 108,
+        "test_timeouts": 0,
+        "validation_timeouts": 0
+      },
+      {
+        "seed": 44,
+        "test_finite": 95,
+        "test_timeouts": 13,
+        "validation_timeouts": 10
+      }
+    ],
+    "state_euler": [
+      {
+        "seed": 42,
+        "test_finite": 108,
+        "test_timeouts": 0,
+        "validation_timeouts": 10
+      },
+      {
+        "seed": 43,
+        "test_finite": 108,
+        "test_timeouts": 0,
+        "validation_timeouts": 10
+      },
+      {
+        "seed": 44,
+        "test_finite": 108,
+        "test_timeouts": 0,
+        "validation_timeouts": 0
+      }
+    ],
+    "state_rk4": [
+      {
+        "seed": 42,
+        "test_finite": 108,
+        "test_timeouts": 0,
+        "validation_timeouts": 0
+      },
+      {
+        "seed": 43,
+        "test_finite": 108,
+        "test_timeouts": 0,
+        "validation_timeouts": 0
+      },
+      {
+        "seed": 44,
+        "test_finite": 108,
+        "test_timeouts": 0,
+        "validation_timeouts": 0
+      }
+    ]
+  },
+  "calibration": {
+    "protocol_sha256": "7a4867635ce5d9aa6cf190e19990f3e40873e0fbf9de08f499ac3003c93457a5",
+    "dataset_manifest_sha256": "231fd49b3837605a01906d66eabd951b296153ec700feff87dd4db4737d2827c",
+    "passed": true,
+    "model_result": false,
+    "summaries": {
+      "oracle": {
+        "passed": 54,
+        "total": 54,
+        "maxima": {
+          "geometry_m": 7.231814188352059e-06,
+          "velocity_m_s": 3.844302794819745e-05,
+          "acceleration_m_s2": 0.0006969950878294304,
+          "force_balance_Nm": 2.0646179053558965e-05,
+          "work_energy_J": 0.00022349848236147274,
+          "prediction_m": 0.0
+        }
+      },
+      "persistence": {
+        "passed": 0,
+        "total": 54,
+        "maxima": {
+          "geometry_m": 2.962872084177892e-06,
+          "velocity_m_s": 0.0,
+          "acceleration_m_s2": 0.0,
+          "force_balance_Nm": 13.479665468707015,
+          "work_energy_J": 0.0,
+          "prediction_m": 0.3002232263223373
+        }
+      },
+      "time_scaled_0.8": {
+        "passed": 0,
+        "total": 54,
+        "maxima": {
+          "geometry_m": 7.731964749180253e-06,
+          "velocity_m_s": 2.4729901361091116e-05,
+          "acceleration_m_s2": 0.00045640372249869594,
+          "force_balance_Nm": 11.598111494495205,
+          "work_energy_J": 133.96849619163592,
+          "prediction_m": 0.254263718858636
+        }
+      }
+    },
+    "limits_SI": {
+      "geometry_m": 0.001,
+      "velocity_m_s": 0.01,
+      "acceleration_m_s2": 0.1,
+      "force_balance_Nm": 0.25,
+      "work_energy_J": 0.05,
+      "prediction_m": 0.01
+    },
+    "test_assemblies_used": false
+  },
+  "bootstrap": "2000 resamples of seeds and assembly identities within family; same resample in both state arms, paired conditions retained",
+  "kinetic_capacity": {
+    "model_result": false,
+    "post_hoc_diagnostic": true,
+    "assemblies": 360,
+    "conditions": 1080,
+    "scope": "Fit the three physical B/C/midpoint masses to the true reduced kinetic metric, per case and shared across the corpus; existing physical reference poses only.",
+    "interpretation": "These are evaluator oracle fits, not neural SI mass estimates. The learned potential/input matrix can compensate some inertial mismatch, so this is not a lower bound on rollout error and does not isolate optimization failure.",
+    "per_family": {
+      "S-A": {
+        "conditions": 360,
+        "median_per_case_relative_rms": 3.8604445293324073e-16,
+        "maximum_per_case_relative_rms": 1.2538867629719326e-15
+      },
+      "S-B": {
+        "conditions": 360,
+        "median_per_case_relative_rms": 3.9305177020479236e-16,
+        "maximum_per_case_relative_rms": 1.5456535480769783e-15
+      },
+      "S-J": {
+        "conditions": 360,
+        "median_per_case_relative_rms": 3.7679004808300405e-16,
+        "maximum_per_case_relative_rms": 1.1435170599907934e-15
+      }
+    },
+    "shared_mass_metric_relative_rms": 0.22548959104709346,
+    "shared_oracle_effective_point_masses_kg": [
+      0.12093809831748446,
+      0.13535793034235505,
+      0.41476361147885044
+    ]
+  },
+  "probe_summaries": {
+    "video_euler": [],
+    "state_euler": [
+      {
+        "post_hoc_diagnostic": true,
+        "state_supervised_component_only": true,
+        "arm": "state_euler",
+        "seed": 42,
+        "checkpoint_sha256": "e6b8919bdfb7bc9df2c655c4f3723b9fad63da58217b4e44764cee0324e12f76",
+        "probe_input_sha256": "1566c65e8164af7ae53bbcfa1be24d3d998f2c7703ab38d6780515881319fed1",
+        "probe_source_sha256": "f1232b1b7ff8d0ea54cc459b0afb0e73749e7db66293589b6938e456e0a20408",
+        "sampled_states": 648,
+        "test_assemblies": 36,
+        "positive_action_gain_states": 445,
+        "effective_inertia_relative_error_median": 74.2431305979326,
+        "effective_inertia_relative_error_mean": 220.2805651345424,
+        "friction_torque_error_rms_Nm": 0.03884722071193655,
+        "maximum_learned_odd_acceleration": 0.0,
+        "devices": [
+          "cpu:0"
+        ],
+        "interpretation": "SI input-gain behavior, not native point masses in kg. True states are a declared intervention; the video encoder is not scored. Public servo damping is separated from unknown joint friction."
+      },
+      {
+        "post_hoc_diagnostic": true,
+        "state_supervised_component_only": true,
+        "arm": "state_euler",
+        "seed": 43,
+        "checkpoint_sha256": "0ad678ce150e8ea29c6e615c019e0724e5771bba2e05f9df6059fb1e8a8a0663",
+        "probe_input_sha256": "1566c65e8164af7ae53bbcfa1be24d3d998f2c7703ab38d6780515881319fed1",
+        "probe_source_sha256": "f1232b1b7ff8d0ea54cc459b0afb0e73749e7db66293589b6938e456e0a20408",
+        "sampled_states": 648,
+        "test_assemblies": 36,
+        "positive_action_gain_states": 458,
+        "effective_inertia_relative_error_median": 73.67949891506677,
+        "effective_inertia_relative_error_mean": 325.584617648057,
+        "friction_torque_error_rms_Nm": 0.03884722071193655,
+        "maximum_learned_odd_acceleration": 0.0,
+        "devices": [
+          "cpu:0"
+        ],
+        "interpretation": "SI input-gain behavior, not native point masses in kg. True states are a declared intervention; the video encoder is not scored. Public servo damping is separated from unknown joint friction."
+      },
+      {
+        "post_hoc_diagnostic": true,
+        "state_supervised_component_only": true,
+        "arm": "state_euler",
+        "seed": 44,
+        "checkpoint_sha256": "1815b3154aecff53f82dbca4c1192eb9dae62a60465bb943d3105db8f8716256",
+        "probe_input_sha256": "1566c65e8164af7ae53bbcfa1be24d3d998f2c7703ab38d6780515881319fed1",
+        "probe_source_sha256": "f1232b1b7ff8d0ea54cc459b0afb0e73749e7db66293589b6938e456e0a20408",
+        "sampled_states": 648,
+        "test_assemblies": 36,
+        "positive_action_gain_states": 443,
+        "effective_inertia_relative_error_median": 73.89691183959789,
+        "effective_inertia_relative_error_mean": 243.99221955289715,
+        "friction_torque_error_rms_Nm": 0.03884722071193655,
+        "maximum_learned_odd_acceleration": 0.0,
+        "devices": [
+          "cpu:0"
+        ],
+        "interpretation": "SI input-gain behavior, not native point masses in kg. True states are a declared intervention; the video encoder is not scored. Public servo damping is separated from unknown joint friction."
+      }
+    ],
+    "state_rk4": [
+      {
+        "post_hoc_diagnostic": true,
+        "state_supervised_component_only": true,
+        "arm": "state_rk4",
+        "seed": 42,
+        "checkpoint_sha256": "e5b0d67f4055e4a8da22003ef6f13bac1432144457de65bd361b468c4d1cbe19",
+        "probe_input_sha256": "1566c65e8164af7ae53bbcfa1be24d3d998f2c7703ab38d6780515881319fed1",
+        "probe_source_sha256": "f1232b1b7ff8d0ea54cc459b0afb0e73749e7db66293589b6938e456e0a20408",
+        "sampled_states": 648,
+        "test_assemblies": 36,
+        "positive_action_gain_states": 570,
+        "effective_inertia_relative_error_median": 115.38811609749357,
+        "effective_inertia_relative_error_mean": 210.18665053276956,
+        "friction_torque_error_rms_Nm": 0.03884722071193655,
+        "maximum_learned_odd_acceleration": 0.0,
+        "devices": [
+          "cpu:0"
+        ],
+        "interpretation": "SI input-gain behavior, not native point masses in kg. True states are a declared intervention; the video encoder is not scored. Public servo damping is separated from unknown joint friction."
+      },
+      {
+        "post_hoc_diagnostic": true,
+        "state_supervised_component_only": true,
+        "arm": "state_rk4",
+        "seed": 43,
+        "checkpoint_sha256": "14857a5f6371487c7839be045483b1126ca55d5a8ab812098c6d1d259bd4fcfe",
+        "probe_input_sha256": "1566c65e8164af7ae53bbcfa1be24d3d998f2c7703ab38d6780515881319fed1",
+        "probe_source_sha256": "f1232b1b7ff8d0ea54cc459b0afb0e73749e7db66293589b6938e456e0a20408",
+        "sampled_states": 648,
+        "test_assemblies": 36,
+        "positive_action_gain_states": 570,
+        "effective_inertia_relative_error_median": 113.44840600498833,
+        "effective_inertia_relative_error_mean": 206.8732805527432,
+        "friction_torque_error_rms_Nm": 0.03884722071193655,
+        "maximum_learned_odd_acceleration": 0.0,
+        "devices": [
+          "cpu:0"
+        ],
+        "interpretation": "SI input-gain behavior, not native point masses in kg. True states are a declared intervention; the video encoder is not scored. Public servo damping is separated from unknown joint friction."
+      },
+      {
+        "post_hoc_diagnostic": true,
+        "state_supervised_component_only": true,
+        "arm": "state_rk4",
+        "seed": 44,
+        "checkpoint_sha256": "001e9f5192a016bc68086b8345e42bb2dd5a0283f0b7606d87d56c5183c72d32",
+        "probe_input_sha256": "1566c65e8164af7ae53bbcfa1be24d3d998f2c7703ab38d6780515881319fed1",
+        "probe_source_sha256": "f1232b1b7ff8d0ea54cc459b0afb0e73749e7db66293589b6938e456e0a20408",
+        "sampled_states": 648,
+        "test_assemblies": 36,
+        "positive_action_gain_states": 575,
+        "effective_inertia_relative_error_median": 120.11613222122921,
+        "effective_inertia_relative_error_mean": 224.86513193667554,
+        "friction_torque_error_rms_Nm": 0.03884722071193655,
+        "maximum_learned_odd_acceleration": 0.0,
+        "devices": [
+          "cpu:0"
+        ],
+        "interpretation": "SI input-gain behavior, not native point masses in kg. True states are a declared intervention; the video encoder is not scored. Public servo damping is separated from unknown joint friction."
+      }
+    ]
+  },
+  "threshold_clarification": "The frozen 0.25 Nm threshold is shared and absolute. S-A/S-B actuators are 5 Nm with gain 2; S-J is 12 Nm with gain 12. The registration describes the 5 Nm reference scale imprecisely as a universal actuator bound; no score or threshold is changed.",
+  "source": "output/keycld_corpus; original measurements and predictions are not modified"
+}

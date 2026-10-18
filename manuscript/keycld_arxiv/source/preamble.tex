@@ -1,0 +1,36 @@
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{float}
+\usepackage{siunitx}
+% Evaluate the official template's length expression before passing it to
+% LenToUnit. Older LaTeX picture backends otherwise print a literal "-12pt".
+\makeatletter
+\let\cvprOriginalLenToUnit\LenToUnit
+\renewcommand{\LenToUnit}[1]{\expandafter\cvprOriginalLenToUnit\expandafter{\the\dimexpr#1\relax}}
+% Restore the full usable column height after flushing wide and single floats.
+\newcommand{\clearfullpage}{%
+  \clearpage
+  \global\@colroom\@colht
+  \global\vsize\@colht
+}
+\makeatother
+\sisetup{detect-all}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\T}{^{\mathsf T}}
+\newcommand{\keycld}{KeyCLD}
+\newcommand{\statee}{State--Euler}
+\newcommand{\stater}{State--RK4}
+\newcommand{\rms}{\operatorname{RMS}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\Nm}{\mathrm{N\,m}}
+\newcommand{\mm}{\mathrm{mm}}
+\newcommand{\keytitle}{Beyond Geometric Closure: Measuring and Diagnosing Mechanical Consistency in Visual Dynamics}
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+\usepackage[capitalize,nameinlink]{cleveref}
+\hypersetup{pdftitle={Beyond Geometric Closure: Measuring and Diagnosing Mechanical Consistency in Visual Dynamics},
+            pdfauthor={Qibin Gu, Yunfeng Yan},pdfsubject={Independent physical evaluation of visual dynamics}}

@@ -1,0 +1,187 @@
+\begin{thebibliography}{24}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Assran et~al.(2025)Assran, Bardes, Fan, Garrido, Howes, Komeili,
+  Muckley, Rizvi, Roberts, Sinha, Zholus, Arnaud, Gejji, Martin, Robert~Hogan,
+  Dugas, Bojanowski, Khalidov, Labatut, Massa, Szafraniec, Krishnakumar, Li,
+  Ma, Chandar, Meier, LeCun, Rabbat, and Ballas]{assran2025vjepa2}
+Mahmoud Assran, Adrien Bardes, David Fan, Quentin Garrido, Russell Howes,
+  Mojtaba Komeili, Matthew Muckley, Ammar Rizvi, Claire Roberts, Koustuv Sinha,
+  Artem Zholus, Sergio Arnaud, Abha Gejji, Ada Martin, Francois Robert~Hogan,
+  Daniel Dugas, Piotr Bojanowski, Vasil Khalidov, Patrick Labatut, Francisco
+  Massa, Marc Szafraniec, Kapil Krishnakumar, Yong Li, Xiaodong Ma, Sarath
+  Chandar, Franziska Meier, Yann LeCun, Michael Rabbat, and Nicolas Ballas.
+\newblock V-jepa~2: Self-supervised video models enable understanding,
+  prediction and planning.
+\newblock \emph{arXiv preprint arXiv:2506.09985}, 2025.
+
+\bibitem[Bear et~al.(2021)Bear, Wang, Mrowca, Binder, Tung, Pramod, Holdaway,
+  Tao, Smith, Sun, Fei-Fei, Kanwisher, Tenenbaum, Yamins, and
+  Fan]{bear2021physion}
+Daniel~M. Bear, Elias Wang, Damian Mrowca, Felix~J. Binder, Hsiao-Yu~Fish Tung,
+  R.~T. Pramod, Cameron Holdaway, Sirui Tao, Kevin Smith, Fan-Yun Sun, Li
+  Fei-Fei, Nancy Kanwisher, Joshua~B. Tenenbaum, Daniel L.~K. Yamins, and
+  Judith~E. Fan.
+\newblock Physion: Evaluating physical prediction from vision in humans and
+  machines.
+\newblock \emph{arXiv preprint arXiv:2106.08261}, 2021.
+
+\bibitem[Cranmer et~al.(2020)Cranmer, Greydanus, Hoyer, Battaglia, Spergel, and
+  Ho]{cranmer2020lagrangian}
+Miles Cranmer, Sam Greydanus, Stephan Hoyer, Peter Battaglia, David Spergel,
+  and Shirley Ho.
+\newblock Lagrangian neural networks.
+\newblock \emph{arXiv preprint arXiv:2003.04630}, 2020.
+
+\bibitem[Daems et~al.(2024)Daems, Taets, wyffels, and
+  Crevecoeur]{daems2024keycld}
+Rembert Daems, Jeroen Taets, Francis wyffels, and Guillaume Crevecoeur.
+\newblock {KeyCLD}: Learning constrained lagrangian dynamics in keypoint
+  coordinates from images.
+\newblock \emph{Neurocomputing}, 573:\penalty0 127175, 2024.
+
+\bibitem[Finzi et~al.(2020)Finzi, Wang, and Wilson]{finzi2020constraints}
+Marc Finzi, Ke~Alexander Wang, and Andrew~Gordon Wilson.
+\newblock Simplifying hamiltonian and lagrangian neural networks via explicit
+  constraints.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2020.
+
+\bibitem[Gao et~al.(2026)Gao, Liu, Peng, Lin, Qin, Jiang, Li, Xiao, Zheng,
+  Yang, and Na]{gao2026lastexam}
+Mingju Gao, Qingle Liu, Yuzhao Peng, Xinjie Lin, Ziming Qin, Zheng Jiang, Wenyi
+  Li, Calvin Xiao, Youjie Zheng, Kaisen Yang, and Qinhuai Na.
+\newblock World models' last exam in physics.
+\newblock \emph{arXiv preprint arXiv:2610.08791}, 2026.
+
+\bibitem[Greydanus et~al.(2019)Greydanus, Dzamba, and
+  Yosinski]{greydanus2019hamiltonian}
+Sam Greydanus, Misko Dzamba, and Jason Yosinski.
+\newblock Hamiltonian neural networks.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2019.
+
+\bibitem[Gruver et~al.(2022)Gruver, Finzi, Stanton, and
+  Wilson]{gruver2022deconstructing}
+Nate Gruver, Marc Finzi, Samuel Stanton, and Andrew~Gordon Wilson.
+\newblock Deconstructing the inductive biases of hamiltonian neural networks.
+\newblock In \emph{International Conference on Learning Representations}, 2022.
+
+\bibitem[Jain et~al.(2026)Jain, Patel, Unmesh, and Ramani]{jain2026mechverse}
+Rahul Jain, Mayank Patel, Asim Unmesh, and Karthik Ramani.
+\newblock {MechVerse}: Evaluating physical motion consistency in video
+  generation models.
+\newblock \emph{arXiv preprint arXiv:2605.14843}, 2026.
+
+\bibitem[Jain and Wu(2026)]{jain2026rigidbench}
+Swarnim Jain and Shangzhe Wu.
+\newblock {RigidBench}: Evaluating rigid-body physics in video generation
+  models.
+\newblock \emph{arXiv preprint arXiv:2608.15555}, 2026.
+
+\bibitem[Li et~al.(2025{\natexlab{a}})Li, Michel, Pan, Liu, Roberts, and
+  Xie]{li2025pisa}
+Chenyu Li, Oscar Michel, Xichen Pan, Sainan Liu, Mike Roberts, and Saining Xie.
+\newblock {PISA} experiments: Exploring physics post-training for video
+  diffusion models by watching stuff drop.
+\newblock \emph{arXiv preprint arXiv:2503.09595}, 2025{\natexlab{a}}.
+
+\bibitem[Li et~al.(2025{\natexlab{b}})Li, Fang, Chen, Yang, Cao, Wong, Luo,
+  Wang, Yin, Gonzalez, Stoica, Han, and Lu]{li2025worldmodelbench}
+Dacheng Li, Yunhao Fang, Yukang Chen, Shuo Yang, Shiyi Cao, Justin Wong,
+  Michael Luo, Xiaolong Wang, Hongxu Yin, Joseph~E. Gonzalez, Ion Stoica, Song
+  Han, and Yao Lu.
+\newblock {WorldModelBench}: Judging video generation models as world models.
+\newblock \emph{arXiv preprint arXiv:2502.20694}, 2025{\natexlab{b}}.
+
+\bibitem[Li et~al.(2026)Li, Zhang, Luo, Yang, Wang, Han, Yu, Gao, Xue, Zhu,
+  Shen, and Xu]{li2026causal}
+Lin Li, Qihang Zhang, Yiming Luo, Shuai Yang, Ruilin Wang, Fei Han, Mingrui Yu,
+  Zelin Gao, Nan Xue, Xing Zhu, Yujun Shen, and Yinghao Xu.
+\newblock Causal world modeling for robot control.
+\newblock \emph{arXiv preprint arXiv:2601.21998}, 2026.
+
+\bibitem[Lutter et~al.(2019)Lutter, Ritter, and Peters]{lutter2019delan}
+Michael Lutter, Christian Ritter, and Jan Peters.
+\newblock Deep lagrangian networks: Using physics as model prior for deep
+  learning.
+\newblock In \emph{International Conference on Learning Representations}, 2019.
+
+\bibitem[Motamed et~al.(2026)Motamed, Culp, Swersky, Jaini, and
+  Geirhos]{motamed2026physicsiq}
+Saman Motamed, Laura Culp, Kevin Swersky, Priyank Jaini, and Robert Geirhos.
+\newblock Do generative video models understand physical principles?
+\newblock In \emph{Proceedings of the IEEE/CVF Winter Conference on
+  Applications of Computer Vision}, pages 948--958, 2026.
+
+\bibitem[Mur-Labadia et~al.(2026)Mur-Labadia, Muckley, Bar, Assran, Sinha,
+  Rabbat, LeCun, Ballas, and Bardes]{murlabadia2026vjepa2_1}
+Lorenzo Mur-Labadia, Matthew Muckley, Amir Bar, Mahmoud Assran, Koustuv Sinha,
+  Michael Rabbat, Yann LeCun, Nicolas Ballas, and Adrien Bardes.
+\newblock V-jepa 2.1: Unlocking dense features in video self-supervised
+  learning.
+\newblock \emph{arXiv preprint arXiv:2603.14482}, 2026.
+
+\bibitem[St{\"o}lzle and Santina(2024)]{stolzle2024con}
+Maximilian St{\"o}lzle and Cosimo~Della Santina.
+\newblock Input-to-state stable coupled oscillator networks for closed-form
+  model-based control in latent space.
+\newblock In \emph{Advances in Neural Information Processing Systems}, pages
+  82010--82059, 2024.
+
+\bibitem[Todorov et~al.(2012)Todorov, Erez, and Tassa]{todorov2012mujoco}
+Emo Todorov, Tom Erez, and Yuval Tassa.
+\newblock {MuJoCo}: A physics engine for model-based control.
+\newblock In \emph{IEEE/RSJ International Conference on Intelligent Robots and
+  Systems}, pages 5026--5033, 2012.
+
+\bibitem[Toth et~al.(2020)Toth, Rezende, Jaegle, Racani{\`e}re, Botev, and
+  Higgins]{toth2020hgn}
+Peter Toth, Danilo~Jimenez Rezende, Andrew Jaegle, S{\'e}bastien Racani{\`e}re,
+  Aleksandar Botev, and Irina Higgins.
+\newblock Hamiltonian generative networks.
+\newblock In \emph{International Conference on Learning Representations}, 2020.
+
+\bibitem[Tragoudaras et~al.(2026)Tragoudaras, Zhang, Cherniavskii, Vozikis,
+  Nijdam, Prinzhorn, Bodracska, Sebe, Zadaianchuk, and
+  Gavves]{tragoudaras2026morpheus}
+Antonios Tragoudaras, Chenyu Zhang, Daniil Cherniavskii, Antonios Vozikis,
+  Thijmen Nijdam, Derck W.~E. Prinzhorn, Mark Bodracska, Nicu Sebe, Andrii
+  Zadaianchuk, and Stratis Gavves.
+\newblock Evaluating newtonian mechanics in video generative models with real
+  physical systems.
+\newblock In \emph{Proceedings of the 43rd International Conference on Machine
+  Learning}, pages 121912--121951, 2026.
+
+\bibitem[Upadhyay et~al.(2026)Upadhyay, Zhang, Solomon, Agrawal, Ba, Wong,
+  de~Melo, and Kadambi]{upadhyay2026worldbench}
+Rishi Upadhyay, Howard Zhang, Jim Solomon, Ayush Agrawal, Yunhao Ba, Alex Wong,
+  Celso~M. de Melo, and Achuta Kadambi.
+\newblock {WorldBench}: Benchmarking physical understanding of world models by
+  isolating physics concepts.
+\newblock \emph{arXiv preprint arXiv:2601.21282}, 2026.
+
+\bibitem[Wang et~al.(2026)Wang, Feng, Jiang, Tian, Yan, Shen, Lyu, Wang, Zhou,
+  Wang, Pang, Xiang, Gao, Shen, and Zhang]{wang2026gauge}
+Shuai Wang, Yaxin Feng, Xuekun Jiang, Shihan Tian, Ningyu Yan, Xing Shen,
+  Chaoyang Lyu, Hui Wang, Yunsong Zhou, Hanqing Wang, Jiangmiao Pang, Yang
+  Xiang, Xing Gao, Chunhua Shen, and Weinan Zhang.
+\newblock {GAUGE}: A measurement-grounded benchmark for physical fidelity in
+  simulation engines and video world models.
+\newblock \emph{arXiv preprint arXiv:2608.05948}, 2026.
+
+\bibitem[Zhong and Leonard(2020)]{zhong2020images}
+Yaofeng~Desmond Zhong and Naomi Leonard.
+\newblock Unsupervised learning of lagrangian dynamics from images for
+  prediction and control.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2020.
+
+\bibitem[Zhong et~al.(2020)Zhong, Dey, and Chakraborty]{zhong2020dissipative}
+Yaofeng~Desmond Zhong, Biswadip Dey, and Amit Chakraborty.
+\newblock Dissipative {SymODEN}: Encoding hamiltonian dynamics with dissipation
+  and control into deep learning.
+\newblock \emph{arXiv preprint arXiv:2002.08860}, 2020.
+
+\end{thebibliography}

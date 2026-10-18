@@ -1,0 +1,26 @@
+{
+  "purpose": "Component diagnosis: remove visual coordinate ambiguity, then vary only training integrator",
+  "publication_baseline": false,
+  "arms": ["euler", "rk4_4"],
+  "train_indices": [0, 449],
+  "validation_indices": [450, 499],
+  "test_indices": [500, 549],
+  "epochs": 40,
+  "updates_per_arm": 18000,
+  "batch_size": 1,
+  "seed": 42,
+  "initialization": "Same original initial_params.p for both arms; no previous learned dynamics reused",
+  "optimizer": "Original Adam grouping, dynamics lr=6e-5, element clip 5; optimizer state retained",
+  "input": "True B,C,midpoint Cartesian positions and exact velocities, normalized by original calibration; actions unchanged",
+  "loss": "Original four-step dynamics loss component and its 43 windows; reconstruction and heatmap losses removed with the visual modules",
+  "velocity": "Exact simulator velocity, projected to the given velocity constraint for both arms",
+  "changed_factor_between_arms": "Original Euler versus RK4 with 4 substeps per image interval inside the training loss",
+  "evaluation": "Exact state at the middle context timestamp; original odeint, 50 timestamps; physical position and independent crank-force acceleration errors",
+  "checkpoint_selection": "Final epoch 40, no test-guided selection or early stop",
+  "limitations": [
+    "This supervised state-input control is not the paper's video-only method and cannot replace its published comparison.",
+    "It diagnoses learning capacity and optimization in physical coordinates; it is not a matched open-chain topology control.",
+    "Only one paired seed; equal update/data budget, different solver computation cost, reported separately.",
+    "The old held-out split is used for exploratory diagnosis, not a new confirmatory benchmark after tuning."
+  ]
+}

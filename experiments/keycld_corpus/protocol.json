@@ -1,0 +1,60 @@
+{
+  "protocol_id": "keycld-corpus-SH-v1",
+  "registration": "Frozen before new checkpoint training or test prediction; no changes to previous KeyCLD results.",
+  "official_commit": "426c99a53d597e81044e4ce77214cd3aa6b92b64",
+  "dataset": {
+    "all_categories": ["S-A", "S-B", "S-C", "S-E", "S-J", "H-A", "H-B"],
+    "keycld_supported_categories": ["S-A", "S-B", "S-J"],
+    "selection": "Freeze every fully accepted assembly available at preparation; retain all registered test assemblies and all three conditions. No selection by model results.",
+    "split": "Preserve assembly-level train/test split. Within the original 12 validation assemblies per planar category, ordinals 97-102 are calibration only; 103-108 are model validation only.",
+    "primary_view": "front",
+    "conditions": ["low_speed", "rated", "limit_or_load"],
+    "training_frames": [30, 80],
+    "evaluation_frames": [30, 120],
+    "observed_frames": 3,
+    "fps": 30,
+    "sampling_unit": "Independent assembly; conditions paired, video views not independent samples",
+    "generation": "Use existing accepted videos and physics only; collection remains paused."
+  },
+  "input_contract": {
+    "model_inputs": ["RGB prefix", "known geometry", "camera calibration", "public velocity command", "public servo gains and limits", "known external force"],
+    "withheld": ["SI masses", "inertias", "friction parameters", "future measured torques", "future physical states"],
+    "controller": "After t=1s the command is constant. Recompute torque from the model's own predicted crank velocity using the declared servo law; never replay ground-truth future feedback torque.",
+    "coordinate_center_xz_m": [0.2, 0.35],
+    "coordinate_half_extent_m": 0.65,
+    "camera": "Fixed world rectangle, orthographic Y=0 rectification. Existing source camera framing used whole-trajectory bounds; this version is explicitly a recorded-camera/calibration-given track, not a future-blind camera protocol."
+  },
+  "training": {
+    "seeds": [42, 43, 44],
+    "epochs": 40,
+    "batch_size": 1,
+    "steps_predicted": 4,
+    "hidden_dimensions": 32,
+    "keypoints": ["B", "C", "coupler_midpoint"],
+    "action_channels": ["motor_torque_Nm", "external_force_x_N", "external_force_z_N"],
+    "visual_lr": 0.0003,
+    "dynamics_lr": 0.00006,
+    "gradient_element_clip": 5.0,
+    "checkpoint": "Final epoch 40 only; save optimizer/RNG state for exact resume",
+    "arms": ["video_euler", "state_euler", "state_rk4"],
+    "main_method": "Unchanged official encoder, renderer, point mass, potential, input matrix, constraints solver and reconstruction + dynamics + BCE loss; Euler, 4 steps, original augmentation and Adam grouping with retained optimizer state.",
+    "diagnostics": "State arms receive true point coordinates and velocity, train only dynamics; paired initialization/seeds/data/updates. RK4 has four substeps per video interval.",
+    "scope": "Joint multi-assembly training across the three supported planar families. New 30Hz images, geometry per assembly, calibrated controller wrapper, force action semantics and expanded data/update count are explicit adaptations, not an exact replication of the original paper's data distribution."
+  },
+  "evaluation": {
+    "derivative_track": "Native ODE at 240Hz, separately audited; not a generic video-reader ranking",
+    "physical_reader": "Declared B/C/midpoint semantics; one keypoint permutation selected on model-validation assemblies only; report its held-out semantic error and geometry coverage",
+    "limits_SI": {"geometry_m": 0.001, "velocity_m_s": 0.01, "acceleration_m_s2": 0.1, "force_balance_Nm": 0.25, "work_energy_J": 0.05, "prediction_m": 0.01},
+    "limit_basis": "Same engineering precision as the earlier planar diagnostic profile; force 5% of the 5Nm actuator limit, energy 1% of 5Nm times 1rad. New independent calibration must pass before reporting scores.",
+    "controls": ["raw simulator states with independent rigid-body equations", "geometrically closed persistence", "velocity/acceleration time scaling 0.8"],
+    "aggregation": "Six equal-weight pass-rate components and all-six joint pass rate. Macro average by mechanism family then condition. Missing metrics retain denominator and coverage.",
+    "uncertainty": "Paired hierarchical bootstrap over training seed and independent assembly, keeping conditions paired; 2000 draws, seed 20261012",
+    "parameter_claims": "Report SI force-balance, energy and response; fixed per-family friction and confounded speed/load do not independently establish friction or mass identification. No kg claim for latent point masses."
+  },
+  "unsupported": {
+    "S-C": "Gear transmission needs a validated gear-coordinate/keypoint adaptation; not silently treated as a three-link chain.",
+    "S-E": "Unilateral cam contact and event work need a contact-capable adaptation.",
+    "H-A": "Official KeyCLD uses two-dimensional latent points; Stewart requires validated 3D orientation/constraint and observation interfaces.",
+    "H-B": "Official KeyCLD uses two-dimensional latent points; Delta requires validated 3D rigid-body interfaces."
+  }
+}

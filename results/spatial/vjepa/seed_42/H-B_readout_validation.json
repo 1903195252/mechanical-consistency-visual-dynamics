@@ -1,0 +1,50 @@
+[
+  {
+    "video_id": "H-B-041-P05-V01",
+    "platform_position_rmse_mm": 4.030294716358185
+  },
+  {
+    "video_id": "H-B-041-P05-V06",
+    "platform_position_rmse_mm": 4.078023135662079
+  },
+  {
+    "video_id": "H-B-041-P05-V11",
+    "platform_position_rmse_mm": 5.463259294629097
+  },
+  {
+    "video_id": "H-B-042-P06-V01",
+    "platform_position_rmse_mm": 49.926307052373886
+  },
+  {
+    "video_id": "H-B-042-P06-V06",
+    "platform_position_rmse_mm": 51.28016322851181
+  },
+  {
+    "video_id": "H-B-042-P06-V11",
+    "platform_position_rmse_mm": 51.10062658786774
+  },
+  {
+    "video_id": "H-B-043-P07-V01",
+    "platform_position_rmse_mm": 11.887713335454464
+  },
+  {
+    "video_id": "H-B-043-P07-V06",
+    "platform_position_rmse_mm": 13.15379049628973
+  },
+  {
+    "video_id": "H-B-043-P07-V11",
+    "platform_position_rmse_mm": 12.988363392651081
+  },
+  {
+    "video_id": "H-B-044-P08-V01",
+    "platform_position_rmse_mm": 13.762524351477623
+  },
+  {
+    "video_id": "H-B-044-P08-V06",
+    "platform_position_rmse_mm": 14.012019149959087
+  },
+  {
+    "video_id": "H-B-044-P08-V11",
+    "platform_position_rmse_mm": 14.772080816328526
+  }
+]

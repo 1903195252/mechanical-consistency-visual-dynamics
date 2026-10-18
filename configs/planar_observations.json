@@ -1,0 +1,37 @@
+{
+  "resolutions": [
+    64,
+    256,
+    512
+  ],
+  "new_widths": [
+    256,
+    512
+  ],
+  "source_resolution": [
+    640,
+    640
+  ],
+  "source_manifest_sha256": "231fd49b3837605a01906d66eabd951b296153ec700feff87dd4db4737d2827c",
+  "source_sha256": "8ab9c22d102595c22cf06b4788a40fef6c526a19122eb8f1f25d46313d374fb8",
+  "camera_center_m": [
+    0.2,
+    0.35
+  ],
+  "half_fov_m": 0.65,
+  "convention": "pixel_centers",
+  "sampling": "bilinear calibrated warp from original RGB; identical to 64px preparation",
+  "splits": {
+    "test": 36,
+    "validation": 18,
+    "calibration": 18,
+    "train": 271
+  },
+  "training_frames": 50,
+  "evaluation_frames": 90,
+  "observed_frames": 3,
+  "fps": 30,
+  "source_start_frame": 30,
+  "physics_and_labels_unchanged": true,
+  "upsampled_64px_images": false
+}

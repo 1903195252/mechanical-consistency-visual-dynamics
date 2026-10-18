@@ -1,0 +1,63 @@
+{
+  "id": "con-keycld-dynamics-extension-v1",
+  "registered_unix_s": 1791901659.0603073,
+  "registration": "Post-hoc supplement: native results were already observed; fixed before these new runs.",
+  "parent_protocol_sha256": "392564a288bb5ec815495803fea4b40c6f98acd1f47ce41d76935fbe46c8d24d",
+  "dataset_manifest_sha256": "231fd49b3837605a01906d66eabd951b296153ec700feff87dd4db4737d2827c",
+  "training": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "arms": [
+      "state_euler_con_iae",
+      "state_rk4_con_iae"
+    ],
+    "epochs": 50,
+    "batch_size": 16,
+    "updates": 2550,
+    "paired": "Within each seed: identical initial parameters, full data order, optimizer, objective, 48-interval training horizon and final checkpoint; integration only differs.",
+    "euler": "One step per 1/30 s frame interval",
+    "rk4": "Four classical RK4 substeps per 1/30 s frame interval",
+    "inference": "Common native adaptive Dopri5, rtol 1e-7 atol 1e-9; no future truth; same prefix and time grid as parent.",
+    "scope": "Privileged-state controls. Native Dopri5 remains an additional reference. Not equal-budget cross-model training."
+  },
+  "video_diagnosis": {
+    "models": [
+      "KeyCLD",
+      "CON"
+    ],
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "split": "All 108 frozen corpus test sequences",
+    "metrics": [
+      "framewise reconstruction",
+      "three-frame initialized future forecast",
+      "last-observed-image persistence",
+      "train-only mean-image control",
+      "motion-mask error",
+      "four-step window-reset latent forecast and latent persistence"
+    ],
+    "separation": "Reconstruction and reset windows observe later images and are diagnostic only; future forecast encodes only the first three images."
+  },
+  "physics": {
+    "raw": "Preserve geometry-gated raw force/energy nulls and all denominators.",
+    "additional_readout": "Use predicted B position, velocity and acceleration to decode crank angle/rate/acceleration; reconstruct exact closure from known geometry and analytic derivatives. Apply the same additional readout to both models and all arms.",
+    "label": "Geometry-conditioned crank readout intervention, separate from raw native results; correction magnitude and point error must be reported.",
+    "calibration": "54 withheld calibration trajectories, original thresholds, oracle/persistence/timewarp checks; no fitting on calibration or test.",
+    "requirements": [
+      "force-balance residual Nm",
+      "work-energy defect J",
+      "coverage",
+      "point error",
+      "projection correction",
+      "raw geometry residual"
+    ],
+    "withheld": "No future reference state, actual torque, mass, inertia or friction enters either predictor or geometric readout."
+  },
+  "failure_policy": "Retain incomplete and nonfinite cases with their original denominators."
+}

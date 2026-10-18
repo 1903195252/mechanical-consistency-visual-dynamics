@@ -1,0 +1,8 @@
+# CPU evaluation environment; Python 3.10.
+numpy==1.24.4
+scipy==1.10.1
+matplotlib==3.7.5
+mujoco==3.2.3
+opencv-python==4.10.0.84
+Pillow==10.4.0
+mapbox-earcut==1.0.1

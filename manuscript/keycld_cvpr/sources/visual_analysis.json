@@ -1,0 +1,135 @@
+{
+  "sources": [
+    {
+      "path": "output/keycld_fourbar/diagnosis/learned_rows.json",
+      "sha256": "11fa48d2a519fd455116518a6ff8f3550f43fceb29ef2756a8bd19b71c982808"
+    },
+    {
+      "path": "output/keycld_fourbar/diagnosis/report.json",
+      "sha256": "7794669197805d43e68e940b945ae40d349ff593e0d204934428643832b6262e"
+    },
+    {
+      "path": "output/keycld_fourbar/diagnosis/visual_example.npz",
+      "sha256": "0a3f5f38443bb76aa877d40f9be2872497fefe90925c59de602e1269ca4fdb63"
+    },
+    {
+      "path": "output/keycld_fourbar/source/keycld/losses.py",
+      "sha256": "e57f9892061eb12245e2371b06ba982f1bb1b57afea6f35ed66c3477829e1792"
+    },
+    {
+      "path": "output/keycld_corpus/runtime/keycld/losses.py",
+      "sha256": "e57f9892061eb12245e2371b06ba982f1bb1b57afea6f35ed66c3477829e1792"
+    },
+    {
+      "path": "output/keycld_corpus/runs/video_euler_seed42/scores.json",
+      "sha256": "27ee0defce008e4753e9aa70f17a34aba1a525e166eda74db2d9d942616482a7"
+    },
+    {
+      "path": "output/keycld_corpus/runs/video_euler_seed43/scores.json",
+      "sha256": "af94843ee9d5bcd0639347f91f9f5672a7688915e2ce179bfcbfdeb172bff92e"
+    },
+    {
+      "path": "output/keycld_corpus/runs/video_euler_seed44/scores.json",
+      "sha256": "66d109fd0cb9d32acd4c58019fabb81fca72fb0ce6ecbe0f2b4d76ec88fdf9c8"
+    }
+  ],
+  "test_trajectories": 50,
+  "training_seed": 42,
+  "trajectory_ids": [
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514,
+    515,
+    516,
+    517,
+    518,
+    519,
+    520,
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533,
+    534,
+    535,
+    536,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    547,
+    548,
+    549
+  ],
+  "image_size_px": [
+    64,
+    64
+  ],
+  "reconstruction_MSE": 0.0001181486010318622,
+  "forecast_MSE": 0.008937186701223255,
+  "motion_reconstruction_MSE": 0.0006962737184949219,
+  "motion_forecast_MSE": 0.050554976910352704,
+  "forecast_reconstruction_MSE_ratio": 75.64361002305125,
+  "motion_forecast_reconstruction_MSE_ratio": 72.60790629816285,
+  "motion_pixel_fraction_mean": 0.1705517578125,
+  "motion_forecast_squared_error_share_mean": 0.9573792338519321,
+  "spatial_aggregation": "Per-trajectory pixel fraction and squared-error share, then arithmetic mean over 50 trajectories.",
+  "motion_mask": "Mean RGB temporal variance over all reference frames > 1e-4; evaluation only.",
+  "paired_local_prediction": {
+    "euler_1": {
+      "mean_RMSE_mm": 6.774373502765849,
+      "mean_minus_persistence_mm": 0.11712897464354352,
+      "paired_bootstrap_95pct_mm": [
+        0.08610400614203433,
+        0.15264783557575726
+      ],
+      "trajectories_better_than_persistence": 8
+    },
+    "rk4_4": {
+      "mean_RMSE_mm": 6.795815892167011,
+      "mean_minus_persistence_mm": 0.13857136404470397,
+      "paired_bootstrap_95pct_mm": [
+        0.10360104727551392,
+        0.1761035883115612
+      ],
+      "trajectories_better_than_persistence": 8
+    }
+  },
+  "latent_persistence_four_step_RMSE_mm": 6.657244528122306,
+  "local_window_definition": "44 reset windows per trajectory; initial encoded positions and central-difference velocities from true images; four prediction steps.",
+  "bootstrap": "Post-hoc paired resampling of 50 test trajectories, 2000 draws, seed 20261013; fixed checkpoint.",
+  "global_permutation_reduction_percent": 5.468755998594565,
+  "corpus_validation_RMSE_mm_by_seed": [
+    160.60038816625982,
+    159.08563639413555,
+    161.99235017778545
+  ],
+  "corpus_validation_scope": "Validation-set errors used to select the global permutation; test coverage is reported separately.",
+  "reconstruction_panel": "Existing example 500, frames 2/9/49: reference, framewise reconstruction, prefix-conditioned forecast."
+}

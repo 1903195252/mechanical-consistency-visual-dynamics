@@ -1,0 +1,107 @@
+[
+  {
+    "epoch": 1,
+    "loss": 1.078510046005249,
+    "updates": 27,
+    "sequence_exposures": 210,
+    "elapsed_s": 27.37073841691017
+  },
+  {
+    "epoch": 2,
+    "loss": 0.7805511355400085,
+    "updates": 54,
+    "sequence_exposures": 420,
+    "elapsed_s": 54.656014401465654
+  },
+  {
+    "epoch": 3,
+    "loss": 0.7502369284629822,
+    "updates": 81,
+    "sequence_exposures": 630,
+    "elapsed_s": 81.97872637957335
+  },
+  {
+    "epoch": 4,
+    "loss": 0.7100387811660767,
+    "updates": 108,
+    "sequence_exposures": 840,
+    "elapsed_s": 109.24586548656225
+  },
+  {
+    "epoch": 5,
+    "loss": 0.6686240434646606,
+    "updates": 135,
+    "sequence_exposures": 1050,
+    "elapsed_s": 136.4424297362566
+  },
+  {
+    "epoch": 6,
+    "loss": 0.6515783667564392,
+    "updates": 162,
+    "sequence_exposures": 1260,
+    "elapsed_s": 163.69455710053444
+  },
+  {
+    "epoch": 7,
+    "loss": 0.6204606294631958,
+    "updates": 189,
+    "sequence_exposures": 1470,
+    "elapsed_s": 190.9079608619213
+  },
+  {
+    "epoch": 8,
+    "loss": 0.5839375853538513,
+    "updates": 216,
+    "sequence_exposures": 1680,
+    "elapsed_s": 218.12862868979573
+  },
+  {
+    "epoch": 9,
+    "loss": 0.5632323622703552,
+    "updates": 243,
+    "sequence_exposures": 1890,
+    "elapsed_s": 245.38439308479428
+  },
+  {
+    "epoch": 10,
+    "loss": 0.5246031284332275,
+    "updates": 270,
+    "sequence_exposures": 2100,
+    "elapsed_s": 272.66986221447587
+  },
+  {
+    "epoch": 11,
+    "loss": 0.4926445484161377,
+    "updates": 297,
+    "sequence_exposures": 2310,
+    "elapsed_s": 302.84437530487776
+  },
+  {
+    "epoch": 12,
+    "loss": 0.46672335267066956,
+    "updates": 324,
+    "sequence_exposures": 2520,
+    "elapsed_s": 330.0677053295076
+  },
+  {
+    "epoch": 13,
+    "loss": 0.44815099239349365,
+    "updates": 351,
+    "sequence_exposures": 2730,
+    "elapsed_s": 357.26345831900835
+  },
+  {
+    "epoch": 14,
+    "loss": 0.43522772192955017,
+    "updates": 378,
+    "sequence_exposures": 2940,
+    "elapsed_s": 384.48519679903984
+  },
+  {
+    "epoch": 15,
+    "loss": 0.4310026168823242,
+    "updates": 386,
+    "sequence_exposures": 3000,
+    "elapsed_s": 392.27885740995407
+  }
+]

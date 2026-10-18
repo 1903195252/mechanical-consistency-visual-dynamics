@@ -1,0 +1,738 @@
+{
+  "reference": {
+    "H-A": {
+      "exact_state_control": {
+        "effort_rmse": 5.809069268143428e-14,
+        "work_energy_max_J": 0.006447820029967794,
+        "point_rmse_mm": 0.0,
+        "effort_pass": 150,
+        "energy_pass": 150
+      },
+      "sampled_state_control": {
+        "effort_rmse": 0.0477484276007852,
+        "work_energy_max_J": 0.02531861213571951,
+        "point_rmse_mm": 0.0,
+        "effort_pass": 150,
+        "energy_pass": 150
+      },
+      "kinematic_intervention": {
+        "effort_rmse": 3.008995700690776,
+        "work_energy_max_J": 0.6051867011859248,
+        "point_rmse_mm": 1.8286744097981245,
+        "effort_pass": 149,
+        "energy_pass": 48
+      }
+    },
+    "H-B": {
+      "exact_state_control": {
+        "effort_rmse": 7.973780784445609e-15,
+        "work_energy_max_J": 0.005609124006772506,
+        "point_rmse_mm": 0.0,
+        "effort_pass": 150,
+        "energy_pass": 150
+      },
+      "sampled_state_control": {
+        "effort_rmse": 0.01446844475280432,
+        "work_energy_max_J": 0.025334830304203335,
+        "point_rmse_mm": 0.0,
+        "effort_pass": 150,
+        "energy_pass": 150
+      },
+      "kinematic_intervention": {
+        "effort_rmse": 0.733886875867254,
+        "work_energy_max_J": 0.20202940247541318,
+        "point_rmse_mm": 2.2474823261299286,
+        "effort_pass": 91,
+        "energy_pass": 63
+      }
+    }
+  },
+  "groups": {
+    "H-A_0": [
+      {
+        "seed": 42,
+        "visual": {
+          "rgb_mse": 0.0038836559855068725,
+          "persistence_mse": 0.0029923214841013155,
+          "motion_mask_mse": 0.025490919960041842,
+          "persistence_motion_mask_mse": 0.025124454014003275,
+          "rgb_to_persistence": 1.2978739103205856
+        },
+        "finite_videos": 150,
+        "native_readouts": 150,
+        "reachable": 150,
+        "measurable": 150,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 5.644195722060559,
+        "scomp_reconstructed": 54.37869339216511,
+        "correction_mm": 2.0649975648848797,
+        "native_point_rmse_mm": 29.68053048551914,
+        "native_platform_position_rmse_mm": 26.589534305967916,
+        "kinematic_intervention_point_rmse_mm": 29.637556175034405,
+        "kinematic_intervention_platform_position_rmse_mm": 26.589534305967916,
+        "effort_rmse": {
+          "reference": 3.008995700690776,
+          "generated": 39.54805996939016,
+          "generated_higher": 150
+        },
+        "work_energy_max_J": {
+          "reference": 0.6051867011859248,
+          "generated": 1.152652866169702,
+          "generated_higher": 121
+        }
+      },
+      {
+        "seed": 43,
+        "visual": {
+          "rgb_mse": 0.004854723407576481,
+          "persistence_mse": 0.0029923214841013155,
+          "motion_mask_mse": 0.026678672110040984,
+          "persistence_motion_mask_mse": 0.025124454014003275,
+          "rgb_to_persistence": 1.622393661032214
+        },
+        "finite_videos": 150,
+        "native_readouts": 150,
+        "reachable": 150,
+        "measurable": 150,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 5.725133486789514,
+        "scomp_reconstructed": 54.65403520537348,
+        "correction_mm": 2.0696528424543086,
+        "native_point_rmse_mm": 29.681995198228897,
+        "native_platform_position_rmse_mm": 26.645828988139176,
+        "kinematic_intervention_point_rmse_mm": 29.654567362114975,
+        "kinematic_intervention_platform_position_rmse_mm": 26.645828988139176,
+        "effort_rmse": {
+          "reference": 3.008995700690776,
+          "generated": 39.59473836189131,
+          "generated_higher": 150
+        },
+        "work_energy_max_J": {
+          "reference": 0.6051867011859248,
+          "generated": 1.1138139952540576,
+          "generated_higher": 121
+        }
+      },
+      {
+        "seed": 44,
+        "visual": {
+          "rgb_mse": 0.003761851469365259,
+          "persistence_mse": 0.0029923214841013155,
+          "motion_mask_mse": 0.025433223197857537,
+          "persistence_motion_mask_mse": 0.025124454014003275,
+          "rgb_to_persistence": 1.2571682185061264
+        },
+        "finite_videos": 150,
+        "native_readouts": 150,
+        "reachable": 150,
+        "measurable": 150,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 5.648505611145534,
+        "scomp_reconstructed": 54.7538586539996,
+        "correction_mm": 2.1115043669179787,
+        "native_point_rmse_mm": 29.670377882636217,
+        "native_platform_position_rmse_mm": 26.549635321415998,
+        "kinematic_intervention_point_rmse_mm": 29.608510266214033,
+        "kinematic_intervention_platform_position_rmse_mm": 26.549635321415998,
+        "effort_rmse": {
+          "reference": 3.008995700690776,
+          "generated": 39.40079583111062,
+          "generated_higher": 150
+        },
+        "work_energy_max_J": {
+          "reference": 0.6051867011859248,
+          "generated": 1.0739058430639663,
+          "generated_higher": 124
+        }
+      }
+    ],
+    "H-A_50": [
+      {
+        "seed": 42,
+        "visual": {
+          "rgb_mse": 0.003523354938564201,
+          "persistence_mse": 0.0029923214841013155,
+          "motion_mask_mse": 0.02634165434787671,
+          "persistence_motion_mask_mse": 0.025124454014003275,
+          "rgb_to_persistence": 1.177465375055572
+        },
+        "finite_videos": 150,
+        "native_readouts": 150,
+        "reachable": 150,
+        "measurable": 150,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 6.145524891759589,
+        "scomp_reconstructed": 54.875109822256576,
+        "correction_mm": 2.065504819027645,
+        "native_point_rmse_mm": 30.069069613300883,
+        "native_platform_position_rmse_mm": 27.01487096882536,
+        "kinematic_intervention_point_rmse_mm": 30.012463754167648,
+        "kinematic_intervention_platform_position_rmse_mm": 27.01487096882536,
+        "effort_rmse": {
+          "reference": 3.008995700690776,
+          "generated": 40.49868017073499,
+          "generated_higher": 150
+        },
+        "work_energy_max_J": {
+          "reference": 0.6051867011859248,
+          "generated": 1.3544865584109835,
+          "generated_higher": 126
+        }
+      },
+      {
+        "seed": 43,
+        "visual": {
+          "rgb_mse": 0.0037192582370092473,
+          "persistence_mse": 0.0029923214841013155,
+          "motion_mask_mse": 0.027185630152622858,
+          "persistence_motion_mask_mse": 0.025124454014003275,
+          "rgb_to_persistence": 1.2429340419370924
+        },
+        "finite_videos": 150,
+        "native_readouts": 150,
+        "reachable": 150,
+        "measurable": 150,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 5.849443925548292,
+        "scomp_reconstructed": 53.87644414644137,
+        "correction_mm": 2.142577643240994,
+        "native_point_rmse_mm": 30.002640375788413,
+        "native_platform_position_rmse_mm": 26.97221165971912,
+        "kinematic_intervention_point_rmse_mm": 29.895543297896722,
+        "kinematic_intervention_platform_position_rmse_mm": 26.97221165971912,
+        "effort_rmse": {
+          "reference": 3.008995700690776,
+          "generated": 40.27787592356453,
+          "generated_higher": 150
+        },
+        "work_energy_max_J": {
+          "reference": 0.6051867011859248,
+          "generated": 1.931478286029459,
+          "generated_higher": 136
+        }
+      },
+      {
+        "seed": 44,
+        "visual": {
+          "rgb_mse": 0.0036845638090744616,
+          "persistence_mse": 0.0029923214841013155,
+          "motion_mask_mse": 0.027150442376732826,
+          "persistence_motion_mask_mse": 0.025124454014003275,
+          "rgb_to_persistence": 1.2313395564785203
+        },
+        "finite_videos": 150,
+        "native_readouts": 150,
+        "reachable": 150,
+        "measurable": 150,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 6.022630639522294,
+        "scomp_reconstructed": 54.1704798339075,
+        "correction_mm": 2.115432018701537,
+        "native_point_rmse_mm": 29.9463894480379,
+        "native_platform_position_rmse_mm": 26.8851700851425,
+        "kinematic_intervention_point_rmse_mm": 29.84918693900488,
+        "kinematic_intervention_platform_position_rmse_mm": 26.8851700851425,
+        "effort_rmse": {
+          "reference": 3.008995700690776,
+          "generated": 40.7630438564621,
+          "generated_higher": 150
+        },
+        "work_energy_max_J": {
+          "reference": 0.6051867011859248,
+          "generated": 1.634773159606386,
+          "generated_higher": 128
+        }
+      }
+    ],
+    "H-B_0": [
+      {
+        "seed": 42,
+        "visual": {
+          "rgb_mse": 0.002820403738102565,
+          "persistence_mse": 0.0013733218051493168,
+          "motion_mask_mse": 0.015912178369859854,
+          "persistence_motion_mask_mse": 0.01446591009075443,
+          "rgb_to_persistence": 2.0537092817774867
+        },
+        "finite_videos": 150,
+        "native_readouts": 121,
+        "reachable": 121,
+        "measurable": 116,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 2.711465272156461,
+        "scomp_reconstructed": 42.03022961786083,
+        "correction_mm": 7.667071205607712,
+        "native_point_rmse_mm": 22.84568076345005,
+        "native_platform_position_rmse_mm": 23.993851498257683,
+        "kinematic_intervention_point_rmse_mm": 21.975974727562043,
+        "kinematic_intervention_platform_position_rmse_mm": 23.993851498257683,
+        "effort_rmse": {
+          "reference": 0.742027621808404,
+          "generated": 12.231749412514775,
+          "generated_higher": 116
+        },
+        "work_energy_max_J": {
+          "reference": 0.2123780371068566,
+          "generated": 0.6222187349841406,
+          "generated_higher": 99
+        }
+      },
+      {
+        "seed": 43,
+        "visual": {
+          "rgb_mse": 0.0027424952232589324,
+          "persistence_mse": 0.0013733218051493168,
+          "motion_mask_mse": 0.015570789935688178,
+          "persistence_motion_mask_mse": 0.01446591009075443,
+          "rgb_to_persistence": 1.9969793044688093
+        },
+        "finite_videos": 150,
+        "native_readouts": 127,
+        "reachable": 125,
+        "measurable": 122,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 2.8606640629416376,
+        "scomp_reconstructed": 44.191383633745026,
+        "correction_mm": 7.542228635116853,
+        "native_point_rmse_mm": 22.85116787206456,
+        "native_platform_position_rmse_mm": 24.364151917379036,
+        "kinematic_intervention_point_rmse_mm": 22.001391813271976,
+        "kinematic_intervention_platform_position_rmse_mm": 24.004930115976375,
+        "effort_rmse": {
+          "reference": 0.7259751418553655,
+          "generated": 12.279323996525457,
+          "generated_higher": 122
+        },
+        "work_energy_max_J": {
+          "reference": 0.20697215869533384,
+          "generated": 0.6399426249022208,
+          "generated_higher": 105
+        }
+      },
+      {
+        "seed": 44,
+        "visual": {
+          "rgb_mse": 0.003267070341389626,
+          "persistence_mse": 0.0013733218051493168,
+          "motion_mask_mse": 0.01602359091863036,
+          "persistence_motion_mask_mse": 0.01446591009075443,
+          "rgb_to_persistence": 2.3789546842842184
+        },
+        "finite_videos": 150,
+        "native_readouts": 126,
+        "reachable": 126,
+        "measurable": 121,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 2.8393689386618477,
+        "scomp_reconstructed": 43.89279959049543,
+        "correction_mm": 7.721333209856545,
+        "native_point_rmse_mm": 22.694858246153018,
+        "native_platform_position_rmse_mm": 24.03709821278176,
+        "kinematic_intervention_point_rmse_mm": 22.06041951567756,
+        "kinematic_intervention_platform_position_rmse_mm": 24.03709821278176,
+        "effort_rmse": {
+          "reference": 0.7317425200829925,
+          "generated": 12.373633401727936,
+          "generated_higher": 121
+        },
+        "work_energy_max_J": {
+          "reference": 0.20830234965526212,
+          "generated": 0.5765306616432259,
+          "generated_higher": 100
+        }
+      }
+    ],
+    "H-B_50": [
+      {
+        "seed": 42,
+        "visual": {
+          "rgb_mse": 0.0026872651969703535,
+          "persistence_mse": 0.0013733218051493168,
+          "motion_mask_mse": 0.01651812677582105,
+          "persistence_motion_mask_mse": 0.01446591009075443,
+          "rgb_to_persistence": 1.9567629283204864
+        },
+        "finite_videos": 150,
+        "native_readouts": 147,
+        "reachable": 145,
+        "measurable": 143,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 3.3968177802994113,
+        "scomp_reconstructed": 53.10497453542167,
+        "correction_mm": 8.6141212402667,
+        "native_point_rmse_mm": 23.25705692874383,
+        "native_platform_position_rmse_mm": 25.182113572135883,
+        "kinematic_intervention_point_rmse_mm": 22.54413838308861,
+        "kinematic_intervention_platform_position_rmse_mm": 24.566708092604408,
+        "effort_rmse": {
+          "reference": 0.7314784546486985,
+          "generated": 12.649047302644133,
+          "generated_higher": 143
+        },
+        "work_energy_max_J": {
+          "reference": 0.19850819571719497,
+          "generated": 0.5781731828192739,
+          "generated_higher": 109
+        }
+      },
+      {
+        "seed": 43,
+        "visual": {
+          "rgb_mse": 0.0030746779621889193,
+          "persistence_mse": 0.0013733218051493168,
+          "motion_mask_mse": 0.017167237214744092,
+          "persistence_motion_mask_mse": 0.01446591009075443,
+          "rgb_to_persistence": 2.2388619700497796
+        },
+        "finite_videos": 150,
+        "native_readouts": 148,
+        "reachable": 141,
+        "measurable": 139,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 3.4057646855611505,
+        "scomp_reconstructed": 50.76550367531723,
+        "correction_mm": 9.812116561671093,
+        "native_point_rmse_mm": 23.230079372862093,
+        "native_platform_position_rmse_mm": 26.801767224178327,
+        "kinematic_intervention_point_rmse_mm": 24.431741429146577,
+        "kinematic_intervention_platform_position_rmse_mm": 25.849003945580492,
+        "effort_rmse": {
+          "reference": 0.731457320419503,
+          "generated": 11.994063181664965,
+          "generated_higher": 139
+        },
+        "work_energy_max_J": {
+          "reference": 0.204128841171021,
+          "generated": 1.998968396376353,
+          "generated_higher": 108
+        }
+      },
+      {
+        "seed": 44,
+        "visual": {
+          "rgb_mse": 0.0028863517831390103,
+          "persistence_mse": 0.0013733218051493168,
+          "motion_mask_mse": 0.01723014935851097,
+          "persistence_motion_mask_mse": 0.01446591009075443,
+          "rgb_to_persistence": 2.1017301060221545
+        },
+        "finite_videos": 150,
+        "native_readouts": 147,
+        "reachable": 142,
+        "measurable": 142,
+        "native_measurable": 0,
+        "joint": 0,
+        "scomp_native": 3.3594260036513686,
+        "scomp_reconstructed": 51.90123153220319,
+        "correction_mm": 8.753582930021274,
+        "native_point_rmse_mm": 23.214872259600313,
+        "native_platform_position_rmse_mm": 25.87749257150977,
+        "kinematic_intervention_point_rmse_mm": 22.73376454796016,
+        "kinematic_intervention_platform_position_rmse_mm": 24.59526713572637,
+        "effort_rmse": {
+          "reference": 0.7355830580455641,
+          "generated": 12.314623576067877,
+          "generated_higher": 142
+        },
+        "work_energy_max_J": {
+          "reference": 0.2051473171566781,
+          "generated": 1.0396855310526432,
+          "generated_higher": 113
+        }
+      }
+    ]
+  },
+  "aggregate": {
+    "H-A_0": {
+      "scomp_native": {
+        "mean": 5.672611606665202,
+        "seed_sd": 0.045536300956771004
+      },
+      "scomp_reconstructed": {
+        "mean": 54.59552908384607,
+        "seed_sd": 0.19430509029351475
+      },
+      "correction_mm": {
+        "mean": 2.082051591419056,
+        "seed_sd": 0.025612836444926942
+      },
+      "native_point_rmse_mm": {
+        "mean": 29.677634522128084,
+        "seed_sd": 0.006326962807439987
+      },
+      "kinematic_intervention_point_rmse_mm": {
+        "mean": 29.633544601121137,
+        "seed_sd": 0.02328912975302725
+      },
+      "visual": {
+        "rgb_mse": 0.0041667436208162045,
+        "persistence_mse": 0.0029923214841013155,
+        "motion_mask_mse": 0.025867605089313454,
+        "persistence_motion_mask_mse": 0.025124454014003275,
+        "rgb_to_persistence": 1.392478596619642
+      },
+      "native_readouts": [
+        150,
+        150,
+        150
+      ],
+      "reachable": [
+        150,
+        150,
+        150
+      ],
+      "measurable": [
+        150,
+        150,
+        150
+      ],
+      "native_measurable": [
+        0,
+        0,
+        0
+      ],
+      "joint": [
+        0,
+        0,
+        0
+      ],
+      "effort_rmse": {
+        "reference": 3.008995700690776,
+        "generated": 39.51453138746403,
+        "generated_seed_sd": 0.10122524717622317,
+        "generated_higher": 450,
+        "matched_count": 450
+      },
+      "work_energy_max_J": {
+        "reference": 0.6051867011859248,
+        "generated": 1.1134575681625754,
+        "generated_seed_sd": 0.039374721487363866,
+        "generated_higher": 366,
+        "matched_count": 450
+      }
+    },
+    "H-A_50": {
+      "scomp_native": {
+        "mean": 6.005866485610058,
+        "seed_sd": 0.14875067152940386
+      },
+      "scomp_reconstructed": {
+        "mean": 54.30734460086848,
+        "seed_sd": 0.5132078100918989
+      },
+      "correction_mm": {
+        "mean": 2.107838160323392,
+        "seed_sd": 0.03909354258513723
+      },
+      "native_point_rmse_mm": {
+        "mean": 30.006033145709065,
+        "seed_sd": 0.06141041363676976
+      },
+      "kinematic_intervention_point_rmse_mm": {
+        "mean": 29.91906466368975,
+        "seed_sd": 0.08414137257616601
+      },
+      "visual": {
+        "rgb_mse": 0.00364239232821597,
+        "persistence_mse": 0.0029923214841013155,
+        "motion_mask_mse": 0.026892575625744132,
+        "persistence_motion_mask_mse": 0.025124454014003275,
+        "rgb_to_persistence": 1.2172463244903948
+      },
+      "native_readouts": [
+        150,
+        150,
+        150
+      ],
+      "reachable": [
+        150,
+        150,
+        150
+      ],
+      "measurable": [
+        150,
+        150,
+        150
+      ],
+      "native_measurable": [
+        0,
+        0,
+        0
+      ],
+      "joint": [
+        0,
+        0,
+        0
+      ],
+      "effort_rmse": {
+        "reference": 3.008995700690776,
+        "generated": 40.51319998358721,
+        "generated_seed_sd": 0.24290965296169725,
+        "generated_higher": 450,
+        "matched_count": 450
+      },
+      "work_energy_max_J": {
+        "reference": 0.6051867011859248,
+        "generated": 1.6402460013489428,
+        "generated_seed_sd": 0.28853479414551125,
+        "generated_higher": 390,
+        "matched_count": 450
+      },
+      "visual_change_percent": {
+        "rgb_mse": -12.584198604893327,
+        "motion_mask_mse": 3.962371208667159
+      }
+    },
+    "H-B_0": {
+      "scomp_native": {
+        "mean": 2.803832757919982,
+        "seed_sd": 0.08069810963850785
+      },
+      "scomp_reconstructed": {
+        "mean": 43.371470947367094,
+        "seed_sd": 1.171103896203328
+      },
+      "correction_mm": {
+        "mean": 7.643544350193704,
+        "seed_sd": 0.09184087797612366
+      },
+      "native_point_rmse_mm": {
+        "mean": 22.797235627222545,
+        "seed_sd": 0.0887038511352692
+      },
+      "kinematic_intervention_point_rmse_mm": {
+        "mean": 22.012595352170525,
+        "seed_sd": 0.043322857971942144
+      },
+      "visual": {
+        "rgb_mse": 0.002943323100917041,
+        "persistence_mse": 0.0013733218051493168,
+        "motion_mask_mse": 0.015835519741392797,
+        "persistence_motion_mask_mse": 0.01446591009075443,
+        "rgb_to_persistence": 2.1432144235101713
+      },
+      "native_readouts": [
+        121,
+        127,
+        126
+      ],
+      "reachable": [
+        121,
+        125,
+        126
+      ],
+      "measurable": [
+        116,
+        122,
+        121
+      ],
+      "native_measurable": [
+        0,
+        0,
+        0
+      ],
+      "joint": [
+        0,
+        0,
+        0
+      ],
+      "effort_rmse": {
+        "reference": 0.7332484279155873,
+        "generated": 12.294902270256056,
+        "generated_seed_sd": 0.07221342366955885,
+        "generated_higher": 359,
+        "matched_count": 359
+      },
+      "work_energy_max_J": {
+        "reference": 0.20921751515248418,
+        "generated": 0.6128973405098624,
+        "generated_seed_sd": 0.03271751163060629,
+        "generated_higher": 304,
+        "matched_count": 359
+      }
+    },
+    "H-B_50": {
+      "scomp_native": {
+        "mean": 3.387336156503977,
+        "seed_sd": 0.02458138020194555
+      },
+      "scomp_reconstructed": {
+        "mean": 51.92390324764736,
+        "seed_sd": 1.1699002014404218
+      },
+      "correction_mm": {
+        "mean": 9.059940243986356,
+        "seed_sd": 0.6551254081407839
+      },
+      "native_point_rmse_mm": {
+        "mean": 23.23400285373541,
+        "seed_sd": 0.021364265826595986
+      },
+      "kinematic_intervention_point_rmse_mm": {
+        "mean": 23.236548120065116,
+        "seed_sd": 1.0394011762336004
+      },
+      "visual": {
+        "rgb_mse": 0.0028827649807660945,
+        "persistence_mse": 0.0013733218051493168,
+        "motion_mask_mse": 0.01697183778302537,
+        "persistence_motion_mask_mse": 0.01446591009075443,
+        "rgb_to_persistence": 2.0991183347974736
+      },
+      "native_readouts": [
+        147,
+        148,
+        147
+      ],
+      "reachable": [
+        145,
+        141,
+        142
+      ],
+      "measurable": [
+        143,
+        139,
+        142
+      ],
+      "native_measurable": [
+        0,
+        0,
+        0
+      ],
+      "joint": [
+        0,
+        0,
+        0
+      ],
+      "effort_rmse": {
+        "reference": 0.7328396110379218,
+        "generated": 12.319244686792326,
+        "generated_seed_sd": 0.32751651207528343,
+        "generated_higher": 424,
+        "matched_count": 424
+      },
+      "work_energy_max_J": {
+        "reference": 0.20259478468163136,
+        "generated": 1.2056090367494234,
+        "generated_seed_sd": 0.7247846004322308,
+        "generated_higher": 330,
+        "matched_count": 424
+      },
+      "visual_change_percent": {
+        "rgb_mse": -2.0574744285491,
+        "motion_mask_mse": 7.17575463382063
+      }
+    }
+  }
+}
