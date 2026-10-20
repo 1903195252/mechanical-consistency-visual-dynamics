@@ -4,7 +4,9 @@ Artifacts are organized by **model, then experiment type**. Shared datasets and 
 
 ## Published records and access
 
-All 24 packages are published on Zenodo, totaling 137.13 GB across three records. **Files are restricted to authorized users.** Titles, authors, descriptions and DOIs are public. Sign in with an authorized Zenodo account to download the required packages; the setup script imports downloaded artifacts and fetches official pretrained weights from their upstream sources.
+All 24 packages are openly available on Zenodo, totaling 137.13 GB across three records. **Files can be downloaded without access approval.** The setup script imports downloaded artifacts and fetches official pretrained weights from their upstream sources.
+
+Original datasets, observations, trajectories, predictions and numerical evidence are licensed under [CC BY 4.0](../DATA_LICENSE.md). Source code uses [MIT](../LICENSE). Model weights and continuation states retain their applicable model licenses; see [the component-level notices](../THIRD_PARTY.md).
 
 | Record | Package groups | Packages | Size |
 |---|---|---:|---:|

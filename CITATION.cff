@@ -1,6 +1,9 @@
 cff-version: 1.2.0
 message: "Please cite the accompanying manuscript when using this audit framework."
 type: software
+version: 1.0.0
+license: MIT
+date-released: 2026-10-20
 title: "Mechanical Consistency in Visual Dynamics"
 authors:
   - family-names: Gu
@@ -10,7 +13,7 @@ authors:
     given-names: Yunfeng
     affiliation: Zhejiang University
 preferred-citation:
-  type: unpublished
+  type: article
   title: "Beyond Geometric Closure: Measuring and Diagnosing Mechanical Consistency in Visual Dynamics"
   authors:
     - family-names: Gu
@@ -18,4 +21,7 @@ preferred-citation:
     - family-names: Yan
       given-names: Yunfeng
   year: 2026
+  journal: arXiv
+  doi: 10.48550/arXiv.2610.24619
+  url: "https://arxiv.org/abs/2610.24619"
 repository-code: "https://github.com/1903195252/mechanical-consistency-visual-dynamics"

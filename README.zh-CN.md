@@ -2,6 +2,8 @@
 
 论文 **Beyond Geometric Closure: Measuring and Diagnosing Mechanical Consistency in Visual Dynamics** 的实验源码与数值证据。
 
+[预印本：arXiv:2610.24619](https://arxiv.org/abs/2610.24619) · [代码许可：MIT](LICENSE) · [数据许可：CC BY 4.0](DATA_LICENSE.md)
+
 框架分开测量视觉预测、几何可达性和力学一致性，以六项 SI 指标与连续容差比得分评价预测，并通过读取、积分器及力矩干预定位误差来源。
 
 ## 一键使用
@@ -21,7 +23,7 @@
 
 ## 数据与权重
 
-24 个实验材料分包（共 137.13 GB）已正式发布至三条 Zenodo 记录。**文件为受限访问**：标题、作者、简介与 DOI 公开，数据及权重下载需要授权。
+24 个实验材料分包（共 137.13 GB）已在三条 Zenodo 记录中开放下载。**无需申请访问授权。** 原创代码采用 [MIT](LICENSE)，原创数据与数值证据采用 [CC BY 4.0](DATA_LICENSE.md)；第三方模型组件保留其适用的上游许可。
 
 | 记录 | 内容 | 容量 |
 |---|---|---:|
@@ -29,7 +31,7 @@
 | [训练模型与平面实验](https://zenodo.org/records/23448170) | KeyCLD、CON 实验及 LingBot 三种子适配权重 | 47.54 GB |
 | [预训练组件与续训状态](https://zenodo.org/records/23448172) | 官方 V-JEPA、LingBot 组件及 V-JEPA 续训状态 | 47.93 GB |
 
-获授权后，下载所需分包并按[导入说明](docs/data.md#importing-packages)使用。分卷包需将 `.tar.parts.json` 与全部同名前缀分卷放在同一目录，导入器会自动跨卷读取，无需手动合并。
+下载所需分包并按[导入说明](docs/data.md#importing-packages)使用。分卷包需将 `.tar.parts.json` 与全部同名前缀分卷放在同一目录，导入器会自动跨卷读取，无需手动合并。
 
 ## 当前实验
 

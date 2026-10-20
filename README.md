@@ -2,6 +2,8 @@
 
 Code and numerical evidence for **Beyond Geometric Closure: Measuring and Diagnosing Mechanical Consistency in Visual Dynamics**, by Qibin Gu and Yunfeng Yan.
 
+[Paper: arXiv:2610.24619](https://arxiv.org/abs/2610.24619) · [Code license: MIT](LICENSE) · [Data license: CC BY 4.0](DATA_LICENSE.md)
+
 The framework measures geometric closure, tangent velocity, curvature acceleration, reaction-free actuator effort, work–energy balance, and point tracking in SI units. Controlled interventions separate localization, geometric readout, integration, and constitutive behavior. The primary score is continuous Scomp; physical coverage and strict joint qualification accompany it.
 
 [中文](README.zh-CN.md) · [Reproduction](docs/reproduction.md) · [Data and weights](docs/data.md) · [Results](docs/results.md) · [Architecture](docs/architecture.md) · [Third-party sources](THIRD_PARTY.md)
@@ -34,7 +36,7 @@ Training requires the experiment datasets. Official pretrained weights have down
 
 ## Data and weights
 
-The 24 artifact packages (137.13 GB) are published in three Zenodo records. **Files have restricted access**: record descriptions and DOIs are public; downloading data and weights requires authorization.
+The 24 artifact packages (137.13 GB) are openly available in three Zenodo records. **Downloads are public and require no access approval.** Original datasets and numerical evidence use CC BY 4.0; model components retain their applicable upstream licenses.
 
 | Record | Contents | Size |
 |---|---|---:|
@@ -42,7 +44,7 @@ The 24 artifact packages (137.13 GB) are published in three Zenodo records. **Fi
 | [Trained models and planar experiments](https://zenodo.org/records/23448170) | KeyCLD and CON experiments; LingBot adapted weights for three seeds | 47.54 GB |
 | [Pretrained dependencies and continuation states](https://zenodo.org/records/23448172) | Official V-JEPA and LingBot components; V-JEPA continuation states | 47.93 GB |
 
-Once granted access, download the required packages and follow the [import instructions](docs/data.md#importing-packages). For split archives, keep the `.tar.parts.json` descriptor and every matching part together; the importer reads them without manual concatenation.
+Download the required packages and follow the [import instructions](docs/data.md#importing-packages). For split archives, keep the `.tar.parts.json` descriptor and every matching part together; the importer reads them without manual concatenation.
 
 ## Experiments
 
@@ -77,7 +79,22 @@ scripts/                Installation, downloads, imports and verification
 docs/                   Protocols and usage
 ```
 
-Generated datasets, weights, predictions, and environments are ignored by Git. Upstream licenses are retained in [THIRD_PARTY.md](THIRD_PARTY.md). Original project code has no assigned redistribution license at this stage.
+Generated datasets, weights, predictions, and environments are ignored by Git. Original project code is released under [MIT](LICENSE), and original data and numerical evidence under [CC BY 4.0](DATA_LICENSE.md). Upstream components retain the licenses and notices listed in [THIRD_PARTY.md](THIRD_PARTY.md).
+
+## Citation
+
+```bibtex
+@article{gu2026beyond,
+  title={Beyond Geometric Closure: Measuring and Diagnosing Mechanical Consistency in Visual Dynamics},
+  author={Gu, Qibin and Yan, Yunfeng},
+  journal={arXiv preprint arXiv:2610.24619},
+  year={2026},
+  doi={10.48550/arXiv.2610.24619},
+  url={https://arxiv.org/abs/2610.24619}
+}
+```
+
+When using the datasets or model packages, also cite the corresponding Zenodo record.
 
 ```bash
 ./setup.sh --profile all --device cuda --download-models --artifact-dir /path/to/artifacts
